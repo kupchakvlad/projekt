@@ -2,16 +2,19 @@
 
 $REGISTRATION_DATABASE = "registration_data.txt";
 
-//registration data from registration_form.html form -> tag(name)
-$username = $_POST["username"];
-$email = $_POST["email"];
-$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+//registration data from registration_form.html to database form -> tag(name)
+$username_registration = $_POST["username_registration"];
+$email_registration = $_POST["email_registration"];
+$password_registration = password_hash($_POST["password_registration"], PASSWORD_DEFAULT);
 
 //writes data to database
-$registration_data = "$username  |  $email  |  $password\n";
-$database = fopen("registration_data.txt", "a");
-fwrite($database, $registration_data);
-fclose($database);
+$registration_data = "$username_registration  |  $email_registration  |  $password_registration\n";
+
+if (isset($_POST["register"])){
+    $database = fopen("registration_data.txt", "a");
+    fwrite($database, $registration_data);
+    fclose($database);
+}
 
 //redirects user to main page after registration. change file name to redirect user to another file
 header("Location: registration_form.html");
