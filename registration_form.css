@@ -55,7 +55,7 @@ body {
 .register {
   width: 100%;
   padding: 13px;
-  background-color: #1ac620;
+  background-color: #1baa20;
   color: rgb(36, 36, 36);
   font-weight: bold;
   border-radius: 7px;
@@ -65,7 +65,7 @@ body {
 }
 
 .register:hover {
-  background-color: #38a23d;
+  background-color: #318736;
 }
 
 .login {
@@ -84,8 +84,4 @@ body {
 
 .login:hover {
   background-color: rgb(98, 108, 200);
-}
-
-.register-form label{
-  
 }
