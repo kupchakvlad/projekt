@@ -19,7 +19,7 @@ if (isset($_POST["register"])){
     exit();
 }
 
-//redirects to login_form.html
+//redirects to login_form.html ----- works if <formnovalidate> atribute is written in login button tag
 if (isset($_POST["login"])){
     header("Location: login_form.html");
     exit();
