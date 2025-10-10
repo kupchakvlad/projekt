@@ -16,8 +16,13 @@ if (isset($_POST["register"])){
     fclose($database);
 }
 
+if (isset($_POST["login"])){
+    header("Location: login_form.html");
+    exit();
+}
+
 //redirects user to main page after registration. change file name to redirect user to another file
-header("Location: registration_form.html");
+header("Location: main.html");
 exit();
 
 ?>
