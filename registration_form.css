@@ -23,7 +23,7 @@ body {
     backdrop-filter: blur(1px);
 }
 .register-form h2{
-    margin-bottom: 45px;
+    margin-bottom: 25px;
     text-align: center;
     color: #ffffff;
    
@@ -31,7 +31,7 @@ body {
 
 .register-form label{
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-weight: bold;
     color: aliceblue;
     margin-left: 10px;
@@ -84,4 +84,8 @@ body {
 
 .login:hover {
   background-color: rgb(98, 108, 200);
+}
+
+.register-form label{
+  
 }
