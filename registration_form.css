@@ -1,87 +1,139 @@
-* {
+* { 
+  /* makes page universal for every browser on every system */
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 body {
+  /* makes gradient from the center of the body */
   background: radial-gradient(circle at center, rgb(73, 118, 172), rgb(55, 55, 55));
+  /* makes the gradient not ot repeat */
   background-repeat: no-repeat;
+  /* font for whole body */
   font-family: Arial, sans-serif;
+  /* makes every element inside <body> flex, so it can be hcanged with no effort */
   display: flex;
+  /* centers vertically every flex element inside <body> */
   align-items: center;
+  /* centers horizontally every flex element inside <body> */
   justify-content: center;
+  /* makes every element as tall as the screen is */
   height: 100vh;
 }
 
 .register-form{
+    /* applies black background color to the form */
     background: rgba(0, 0, 0, 0.4);
+    /* rounds the borders of the form */
     border-radius: 10px;
+    /* adds spaces between the edges and the form content: 30px(top and bottom), 40px(left and right) */
     padding: 30px 40px;
+    /* makes shadow behind the form */
     box-shadow: 10px 15px 30px rgb(0, 0, 0);
+    /* forms width */
     width: 460px;
-    height: 470px;
+    /* forms height */
+    height: 480px;
+    /* adds visual effects to the background of the element */
     backdrop-filter: blur(1px);
 }
+
 .register-form h2{
+  /* separates the form title from anything that comes below for 25px */
     margin-bottom: 25px;
+    /* centers the text horizontally */
     text-align: center;
+    /* applies the white color to the text */
     color: #ffffff;
-   
 }
 
 .register-form label{
+  /* says to label that no other element should be on the same line as label */
     display: block;
+    /* separates the label from anything that comes below for 12px */
     margin-bottom: 12px;
+    /* makes the font bolded */
     font-weight: bold;
+    /* applies white color to the text */
     color: aliceblue;
+    /* adds 10px left of the element */
     margin-left: 10px;
 }
 
+/* adresses to all elements with same input type */
 .register-form input[type="text"],
 .register-form input[type="email"],
 .register-form input[type="password"] {
-  width: 93%;
-  padding: 10px;
+  /* tells the width the inputs takes from the parents container(register-form) */
+  width: 92%;
+  /* makes 12px of space inside the input */
+  padding: 12px;
+  /* makes 15px spaces on the bottom of every document */
   margin-bottom: 15px;
+  /* makes borders to the inputs */
   border: 2px solid #333232;
+  /* rounds the inputs */
   border-radius: 20px;
   box-sizing: border-box;
+  /* makes 16px of space to the left of the inputs */
   margin-left: 16px;
+  /* background color for inputs */
   background-color: #333232;
+  /* makes placeholder visible on the black input background */
   color: aliceblue;
-
 }
 
 .register {
+  /* tells that it takes 100% of width from parents container(register-form) */
   width: 100%;
+  /* makes 13px of space inside the button from the edges */
   padding: 13px;
+  /* background color for the button */
   background-color: #1baa20;
+  /* color of the text inside the button */
   color: rgb(36, 36, 36);
+  /* bolds the text */
   font-weight: bold;
+  /* borders button */
   border-radius: 7px;
+  /* changes the cursor on hand icon */
   cursor: pointer;
+  /* make borders to the button */
   border: 1px solid black;
-  margin-bottom: 3px;
+  /* makes space under the button */
+  margin-bottom: 10px;
 }
 
 .register:hover {
+  /* changes the  button color after user points on it */
   background-color: #318736;
 }
 
 .login {
-  margin-top: 3px;
+  /* applies background color for the button */
   background-color: rgb(75, 86, 170);
+  /* applies the color to the text inside the button */
   color: white;
+  /* takes 100% of the width from the parents form (register-form) */
   width: 100%;
+  /* makes 12px spaces from edges inside the button */
   padding: 12px;
+  /* rounds borders */
   border-radius: 7px;
+  /* makes borders */
   border: 1px solid black;
+  /* centers the text inside the button */
   text-align: center;
+  /* changes the cursor on hand icon */
   cursor: pointer;
+  /* bolds the text */
   font-weight: bold;
+  /* makes space under the button */
   margin-bottom: 3px;
 }
 
 .login:hover {
+  /* changes the  button color after user points on it */
   background-color: rgb(98, 108, 200);
 }
