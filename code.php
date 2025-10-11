@@ -11,7 +11,7 @@ $password_registration = password_hash($_POST["password_registration"], PASSWORD
 $registration_data = "$username_registration  |  $email_registration  |  $password_registration\n";
 
 //writes data on click and redirect to the main page if data have been written well
-if (isset($_POST["register"])){
+if (isset($_POST["register_submit"])){
     $database = fopen("registration_data.txt", "a");
     fwrite($database, $registration_data);
     fclose($database);
@@ -22,6 +22,12 @@ if (isset($_POST["register"])){
 //redirects to login_form.html ----- works if <formnovalidate> atribute is written in login button tag
 if (isset($_POST["login"])){
     header("Location: login_form.html");
+    exit();
+}
+
+//redirects to registration_form.html from login_form.html if the button is clicked ---- works if <formnovalidate> atribute is written in register button tag
+if (isset($_POST["register"])){
+    header("Location: registration_form.html");
     exit();
 }
 

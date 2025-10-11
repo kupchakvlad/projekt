@@ -20,7 +20,7 @@ body {
     padding: 30px 40px;
     box-shadow: 10px 15px 30px rgb(0, 0, 0);
     width: 380px;
-    height: 345px;
+    height: 380px;
     backdrop-filter: blur(1px);
 }
 .login h2{
@@ -65,6 +65,23 @@ body {
   font-weight: bold;
 }
 
+.registration_btn{
+  margin-top: 7px;
+  background-color: rgb(114, 65, 220);
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .login_btn:hover {
   background-color: rgb(51, 144, 98);
+}
+
+.registration_btn:hover {
+  background-color: rgb(134, 63, 177);
 }
