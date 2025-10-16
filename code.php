@@ -1,5 +1,4 @@
 <?php
-ob_start();
 session_start();
 
 $REGISTRATION_DATABASE = "registration_database.txt";
@@ -15,7 +14,7 @@ $registration_data = "$username_registration|$email_registration|$password_regis
 //writes data on click and redirect to the main page if data have been written well
 if (isset($_POST["register_submit"])){
     file_put_contents($REGISTRATION_DATABASE, $registration_data, FILE_APPEND);
-    header("Location: main.html");
+    header("Location: main/main.html");
     exit();
 }
 
@@ -73,7 +72,7 @@ if (isset($_POST["login_submit"])){
     //if the found variable is true
     if ($found) {
         //than we redirecting user to main.html
-        header("Location: main.html");
+        header("Location: main/main.html");
         exit();
         //else he has to try to login once more
     } else {
