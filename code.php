@@ -14,7 +14,7 @@ $registration_data = "$username_registration|$email_registration|$password_regis
 
 //writes data on click and redirect to the main page if data have been written well
 if (isset($_POST["register_submit"])){
-    file_put_contents($REGISTRATION_DATABASE, "$username_registration|$email_registration|$password_registration\n", FILE_APPEND);
+    file_put_contents($REGISTRATION_DATABASE, $registration_data, FILE_APPEND);
     header("Location: main.html");
     exit();
 }
