@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link rel="stylesheet" href="registration_form.css" />
+    <link rel="stylesheet" href="registration_form.css"/>
 </head>
 <body>
-    <form class="register-form" action="../code.php" method="POST">
-
-        <h2>Registration</h2>
-
-        <label for="Username">Username</label>
-        <input type="text" id="Username" name="username_registration" required placeholder="Enter your name">
-
-        <label for="Email">E-mail</label>
-        <input type="email" id="Email" name="email_registration" required placeholder="Enter your mail">
-
-        <label for="Password">Password</label>
-        <input type="password" id="Password" name="password_registration" required placeholder="Create your password">
-
-        <button class="register" name="register_submit" type="submit"> Sign-up </button>
-
-        <button class="login" name="login" type="submit" formnovalidate> Login </button>
-    </form>
+    <button type="button" id="dark-mode-btn" class="dark-mode-btn">Dark Mode</button>
+    <div class="form-container">
+        <div class="top-buttons">
+            <button id="registration_button" onclick="showRegistration()" class="registration-form">Registration</button>
+            <button id="login_button" onclick="showLogin()" class="login-form">Login</button>
+        </div>
+        
+        <form action="#" id="login_form" class="active">
+            <input type="email" placeholder="Enter your email" required>
+            <input type="password" placeholder="Enter your password" required>
+            <input type="submit" class="submit" value="Sign-in">
+        </form>
+        
+        <form action="#" id="registration_form">
+            <input type="text" placeholder="Enter your name" required>
+            <input type="email" placeholder="Enter your email" required>
+            <input type="password" placeholder="Enter your password" required>
+            <input type="submit" class="submit" value="Sign-up">
+        </form>
+    </div>
+    <script src="registration_form.js"></script>
 </body>
 </html>
