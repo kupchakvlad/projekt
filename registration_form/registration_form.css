@@ -27,6 +27,43 @@ body.dark-mode{
   height: 320px;
 }
 
+body.dark-mode .form-container {
+  background-color: rgb(81, 81, 81);
+  color: white;
+}
+
+body.dark-mode form input {
+  background-color: rgb(106, 106, 106);
+  color: white;
+}
+
+body.dark-mode .top-buttons button {
+  background-color: rgb(106, 106, 106);
+  color:white;
+  transition: background-color 0.2s;
+}
+
+body.dark-mode form input[type="submit"] {
+  background-color: rgb(185, 185, 185);
+  color: rgb(60, 60, 60);
+}
+
+body.dark-mode .top-buttons button:hover {
+  background-color: rgb(151, 151, 151);
+}
+
+body.dark-mode form input[type="submit"]:hover {
+  background-color: rgb(123, 123, 123);
+}
+
+body.dark-mode .dark-mode-btn {
+  color: white;
+}
+
+body.dark-mode .top-buttons button.active{
+  background-color: rgb(151, 151, 151);
+}
+
 .top-buttons {
   display: flex;
   justify-content: left;
@@ -82,7 +119,7 @@ input[type="password"] {
 }
 
 .dark-mode-btn {
-  background-color: rgba(123, 122, 122, 0.3);
+  background-color: rgba(121, 121, 121, 0.3);
   position: fixed;
   top: 20px;
   right: 20px;

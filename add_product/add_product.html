@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="add_product.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header><!-- add header here --></header>
+
+    <button class="back-to-main"> ← </button>
+    <button type="button" id="dark-mode-btn" class="dark-mode-btn">Dark Mode</button>
+
+    <form action="#" mathod="POST">
+        <label for="Photo">Upload photo of product: </label>
+        <input type="file" id="Photo" accept="image/*" multiple>
+        <input type="text" placeholder="Enter your product name" required>
+        <input type="text" placeholder="Enter your product category" required>
+        <input type="text" placeholder="Enter your product manufacturer" required>
+        <label for="Season">Enter the season your shoes are made for.</label>
+        <select name="season" id="Season" required>
+            <option value="winter">Winter</option>
+            <option value="winter">Spring</option>
+            <option value="winter">Summer</option>
+            <option value="winter">Autumn</option>
+        </select>
+        <input type="range" id="slider" oninput="shoeSize()" min="28" max="48" step="1" value="36">
+        <span id="size-value">36</span>
+        <input type="text" placeholder="Enter price">
+        <input type="submit" class="submit-button" value="Add product">
+    </form>
+
+    <script src="add_product.js"></script>
+</body>
+</html>
