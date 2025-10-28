@@ -1,78 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Main page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botovo</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <script src="main.js"></script>
-    <header class="header">
 
-        <a href="" class="logo">Botovo</a>
-
-        <div class="header-buttons">
-
-            <a href="#">Add product</a>
-
-            <div class="acc-menu">
-                <a href="#">Account</a>
-            </div>
-            <div class="Dark-mode">
-                <a href="#">Dark-Mode</a>
-
-            </div>
-        </div>
-    </header>
+<header class="header">
+  <a href="#" class="logo">Botovo</a>
+  <nav class="header-buttons">
+    <a href="../add_product/add_product.html">Add Product</a>
+    <a href="#">Account</a>
+    <a href="#" id="dark-mode-toggle">Dark Mode</a>
+  </nav>
+</header>
 
 <main>
-    <div class="filter">
-        <h3>Filtry</h3>
-        <label><input type="checkbox"> Tenisky</label>
-        <label><input type="checkbox"> Boty</label>
-        <label><input type="checkbox"> Sandály</label>
-        <label><input type="checkbox"> Velikost 40</label>
-        <label><input type="checkbox"> Velikost 41</label>
-        <label><input type="checkbox"> Velikost 42</label>
-    </div>
+  <aside class="filter">
+    <h3>Filters</h3>
 
-    <div class="products">
-        <div class="product-card">
-            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTcRisbDk75_Lmsnk6uowba0hEkSUpaUBeatAD9rzozcTKLFXAxStRX3fFs4Y-RRk35R-EIIx1L-6zSQ-iR7A8z5Bc5jIJxH3i_F0t_hdl-_BjSXuz3h50b" alt="Produkt">
-            <div class="name">AirMax 2025</div>
-            <div class="brand">Nike</div>
-            <div class="price">150€</div>
-        </div>
-        <div class="product-card">
-            <img src="https://store.globalcitizen.org/cdn/shop/files/TakeActionClassicLeatherSneaker4.png?v=1697732349" alt="Produkt">
-            <div class="name">Classic Leather</div>
-            <div class="brand">Reebok</div>
-            <div class="price">120€</div>
-        </div>
-        <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw4JryjuaiuFkEGrbaYDG_KJXXkn5A7tClsw&s" alt="Produkt">
-            <div class="name">Chuck Taylor</div>
-            <div class="brand">Converse</div>
-            <div class="price">90€</div>
-        </div>
-        <div class="product-card">
-            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR-7f-6-jXXQ5jYljWByFhnSf1r6HGuKZeFN60hFyz-Nqkhj7TygIqt35sd2arx2AH2OYXaLWOmh_4wwmdqJYOKZ1YRgGs5iTzSz5s8-ONPcyYhOM0WmZyGXEPWEbMzfmns3w9Cbp-n&usqp=CAc" alt="Produkt">
-            <div class="name">UltraBoost</div>
-            <div class="brand">Adidas</div>
-            <div class="price">180€</div>
-        </div>
-    </div>
+    <label for="search">Search by name:</label>
+    <input type="text" id="search" placeholder="e.g. Nike">
+
+    <h4>Sizes</h4>
+    <label><input type="checkbox" value="35" class="size-filter"> Size 35</label>
+    <label><input type="checkbox" value="36" class="size-filter"> Size 36</label>
+    <label><input type="checkbox" value="37" class="size-filter"> Size 37</label>
+    <label><input type="checkbox" value="38" class="size-filter"> Size 38</label>
+    <label><input type="checkbox" value="39" class="size-filter"> Size 39</label>
+    <label><input type="checkbox" value="40" class="size-filter"> Size 40</label>
+    <label><input type="checkbox" value="41" class="size-filter"> Size 41</label>
+    <label><input type="checkbox" value="42" class="size-filter"> Size 42</label>
+  </aside>
+
+  <section class="products" id="products">
+    <!-- Products will be added here by JS -->
+  </section>
 </main>
 
 <footer>
-    <div class="logo-footer">Botovo</div>
-    <div class="contacts">
-        <div>Ansar Rinatuly – rinatans@student.cvut.cz</div>
-        <div>Vlad Kupchak – kupchvla@student.cvut.cz</div>
-        <div class="joke">„Kdo nemá Botovo, jako by nebyl! A nohy smrdí bez stylu!“ 👟😂</div>
-    </div>
+  <div>Botovo © 2025</div>
+  <div>Ansar Rinatuly – rinatans@student.cvut.cz</div>
+  <div>Vlad Kupchak – kupchvla@student.cvut.cz</div>
+  <p class="joke">„Kdo nemá Botovo, jako by nebyl!“</p>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>
+

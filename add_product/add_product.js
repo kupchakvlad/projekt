@@ -1,7 +1,7 @@
 const slider = document.getElementById("slider");
 const output = document.getElementById("size-value");
 const darkModeBtn = document.getElementById("dark-mode-btn");
-
+const BackBtn = document.querySelector(".back-to-main")
 
 function shoeSize() {
     output.textContent = slider.value;
@@ -14,3 +14,7 @@ function shoeSize() {
 darkModeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 });
+
+BackBtn.addEventListener("click", () => {
+    window.location.href = "../main/main.html";
+})
