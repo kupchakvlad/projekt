@@ -140,7 +140,7 @@ body.dark select:focus {
 
 body.dark .back-to-main,
 body.dark .dark-mode-btn {
-  background-color: #2563eb;
+  background-color: #555;
   color: white;
 }
 
