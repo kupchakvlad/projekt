@@ -27,7 +27,9 @@
             <option value="winter">Summer</option>
             <option value="winter">Autumn</option>
         </select>
-        <input type="range" id="slider" oninput="shoeSize()" min="28" max="48" step="1" value="36">
+        <label for="slider"> Enter shoes size: 
+            <input type="range" id="slider" min="28" max="48" step="1" value="36">
+        </label>
         <span id="size-value">36</span>
         <input type="text" placeholder="Enter price">
         <input type="submit" class="submit-button" value="Add product">
