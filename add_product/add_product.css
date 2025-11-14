@@ -167,16 +167,3 @@ body.dark form label {
 .submit-button:hover {
   background-color: #218838;
 }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 600px) {
-  form {
-    padding: 1.5rem;
-  }
-
-  .back-to-main,
-  .dark-mode-btn {
-    font-size: 0.9rem;
-    padding: 6px 10px;
-  }
-}
