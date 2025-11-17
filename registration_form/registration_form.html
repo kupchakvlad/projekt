@@ -15,17 +15,31 @@
             <button id="login_button" class="login-form">Login</button>
         </div>
         
-        <form action="#" id="login_form" class="active">
-            <input type="email" placeholder="Enter your email" required>
-            <input type="password" placeholder="Enter your password" required>
-            <input type="submit" class="submit" value="Sign-in">
+        <form action="registration_form.php" method="POST" id="login_form" class="active">
+            <label for="login_email">Enter your email: 
+                <input type="text" id="login_email" name="login_email" required>
+            </label>
+            <label for="login_password">Enter your password: 
+                <input type="password" id="login_password" name="login_password" required>
+            </label>
+            <input type="submit" id="login_submit" class="submit" value="Sign-in">
         </form>
         
-        <form action="#" id="registration_form">
-            <input type="text" placeholder="Enter your name" required>
-            <input type="email" placeholder="Enter your email" required>
-            <input type="password" placeholder="Enter your password" required>
-            <input type="submit" class="submit" value="Sign-up">
+        <form action="registration_form.php" method="POST" id="registration_form">
+            <label for="registration_name">Enter name: 
+                <input type="text" id="registration_name" name="registration_name" required>
+            </label>
+            <div id="registration_email_container">
+                <label for="registration_email">Enter email: 
+                    <input type="text" id="registration_email" name="registration_email" required>
+                </label>
+            </div>
+            <div id="registration_password_container">
+                <label for="registration_password">Enter password
+                    <input type="password" id="registration_password" name="registration_password" required>
+                </label>
+            </div>
+            <input type="submit" class="submit" id="registration_submit" value="Sign-up">
         </form>
     </div>
 </body>

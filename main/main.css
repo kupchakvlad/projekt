@@ -25,16 +25,24 @@ body {
   top: 0;
 }
 
-.logo { font-size: 28px; font-weight: bold; color: #222; text-decoration: none; }
+.logo {
+  font-size: 28px; font-weight: bold; color: #222; text-decoration: none;
+}
 
-.header-buttons { display: flex; gap: 15px; }
+.header-buttons {
+  display: flex; gap: 15px;
+}
 
 .header-buttons a {
   color: #444;
   text-decoration: none;
   font-weight: 600;
+  cursor: pointer;
 }
-.header-buttons a:hover { color: #ff6b00; }
+
+.header-buttons a:hover {
+  color: #ff6b00;
+}
 
 main {
   flex: 1;
@@ -91,9 +99,17 @@ main {
   border-radius: 6px;
 }
 
-.product-card .name { font-weight: bold; margin-top: 5px; }
-.product-card .brand { color: #777; font-size: 13px; }
-.product-card .price { color: #ff6b00; font-weight: bold; margin-top: 5px; }
+.product-card .name {
+  font-weight: bold; margin-top: 5px;
+}
+
+.product-card .brand {
+  color: #777; font-size: 13px;
+}
+
+.product-card .price {
+  color: #ff6b00; font-weight: bold; margin-top: 5px;
+}
 
 footer {
   background: #333;

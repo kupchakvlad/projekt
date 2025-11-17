@@ -146,7 +146,7 @@ body.dark .dark-mode-btn {
 
 body.dark .back-to-main:hover,
 body.dark .dark-mode-btn:hover {
-  background-color: #1e40af;
+  background-color: rgb(151, 151, 151);
 }
 
 body.dark form label {
