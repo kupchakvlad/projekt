@@ -22,12 +22,14 @@ body.dark-mode{
 }
 
 .form-container {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 10px black;
   width: 400px;
-  height: 350px;
+  height: 450px;
 }
 
 body.dark-mode .form-container {
@@ -95,13 +97,16 @@ body.dark-mode .top-buttons button.active{
 
 form {
   display: none;
+  flex-direction: column;
+  height: 100%;
 }
 
 form.active {
-  display: block;
+  display: flex;
 }
 
 .submit {
+  margin-top: auto;
   background-color: lightskyblue;
   font-weight: bold;
   border: none;
@@ -117,22 +122,27 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 93%;
-  height: 30px;
+  height: 35px;
   padding: 10px;
-  margin: 10px 0;
+  margin: 5px;
   border-radius: 5px;
   border: none;
   background-color: #eee;
 }
 
+label {
+  font-size: small;
+}
+
 #login_email.email_error {
   border: 2px red solid;
 }
+
 #registration_email.email_error {
   border: 2px red solid;
 }
 
-#registration_password.password_error {
+#registration_password.password_error, #registration_password_confirmation.password_error {
   border: 2px red solid;
 }
 
@@ -147,7 +157,7 @@ input[type="password"] {
   transition: background-color 0.2s ease, color 0.3s ease;
   position: fixed;
   top: 1rem;
-  right: 1rem; /* ✅ positions the button in the top-right corner */
+  right: 1rem;
   z-index: 1000;
 }
 
