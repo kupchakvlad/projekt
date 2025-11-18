@@ -59,6 +59,9 @@ FIRST LISTENER CHECKS:
 */
 
 registration_form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
     let password = registration_password.value;
     let password_confirmation = registration_password_confirmation.value;
     let email_value = registration_email.value
@@ -130,37 +133,22 @@ registration_form.addEventListener("submit", function(event) {
 
     
     }
-    email_checker();
-    password_length_checker();
-    password_confirmation_checker();
-
-    if (!valid) event.preventDefault();
-});
 
 
-/* 
-SECOND LISTENER CHECKS STRENGTH OF PASSWORD FROM ZWA.TOAD.CZ SERVER, CHECKS:
-    { IF USER PASSWORD IS IN THE LIST IN SERVER, WRITES IN THE BOTTOM THAT PASSWORD IS WEAK, MAKES BORDER RED }
-    { BLOKUJE ODESILANI DAT NA SERVER POKUD UZIVATELSKE HESLO JE NA SERVERU, V OKAMZIKU KDYZ NENI TAK ODESILA DATA NA SERVER -
-    - POMOCI [registration_form.submit();] }
-*/
-registration_form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    password_strength_connection();
-});
-
-function password_strength_connection(event) {
-    let request = new XMLHttpRequest();
-    request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
-    request.send();
-    request.addEventListener("load", control_of_password_strength_answer)
-}
+    function password_strength_connection(event) {
+        let request = new XMLHttpRequest();
+        request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
+        request.send();
+        request.addEventListener("load", control_of_password_strength_answer)
+    }
 
 function control_of_password_strength_answer(event) {
     
     let words = event.target.responseText.split("\n");
     
     if (words.includes(registration_password.value)) {
+        
+        valid = false;
 
         registration_password.classList.add("password_error");
         
@@ -183,3 +171,20 @@ function control_of_password_strength_answer(event) {
 
     }
 }
+
+    email_checker();
+    password_length_checker();
+    password_confirmation_checker();
+
+    if (!valid) return;
+
+    password_strength_connection();
+});
+
+
+/* 
+SECOND LISTENER CHECKS STRENGTH OF PASSWORD FROM ZWA.TOAD.CZ SERVER, CHECKS:
+    { IF USER PASSWORD IS IN THE LIST IN SERVER, WRITES IN THE BOTTOM THAT PASSWORD IS WEAK, MAKES BORDER RED }
+    { BLOKUJE ODESILANI DAT NA SERVER POKUD UZIVATELSKE HESLO JE NA SERVERU, V OKAMZIKU KDYZ NENI TAK ODESILA DATA NA SERVER -
+    - POMOCI [registration_form.submit();] }
+*/
