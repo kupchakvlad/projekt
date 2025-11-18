@@ -57,17 +57,17 @@ FIRST LISTENER CHECKS:
         { PASSWORD LENGTH AND WRITES ABOUT THIS IN THE BOTTOM MAKES BORDER RED AS WELL },
         { PASSWORD CONFIRMATION FROM THE SECOND PASSWORD INPUT AND WRITES OUT THAT PASSWORDS DOES NOT MATCH IN THE BOTTOM AND MAKES BORDER RED AS WELL }
 */
+
 registration_form.addEventListener("submit", function(event) {
     let password = registration_password.value;
     let password_confirmation = registration_password_confirmation.value;
     let email_value = registration_email.value
     let valid = true;
 
-
-    //EMAIL CHEKER
-    if (email_value.indexOf("@") == -1) {
-        valid = false;
-        registration_email.classList.add("email_error");
+    function email_checker() {
+        if (email_value.indexOf("@") == -1) {
+            valid = false;
+            registration_email.classList.add("email_error");
 
         if (!emailMessage) {
             emailMessage = document.createElement("p");
@@ -76,55 +76,63 @@ registration_form.addEventListener("submit", function(event) {
             registration_password_container.appendChild(emailMessage);
         }
 
-    } else {
-        registration_email.classList.remove("email_error");
-        if (emailMessage){
-            emailMessage.remove();
-            emailMessage = null;
+        } else {
+            registration_email.classList.remove("email_error");
+            if (emailMessage){
+                emailMessage.remove();
+                emailMessage = null;
+            }
         }
     }
 
-    //PASSWORD LENGTH CHEKER
-    if (password.length < 8) {
-        valid = false;
-        registration_password.classList.add("password_error");
+    function password_length_checker() {
+        if (password.length < 8) {
+            valid = false;
+            registration_password.classList.add("password_error");
 
-        if (!passwordMessage_8) {
-            passwordMessage_8 = document.createElement("p");
-            passwordMessage_8.className = "password-error-message";
-            passwordMessage_8.textContent = "At least 8 characters.";
-            registration_password_container.appendChild(passwordMessage_8);
-        }
-    } else if (passwordMessage_8) {
+            if (!passwordMessage_8) {
+                passwordMessage_8 = document.createElement("p");
+                passwordMessage_8.className = "password-error-message";
+                passwordMessage_8.textContent = "At least 8 characters.";
+                registration_password_container.appendChild(passwordMessage_8);
+            }
+        } else if (passwordMessage_8) {
             passwordMessage_8.remove();
             passwordMessage_8 = null;
             registration_password.classList.remove("password_error");
-    }
-
-
-    //PASSWORD CONFIRMATOR
-    if (password != password_confirmation) {
-        
-        registration_password.classList.add("password_error");
-        registration_password_confirmation.classList.add("password_error");
-        valid = false;
-
-        if (!passwordMessage_confirmation) {
-            passwordMessage_confirmation = document.createElement("div");
-            passwordMessage_confirmation.className = "password-error-message";
-            passwordMessage_confirmation.textContent = "The entered passwords do not match.";
-            registration_password_container.appendChild(passwordMessage_confirmation);
-        }
-        
-    } else {
-
-        registration_password_confirmation.classList.remove("password_error");
-
-     if (passwordMessage_confirmation){
-            passwordMessage_confirmation.remove();
-            passwordMessage_confirmation = null;
         }
     }
+
+
+    function password_confirmation_checker() {
+        if (password != password_confirmation) {
+        
+            valid = false;
+            registration_password.classList.add("password_error");
+            registration_password_confirmation.classList.add("password_error");
+
+            if (!passwordMessage_confirmation) {
+                passwordMessage_confirmation = document.createElement("div");
+                passwordMessage_confirmation.className = "password-error-message";
+                passwordMessage_confirmation.textContent = "The entered passwords do not match.";
+                registration_password_container.appendChild(passwordMessage_confirmation);
+            }
+        
+        } else {
+
+            registration_password_confirmation.classList.remove("password_error");
+
+            if (passwordMessage_confirmation){
+                passwordMessage_confirmation.remove();
+                passwordMessage_confirmation = null;
+            }
+        }
+
+    
+    }
+    email_checker();
+    password_length_checker();
+    password_confirmation_checker();
 
     if (!valid) event.preventDefault();
 });
