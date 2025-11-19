@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-  background-color:#eee;
-  color: black;
+  background-color:#f4f6f8;
+  color: #1f2937;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@ body.dark-mode{
 .form-container {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 10px black;
@@ -50,15 +50,15 @@ body.dark-mode .top-buttons button {
 
 body.dark-mode form input[type="submit"] {
   background-color: rgb(185, 185, 185);
-  color: rgb(60, 60, 60);
+  color: rgb(92, 92, 92);
 }
 
 body.dark-mode .top-buttons button:hover {
-  background-color: rgb(151, 151, 151);
+  background-color: rgb(185, 185, 185);
 }
 
 body.dark-mode form input[type="submit"]:hover {
-  background-color: rgb(123, 123, 123);
+  background-color: rgb(150, 150, 150);
 }
 
 body.dark-mode .dark-mode-btn {
@@ -84,15 +84,17 @@ body.dark-mode .top-buttons button.active{
   flex: 1;
   margin: 5px;
   padding: 10px;
-  border: none;
-  font-weight: bold;
-  background-color: #eee;
+  border-radius: 5px;
+  background-color:#3b82f6;
   cursor: pointer;
   transition: background-color 0.2s;
+  color: white;
+  font-size: 1rem;
+  border: none;
 }
 
 .top-buttons button.active {
-  background-color: lightskyblue;
+  background-color: #2563eb;
 }
 
 form {
@@ -107,7 +109,7 @@ form.active {
 
 .submit {
   margin-top: auto;
-  background-color: lightskyblue;
+  background-color: #14dd9a;
   font-weight: bold;
   border: none;
   color: black;
@@ -127,7 +129,7 @@ input[type="password"] {
   margin: 5px;
   border-radius: 5px;
   border: none;
-  background-color: #eee;
+  background-color: #e5e7eb;
 }
 
 label {
@@ -166,13 +168,13 @@ label {
 }
 
 .submit:hover {
-  background-color: #669dd9;
+  background-color: #10b981;
 }
 
 .registration-form:hover {
-  background-color: #d2d2d2;
+  background-color: #60a5fa;
 }
 
 .login-form:hover {
-  background-color: #d2d2d2;
+  background-color: #60a5fa;
 }
