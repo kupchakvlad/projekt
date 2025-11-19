@@ -142,35 +142,35 @@ registration_form.addEventListener("submit", function(event) {
         request.addEventListener("load", control_of_password_strength_answer)
     }
 
-function control_of_password_strength_answer(event) {
+    function control_of_password_strength_answer(event) {
     
-    let words = event.target.responseText.split("\n");
+        let words = event.target.responseText.split("\n");
     
-    if (words.includes(registration_password.value)) {
+        if (words.includes(registration_password.value)) {
         
-        valid = false;
+            valid = false;
 
-        registration_password.classList.add("password_error");
+            registration_password.classList.add("password_error");
         
-        if (!passwordStrengthMessage) {
-            passwordStrengthMessage = document.createElement("p");
-            passwordStrengthMessage.className = "password-error-message";
-            passwordStrengthMessage.textContent = "Password is too weak.";
-            registration_password_container.appendChild(passwordStrengthMessage);
+            if (!passwordStrengthMessage) {
+                passwordStrengthMessage = document.createElement("p");
+                passwordStrengthMessage.className = "password-error-message";
+                passwordStrengthMessage.textContent = "Password is too weak.";
+                registration_password_container.appendChild(passwordStrengthMessage);
+            }
+        } else {
+
+            registration_password.classList.remove("password_error");
+
+            if (passwordStrengthMessage) {
+                passwordStrengthMessage.remove();
+                passwordStrengthMessage = null;
+            }
+
+            registration_form.submit();
+
         }
-    } else {
-
-        registration_password.classList.remove("password_error");
-
-        if (passwordStrengthMessage) {
-            passwordStrengthMessage.remove();
-            passwordStrengthMessage = null;
-        }
-
-        registration_form.submit();
-
     }
-}
 
     email_checker();
     password_length_checker();
