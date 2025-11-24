@@ -16,10 +16,10 @@
         </div>
         
         <form action="registration_form.php" method="POST" id="login_form" class="active">
-            <label for="login_email">Enter your email: 
+            <label for="login_email">Enter your email:
                 <input type="text" id="login_email" name="login_email" required>
             </label>
-            <label for="login_password">Enter your password: 
+            <label for="login_password">Enter your password:
                 <input type="password" id="login_password" name="login_password" required>
             </label>
             <input type="submit" id="login_submit" class="submit" value="Sign-in">
@@ -39,10 +39,10 @@
                     <input type="password" id="registration_password" name="registration_password" required>
                 </label>
                 <label for="registration_password_confirmation">Enter password once again:
-                    <input type="password" id="registration_password_confirmation" required>
+                    <input type="password" name="registration_password_confirmation" id="registration_password_confirmation" required>
                 </label>
             </div>
-            <input type="submit" class="submit" id="registration_submit" value="Sign-up">
+            <input type="submit" name="registration_submit" class="submit" id="registration_submit" value="Sign-up">
         </form>
     </div>
 </body>
