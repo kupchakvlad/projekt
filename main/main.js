@@ -2,7 +2,6 @@ const DarkMode = document.getElementById("dark-mode-toggle");
 const AddProductLink = document.getElementById("add-product");
 const AccountLink = document.getElementById("account");
 
-
 DarkMode.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 });

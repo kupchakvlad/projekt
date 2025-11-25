@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+$servername = "kupchvla@zwa.toad.cz";
+$username = "kupchvla";
+$password = "";
+$dbname = "projekt";
+
 $errorMessages = [];
 
 if (isset($_POST['registration_submit'])) {
@@ -12,7 +17,7 @@ if (isset($_POST['registration_submit'])) {
     $registration_password_confirmation = trim($_POST['registration_password_confirmation']);
 
 
-    // DATA CHECKS
+    // REGISTRATION DATA CHECKS
     if (empty($registration_name)) {
         array_push($errorMessages, "Name is required");
     }
