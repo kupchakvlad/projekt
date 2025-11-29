@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botovo</title>
-    <link rel="stylesheet" href="main.css">
-    <script src="main.js" defer></script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botovo - Shop</title>
+<link rel="stylesheet" href="main.css">
+<script src="main.js" defer></script>
 </head>
 <body>
 
@@ -20,33 +20,51 @@
 
 <main>
   <aside class="filter">
-    <h3>Filters</h3>
+  <h3>Filters</h3>
 
-    <label for="search">Search by name:</label>
-    <input type="text" id="search" placeholder="e.g. Nike">
+  <label for="search">Search by name:</label>
+  <input type="text" id="search" placeholder="e.g. Nike">
 
-    <h4>Sizes</h4>
-    <label><input type="checkbox" value="35" class="size-filter"> Size 35</label>
-    <label><input type="checkbox" value="36" class="size-filter"> Size 36</label>
-    <label><input type="checkbox" value="37" class="size-filter"> Size 37</label>
-    <label><input type="checkbox" value="38" class="size-filter"> Size 38</label>
-    <label><input type="checkbox" value="39" class="size-filter"> Size 39</label>
-    <label><input type="checkbox" value="40" class="size-filter"> Size 40</label>
-    <label><input type="checkbox" value="41" class="size-filter"> Size 41</label>
-    <label><input type="checkbox" value="42" class="size-filter"> Size 42</label>
-  </aside>
+<h4>Size</h4>
+<div class="size-container">
+  <input type="range" id="size-slider" min="28" max="48" value="38">
+  <span id="size-value">38</span>
+</div>
+
+
+<h4>Price</h4>
+<div class="price-container">
+  <div class="price-slider-row">
+    <label>Min:</label>
+    <input type="range" id="min-price" min="0" max="1000" value="100">
+    <span id="min-price-value">100</span> CZK
+  </div>
+  <div class="price-slider-row">
+    <label>Max:</label>
+    <input type="range" id="max-price" min="0" max="1000" value="700">
+    <span id="max-price-value">700</span> CZK
+  </div>
+</div>
+
+
+  <h4>Season</h4>
+  <label class="season-option"><input type="radio" name="season" value="summer" checked> Summer</label>
+  <label class="season-option"><input type="radio" name="season" value="winter"> Winter</label>
+
+  <button id="apply-filters">Find</button>
+</aside>
+
 
   <section class="products" id="products">
-
+    <!-- Здесь будут товары -->
   </section>
 </main>
 
 <footer>
-  <div>Botovo © 2025</div>
-  <div>Ansar Rinatuly – rinatans@student.cvut.cz</div>
-  <div>Vlad Kupchak – kupchvla@student.cvut.cz</div>
+  Botovo © 2025
 </footer>
 
 </body>
 </html>
+
 
