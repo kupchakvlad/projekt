@@ -1,9 +1,8 @@
 // Dark mode toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
-const body = document.body;
 
 darkModeToggle.addEventListener('click', function() {
-    body.classList.toggle('dark');
+    document.body.classList.toggle('dark');
 });
 
 const backButton = document.getElementById('back-button');
@@ -22,10 +21,4 @@ profileForm.addEventListener('submit', function(e) {
     const firstName = document.getElementById('first-name').value;
     const lastName = document.getElementById('last-name').value;
     const email = document.getElementById('email').value;
-
-    // Update user name display
-    userName.textContent = `${firstName} ${lastName}`;
-
-    // Update email display
-    userEmail.textContent = email;
 });

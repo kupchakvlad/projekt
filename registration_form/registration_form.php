@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-$servername = "kupchvla@zwa.toad.cz";
-$username = "kupchvla";
-$password = "";
-$dbname = "projekt";
-
 $errorMessages = [];
 
 if (isset($_POST['registration_submit'])) {

@@ -208,6 +208,10 @@ body.dark .filter {
   color: #ccc;
 }
 
+body.dark .logo {
+    color: white;
+}
+
 body.dark input, body.dark select {
   background-color: #2a2a2a;
   color: #eee;
