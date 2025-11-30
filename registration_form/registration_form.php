@@ -28,19 +28,19 @@ if (isset($_POST['registration_submit'])) {
 
     // REGISTRATION DATA CHECKS
     if (empty($registration_name)) {
-        array_push($errorMessages, "Name is required");
+        $errorMessages[] = "Name is required";
     }
     if (empty($registration_email)) {
-        array_push($errorMessages, "Email is required");
+        $errorMessages[] = "Email is required";
     } else if (strpos($registration_email, "@") === false) {
-        array_push($errorMessages, "Email is entered incorrectly");
+        $errorMessages[] = "Email is entered incorrectly";
     }
     if (empty($registration_password)) {
-        array_push($errorMessages, "Password is required");
+        $errorMessages[] = "Password is required";
     } else if (strlen($registration_password) < 8) {
-        array_push($errorMessages, "Password must be at least 8 characters");
+        $errorMessages[] = "Password must be at least 8 characters";
     } else if ($registration_password !== $registration_password_confirmation) {
-        array_push($errorMessages, "Passwords do not match");
+        $errorMessages[] = "Passwords do not match";
     }
 
     $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
