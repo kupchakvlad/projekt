@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="proba10">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.html" afterDir="false" />
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="proba11">
       <change beforePath="$PROJECT_DIR$/registration_form/registration_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +105,7 @@
       <workItem from="1764433418868" duration="105000" />
       <workItem from="1764441226229" duration="3409000" />
       <workItem from="1764508121098" duration="6847000" />
-      <workItem from="1764522479253" duration="9680000" />
+      <workItem from="1764522479253" duration="9954000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -213,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764539400251</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="proba11">
+      <option name="closed" value="true" />
+      <created>1764539880850</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1764539880850</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +250,7 @@
     <MESSAGE value="proba8" />
     <MESSAGE value="proba9" />
     <MESSAGE value="proba10" />
-    <option name="LAST_COMMIT_MESSAGE" value="proba10" />
+    <MESSAGE value="proba11" />
+    <option name="LAST_COMMIT_MESSAGE" value="proba11" />
   </component>
 </project>

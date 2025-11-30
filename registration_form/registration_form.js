@@ -175,5 +175,6 @@ registration_form.addEventListener("submit", function(event) {
             registration_form.submit();
 
         }
-    }
+    };
+    request.send();
 });
