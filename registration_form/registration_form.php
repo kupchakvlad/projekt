@@ -1,6 +1,20 @@
 <?php
 session_start();
 
+//  DATABASE CONNECTION
+
+$host = "zwa.toad.cz";
+$username = "kupchvla";
+$password = "webove aplikace";
+$database = "kupchvla";
+
+$mysqli = new mysqli($host, $username, $password, $database);
+
+if ($mysqli->connect_errno) {
+    die("Connect failed: \n". $mysqli->connect_error);
+}
+echo "Connected successfully";
+
 $errorMessages = [];
 
 if (isset($_POST['registration_submit'])) {
@@ -25,7 +39,7 @@ if (isset($_POST['registration_submit'])) {
         array_push($errorMessages, "Password is required");
     } else if (strlen($registration_password) < 8) {
         array_push($errorMessages, "Password must be at least 8 characters");
-    } else if ($registration_password != $registration_password_confirmation) {
+    } else if ($registration_password !== $registration_password_confirmation) {
         array_push($errorMessages, "Passwords do not match");
     }
 } else {
