@@ -50,19 +50,26 @@ if (isset($_POST['registration_submit'])) {
         // sozdanie mesta podkljuccenija dla vozmoznosti obrabotat' komandu
         $statement = mysqli_stmt_init($connection);
         // svjazyvajetsja s db i oboznacaet parametry dannych kotoryje budut vstavleny
-        if (mysqli_stmt_prepare($statement, $insert_user_query)) {
-            mysqli_stmt_bind_param($statement, "sss", $registration_name, $registration_email, $hashed_password);
-            // vypolnjaet komandu
-            mysqli_stmt_execute($statement);
+        if (!mysqli_stmt_prepare($statement, $insert_user_query)) {
+            die("Prepare failed: " . mysqli_error($connection));
+        }
+
+        if (!mysqli_stmt_bind_param($statement, "sss", $registration_name, $registration_email, $hashed_password)) {
+            die("Bind param failed: " . mysqli_stmt_error($statement));
+        }
+
+        if (!mysqli_stmt_execute($statement)) {
+            die("Execute failed: " . mysqli_stmt_error($statement));
+        }
 
 //            header("Location: ../main/main.html");
 //            exit;
-        } else {
-            $errorMessages[] = "Database error";
-        }
-    }
-} else {
-//    header("Location: ../main/main.html");
-//    exit;
+//        } else {
+//            $errorMessages[] = "Database error";
+//        }
+//    }
+    }// else {
+////    header("Location: ../main/main.html");
+////    exit;
 }
 ?>

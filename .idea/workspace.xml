@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="proba2">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="proba3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration_form/registration_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.php" afterDir="false" />
     </list>
@@ -46,6 +46,9 @@
   }
 }</component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -98,7 +101,7 @@
       <workItem from="1764433418868" duration="105000" />
       <workItem from="1764441226229" duration="3409000" />
       <workItem from="1764508121098" duration="6847000" />
-      <workItem from="1764522479253" duration="6441000" />
+      <workItem from="1764522479253" duration="6806000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -140,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764536402647</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="proba3">
+      <option name="closed" value="true" />
+      <created>1764536669886</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764536669886</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +174,7 @@
     <MESSAGE value="sdelal podkljucenije k baze dannych" />
     <MESSAGE value="registracionnyje dannyje -&gt; db proba1" />
     <MESSAGE value="proba2" />
-    <option name="LAST_COMMIT_MESSAGE" value="proba2" />
+    <MESSAGE value="proba3" />
+    <option name="LAST_COMMIT_MESSAGE" value="proba3" />
   </component>
 </project>
