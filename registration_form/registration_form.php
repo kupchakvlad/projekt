@@ -53,29 +53,38 @@ if (isset($_POST['registration_submit'])) {
     }
 
 
-    if (empty($errorMessages)) {
-        $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-        $statement = mysqli_stmt_init($connection);
-        if (!mysqli_stmt_prepare($statement, $insert_user_query)) {
-            die("Prepare failed: " . mysqli_error($connection));
-        }
+    $check_email_query = "SELECT id FROM users WHERE email = ?";
+    $stmt_check = mysqli_prepare($connection, $check_email_query);
+    mysqli_stmt_bind_param($stmt_check, "s", $registration_email);
+    mysqli_stmt_execute($stmt_check);
+    mysqli_stmt_store_result($stmt_check);
 
-        if (!mysqli_stmt_bind_param($statement, "sss", $registration_name, $registration_email, $hashed_password)) {
-            die("Bind param failed: " . mysqli_stmt_error($statement));
-        }
+    if (mysqli_stmt_num_rows($stmt_check) > 0) {
+        die("<p style='color:red;'>Email is already registered.</p>");
+    }
 
-        if (!mysqli_stmt_execute($statement)) {
-            die("Execute failed: " . mysqli_stmt_error($statement));
-        }
+    // ---------------- HASH PASSWORD ----------------
+    $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
 
-//            header("Location: ../main/main.html");
-//            exit;
-//        } else {
-//            $errorMessages[] = "Database error";
-//        }
-//    }
-    }// else {
-////    header("Location: ../main/main.html");
-////    exit;
+    // ---------------- INSERT USER ----------------
+    $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    $stmt = mysqli_prepare($connection, $insert_user_query);
+    if (!$stmt) die("Prepare failed: " . mysqli_error($connection));
+
+    mysqli_stmt_bind_param($stmt, "sss", $registration_name, $registration_email, $hashed_password);
+
+    if (!mysqli_stmt_execute($stmt)) {
+        die("Execute failed: " . mysqli_stmt_error($stmt));
+    }
+
+    // SUCCESS
+    echo "<p style='color:green;'>User registered successfully!</p>";
+    // Optional: redirect
+    // header("Location: ../main/main.html");
+    // exit;
+
+} else {
+    echo "<p>No form submitted.</p>";
+
 }
 ?>
