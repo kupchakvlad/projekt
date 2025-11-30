@@ -45,13 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name']))
 
     $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
 
-    if (!empty($errorMessages)) {
-        foreach ($errorMessages as $err) {
-            echo "<p style='color:red;'>$err</p>";
-        }
-        exit;
-    }
-
 
     $check_email_query = "SELECT id FROM users WHERE email = ?";
     $stmt_check = mysqli_prepare($connection, $check_email_query);
@@ -69,22 +62,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name']))
     // ---------------- INSERT USER ----------------
     $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($connection, $insert_user_query);
-    if (!$stmt) die("Prepare failed: " . mysqli_error($connection));
 
     mysqli_stmt_bind_param($stmt, "sss", $registration_name, $registration_email, $hashed_password);
 
     if (!mysqli_stmt_execute($stmt)) {
-        die("Execute failed: " . mysqli_stmt_error($stmt));
+        die("Execution failed: " . mysqli_stmt_error($stmt));
     }
 
     // SUCCESS
-    echo "<p style='color:green;'>User registered successfully!</p>";
-    // Optional: redirect
-    // header("Location: ../main/main.html");
-    // exit;
-
-} else {
-    echo "<p>No form submitted.</p>";
+    header("Location: ../main/main.html");
+    exit;
 
 }
 ?>
