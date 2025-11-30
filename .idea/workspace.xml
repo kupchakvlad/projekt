@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="test db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration_form/registration_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +97,17 @@
       <workItem from="1764148199381" duration="34000" />
       <workItem from="1764433418868" duration="105000" />
       <workItem from="1764441226229" duration="3409000" />
-      <workItem from="1764508121098" duration="4779000" />
+      <workItem from="1764508121098" duration="5400000" />
     </task>
+    <task id="LOCAL-00001" summary="test db">
+      <option name="closed" value="true" />
+      <created>1764513029583</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764513029583</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,5 +123,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test db" />
+    <option name="LAST_COMMIT_MESSAGE" value="test db" />
   </component>
 </project>
