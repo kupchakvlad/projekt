@@ -24,7 +24,6 @@ if (isset($_POST['registration_submit'])) {
     $registration_password = trim($_POST['registration_password']);
     $registration_password_confirmation = trim($_POST['registration_password_confirmation']);
 
-    $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
 
 
     // REGISTRATION DATA CHECKS
@@ -43,6 +42,8 @@ if (isset($_POST['registration_submit'])) {
     } else if ($registration_password !== $registration_password_confirmation) {
         array_push($errorMessages, "Passwords do not match");
     }
+
+    $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
 
     if (empty($errorMessages)) {
         // komanda dla vtavki dannych v mysql tablicu
