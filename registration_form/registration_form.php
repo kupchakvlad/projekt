@@ -16,7 +16,7 @@ if (!$connection) {
 //REGISTRATION VALIDATION
 $errorMessages = [];
 
-if (isset($_POST['registration_submit'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name'])) {
 
     // REGISTRATION DATA
     $registration_name = trim($_POST['registration_name']);
