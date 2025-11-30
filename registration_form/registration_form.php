@@ -45,12 +45,17 @@ if (isset($_POST['registration_submit'])) {
 
     $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
 
+    if (!empty($errorMessages)) {
+        foreach ($errorMessages as $err) {
+            echo "<p style='color:red;'>$err</p>";
+        }
+        exit;
+    }
+
+
     if (empty($errorMessages)) {
-        // komanda dla vtavki dannych v mysql tablicu
         $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-        // sozdanie mesta podkljuccenija dla vozmoznosti obrabotat' komandu
         $statement = mysqli_stmt_init($connection);
-        // svjazyvajetsja s db i oboznacaet parametry dannych kotoryje budut vstavleny
         if (!mysqli_stmt_prepare($statement, $insert_user_query)) {
             die("Prepare failed: " . mysqli_error($connection));
         }
