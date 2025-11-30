@@ -1,91 +1,30 @@
-// LOGIN
-const login_button = document.getElementById("login_button");
-const login_email = document.getElementById("login_email");
-const login_form = document.getElementById("login_form");
-
-//REGISTRATION
-const registration_button = document.getElementById("registration_button");
-const registration_form = document.getElementById("registration_form");
-const registration_email = document.getElementById("registration_email");
-const registration_password = document.getElementById("registration_password");
-const registration_password_confirmation = document.getElementById("registration_password_confirmation");
-const registration_email_container = document.getElementById("registration_email_container");
-const registration_password_container = document.getElementById("registration_password_container");
-
-//DARKMODE
-const darkMode = document.getElementById("dark-mode-btn");
-
-
-//SWITCHING ON LOGIN
-login_button.addEventListener("click", () => {
-    login_button.classList.add("active");
-    login_form.classList.add("active");
-    registration_button.classList.remove("active");
-    registration_form.classList.remove("active");
-});
-
-
-//SWITCHING ON REGISTRATION
-registration_button.addEventListener("click", () => {
-    registration_button.classList.add("active");
-    registration_form.classList.add("active");
-    login_button.classList.remove("active");
-    login_form.classList.remove("active");
-});
-
-
-//TURNING DARK MODE ON
-darkMode.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode")
-});
-
-
-
-// ------------------------CHECKINGS-------------------------------------
-
-
-//MESSAGES
-let passwordMessage_confirmation = null;
-let passwordMessage_8 = null;
-let emailMessage = null;
-let passwordStrengthMessage = null;
-
-
-/*
-FIRST LISTENER CHECKS:
-        { EMAIL AND WRITES THAT EMAIL IS NOT VALID IN THE BOTTOM, MAKES BORDER RED AS WELL },
-        { PASSWORD LENGTH AND WRITES ABOUT THIS IN THE BOTTOM MAKES BORDER RED AS WELL },
-        { PASSWORD CONFIRMATION FROM THE SECOND PASSWORD INPUT AND WRITES OUT THAT PASSWORDS DOES NOT MATCH IN THE BOTTOM AND MAKES BORDER RED AS WELL }
-*/
-
 let byPassListener = false;
 
 registration_form.addEventListener("submit", function(event) {
-
-    if (byPassListener) return;
+    if (byPassListener) return; // prevent recursion
 
     event.preventDefault();
 
     let password = registration_password.value;
     let password_confirmation = registration_password_confirmation.value;
-    let email_value = registration_email.value
+    let email_value = registration_email.value;
     let valid = true;
 
+    // --- VALIDATION FUNCTIONS ---
     function email_checker() {
-        if (email_value.indexOf("@") == -1) {
+        if (email_value.indexOf("@") === -1) {
             valid = false;
             registration_email.classList.add("email_error");
 
-        if (!emailMessage) {
-            emailMessage = document.createElement("p");
-            emailMessage.className = "password-error-message";
-            emailMessage.textContent = "Email is not entered properly.";
-            registration_password_container.appendChild(emailMessage);
-        }
-
+            if (!emailMessage) {
+                emailMessage = document.createElement("p");
+                emailMessage.className = "password-error-message";
+                emailMessage.textContent = "Email is not entered properly.";
+                registration_email_container.appendChild(emailMessage);
+            }
         } else {
             registration_email.classList.remove("email_error");
-            if (emailMessage){
+            if (emailMessage) {
                 emailMessage.remove();
                 emailMessage = null;
             }
@@ -103,17 +42,17 @@ registration_form.addEventListener("submit", function(event) {
                 passwordMessage_8.textContent = "At least 8 characters.";
                 registration_password_container.appendChild(passwordMessage_8);
             }
-        } else if (passwordMessage_8) {
-            passwordMessage_8.remove();
-            passwordMessage_8 = null;
+        } else {
             registration_password.classList.remove("password_error");
+            if (passwordMessage_8) {
+                passwordMessage_8.remove();
+                passwordMessage_8 = null;
+            }
         }
     }
 
-
     function password_confirmation_checker() {
-        if (password != password_confirmation) {
-        
+        if (password !== password_confirmation) {
             valid = false;
             registration_password.classList.add("password_error");
             registration_password_confirmation.classList.add("password_error");
@@ -124,36 +63,30 @@ registration_form.addEventListener("submit", function(event) {
                 passwordMessage_confirmation.textContent = "The entered passwords do not match.";
                 registration_password_container.appendChild(passwordMessage_confirmation);
             }
-        
         } else {
-
             registration_password_confirmation.classList.remove("password_error");
-
-            if (passwordMessage_confirmation){
+            if (passwordMessage_confirmation) {
                 passwordMessage_confirmation.remove();
                 passwordMessage_confirmation = null;
             }
         }
-
-    
     }
 
+    // Run validations
     email_checker();
     password_length_checker();
     password_confirmation_checker();
 
-    if (!valid) return;
+    if (!valid) return; // stop if errors
 
+    // --- PASSWORD STRENGTH CHECK ---
     let request = new XMLHttpRequest();
     request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
-    request.send();
     request.onload = function() {
         let words = request.responseText.split("\n");
 
-        if (words.includes(registration_password.value)) {
-
-            valid = false;
-
+        if (words.includes(password)) {
+            // Weak password
             registration_password.classList.add("password_error");
 
             if (!passwordStrengthMessage) {
@@ -163,17 +96,15 @@ registration_form.addEventListener("submit", function(event) {
                 registration_password_container.appendChild(passwordStrengthMessage);
             }
         } else {
-
+            // Password ok → submit form
             registration_password.classList.remove("password_error");
-
             if (passwordStrengthMessage) {
                 passwordStrengthMessage.remove();
                 passwordStrengthMessage = null;
             }
 
-            byPassListener = true;
+            byPassListener = true; // prevent recursion
             registration_form.submit();
-
         }
     };
     request.send();
