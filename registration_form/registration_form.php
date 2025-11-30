@@ -2,8 +2,7 @@
 session_start();
 
 //  DATABASE CONNECTION
-
-$host = "zwa.toad.cz";
+$host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
 $database = "kupchvla";
@@ -13,8 +12,9 @@ $mysqli = new mysqli($host, $username, $password, $database);
 if ($mysqli->connect_errno) {
     die("Connect failed: \n". $mysqli->connect_error);
 }
-echo "Connected successfully";
 
+
+//REGISTRATION VALIDATION
 $errorMessages = [];
 
 if (isset($_POST['registration_submit'])) {
