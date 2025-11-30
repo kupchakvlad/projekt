@@ -58,7 +58,11 @@ FIRST LISTENER CHECKS:
         { PASSWORD CONFIRMATION FROM THE SECOND PASSWORD INPUT AND WRITES OUT THAT PASSWORDS DOES NOT MATCH IN THE BOTTOM AND MAKES BORDER RED AS WELL }
 */
 
+let byPassListener = false;
+
 registration_form.addEventListener("submit", function(event) {
+
+    if (byPassListener) return;
 
     event.preventDefault();
 
@@ -134,24 +138,24 @@ registration_form.addEventListener("submit", function(event) {
     
     }
 
+    email_checker();
+    password_length_checker();
+    password_confirmation_checker();
 
-    function password_strength_connection(event) {
-        let request = new XMLHttpRequest();
-        request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
-        request.send();
-        request.addEventListener("load", control_of_password_strength_answer)
-    }
+    if (!valid) return;
 
-    function control_of_password_strength_answer(event) {
-    
-        let words = event.target.responseText.split("\n");
-    
+    let request = new XMLHttpRequest();
+    request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
+    request.send();
+    request.onload = function() {
+        let words = request.responseText.split("\n");
+
         if (words.includes(registration_password.value)) {
-        
+
             valid = false;
 
             registration_password.classList.add("password_error");
-        
+
             if (!passwordStrengthMessage) {
                 passwordStrengthMessage = document.createElement("p");
                 passwordStrengthMessage.className = "password-error-message";
@@ -167,16 +171,9 @@ registration_form.addEventListener("submit", function(event) {
                 passwordStrengthMessage = null;
             }
 
+            byPassListener = true;
             registration_form.submit();
 
         }
     }
-
-    email_checker();
-    password_length_checker();
-    password_confirmation_checker();
-
-    if (!valid) return;
-
-    password_strength_connection();
 });
