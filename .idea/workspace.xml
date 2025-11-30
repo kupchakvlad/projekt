@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pocinil dark mode na registration_form">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="sdelal podkljucenije k baze dannych">
+      <change afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration_form/registration_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,22 +31,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPENED",
-    "assignee": {
-      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-      "username": "kupchvla",
-      "fullname": "Vladyslav Kupchak"
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;kupchvla&quot;,
+      &quot;fullname&quot;: &quot;Vladyslav Kupchak&quot;
     }
   }
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "first": "https://gitlab.fel.cvut.cz/kupchvla/zwa.git",
-    "second": "ce3580d6-093e-4c0d-aa85-35325ecfb842"
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.fel.cvut.cz/kupchvla/zwa.git&quot;,
+    &quot;second&quot;: &quot;ce3580d6-093e-4c0d-aa85-35325ecfb842&quot;
   }
-}]]></component>
+}</component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -97,7 +99,8 @@
       <workItem from="1764148199381" duration="34000" />
       <workItem from="1764433418868" duration="105000" />
       <workItem from="1764441226229" duration="3409000" />
-      <workItem from="1764508121098" duration="6320000" />
+      <workItem from="1764508121098" duration="6847000" />
+      <workItem from="1764522479253" duration="5716000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -115,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764513590318</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="sdelal podkljucenije k baze dannych">
+      <option name="closed" value="true" />
+      <created>1764514513264</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764514513264</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +146,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test db" />
     <MESSAGE value="pocinil dark mode na registration_form" />
-    <option name="LAST_COMMIT_MESSAGE" value="pocinil dark mode na registration_form" />
+    <MESSAGE value="sdelal podkljucenije k baze dannych" />
+    <option name="LAST_COMMIT_MESSAGE" value="sdelal podkljucenije k baze dannych" />
   </component>
 </project>

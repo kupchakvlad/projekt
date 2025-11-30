@@ -1,18 +1,8 @@
 <?php
 session_start();
 
-//  DATABASE CONNECTION
-$host = "localhost";
-$username = "kupchvla";
-$password = "webove aplikace";
-$database = "kupchvla";
-
-$mysqli = new mysqli($host, $username, $password, $database);
-
-if ($mysqli->connect_errno) {
-    die("Connect failed: \n". $mysqli->connect_error);
-}
-
+//DATABASE
+include("../db.php");
 
 //REGISTRATION VALIDATION
 $errorMessages = [];
@@ -24,6 +14,8 @@ if (isset($_POST['registration_submit'])) {
     $registration_email = trim($_POST['registration_email']);
     $registration_password = trim($_POST['registration_password']);
     $registration_password_confirmation = trim($_POST['registration_password_confirmation']);
+
+    $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
 
 
     // REGISTRATION DATA CHECKS
@@ -41,6 +33,24 @@ if (isset($_POST['registration_submit'])) {
         array_push($errorMessages, "Password must be at least 8 characters");
     } else if ($registration_password !== $registration_password_confirmation) {
         array_push($errorMessages, "Passwords do not match");
+    }
+
+    if (empty($errorMessages)) {
+        // komanda dla vtavki dannych v mysql tablicu
+        $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+        // sozdanie mesta podkljuccenija dla vozmoznosti obrabotat' komandu
+        $statement = mysqli_stmt_init($connection);
+        // svjazyvajetsja s db i oboznacaet parametry dannych kotoryje budut vstavleny
+        if (mysqli_stmt_prepare($statement, $insert_user_query)) {
+            mysqli_stmt_bind_param($statement, "sss", $registration_name, $registration_email, $hashed_password);
+            // vypolnjaet komandu
+            mysqli_stmt_execute($statement);
+
+            header("Location: ../main/main.html");
+            exit;
+        } else {
+            $errorMessages[] = "Database error";
+        }
     }
 } else {
     header("Location: ../main/main.html");
