@@ -46,14 +46,14 @@ if (isset($_POST['registration_submit'])) {
             // vypolnjaet komandu
             mysqli_stmt_execute($statement);
 
-            header("Location: ../main/main.html");
-            exit;
+//            header("Location: ../main/main.html");
+//            exit;
         } else {
             $errorMessages[] = "Database error";
         }
     }
 } else {
-    header("Location: ../main/main.html");
-    exit;
+//    header("Location: ../main/main.html");
+//    exit;
 }
 ?>
