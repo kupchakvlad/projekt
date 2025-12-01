@@ -15,5 +15,5 @@ darkModeBtn.addEventListener("click", () => {
 });
 
 BackBtn.addEventListener("click", () => {
-    window.location.href = "../main/main.html";
+    window.location.href = "../main/main.php";
 });
