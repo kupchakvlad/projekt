@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name']))
     $_SESSION["user_id"] = $user_id;
 
     // SUCCESS
-    header("Location: ../main/main.html");
+    header("Location: ../main/main.php");
     exit;
 
 }
