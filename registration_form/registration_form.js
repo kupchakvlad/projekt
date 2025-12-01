@@ -1,46 +1,51 @@
-const darkMode = document.getElementById("dark-mode-btn");
+// LOGIN
+const login_button = document.getElementById("login_button");
+// unused const login_email = document.getElementById("login_email");
+const login_form = document.getElementById("login_form");
 
-const registrationForm = document.getElementById("registration_form");
-const loginForm = document.getElementById("login_form");
-
-const registrationBtn = document.getElementById("registration_button");
-const loginBtn = document.getElementById("login_button");
-
+//REGISTRATION
+const registration_button = document.getElementById("registration_button");
+const registration_form = document.getElementById("registration_form");
+const registration_email = document.getElementById("registration_email");
 const registration_password = document.getElementById("registration_password");
 const registration_password_confirmation = document.getElementById("registration_password_confirmation");
-const registration_email = document.getElementById("registration_email");
 const registration_email_container = document.getElementById("registration_email_container");
 const registration_password_container = document.getElementById("registration_password_container");
 
+//DARKMODE
+const darkMode = document.getElementById("dark-mode-btn");
 
-darkMode.addEventListener("click", function() {
-    document.body.classList.toggle("dark-mode");
+//TURNING DARK MODE ON
+darkMode.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode")
 });
 
-registrationBtn.addEventListener("click", function() {
-    registrationForm.classList.remove("active");
-    loginForm.classList.add("active");
-
-    registrationBtn.classList.remove("active");
-    loginBtn.classList.add("active");
+//SWITCHING ON LOGIN
+login_button.addEventListener("click", () => {
+    login_button.classList.add("active");
+    login_form.classList.add("active");
+    registration_button.classList.remove("active");
+    registration_form.classList.remove("active");
 });
 
-loginBtnBtn.addEventListener("click", function() {
-    registrationForm.classList.add("active");
-    loginForm.classList.remove("active");
 
-    registrationBtn.classList.add("active");
-    loginBtn.classList.remove("active");
+//SWITCHING ON REGISTRATION
+registration_button.addEventListener("click", () => {
+    registration_button.classList.add("active");
+    registration_form.classList.add("active");
+    login_button.classList.remove("active");
+    login_form.classList.remove("active");
 });
+
 
 
 let byPassListener = false;
-let emailMessage;
-let passwordMessage_8;
-let passwordMessage_confirmation;
-let passwordStrengthMessage;
+let emailMessage = null;
+let passwordMessage_8 = null;
+let passwordMessage_confirmation = null;
+let passwordStrengthMessage = null;
 
-registrationForm.addEventListener("submit", function(event) {
+registration_form.addEventListener("submit", function(event) {
     if (byPassListener) return; // prevent recursion
 
     event.preventDefault();
@@ -143,7 +148,7 @@ registrationForm.addEventListener("submit", function(event) {
             }
 
             byPassListener = true;
-            registrationForm.submit();
+            registration_form.submit();
         }
     };
     request.send();
