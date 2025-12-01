@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil sessions na kazduju stranicu, teper' nel'zja perechodit' po stranicam nezaregestrirovanym, nezareganych pol'zovatelej vsegda budet otpravljat' na stranicu registracii. + dobavil pri vvedenii uze suscestvujuseho email v baze dannych -&gt; vyvod osybki o tom cto takoj email uze zareganyj.">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="probuju dodelat' session kontrol', ctoby ono dejstvitel'no ne puskalo usera na ljubuju stranicu nezareganym">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_product/add_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_product/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +113,7 @@
       <workItem from="1764508121098" duration="6847000" />
       <workItem from="1764522479253" duration="10979000" />
       <workItem from="1764604134596" duration="2515000" />
-      <workItem from="1764609609616" duration="14894000" />
+      <workItem from="1764609609616" duration="15990000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -297,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764629110205</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="probuju dodelat' session kontrol', ctoby ono dejstvitel'no ne puskalo usera na ljubuju stranicu nezareganym">
+      <option name="closed" value="true" />
+      <created>1764629584316</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1764629584316</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +348,7 @@
     <MESSAGE value="ispravil js v registration_form.js" />
     <MESSAGE value="ispravil js v registration_form.js 2" />
     <MESSAGE value="dobavil sessions na kazduju stranicu, teper' nel'zja perechodit' po stranicam nezaregestrirovanym, nezareganych pol'zovatelej vsegda budet otpravljat' na stranicu registracii. + dobavil pri vvedenii uze suscestvujuseho email v baze dannych -&gt; vyvod osybki o tom cto takoj email uze zareganyj." />
-    <option name="LAST_COMMIT_MESSAGE" value="dobavil sessions na kazduju stranicu, teper' nel'zja perechodit' po stranicam nezaregestrirovanym, nezareganych pol'zovatelej vsegda budet otpravljat' na stranicu registracii. + dobavil pri vvedenii uze suscestvujuseho email v baze dannych -&gt; vyvod osybki o tom cto takoj email uze zareganyj." />
+    <MESSAGE value="probuju dodelat' session kontrol', ctoby ono dejstvitel'no ne puskalo usera na ljubuju stranicu nezareganym" />
+    <option name="LAST_COMMIT_MESSAGE" value="probuju dodelat' session kontrol', ctoby ono dejstvitel'no ne puskalo usera na ljubuju stranicu nezareganym" />
   </component>
 </project>

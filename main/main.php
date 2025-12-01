@@ -5,8 +5,8 @@ session_start();
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.html");
     exit;
-} else {
-    header("Location: ../main/main.html");
 }
+
+readfile("../main/main.html");
 
 ?>

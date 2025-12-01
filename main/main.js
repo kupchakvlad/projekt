@@ -3,14 +3,6 @@ document.getElementById("dark-mode-toggle").addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-document.getElementById("add-product").addEventListener("click", () => {
-  window.location.href = "../add_product/add_product.html";
-});
-
-document.getElementById("account").addEventListener("click", () => {
-  window.location.href = "../account/account.html";
-});
-
 // ===== Size =====
 const sizeSlider = document.getElementById("size-slider");
 const sizeValue = document.getElementById("size-value");
