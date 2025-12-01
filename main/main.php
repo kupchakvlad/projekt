@@ -23,8 +23,8 @@ if (!isset($_SESSION["user_id"])) {
 <header class="header">
   <a href="main_back.php" class="logo">Botovo</a>
   <nav class="header-buttons">
-    <a id="add-product">Add Product</a>
-    <a id="account">Account</a>
+    <a href="../add_product/add_product.php" id="add-product">Add Product</a>
+    <a href="../account/account.php" id="account">Account</a>
     <a id="dark-mode-toggle">Dark Mode</a>
   </nav>
 </header>

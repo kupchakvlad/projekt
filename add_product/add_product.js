@@ -13,3 +13,7 @@ slider.addEventListener("input", () => {
 darkModeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 });
+
+BackBtn.addEventListener("click", () => {
+    window.location.href = "../main/main.html";
+});
