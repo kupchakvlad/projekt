@@ -6,6 +6,93 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.html");
     exit;
 }
-
-readfile("../account/account.html");
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Botovo</title>
+    <link rel="stylesheet" href="account.css">
+    <script src="account.js" defer></script>
+</head>
+<body>
+<button class="dark-mode-btn" id="dark-mode-toggle">Dark Mode</button>
+<button class="back-to-main" id="back-button">←</button>
+
+<header>
+    <h1>My Account</h1>
+</header>
+
+<form id="profile-form">
+    <div class="user-section">
+        <div class="welcome-text">Welcome,</div>
+        <div class="user-name" id="user-name">Example</div>
+        <div class="user-email" id="user-email">example@email.com</div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" value="" required>
+        </div>
+        <div>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" value="" required>
+        </div>
+    </div>
+
+    <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" value="" required>
+    </div>
+
+    <div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" value="" required>
+    </div>
+
+    <div>
+        <label for="country">Country</label>
+        <select id="country" required>
+            <option value="" selected>Select Country</option>
+            <option value="us">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="ca">Canada</option>
+            <option value="au">Australia</option>
+            <option value="de">Germany</option>
+            <option value="fr">France</option>
+            <option value="es">Spain</option>
+            <option value="it">Italy</option>
+            <option value="jp">Japan</option>
+            <option value="cn">China</option>
+            <option value="ch">Czechia</option>
+            <option value="ua">Ukraine</option>
+            <option value="po">Poland</option>
+            <option value="sk">Slovakia</option>
+            <option value="kz">Kazakhstan</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="address">Street Address</label>
+        <input type="text" id="address" value="" required>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label for="city">City</label>
+            <input type="text" id="city" value="" required>
+        </div>
+        <div>
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" value="" required>
+        </div>
+    </div>
+
+    <button type="submit" class="submit-button">Save Changes</button>
+</form>
+
+</body>
+</html>

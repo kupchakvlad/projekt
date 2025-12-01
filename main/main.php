@@ -6,7 +6,78 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.html");
     exit;
 }
-
-readfile("../main/main.html");
-
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botovo - Shop</title>
+<link rel="stylesheet" href="main.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+  <a href="main_back.php" class="logo">Botovo</a>
+  <nav class="header-buttons">
+    <a id="add-product">Add Product</a>
+    <a id="account">Account</a>
+    <a id="dark-mode-toggle">Dark Mode</a>
+  </nav>
+</header>
+
+<main>
+  <aside class="filter">
+  <h3>Filters</h3>
+
+  <label for="search">Search by name:</label>
+  <input type="text" id="search" placeholder="e.g. Nike">
+
+<h4>Size</h4>
+<div class="size-container">
+  <input type="range" id="size-slider" min="28" max="48" value="38">
+  <span id="size-value">38</span>
+</div>
+
+
+<h4>Price</h4>
+<div class="price-container">
+  <div class="price-slider-row">
+    <label>Min:</label>
+    <input type="range" id="min-price" min="0" max="9999" value="100">
+    <span id="min-price-value">100</span> CZK
+  </div>
+  <div class="price-slider-row">
+    <label>Max:</label>
+    <input type="range" id="max-price" min="0" max="10000" value="700">
+    <span id="max-price-value">700</span> CZK
+  </div>
+</div>
+
+
+  <h4>Season</h4>
+  <label class="season-option"><input type="radio" name="season" value="autumn" checked> Autumn</label>
+  <label class="season-option"><input type="radio" name="season" value="winter"> Winter</label>
+  <label class="season-option"><input type="radio" name="season" value="spring" checked> Spring</label>
+  <label class="season-option"><input type="radio" name="season" value="summer" checked> Summer</label>
+
+  <button id="apply-filters">Find</button>
+</aside>
+
+
+  <section class="products" id="products">
+    <!-- Здесь будут товары -->
+  </section>
+</main>
+
+<footer>
+  Botovo © 2025
+</footer>
+
+</body>
+</html>
+
+
