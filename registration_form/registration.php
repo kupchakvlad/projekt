@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name']))
     }
 
     $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
+    $email_message = '';
 
 
     $check_email_query = "SELECT id FROM users WHERE email = ?";
@@ -53,7 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name']))
     mysqli_stmt_store_result($stmt_check);
 
     if (mysqli_stmt_num_rows($stmt_check) > 0) {
-        die("<p style='color:red;'>Email is already registered.</p>");
+        $email_message = "email-error-message";
+        $email_message_text = "Email already exists";
     }
 
     // ---------------- HASH PASSWORD ----------------
@@ -68,6 +70,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name']))
     if (!mysqli_stmt_execute($stmt)) {
         die("Execution failed: " . mysqli_stmt_error($stmt));
     }
+
+//    ---------------- SESSION ID OF REGISTERED USER ----------------
+    $user_id = mysqli_insert_id($connection);
+    $_SESSION["user_id"] = $user_id;
 
     // SUCCESS
     header("Location: ../main/main.html");

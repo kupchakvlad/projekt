@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="ispravil js v registration_form.js">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="ispravil js v registration_form.js 2">
+      <change afterPath="$PROJECT_DIR$/main/main.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/registration_form/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_product/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +113,7 @@
       <workItem from="1764508121098" duration="6847000" />
       <workItem from="1764522479253" duration="10979000" />
       <workItem from="1764604134596" duration="2515000" />
-      <workItem from="1764609609616" duration="2936000" />
+      <workItem from="1764609609616" duration="14266000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -278,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764609903314</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="ispravil js v registration_form.js 2">
+      <option name="closed" value="true" />
+      <created>1764616205975</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1764616205975</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +330,7 @@
     <MESSAGE value="proba16" />
     <MESSAGE value="proba17" />
     <MESSAGE value="ispravil js v registration_form.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="ispravil js v registration_form.js" />
+    <MESSAGE value="ispravil js v registration_form.js 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ispravil js v registration_form.js 2" />
   </component>
 </project>

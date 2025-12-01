@@ -15,7 +15,7 @@
             <button id="login_button" class="login-form">Login</button>
         </div>
         
-        <form action="registration_form.php" method="POST" id="login_form">
+        <form action="registration.php" method="POST" id="login_form">
             <label for="login_email">Enter your email:
                 <input type="text" id="login_email" name="login_email" required>
             </label>
@@ -25,7 +25,7 @@
             <input type="submit" id="login_submit" class="submit" value="Sign-in">
         </form>
         
-        <form action="registration_form.php" method="POST" id="registration_form" class="active">
+        <form action="registration.php" method="POST" id="registration_form" class="active">
             <label for="registration_name">Enter name: 
                 <input type="text" id="registration_name" name="registration_name" required>
             </label>
@@ -41,6 +41,7 @@
                 <label for="registration_password_confirmation">Enter password once again:
                     <input type="password" id="registration_password_confirmation" name="registration_password_confirmation" required>
                 </label>
+                <div class="<?php echo $email_message;?>"> <?php echo $email_message_text; ?> </div>
             </div>
             <input type="submit" name="registration_submit" class="submit" id="registration_submit" value="Sign-up">
         </form>
