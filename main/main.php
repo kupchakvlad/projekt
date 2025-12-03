@@ -21,7 +21,7 @@ if (!isset($_SESSION["user_id"])) {
 <body>
 
 <header class="header">
-  <a href="main_back.php" class="logo">Botovo</a>
+  <a href="main.php" class="logo">Botovo</a>
   <nav class="header-buttons">
     <a href="../add_product/add_product.php" id="add-product">Add Product</a>
     <a href="../account/account.php" id="account">Account</a>

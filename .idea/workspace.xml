@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="v to ze vremja perechod nazad s add product i account budet bezopasnym potomu cto na main uze jest' proverka sesion i na knopki backtomain mozno ne stavit' zasitu a prosto ostavit' ich v js">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="teper' ostalos' sdelat' login i ja tol'ko perepisal .html na .php v etom komite">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +108,8 @@
       <workItem from="1764508121098" duration="6847000" />
       <workItem from="1764522479253" duration="10979000" />
       <workItem from="1764604134596" duration="2515000" />
-      <workItem from="1764609609616" duration="17688000" />
+      <workItem from="1764609609616" duration="17837000" />
+      <workItem from="1764705135846" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -328,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764632164196</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="teper' ostalos' sdelat' login i ja tol'ko perepisal .html na .php v etom komite">
+      <option name="closed" value="true" />
+      <created>1764632380138</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1764632380138</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +353,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sdelal podkljucenije k baze dannych" />
     <MESSAGE value="registracionnyje dannyje -&gt; db proba1" />
     <MESSAGE value="proba2" />
     <MESSAGE value="proba3" />
@@ -371,6 +377,7 @@
     <MESSAGE value="probuju sdelt' eto dla main stranicy." />
     <MESSAGE value="sdelal vse fajly php ctoby bylo bezopasno vchodit' na vse stranicy, k nim dobavil _back fajly, tam budet backend potom." />
     <MESSAGE value="v to ze vremja perechod nazad s add product i account budet bezopasnym potomu cto na main uze jest' proverka sesion i na knopki backtomain mozno ne stavit' zasitu a prosto ostavit' ich v js" />
-    <option name="LAST_COMMIT_MESSAGE" value="v to ze vremja perechod nazad s add product i account budet bezopasnym potomu cto na main uze jest' proverka sesion i na knopki backtomain mozno ne stavit' zasitu a prosto ostavit' ich v js" />
+    <MESSAGE value="teper' ostalos' sdelat' login i ja tol'ko perepisal .html na .php v etom komite" />
+    <option name="LAST_COMMIT_MESSAGE" value="teper' ostalos' sdelat' login i ja tol'ko perepisal .html na .php v etom komite" />
   </component>
 </project>
