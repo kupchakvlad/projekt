@@ -86,7 +86,7 @@ main {
   flex: 1;
   height: 6px;
   border-radius: 3px;
-  -webkit-appearance: none;
+  webkit-appearance: none;
   background: #2563eb;
 }
 

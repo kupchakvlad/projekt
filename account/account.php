@@ -1,11 +1,28 @@
 <?php
 session_start();
 
-// ---------------- CHECKS IF USER IS REGISTERED ----------------
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.html");
     exit;
 }
+
+$host = "localhost";
+$username = "kupchvla";
+$password = "webove aplikace";
+$database = "kupchvla";
+
+$connection = mysqli_connect($host, $username, $password, $database);
+if (!$connection) die("Connect failed: " . mysqli_connect_error());
+
+// Получение данных пользователя
+$user_id = $_SESSION["user_id"];
+$query = "SELECT name, email FROM users WHERE id = ?";
+$stmt = mysqli_prepare($connection, $query);
+mysqli_stmt_bind_param($stmt, "i", $user_id);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $name, $email);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
 ?>
 
 <!DOCTYPE html>
@@ -18,81 +35,27 @@ if (!isset($_SESSION["user_id"])) {
     <script src="account.js" defer></script>
 </head>
 <body>
-<button class="dark-mode-btn" id="dark-mode-toggle">Dark Mode</button>
-<button class="back-to-main" id="back-button">←</button>
-
 <header>
     <h1>My Account</h1>
 </header>
 
-<form id="profile-form">
+<form id="profile-form" method="POST" action="update_account.php">
     <div class="user-section">
         <div class="welcome-text">Welcome,</div>
-        <div class="user-name" id="user-name">Example</div>
-        <div class="user-email" id="user-email">example@email.com</div>
+        <div class="user-name" id="user-name"><?php echo htmlspecialchars($name); ?></div>
+        <div class="user-email" id="user-email"><?php echo htmlspecialchars($email); ?></div>
     </div>
 
-    <div class="form-row">
-        <div>
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" value="" required>
-        </div>
-        <div>
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" value="" required>
-        </div>
-    </div>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($name); ?>" required>
 
-    <div>
-        <label for="email">Email Address</label>
-        <input type="email" id="email" value="" required>
-    </div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
 
-    <div>
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" value="" required>
-    </div>
-
-    <div>
-        <label for="country">Country</label>
-        <select id="country" required>
-            <option value="" selected>Select Country</option>
-            <option value="us">United States</option>
-            <option value="uk">United Kingdom</option>
-            <option value="ca">Canada</option>
-            <option value="au">Australia</option>
-            <option value="de">Germany</option>
-            <option value="fr">France</option>
-            <option value="es">Spain</option>
-            <option value="it">Italy</option>
-            <option value="jp">Japan</option>
-            <option value="cn">China</option>
-            <option value="ch">Czechia</option>
-            <option value="ua">Ukraine</option>
-            <option value="po">Poland</option>
-            <option value="sk">Slovakia</option>
-            <option value="kz">Kazakhstan</option>
-        </select>
-    </div>
-
-    <div>
-        <label for="address">Street Address</label>
-        <input type="text" id="address" value="" required>
-    </div>
-
-    <div class="form-row">
-        <div>
-            <label for="city">City</label>
-            <input type="text" id="city" value="" required>
-        </div>
-        <div>
-            <label for="zip">ZIP Code</label>
-            <input type="text" id="zip" value="" required>
-        </div>
-    </div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter new password">
 
     <button type="submit" class="submit-button">Save Changes</button>
 </form>
-
 </body>
 </html>

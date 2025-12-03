@@ -1,24 +1,15 @@
 // Dark mode toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark');
+    });
+}
 
-darkModeToggle.addEventListener('click', function() {
-    document.body.classList.toggle('dark');
-});
-
+// Back button
 const backButton = document.getElementById('back-button');
-backButton.addEventListener('click', function() {
-    window.location.href = "../main/main.php";
-});
-
-// Profile form submission
-const profileForm = document.getElementById('profile-form');
-const userName = document.getElementById('user-name');
-const userEmail = document.getElementById('user-email');
-
-profileForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const firstName = document.getElementById('first-name').value;
-    const lastName = document.getElementById('last-name').value;
-    const email = document.getElementById('email').value;
-});
+if (backButton) {
+    backButton.addEventListener('click', function() {
+        window.location.href = "../main/main.php";
+    });
+}
