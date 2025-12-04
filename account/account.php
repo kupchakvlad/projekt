@@ -35,17 +35,22 @@ mysqli_stmt_close($stmt);
     <script src="account.js" defer></script>
 </head>
 <body>
+
+    
+<button id="back-button" class="top-button">Back</button>
+<button id="dark-mode-toggle" class="top-button"> Dark Mode</button>
+
 <header>
     <h1>My Account</h1>
 </header>
 
-<form id="profile-form" method="POST" action="update_account.php">
-    <div class="user-section">
-        <div class="welcome-text">Welcome,</div>
-        <div class="user-name" id="user-name"><?php echo htmlspecialchars($name); ?></div>
-        <div class="user-email" id="user-email"><?php echo htmlspecialchars($email); ?></div>
-    </div>
+<div class="user-panel">
+    <div class="welcome-text">Welcome,</div>
+    <div class="user-name"><?php echo htmlspecialchars($name); ?></div>
+    <div class="user-email"><?php echo htmlspecialchars($email); ?></div>
+</div>
 
+<form id="profile-form" method="POST" action="update_account.php">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($name); ?>" required>
 
