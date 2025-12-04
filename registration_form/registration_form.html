@@ -1,3 +1,9 @@
+<?php
+session_start();
+$login_error = $_SESSION['login_error'] ?? '';
+unset($_SESSION['login_error']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,6 +28,11 @@
             <label for="login_password">Enter your password:
                 <input type="password" id="login_password" name="login_password" required>
             </label>
+            
+            <?php if ($login_error): ?>
+        <div class="form-error"><?php echo htmlspecialchars($login_error); ?></div>
+        <?php endif; ?>
+
             <input type="submit" id="login_submit" class="submit" value="Sign-in">
         </form>
         
