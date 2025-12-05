@@ -37,7 +37,7 @@ mysqli_stmt_close($stmt);
 <body>
 
     
-<button id="back-button" class="top-button">Back</button>
+<button id="back-button" class="top-button"> ← </button>
 <button id="dark-mode-toggle" class="top-button"> Dark Mode</button>
 
 <header>
