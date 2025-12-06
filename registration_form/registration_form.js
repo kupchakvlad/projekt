@@ -21,7 +21,7 @@ function sendDarkMode(value) {
     // pokazyvajet cto PHP mozet procitat eti dannyje
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // sochranjajet znacenije i otpravljajet na server
-    const data = `mode=${value}`;
+    const data = `mode=${encodeURIComponent(value)}`;
     request.send(data)
 }
 //TURNING DARK MODE ON
@@ -57,6 +57,7 @@ let emailMessage = null;
 let passwordMessage_8 = null;
 let passwordMessage_confirmation = null;
 let passwordStrengthMessage = null;
+let isCheckingPasswordStrength = false;
 
 registration_form.addEventListener("submit", function(event) {
     if (byPassListener) return; // prevent recursion
@@ -137,10 +138,16 @@ registration_form.addEventListener("submit", function(event) {
 
     if (!valid) return; // stop if errors
 
+    if (isCheckingPasswordStrength) return;
+    isCheckingPasswordStrength = true;
+
     // --- PASSWORD STRENGTH CHECK ---
     let request = new XMLHttpRequest();
     request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
     request.onload = function() {
+
+        isCheckingPasswordStrength = false;
+
         let words = request.responseText.split("\n");
 
         if (words.includes(password)) {

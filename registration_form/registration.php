@@ -37,7 +37,7 @@ if (isset($_POST['registration_submit'])) {
     }
     if (empty($registration_email)) {
         $errorMessages[] = "Email is required";
-    } else if (strpos($registration_email, "@") === false) {
+    } else if (filter_var($registration_email, FILTER_VALIDATE_EMAIL) === false) {
         $errorMessages[] = "Email is entered incorrectly";
     }
     if (empty($registration_password)) {
