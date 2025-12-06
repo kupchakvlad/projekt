@@ -94,9 +94,9 @@ if (isset($_POST['registration_submit'])) {
     } else {
         echo "All fields are required";
     }
+}
 
 mysqli_close($connection);
 header("Location: ../main/main.php");
 exit;
-}
 ?>

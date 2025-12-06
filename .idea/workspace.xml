@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil cookie na dark mode 7">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil cookie na dark mode 8">
       <change beforePath="$PROJECT_DIR$/registration_form/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +122,7 @@
       <workItem from="1764604134596" duration="2515000" />
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
-      <workItem from="1765029583925" duration="15583000" />
+      <workItem from="1765029583925" duration="15679000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -444,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765054231434</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="dobavil cookie na dark mode 8">
+      <option name="closed" value="true" />
+      <created>1765054468447</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1765054468447</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +482,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="proba13" />
     <MESSAGE value="proba14" />
     <MESSAGE value="proba15" />
     <MESSAGE value="proba16" />
@@ -499,6 +506,7 @@
     <MESSAGE value="dobavil cookie na dark mode 5" />
     <MESSAGE value="dobavil cookie na dark mode 6" />
     <MESSAGE value="dobavil cookie na dark mode 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="dobavil cookie na dark mode 7" />
+    <MESSAGE value="dobavil cookie na dark mode 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="dobavil cookie na dark mode 8" />
   </component>
 </project>
