@@ -21,7 +21,7 @@ if (!$connection) {
 // REGISTRATION VALIDATION
 $errorMessages = [];
 
-if (isset($_POST['registration_submit'])) {
+if (!empty($_POST['registration_email']) && !empty($_POST['registration_password'])) {
 
     // REGISTRATION DATA
     $registration_name = trim($_POST['registration_name']);
