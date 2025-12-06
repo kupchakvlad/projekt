@@ -96,6 +96,7 @@ if (isset($_POST['registration_submit'])) {
     }
 
 mysqli_close($connection);
-
+header("Location: ../main/main.php");
+exit;
 }
 ?>
