@@ -72,7 +72,6 @@ registration_form.addEventListener("submit", function(event) {
     let email_value = registration_email.value;
     let valid = true;
 
-    // --- VALIDATION FUNCTIONS ---
     function email_checker() {
         if (email_value.indexOf("@") === -1) {
             valid = false;
@@ -134,7 +133,6 @@ registration_form.addEventListener("submit", function(event) {
         }
     }
 
-    // Run validations
     email_checker();
     password_length_checker();
     password_confirmation_checker();
@@ -154,7 +152,6 @@ registration_form.addEventListener("submit", function(event) {
     isCheckingPasswordStrength = true;
     console.log("Starting password strength check...");
 
-    // --- PASSWORD STRENGTH CHECK ---
     let request = new XMLHttpRequest();
     request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
 
@@ -165,12 +162,10 @@ registration_form.addEventListener("submit", function(event) {
         if (request.status === 200) {
             let words = request.responseText.split("\n").map(word => word.trim());
             console.log("Password list loaded. Total passwords:", words.length);
-            console.log("Checking if password is weak...");
             console.log("Is password in weak list?", words.includes(password));
 
             if (words.includes(password)) {
                 console.log("PASSWORD IS WEAK - NOT SUBMITTING");
-                // Weak password
                 registration_password.classList.add("password_error");
 
                 if (!passwordStrengthMessage) {
@@ -181,7 +176,6 @@ registration_form.addEventListener("submit", function(event) {
                 }
             } else {
                 console.log("PASSWORD IS STRONG - SUBMITTING FORM NOW");
-                // Strong password
                 registration_password.classList.remove("password_error");
                 if (passwordStrengthMessage) {
                     passwordStrengthMessage.remove();
