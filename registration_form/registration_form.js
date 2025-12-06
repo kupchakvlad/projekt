@@ -42,154 +42,131 @@ registration_button.addEventListener("click", () => {
     login_form.classList.remove("active");
 });
 
-// VALIDATION + SUBMISSION
-let byPassListener = false;
-let isCheckingPasswordStrength = false;
-
-// Error message nodes
+// ERROR MESSAGE NODES
 let emailMessage = null;
 let passwordMessage_8 = null;
 let passwordMessage_confirmation = null;
 let passwordStrengthMessage = null;
 
-registration_form.addEventListener("submit", function(event) {
-    console.log("Form submit event triggered");
-
-    // If already validated, let browser submit normally
-    if (byPassListener) return true;
-
-    event.preventDefault();
-    console.log("Validation started — preventing default");
-
+// VALIDATION FUNCTIONS
+function validateForm() {
+    let valid = true;
+    const email_value = registration_email.value.trim();
     const password = registration_password.value.trim();
     const password_confirmation = registration_password_confirmation.value.trim();
-    const email_value = registration_email.value.trim();
-    let valid = true;
 
-    // -------- EMAIL CHECK --------
-    function email_checker() {
-        const emailPattern = /^\S+@\S+\.\S+$/;
-
-        if (!emailPattern.test(email_value)) {
-            valid = false;
-            registration_email.classList.add("email_error");
-
-            if (!emailMessage) {
-                emailMessage = document.createElement("p");
-                emailMessage.className = "password-error-message";
-                emailMessage.textContent = "Email is not entered properly.";
-                registration_email_container.appendChild(emailMessage);
-            }
-        } else {
-            registration_email.classList.remove("email_error");
-            if (emailMessage) {
-                emailMessage.remove();
-                emailMessage = null;
-            }
+    // EMAIL CHECK
+    const emailPattern = /^\S+@\S+\.\S+$/;
+    if (!emailPattern.test(email_value)) {
+        valid = false;
+        registration_email.classList.add("email_error");
+        if (!emailMessage) {
+            emailMessage = document.createElement("p");
+            emailMessage.className = "password-error-message";
+            emailMessage.textContent = "Email is not entered properly.";
+            registration_email_container.appendChild(emailMessage);
+        }
+    } else {
+        registration_email.classList.remove("email_error");
+        if (emailMessage) {
+            emailMessage.remove();
+            emailMessage = null;
         }
     }
 
-    // -------- PASSWORD LENGTH --------
-    function password_length_checker() {
-        if (password.length < 8) {
-            valid = false;
-            registration_password.classList.add("password_error");
-
-            if (!passwordMessage_8) {
-                passwordMessage_8 = document.createElement("p");
-                passwordMessage_8.className = "password-error-message";
-                passwordMessage_8.textContent = "At least 8 characters.";
-                registration_password_container.appendChild(passwordMessage_8);
-            }
-        } else {
-            registration_password.classList.remove("password_error");
-            if (passwordMessage_8) {
-                passwordMessage_8.remove();
-                passwordMessage_8 = null;
-            }
+    // PASSWORD LENGTH CHECK
+    if (password.length < 8) {
+        valid = false;
+        registration_password.classList.add("password_error");
+        if (!passwordMessage_8) {
+            passwordMessage_8 = document.createElement("p");
+            passwordMessage_8.className = "password-error-message";
+            passwordMessage_8.textContent = "At least 8 characters.";
+            registration_password_container.appendChild(passwordMessage_8);
+        }
+    } else {
+        registration_password.classList.remove("password_error");
+        if (passwordMessage_8) {
+            passwordMessage_8.remove();
+            passwordMessage_8 = null;
         }
     }
 
-    // -------- PASSWORD MATCH --------
-    function password_confirmation_checker() {
-        if (password !== password_confirmation) {
-            valid = false;
-            registration_password.classList.add("password_error");
-            registration_password_confirmation.classList.add("password_error");
-
-            if (!passwordMessage_confirmation) {
-                passwordMessage_confirmation = document.createElement("p");
-                passwordMessage_confirmation.className = "password-error-message";
-                passwordMessage_confirmation.textContent = "The entered passwords do not match.";
-                registration_password_container.appendChild(passwordMessage_confirmation);
-            }
-        } else {
-            registration_password_confirmation.classList.remove("password_error");
-            if (passwordMessage_confirmation) {
-                passwordMessage_confirmation.remove();
-                passwordMessage_confirmation = null;
-            }
+    // PASSWORD MATCH CHECK
+    if (password !== password_confirmation) {
+        valid = false;
+        registration_password.classList.add("password_error");
+        registration_password_confirmation.classList.add("password_error");
+        if (!passwordMessage_confirmation) {
+            passwordMessage_confirmation = document.createElement("p");
+            passwordMessage_confirmation.className = "password-error-message";
+            passwordMessage_confirmation.textContent = "The entered passwords do not match.";
+            registration_password_container.appendChild(passwordMessage_confirmation);
+        }
+    } else {
+        registration_password_confirmation.classList.remove("password_error");
+        if (passwordMessage_confirmation) {
+            passwordMessage_confirmation.remove();
+            passwordMessage_confirmation = null;
         }
     }
 
-    // RUN CHECKS
-    email_checker();
-    password_length_checker();
-    password_confirmation_checker();
+    return valid;
+}
 
-    if (!valid) {
-        console.log("Validation failed — stopping");
-        return;
-    }
+// PASSWORD STRENGTH CHECK VIA AJAX
+function checkPasswordStrength() {
+    return new Promise((resolve, reject) => {
+        const password = registration_password.value.trim();
+        const request = new XMLHttpRequest();
+        request.open("GET", "get_passwords.php", true); // PHP proxy for same-origin
 
-    // -------- PASSWORD STRENGTH CHECK --------
-    if (isCheckingPasswordStrength) return;
-
-    isCheckingPasswordStrength = true;
-    console.log("Checking password strength...");
-
-    const request = new XMLHttpRequest();
-    request.open("GET", "get_passwords.php", true); // FIXED SAME-ORIGIN URL
-
-    request.onload = function() {
-        console.log("Password check completed:", request.status);
-        isCheckingPasswordStrength = false;
-
-        if (request.status === 200) {
-            const weakList = request.responseText.split("\n").map(w => w.trim());
-
-            if (weakList.includes(password)) {
-                console.log("Weak password detected — stopping submit");
-                registration_password.classList.add("password_error");
-
-                if (!passwordStrengthMessage) {
-                    passwordStrengthMessage = document.createElement("p");
-                    passwordStrengthMessage.className = "password-error-message";
-                    passwordStrengthMessage.textContent = "Password is too weak.";
-                    registration_password_container.appendChild(passwordStrengthMessage);
+        request.onload = function () {
+            if (request.status === 200) {
+                const weakList = request.responseText.split("\n").map(w => w.trim());
+                if (weakList.includes(password)) {
+                    registration_password.classList.add("password_error");
+                    if (!passwordStrengthMessage) {
+                        passwordStrengthMessage = document.createElement("p");
+                        passwordStrengthMessage.className = "password-error-message";
+                        passwordStrengthMessage.textContent = "Password is too weak.";
+                        registration_password_container.appendChild(passwordStrengthMessage);
+                    }
+                    resolve(false);
+                } else {
+                    registration_password.classList.remove("password_error");
+                    if (passwordStrengthMessage) {
+                        passwordStrengthMessage.remove();
+                        passwordStrengthMessage = null;
+                    }
+                    resolve(true);
                 }
-
             } else {
-                console.log("Password strong — submitting now");
-
-                if (passwordStrengthMessage) {
-                    passwordStrengthMessage.remove();
-                    passwordStrengthMessage = null;
-                }
-
-                byPassListener = true;
-                registration_form.submit(); // SEND TO PHP
+                alert("Unable to verify password strength. Please try again.");
+                resolve(false);
             }
+        };
 
-        } else {
-            alert("Unable to verify password strength. Please try again.");
-        }
-    };
+        request.onerror = function () {
+            alert("Network error while checking password strength.");
+            resolve(false);
+        };
 
-    request.onerror = function() {
-        isCheckingPasswordStrength = false;
-        alert("Network error while checking password strength.");
-    };
+        request.send();
+    });
+}
 
-    request.send();
+// SUBMIT HANDLER
+registration_form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    // 1️⃣ Validate email & password synchronously
+    if (!validateForm()) return;
+
+    // 2️⃣ Validate password strength asynchronously
+    const strong = await checkPasswordStrength();
+    if (strong) {
+        // ✅ Submit form to registration.php
+        registration_form.submit();
+    }
 });
