@@ -29,7 +29,6 @@ if (isset($_POST['registration_submit'])) {
     $registration_password = trim($_POST['registration_password']);
     $registration_password_confirmation = trim($_POST['registration_password_confirmation']);
 
-
     // REGISTRATION DATA CHECKS
     if (empty($registration_name)) {
         $errorMessages[] = "Name is required";
@@ -46,7 +45,6 @@ if (isset($_POST['registration_submit'])) {
     } else if ($registration_password !== $registration_password_confirmation) {
         $errorMessages[] = "Passwords do not match";
     }
-
 
     $check_email_query = "SELECT id FROM users WHERE email = ?";
     $stmt_check = mysqli_prepare($connection, $check_email_query);
@@ -82,21 +80,27 @@ if (isset($_POST['registration_submit'])) {
             die("Execution failed: " . mysqli_stmt_error($stmt));
         }
 
-// ---------------- SESSION ID OF REGISTERED USER ----------------
+        // ---------------- SESSION ID OF REGISTERED USER ----------------
         $user_id = mysqli_insert_id($connection);
         $_SESSION["user_id"] = $user_id;
 
         mysqli_stmt_close($stmt);
+        mysqli_close($connection);
 
         // SUCCESS
         header("Location: ../main/main.php");
         exit;
+
     } else {
-        echo "All fields are required";
+        mysqli_close($connection);
+        $_SESSION['registration_error'] = implode("<br>", $errorMessages);
+        header("Location: registration_form.html");
+        exit;
     }
 }
 
+// If accessed directly without POST
 mysqli_close($connection);
-header("Location: ../main/main.php");
+header("Location: registration_form.html");
 exit;
 ?>
