@@ -167,6 +167,6 @@ registration_form.addEventListener("submit", async function (event) {
     const strong = await checkPasswordStrength();
     if (strong) {
         // ✅ Submit form to registration.php
-        document.getElementById("registration_submit").click();
+        registration_form.submit();
     }
 });
