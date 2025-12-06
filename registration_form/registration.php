@@ -55,27 +55,30 @@ if (isset($_POST['registration_submit'])) {
     if (mysqli_stmt_num_rows($stmt_check) > 0) {
         $email_message_text = "Email already exists";
     }
+    mysqli_stmt_close($stmt_check);
 
-    // ---------------- HASH PASSWORD ----------------
-    $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
+    if (empty($errorMessages)) {
+        // ---------------- HASH PASSWORD ----------------
+        $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
 
-    // ---------------- INSERT USER ----------------
-    $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-    $stmt = mysqli_prepare($connection, $insert_user_query);
+        // ---------------- INSERT USER ----------------
+        $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+        $stmt = mysqli_prepare($connection, $insert_user_query);
 
-    mysqli_stmt_bind_param($stmt, "sss", $registration_name, $registration_email, $hashed_password);
+        mysqli_stmt_bind_param($stmt, "sss", $registration_name, $registration_email, $hashed_password);
 
-    if (!mysqli_stmt_execute($stmt)) {
-        die("Execution failed: " . mysqli_stmt_error($stmt));
-    }
+        if (!mysqli_stmt_execute($stmt)) {
+            die("Execution failed: " . mysqli_stmt_error($stmt));
+        }
 
 // ---------------- SESSION ID OF REGISTERED USER ----------------
-    $user_id = mysqli_insert_id($connection);
-    $_SESSION["user_id"] = $user_id;
+        $user_id = mysqli_insert_id($connection);
+        $_SESSION["user_id"] = $user_id;
 
-    // SUCCESS
-    header("Location: ../main/main.php");
-    exit;
+        // SUCCESS
+        header("Location: ../main/main.php");
+        exit;
+    }
 
 }
 ?>
