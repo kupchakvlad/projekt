@@ -72,6 +72,10 @@ if (isset($_POST['registration_submit'])) {
         $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
         $stmt = mysqli_prepare($connection, $insert_user_query);
 
+        if (!$stmt) {
+            die("FATAL: Insert statement preparation failed: " . mysqli_error($connection));
+        }
+
         mysqli_stmt_bind_param($stmt, "sss", $registration_name, $registration_email, $hashed_password);
 
         if (!mysqli_stmt_execute($stmt)) {
@@ -87,7 +91,11 @@ if (isset($_POST['registration_submit'])) {
         // SUCCESS
         header("Location: ../main/main.php");
         exit;
+    } else {
+        echo "All fields are required";
     }
+
+mysqli_close($connection);
 
 }
 ?>
