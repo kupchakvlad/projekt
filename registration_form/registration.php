@@ -44,7 +44,6 @@ if (isset($_POST['registration_submit'])) {
     }
 
     $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
-    $email_message = '';
 
 
     $check_email_query = "SELECT id FROM users WHERE email = ?";
@@ -54,7 +53,6 @@ if (isset($_POST['registration_submit'])) {
     mysqli_stmt_store_result($stmt_check);
 
     if (mysqli_stmt_num_rows($stmt_check) > 0) {
-        $email_message = "email-error-message";
         $email_message_text = "Email already exists";
     }
 

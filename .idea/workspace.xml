@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil soobsenije pri osybke vhcoda s loginom">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="nuzno dobavit cookies">
+      <change afterPath="$PROJECT_DIR$/registration_form/set_dark_mode_cookie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration_form/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration_form/registration_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +127,7 @@
       <workItem from="1764604134596" duration="2515000" />
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
-      <workItem from="1765029583925" duration="6749000" />
+      <workItem from="1765029583925" duration="11088000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -374,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765034722013</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="nuzno dobavit cookies">
+      <option name="closed" value="true" />
+      <created>1765045832406</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1765045832406</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="proba4" />
     <MESSAGE value="proba5" />
     <MESSAGE value="proba6" />
     <MESSAGE value="proba7" />
@@ -429,6 +439,7 @@
     <MESSAGE value="ja dovbojob" />
     <MESSAGE value="peresmotrel login.php" />
     <MESSAGE value="dobavil soobsenije pri osybke vhcoda s loginom" />
-    <option name="LAST_COMMIT_MESSAGE" value="dobavil soobsenije pri osybke vhcoda s loginom" />
+    <MESSAGE value="nuzno dobavit cookies" />
+    <option name="LAST_COMMIT_MESSAGE" value="nuzno dobavit cookies" />
   </component>
 </project>

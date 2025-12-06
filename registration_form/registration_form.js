@@ -15,10 +15,23 @@ const registration_password_container = document.getElementById("registration_pa
 //DARKMODE
 const darkMode = document.getElementById("dark-mode-btn");
 
+function sendDarkMode(value) {
+    const request = new XMLHttpRequest();
+    request.open('POST', 'set_dark_mode_cookie.php', true); // true - asynchronnyj request
+    // pokazyvajet cto PHP mozet procitat eti dannyje
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // sochranjajet znacenije i otpravljajet na server
+    const data = `mode=${value}`;
+    request.send(data)
+}
 //TURNING DARK MODE ON
+
 darkMode.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode")
+    document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    sendDarkMode(isDarkMode);
 });
+// DARK MODE COOKIES SENDER
 
 //SWITCHING ON LOGIN
 login_button.addEventListener("click", () => {

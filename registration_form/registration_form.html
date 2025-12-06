@@ -1,7 +1,14 @@
 <?php
 session_start();
-$login_error = $_SESSION['login_error'];
+
+$login_error = $_SESSION['login_error'] ?? '';
 unset($_SESSION['login_error']);
+
+$registration_error = $_SESSION['registration_error'] ?? '';
+unset($_SESSION['registration_error']);
+
+$email_message = $email_message ?? '';
+$email_message_text = $email_message_text ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +37,7 @@ unset($_SESSION['login_error']);
             </label>
             
             <?php if ($login_error): ?>
-                <div class="form-error"><?php echo htmlspecialchars($login_error); ?></div>
+                <div class="login-error"><?php echo htmlspecialchars($login_error); ?></div>
             <?php endif; ?>
 
             <input type="submit" id="login_submit" name="login_submit" class="submit" value="Sign-in">
@@ -52,7 +59,9 @@ unset($_SESSION['login_error']);
                 <label for="registration_password_confirmation">Enter password once again:
                     <input type="password" id="registration_password_confirmation" name="registration_password_confirmation" required>
                 </label>
-                <div class="<?php echo $email_message;?>"> <?php echo $email_message_text; ?> </div>
+                <?php if ($login_error): ?>
+                    <div class="email-error-message"> <?php echo htmlspecialchars($email_message_text); ?> </div>
+                <?php endif; ?>
             </div>
             <input type="submit" name="registration_submit" class="submit" id="registration_submit" value="Sign-up">
         </form>
