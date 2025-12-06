@@ -30,7 +30,6 @@ if (isset($_POST['registration_submit'])) {
     $registration_password_confirmation = trim($_POST['registration_password_confirmation']);
 
 
-
     // REGISTRATION DATA CHECKS
     if (empty($registration_name)) {
         $errorMessages[] = "Name is required";
