@@ -149,7 +149,7 @@ registration_form.addEventListener("submit", function(event) {
     console.log("Checking password strength...");
 
     const request = new XMLHttpRequest();
-    request.open("GET", "http://zwa.toad.cz/passwords.txt", true); // FIXED SAME-ORIGIN URL
+    request.open("GET", "https://zwa.toad.cz/passwords.txt", true); // FIXED SAME-ORIGIN URL
 
     request.onload = function() {
         console.log("Password check completed:", request.status);
