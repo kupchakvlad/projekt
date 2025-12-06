@@ -57,9 +57,15 @@ let passwordStrengthMessage = null;
 let isCheckingPasswordStrength = false;
 
 registration_form.addEventListener("submit", function(event) {
-    if (byPassListener) return;
+    console.log("Form submit event triggered");
+
+    if (byPassListener) {
+        console.log("byPassListener is true - allowing form to submit");
+        return;
+    }
 
     event.preventDefault();
+    console.log("Form submission prevented - starting validation");
 
     let password = registration_password.value;
     let password_confirmation = registration_password_confirmation.value;
@@ -133,23 +139,37 @@ registration_form.addEventListener("submit", function(event) {
     password_length_checker();
     password_confirmation_checker();
 
-    if (!valid) return;
+    console.log("Validation result - valid:", valid);
 
-    if (isCheckingPasswordStrength) return;
+    if (!valid) {
+        console.log("Validation failed - stopping");
+        return;
+    }
+
+    if (isCheckingPasswordStrength) {
+        console.log("Password check already in progress - stopping");
+        return;
+    }
+
     isCheckingPasswordStrength = true;
+    console.log("Starting password strength check...");
 
     // --- PASSWORD STRENGTH CHECK ---
     let request = new XMLHttpRequest();
     request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
 
     request.onload = function() {
+        console.log("Password check completed. Status:", request.status);
         isCheckingPasswordStrength = false;
 
-        // FIX 1: Check if request was successful ← ADDED
         if (request.status === 200) {
             let words = request.responseText.split("\n").map(word => word.trim());
+            console.log("Password list loaded. Total passwords:", words.length);
+            console.log("Checking if password is weak...");
+            console.log("Is password in weak list?", words.includes(password));
 
             if (words.includes(password)) {
+                console.log("PASSWORD IS WEAK - NOT SUBMITTING");
                 // Weak password
                 registration_password.classList.add("password_error");
 
@@ -160,6 +180,7 @@ registration_form.addEventListener("submit", function(event) {
                     registration_password_container.appendChild(passwordStrengthMessage);
                 }
             } else {
+                console.log("PASSWORD IS STRONG - SUBMITTING FORM NOW");
                 // Strong password
                 registration_password.classList.remove("password_error");
                 if (passwordStrengthMessage) {
@@ -168,6 +189,7 @@ registration_form.addEventListener("submit", function(event) {
                 }
 
                 byPassListener = true;
+                console.log("Setting byPassListener to true and submitting...");
                 registration_form.submit();
             }
         } else {
@@ -175,11 +197,14 @@ registration_form.addEventListener("submit", function(event) {
             alert('Unable to verify password strength. Please try again.');
         }
     };
+
     request.onerror = function() {
+        console.log("NETWORK ERROR OCCURRED");
         isCheckingPasswordStrength = false;
         console.error('Network error while checking password strength');
         alert('Network error. Please check your connection and try again.');
     };
 
+    console.log("Sending password check request to server...");
     request.send();
 });
