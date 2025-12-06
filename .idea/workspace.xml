@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil cookie na dark mode 14">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.js" afterDir="false" />
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil cookie na dark mode 15">
+      <change beforePath="$PROJECT_DIR$/registration_form/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +122,7 @@
       <workItem from="1764604134596" duration="2515000" />
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
-      <workItem from="1765029583925" duration="17875000" />
+      <workItem from="1765029583925" duration="18031000" />
     </task>
     <task id="LOCAL-00001" summary="test db">
       <option name="closed" value="true" />
@@ -502,7 +500,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765056612286</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="dobavil cookie na dark mode 15">
+      <option name="closed" value="true" />
+      <created>1765056759424</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1765056759424</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dobavil sessions na kazduju stranicu, teper' nel'zja perechodit' po stranicam nezaregestrirovanym, nezareganych pol'zovatelej vsegda budet otpravljat' na stranicu registracii. + dobavil pri vvedenii uze suscestvujuseho email v baze dannych -&gt; vyvod osybki o tom cto takoj email uze zareganyj." />
     <MESSAGE value="probuju dodelat' session kontrol', ctoby ono dejstvitel'no ne puskalo usera na ljubuju stranicu nezareganym" />
     <MESSAGE value="probuju sdelt' eto dla main stranicy." />
     <MESSAGE value="sdelal vse fajly php ctoby bylo bezopasno vchodit' na vse stranicy, k nim dobavil _back fajly, tam budet backend potom." />
@@ -557,6 +562,7 @@
     <MESSAGE value="dobavil cookie na dark mode 12" />
     <MESSAGE value="dobavil cookie na dark mode 13" />
     <MESSAGE value="dobavil cookie na dark mode 14" />
-    <option name="LAST_COMMIT_MESSAGE" value="dobavil cookie na dark mode 14" />
+    <MESSAGE value="dobavil cookie na dark mode 15" />
+    <option name="LAST_COMMIT_MESSAGE" value="dobavil cookie na dark mode 15" />
   </component>
 </project>
