@@ -33,7 +33,7 @@ unset($_SESSION['login_error']);
         <div class="form-error"><?php echo htmlspecialchars($login_error); ?></div>
         <?php endif; ?>
 
-            <input type="submit" id="login_submit" class="submit" value="Sign-in">
+            <input type="submit" id="login_submit" name="login_submit" class="submit" value="Sign-in">
         </form>
         
         <form action="registration.php" method="POST" id="registration_form" class="active">

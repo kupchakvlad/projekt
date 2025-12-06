@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name']))
         die("Execution failed: " . mysqli_stmt_error($stmt));
     }
 
-//    ---------------- SESSION ID OF REGISTERED USER ----------------
+// ---------------- SESSION ID OF REGISTERED USER ----------------
     $user_id = mysqli_insert_id($connection);
     $_SESSION["user_id"] = $user_id;
 
