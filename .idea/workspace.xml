@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil cookie na dark mode 16">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil cookie na dark mode 17">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration_form/registration_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.js" afterDir="false" />
     </list>
@@ -123,15 +123,7 @@
       <workItem from="1764604134596" duration="2515000" />
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
-      <workItem from="1765029583925" duration="21101000" />
-    </task>
-    <task id="LOCAL-00001" summary="test db">
-      <option name="closed" value="true" />
-      <created>1764513029583</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1764513029583</updated>
+      <workItem from="1765029583925" duration="21621000" />
     </task>
     <task id="LOCAL-00002" summary="pocinil dark mode na registration_form">
       <option name="closed" value="true" />
@@ -517,7 +509,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765056942562</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="dobavil cookie na dark mode 17">
+      <option name="closed" value="true" />
+      <created>1765061724896</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1765061724897</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="probuju sdelt' eto dla main stranicy." />
     <MESSAGE value="sdelal vse fajly php ctoby bylo bezopasno vchodit' na vse stranicy, k nim dobavil _back fajly, tam budet backend potom." />
     <MESSAGE value="v to ze vremja perechod nazad s add product i account budet bezopasnym potomu cto na main uze jest' proverka sesion i na knopki backtomain mozno ne stavit' zasitu a prosto ostavit' ich v js" />
     <MESSAGE value="teper' ostalos' sdelat' login i ja tol'ko perepisal .html na .php v etom komite" />
@@ -572,6 +571,7 @@
     <MESSAGE value="dobavil cookie na dark mode 14" />
     <MESSAGE value="dobavil cookie na dark mode 15" />
     <MESSAGE value="dobavil cookie na dark mode 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="dobavil cookie na dark mode 16" />
+    <MESSAGE value="dobavil cookie na dark mode 17" />
+    <option name="LAST_COMMIT_MESSAGE" value="dobavil cookie na dark mode 17" />
   </component>
 </project>
