@@ -1,11 +1,11 @@
 <?php
 session_start();
-$login_error = $_SESSION['login_error'] ?? '';
+$login_error = $_SESSION['login_error'];
 unset($_SESSION['login_error']);
 ?>
 
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@ unset($_SESSION['login_error']);
             </label>
             
             <?php if ($login_error): ?>
-                <script> alert("<?php echo htmlspecialchars($login_error); ?>"); </script>
+                <div class="form-error"><?php echo htmlspecialchars($login_error); ?></div>
             <?php endif; ?>
 
             <input type="submit" id="login_submit" name="login_submit" class="submit" value="Sign-in">

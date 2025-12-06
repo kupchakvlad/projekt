@@ -13,10 +13,10 @@ if (!$connection) {
     die("Connect failed: \n". mysqli_connect_error());
 }
 
-//REGISTRATION VALIDATION
+// REGISTRATION VALIDATION
 $errorMessages = [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_name'])) {
+if (isset($_POST['registration_submit'])) {
 
     // REGISTRATION DATA
     $registration_name = trim($_POST['registration_name']);
