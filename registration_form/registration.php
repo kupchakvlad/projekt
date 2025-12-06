@@ -90,32 +90,6 @@ if (isset($_POST['registration_submit'])) {
         // SUCCESS
         header("Location: ../main/main.php");
         exit;
-
-    } else {
-        // ERRORS FOUND - SHOW THEM
-        mysqli_close($connection);
-
-        header('Content-Type: text/html; charset=utf-8');
-        echo "<!DOCTYPE html><html><head><title>Errors</title></head><body>";
-        echo "<h1>VALIDATION ERRORS:</h1>";
-        echo "<pre>";
-        print_r($errorMessages);
-        echo "</pre>";
-        echo "<hr>";
-        echo "<h3>Data Received:</h3>";
-        echo "Name: " . htmlspecialchars($registration_name ?? 'NOT SET') . "<br>";
-        echo "Email: " . htmlspecialchars($registration_email ?? 'NOT SET') . "<br>";
-        echo "Password length: " . strlen($registration_password ?? '') . "<br>";
-        echo "Confirmation length: " . strlen($registration_password_confirmation ?? '') . "<br>";
-        echo "Passwords match: " . (($registration_password ?? '') === ($registration_password_confirmation ?? '') ? "YES" : "NO") . "<br>";
-        echo "<br><a href='registration_form.html'>Go Back</a>";
-        echo "</body></html>";
-        die();
-
-//        mysqli_close($connection);
-//        $_SESSION['registration_error'] = implode("<br>", $errorMessages);
-//        header("Location: registration_form.html");
-//        exit;
     }
 }
 
