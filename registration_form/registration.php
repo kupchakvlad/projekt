@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 //DATABASE
@@ -43,17 +48,20 @@ if (isset($_POST['registration_submit'])) {
         $errorMessages[] = "Passwords do not match";
     }
 
-    $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
-
 
     $check_email_query = "SELECT id FROM users WHERE email = ?";
     $stmt_check = mysqli_prepare($connection, $check_email_query);
+
+    if (!$stmt_check) {
+        die("FATAL: Email check statement preparation failed: " . mysqli_error($connection));
+    }
+
     mysqli_stmt_bind_param($stmt_check, "s", $registration_email);
     mysqli_stmt_execute($stmt_check);
     mysqli_stmt_store_result($stmt_check);
 
     if (mysqli_stmt_num_rows($stmt_check) > 0) {
-        $email_message_text = "Email already exists";
+        $errorMessages[] = "Email already exists";
     }
     mysqli_stmt_close($stmt_check);
 
@@ -74,6 +82,8 @@ if (isset($_POST['registration_submit'])) {
 // ---------------- SESSION ID OF REGISTERED USER ----------------
         $user_id = mysqli_insert_id($connection);
         $_SESSION["user_id"] = $user_id;
+
+        mysqli_stmt_close($stmt);
 
         // SUCCESS
         header("Location: ../main/main.php");
