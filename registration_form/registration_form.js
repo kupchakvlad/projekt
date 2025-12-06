@@ -22,6 +22,11 @@ function sendDarkMode(value) {
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     // sochranjajet znacenije i otpravljajet na server
     const data = `mode=${encodeURIComponent(value)}`;
+
+    request.onerror = function() {
+        console.error('Failed to save dark mode preference');
+    };
+
     request.send(data)
 }
 //TURNING DARK MODE ON
@@ -148,7 +153,7 @@ registration_form.addEventListener("submit", function(event) {
 
         isCheckingPasswordStrength = false;
 
-        let words = request.responseText.split("\n");
+        let words = request.responseText.split("\n").map(word => word.trim());
 
         if (words.includes(password)) {
             // Weak password
