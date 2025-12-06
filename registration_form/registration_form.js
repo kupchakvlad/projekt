@@ -1,6 +1,5 @@
 // LOGIN
 const login_button = document.getElementById("login_button");
-// unused const login_email = document.getElementById("login_email");
 const login_form = document.getElementById("login_form");
 
 //REGISTRATION
@@ -17,26 +16,22 @@ const darkMode = document.getElementById("dark-mode-btn");
 
 function sendDarkMode(value) {
     const request = new XMLHttpRequest();
-    request.open('POST', 'set_dark_mode_cookie.php', true); // true - asynchronnyj request
-    // pokazyvajet cto PHP mozet procitat eti dannyje
+    request.open('POST', 'set_dark_mode_cookie.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // sochranjajet znacenije i otpravljajet na server
     const data = `mode=${encodeURIComponent(value)}`;
 
     request.onerror = function() {
         console.error('Failed to save dark mode preference');
     };
 
-    request.send(data)
+    request.send(data);
 }
-//TURNING DARK MODE ON
 
 darkMode.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     const isDarkMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
     sendDarkMode(isDarkMode);
 });
-// DARK MODE COOKIES SENDER
 
 //SWITCHING ON LOGIN
 login_button.addEventListener("click", () => {
@@ -46,7 +41,6 @@ login_button.addEventListener("click", () => {
     registration_form.classList.remove("active");
 });
 
-
 //SWITCHING ON REGISTRATION
 registration_button.addEventListener("click", () => {
     registration_button.classList.add("active");
@@ -54,8 +48,6 @@ registration_button.addEventListener("click", () => {
     login_button.classList.remove("active");
     login_form.classList.remove("active");
 });
-
-
 
 let byPassListener = false;
 let emailMessage = null;
@@ -65,7 +57,7 @@ let passwordStrengthMessage = null;
 let isCheckingPasswordStrength = false;
 
 registration_form.addEventListener("submit", function(event) {
-    if (byPassListener) return; // prevent recursion
+    if (byPassListener) return;
 
     event.preventDefault();
 
@@ -141,7 +133,7 @@ registration_form.addEventListener("submit", function(event) {
     password_length_checker();
     password_confirmation_checker();
 
-    if (!valid) return; // stop if errors
+    if (!valid) return;
 
     if (isCheckingPasswordStrength) return;
     isCheckingPasswordStrength = true;
@@ -149,32 +141,45 @@ registration_form.addEventListener("submit", function(event) {
     // --- PASSWORD STRENGTH CHECK ---
     let request = new XMLHttpRequest();
     request.open("GET", "https://zwa.toad.cz/passwords.txt", true);
-    request.onload = function() {
 
+    request.onload = function() {
         isCheckingPasswordStrength = false;
 
-        let words = request.responseText.split("\n").map(word => word.trim());
+        // FIX 1: Check if request was successful ← ADDED
+        if (request.status === 200) {
+            let words = request.responseText.split("\n").map(word => word.trim());
 
-        if (words.includes(password)) {
-            // Weak password
-            registration_password.classList.add("password_error");
+            if (words.includes(password)) {
+                // Weak password
+                registration_password.classList.add("password_error");
 
-            if (!passwordStrengthMessage) {
-                passwordStrengthMessage = document.createElement("p");
-                passwordStrengthMessage.className = "password-error-message";
-                passwordStrengthMessage.textContent = "Password is too weak.";
-                registration_password_container.appendChild(passwordStrengthMessage);
+                if (!passwordStrengthMessage) {
+                    passwordStrengthMessage = document.createElement("p");
+                    passwordStrengthMessage.className = "password-error-message";
+                    passwordStrengthMessage.textContent = "Password is too weak.";
+                    registration_password_container.appendChild(passwordStrengthMessage);
+                }
+            } else {
+                // Strong password
+                registration_password.classList.remove("password_error");
+                if (passwordStrengthMessage) {
+                    passwordStrengthMessage.remove();
+                    passwordStrengthMessage = null;
+                }
+
+                byPassListener = true;
+                registration_form.submit();
             }
         } else {
-            registration_password.classList.remove("password_error");
-            if (passwordStrengthMessage) {
-                passwordStrengthMessage.remove();
-                passwordStrengthMessage = null;
-            }
-
-            byPassListener = true;
-            registration_form.submit();
+            console.error('Failed to check password strength, status:', request.status);
+            alert('Unable to verify password strength. Please try again.');
         }
     };
+    request.onerror = function() {
+        isCheckingPasswordStrength = false;
+        console.error('Network error while checking password strength');
+        alert('Network error. Please check your connection and try again.');
+    };
+
     request.send();
 });
