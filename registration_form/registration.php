@@ -92,10 +92,25 @@ if (isset($_POST['registration_submit'])) {
         exit;
 
     } else {
+
         mysqli_close($connection);
-        $_SESSION['registration_error'] = implode("<br>", $errorMessages);
-        header("Location: registration_form.html");
+        echo "<h2>Validation Errors Found:</h2>";
+        echo "<pre>";
+        print_r($errorMessages);
+        echo "</pre>";
+        echo "<hr>";
+        echo "<h3>Data received:</h3>";
+        echo "Name: " . htmlspecialchars($registration_name) . "<br>";
+        echo "Email: " . htmlspecialchars($registration_email) . "<br>";
+        echo "Password length: " . strlen($registration_password) . "<br>";
+        echo "Passwords match: " . ($registration_password === $registration_password_confirmation ? "YES" : "NO") . "<br>";
+        echo "<br><a href='registration_form.html'>Go back</a>";
         exit;
+
+//        mysqli_close($connection);
+//        $_SESSION['registration_error'] = implode("<br>", $errorMessages);
+//        header("Location: registration_form.html");
+//        exit;
     }
 }
 
