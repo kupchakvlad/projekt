@@ -1,8 +1,12 @@
 // Dark mode toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 darkModeToggle.addEventListener('click', function() {
-    const isDark = document.body.classList.toggle("dark");
-    document.cookie = `mode=${isDark ? 'dark' : 'light'}; path=/;`;
+    const isDark = document.body.classList.toggle("dark-mode");
+    const newMode = isDark ? 'dark' : 'light';
+    const request = new XMLHttpRequest();
+    request.open("POST", "../registration_form/set_dark_mode_cookie.php", true);
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.send(`mode=${newMode}`);
 });
 
 // Back button

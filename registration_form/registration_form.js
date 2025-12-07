@@ -15,7 +15,11 @@ const registration_password_container = document.getElementById("registration_pa
 const darkMode = document.getElementById("dark-mode-btn");
 darkMode.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode");
-    document.cookie = `mode=${isDark ? 'dark' : 'light'}; path=/;`;
+    const newMode = isDark ? 'dark' : 'light';
+    const request = new XMLHttpRequest();
+    request.open("POST", "../registration_form/set_dark_mode_cookie.php", true);
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.send(`mode=${newMode}`);
 });
 
 // SWITCH TO LOGIN
