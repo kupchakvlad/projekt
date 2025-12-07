@@ -6,6 +6,8 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.html");
     exit;
 }
+
+$dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark-mode' : '';
 ?>
 
 
@@ -18,7 +20,7 @@ if (!isset($_SESSION["user_id"])) {
 <link rel="stylesheet" href="main.css">
 <script src="main.js" defer></script>
 </head>
-<body>
+<body class="<?php echo $dark_mode_class; ?>">
 
 <header class="header">
   <a href="main.php" class="logo">Botovo</a>
