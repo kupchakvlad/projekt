@@ -2,14 +2,8 @@
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark');
-        const mode = body.classList.contains("dark") ? "dark" : "light";
-
-        // send mode to PHP with AJAX
-        const request = new XMLHttpRequest();
-        request.open("POST", "set_dark_mode_cookie.php", true);
-        request.setRequestHeader("Content-Type", "application/x-www-registration_form-urlencoded");
-        request.send(`mode=${encodeURIComponent(mode)}`);
+        const isDark = document.body.classList.toggle("dark-mode");
+        document.cookie = `mode=${isDark ? 'dark' : 'light'}; path=/;`;
     });
 }
 
