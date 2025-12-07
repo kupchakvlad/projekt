@@ -90,6 +90,6 @@ if (!empty($_POST['registration_email']) && !empty($_POST['registration_password
 
 // If accessed directly without POST
 mysqli_close($connection);
-header("Location: registration_form.html");
+header("Location: registration_form.php");
 exit;
 ?>

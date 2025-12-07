@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["user_id"])) {
-    header("Location: ../registration_form/registration_form.html");
+    header("Location: ../registration_form/registration_form.php");
     exit;
 }
 

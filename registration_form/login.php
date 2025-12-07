@@ -46,7 +46,7 @@ if (isset($_POST['login_submit'])) {
         }
     }
     $_SESSION['login_error'] = $error_message;
-    header("Location: registration_form.html");
+    header("Location: registration_form.php");
     exit;
 }
 ?>
