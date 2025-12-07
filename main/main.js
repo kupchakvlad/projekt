@@ -6,7 +6,7 @@ document.getElementById("dark-mode-toggle").addEventListener("click", () => {
   // send mode to PHP with AJAX
   const request = new XMLHttpRequest();
   request.open("POST", "set_dark_mode_cookie.php", true);
-  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.setRequestHeader("Content-Type", "application/x-www-registration_form-urlencoded");
   request.send(`mode=${encodeURIComponent(mode)}`);
 });
 

@@ -5,7 +5,7 @@ const login_form = document.getElementById("login_form");
 // REGISTRATION
 const registration_button = document.getElementById("registration_button");
 const registration_form = document.getElementById("registration_form");
-const form = document.getElementById("registration_email");
+const registration_email = document.getElementById("registration_email");
 const registration_password = document.getElementById("registration_password");
 const registration_password_confirmation = document.getElementById("registration_password_confirmation");
 const registration_email_container = document.getElementById("registration_email_container");
@@ -21,9 +21,12 @@ function sendDarkMode(value) {
     request.send(`mode=${encodeURIComponent(value)}`);
 }
 
+if (document.cookie.includes("mode=dark")) {
+    document.body.classList.add("dark-mode");
+}
 darkMode.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    sendDarkMode(document.body.classList.contains("dark-mode") ? "dark" : "light");
+    const isDark = body.classList.toggle("dark-mode");
+    sendDarkMode(isDark ? "dark" : "light");
 });
 
 // SWITCH TO LOGIN
@@ -166,7 +169,7 @@ registration_form.addEventListener("submit", async function (event) {
     // 2️⃣ Validate password strength asynchronously
     const strong = await checkPasswordStrength();
     if (strong) {
-        // ✅ Submit form to registration.php
+        // ✅ Submit registration_form to registration.php
         registration_form.submit();
     }
 });
