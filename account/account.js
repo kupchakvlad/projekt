@@ -3,7 +3,7 @@ const darkModeToggle = document.getElementById('dark-mode-toggle');
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark');
-        const mode = body.classList.contains("dark-mode") ? "dark" : "light";
+        const mode = body.classList.contains("dark") ? "dark" : "light";
 
         // send mode to PHP with AJAX
         const request = new XMLHttpRequest();

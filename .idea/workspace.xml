@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil cookie na dark mode 24">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="dobavil cookie na dark mode 25">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_product/add_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,15 +125,7 @@
       <workItem from="1764604134596" duration="2515000" />
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
-      <workItem from="1765029583925" duration="25424000" />
-    </task>
-    <task id="LOCAL-00009" summary="proba6">
-      <option name="closed" value="true" />
-      <created>1764538028602</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1764538028602</updated>
+      <workItem from="1765029583925" duration="25714000" />
     </task>
     <task id="LOCAL-00010" summary="proba7">
       <option name="closed" value="true" />
@@ -523,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765064299215</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="dobavil cookie na dark mode 25">
+      <option name="closed" value="true" />
+      <created>1765066082605</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1765066082605</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dobavil cookie na dark mode" />
     <MESSAGE value="dobavil cookie na dark mode 1" />
     <MESSAGE value="dobavil cookie na dark mode 2" />
     <MESSAGE value="dobavil cookie na dark mode 3" />
@@ -578,6 +573,7 @@
     <MESSAGE value="dobavil cookie na dark mode 22" />
     <MESSAGE value="dobavil cookie na dark mode 23" />
     <MESSAGE value="dobavil cookie na dark mode 24" />
-    <option name="LAST_COMMIT_MESSAGE" value="dobavil cookie na dark mode 24" />
+    <MESSAGE value="dobavil cookie na dark mode 25" />
+    <option name="LAST_COMMIT_MESSAGE" value="dobavil cookie na dark mode 25" />
   </component>
 </project>

@@ -1,7 +1,7 @@
 // ===== Header =====
 document.getElementById("dark-mode-toggle").addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  const mode = body.classList.contains("dark-mode") ? "dark" : "light";
+  const mode = body.classList.contains("dark") ? "dark" : "light";
 
   // send mode to PHP with AJAX
   const request = new XMLHttpRequest();
