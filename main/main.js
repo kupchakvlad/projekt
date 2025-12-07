@@ -1,6 +1,6 @@
 // ===== Header =====
 document.getElementById("dark-mode-toggle").addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.toggle("dark");
     const newMode = isDark ? 'dark' : 'light';
     const request = new XMLHttpRequest();
     request.open("POST", "../registration_form/set_dark_mode_cookie.php", true);
