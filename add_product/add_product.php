@@ -6,6 +6,8 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
 }
+
+$dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +19,7 @@ if (!isset($_SESSION["user_id"])) {
     <script src="add_product.js" defer></script>
     <title>Add Product - Botovo</title>
 </head>
-<body>
+<body class="<?php echo $dark_mode_class ?>">
 
     <button class="back-to-main"> ← </button>
     <button type="button" id="dark-mode-btn" class="dark-mode-btn">Dark Mode</button>

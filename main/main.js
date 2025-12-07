@@ -1,7 +1,5 @@
 // ===== Header =====
 document.getElementById("dark-mode-toggle").addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-    document.body.classList.toggle("dark");
     const isDark = document.body.classList.toggle("dark");
     document.cookie = `mode=${isDark ? 'dark' : 'light'}; path=/;`;
 });
