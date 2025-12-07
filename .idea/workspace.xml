@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="prodolzaju delat' cookie na dark mode 6">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="prodolzaju delat' cookie na dark mode 7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_product/add_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.js" afterDir="false" />
@@ -132,15 +132,7 @@
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
       <workItem from="1765029583925" duration="28878000" />
-      <workItem from="1765110460582" duration="6406000" />
-    </task>
-    <task id="LOCAL-00029" summary="ja dovbojob">
-      <option name="closed" value="true" />
-      <created>1764974913488</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1764974913488</updated>
+      <workItem from="1765110460582" duration="6723000" />
     </task>
     <task id="LOCAL-00030" summary="peresmotrel login.php">
       <option name="closed" value="true" />
@@ -526,7 +518,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765116631107</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="prodolzaju delat' cookie na dark mode 7">
+      <option name="closed" value="true" />
+      <created>1765116883388</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1765116883388</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +556,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dobavil cookie na dark mode 20" />
     <MESSAGE value="dobavil cookie na dark mode 21" />
     <MESSAGE value="dobavil cookie na dark mode 22" />
     <MESSAGE value="dobavil cookie na dark mode 23" />
@@ -581,6 +580,7 @@
     <MESSAGE value="prodolzaju delat' cookie na dark mode 4" />
     <MESSAGE value="prodolzaju delat' cookie na dark mode 5" />
     <MESSAGE value="prodolzaju delat' cookie na dark mode 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="prodolzaju delat' cookie na dark mode 6" />
+    <MESSAGE value="prodolzaju delat' cookie na dark mode 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="prodolzaju delat' cookie na dark mode 7" />
   </component>
 </project>

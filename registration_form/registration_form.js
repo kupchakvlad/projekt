@@ -17,7 +17,7 @@ darkMode.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode");
     const newMode = isDark ? 'dark' : 'light';
     const request = new XMLHttpRequest();
-    request.open("POST", "/set_dark_mode_cookie.php", true);
+    request.open("POST", "../set_dark_mode_cookie.php", true);
     request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     request.send(`mode=${newMode}`);
 });
