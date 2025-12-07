@@ -36,7 +36,7 @@ mysqli_stmt_close($stmt);
     <link rel="stylesheet" href="account.css">
     <script src="account.js" defer></script>
 </head>
-<body>
+<body class="<?php echo $dark_mode_class; ?>">
 
     
 <button id="back-button" class="top-button"> ← </button>

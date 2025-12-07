@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="prodolzaju delat' cookie na dark mode 2">
-      <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="prodolzaju delat' cookie na dark mode 3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_product/add_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,15 +126,7 @@
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
       <workItem from="1765029583925" duration="28878000" />
-      <workItem from="1765110460582" duration="5096000" />
-    </task>
-    <task id="LOCAL-00025" summary="probuju sdelt' eto dla main stranicy.">
-      <option name="closed" value="true" />
-      <created>1764630643514</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1764630643514</updated>
+      <workItem from="1765110460582" duration="5340000" />
     </task>
     <task id="LOCAL-00026" summary="sdelal vse fajly php ctoby bylo bezopasno vchodit' na vse stranicy, k nim dobavil _back fajly, tam budet backend potom.">
       <option name="closed" value="true" />
@@ -517,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765115393584</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="prodolzaju delat' cookie na dark mode 3">
+      <option name="closed" value="true" />
+      <created>1765115566618</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1765115566618</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dobavil cookie na dark mode 16" />
     <MESSAGE value="dobavil cookie na dark mode 17" />
     <MESSAGE value="dobavil cookie na dark mode 18" />
     <MESSAGE value="dobavil cookie na dark mode 19" />
@@ -572,6 +574,7 @@
     <MESSAGE value="prodolzaju delat' cookie na dark mode" />
     <MESSAGE value="prodolzaju delat' cookie na dark mode 1" />
     <MESSAGE value="prodolzaju delat' cookie na dark mode 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="prodolzaju delat' cookie na dark mode 2" />
+    <MESSAGE value="prodolzaju delat' cookie na dark mode 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="prodolzaju delat' cookie na dark mode 3" />
   </component>
 </project>
