@@ -6,6 +6,8 @@ if (!isset($_SESSION["user_id"])) {
     exit;
 }
 
+$dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
+
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";

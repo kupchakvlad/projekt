@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="peredelal ajax na proverke parolja na silu">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="prodolzaju delat' cookie na dark mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_product/add_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,15 +126,7 @@
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
       <workItem from="1765029583925" duration="28878000" />
-      <workItem from="1765110460582" duration="3813000" />
-    </task>
-    <task id="LOCAL-00022" summary="ispravil js v registration_form.js 2">
-      <option name="closed" value="true" />
-      <created>1764616205975</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1764616205975</updated>
+      <workItem from="1765110460582" duration="3990000" />
     </task>
     <task id="LOCAL-00023" summary="dobavil sessions na kazduju stranicu, teper' nel'zja perechodit' po stranicam nezaregestrirovanym, nezareganych pol'zovatelej vsegda budet otpravljat' na stranicu registracii. + dobavil pri vvedenii uze suscestvujuseho email v baze dannych -&gt; vyvod osybki o tom cto takoj email uze zareganyj.">
       <option name="closed" value="true" />
@@ -519,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765112445321</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="prodolzaju delat' cookie na dark mode">
+      <option name="closed" value="true" />
+      <created>1765114305602</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1765114305602</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dobavil cookie na dark mode 13" />
     <MESSAGE value="dobavil cookie na dark mode 14" />
     <MESSAGE value="dobavil cookie na dark mode 15" />
     <MESSAGE value="dobavil cookie na dark mode 16" />
@@ -574,6 +574,7 @@
     <MESSAGE value="dobavil cookie na dark mode 35" />
     <MESSAGE value="sdelal cookie na dark mode tol'ko na registration_form.php, zavtra dodelaju" />
     <MESSAGE value="peredelal ajax na proverke parolja na silu" />
-    <option name="LAST_COMMIT_MESSAGE" value="peredelal ajax na proverke parolja na silu" />
+    <MESSAGE value="prodolzaju delat' cookie na dark mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="prodolzaju delat' cookie na dark mode" />
   </component>
 </project>
