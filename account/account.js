@@ -2,7 +2,7 @@
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', function() {
-        const isDark = document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.toggle("dark");
         document.cookie = `mode=${isDark ? 'dark' : 'light'}; path=/;`;
     });
 }

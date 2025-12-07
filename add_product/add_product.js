@@ -11,7 +11,7 @@ slider.addEventListener("input", () => {
 
 
 darkModeBtn.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.toggle("dark");
     document.cookie = `mode=${isDark ? 'dark' : 'light'}; path=/;`;
 });
 
