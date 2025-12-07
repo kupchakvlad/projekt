@@ -14,19 +14,9 @@ const registration_password_container = document.getElementById("registration_pa
 // DARK MODE
 const darkMode = document.getElementById("dark-mode-btn");
 
-function sendDarkMode(value) {
-    const request = new XMLHttpRequest();
-    request.open("POST", "set_dark_mode_cookie.php", true);
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    request.send(`mode=${encodeURIComponent(value)}`);
-}
-
-if (document.cookie.includes("mode=dark")) {
-    document.body.classList.add("dark-mode");
-}
 darkMode.addEventListener("click", () => {
-    const isDark = body.classList.toggle("dark-mode");
-    sendDarkMode(isDark ? "dark" : "light");
+    const isDark = document.body.classList.toggle("dark-mode");
+    document.cookie = `mode=${isDark ? 'dark' : 'light'}; path=/;`;
 });
 
 // SWITCH TO LOGIN
