@@ -1,5 +1,5 @@
 <?php
-
+// dlja js
 // v js v peremennoj data, mode=`${data}`, ${data} - peredajotsja
 $new_mode = $_POST["mode"];
 

@@ -13,7 +13,6 @@ const registration_password_container = document.getElementById("registration_pa
 
 // DARK MODE
 const darkMode = document.getElementById("dark-mode-btn");
-
 darkMode.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode");
     document.cookie = `mode=${isDark ? 'dark' : 'light'}; path=/;`;
@@ -49,8 +48,7 @@ function validateForm() {
     const password_confirmation = registration_password_confirmation.value.trim();
 
     // EMAIL CHECK
-    const emailPattern = /^\S+@\S+\.\S+$/;
-    if (!emailPattern.test(email_value)) {
+    if (email_value.indexOf("@") === -1) {
         valid = false;
         registration_email.classList.add("email_error");
         if (!emailMessage) {
@@ -106,60 +104,53 @@ function validateForm() {
 
     return valid;
 }
-
-// PASSWORD STRENGTH CHECK VIA AJAX
-function checkPasswordStrength() {
-    return new Promise((resolve, reject) => {
-        const password = registration_password.value.trim();
-        const request = new XMLHttpRequest();
-        request.open("GET", "get_passwords.php", true); // PHP proxy for same-origin
-
-        request.onload = function () {
-            if (request.status === 200) {
-                const weakList = request.responseText.split("\n").map(w => w.trim());
-                if (weakList.includes(password)) {
-                    registration_password.classList.add("password_error");
-                    if (!passwordStrengthMessage) {
-                        passwordStrengthMessage = document.createElement("p");
-                        passwordStrengthMessage.className = "password-error-message";
-                        passwordStrengthMessage.textContent = "Password is too weak.";
-                        registration_password_container.appendChild(passwordStrengthMessage);
-                    }
-                    resolve(false);
-                } else {
-                    registration_password.classList.remove("password_error");
-                    if (passwordStrengthMessage) {
-                        passwordStrengthMessage.remove();
-                        passwordStrengthMessage = null;
-                    }
-                    resolve(true);
-                }
-            } else {
-                alert("Unable to verify password strength. Please try again.");
-                resolve(false);
-            }
-        };
-
-        request.onerror = function () {
-            alert("Network error while checking password strength.");
-            resolve(false);
-        };
-
-        request.send();
-    });
-}
-
-// SUBMIT HANDLER
-registration_form.addEventListener("submit", async function (event) {
+registration_form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // 1️⃣ Validate email & password synchronously
-    if (!validateForm()) return;
-
-    // 2️⃣ Validate password strength asynchronously
-    const strong = await checkPasswordStrength();
-    if (strong) {
-        // ✅ Submit registration_form to registration.php
-        registration_form.submit();
+    if (!validateForm()) {
+        return; // STOP IF BASIC VALIDATION FAIL
     }
+
+    const password = registration_password.value.trim();
+
+    // PASSWORD STRENGHT VALIDATION WITH AJAX
+    const request = new XMLHttpRequest();
+
+    request.open("GET", "get_passwords.php", true); // TRUE - AJAX. ---- TAKES EVERY PASSWORD FROM GET_PASSWORDS.PHP -> ZWA.TOAD.CZ/PASSWORDS.TXT
+
+    request.onload = function () {
+        if (request.status === 200) {
+
+            const weakList = request.responseText.split("\n").map(w => w.trim()); // WRITES EVERY PASSWORD FROM ZWA.TOAD.CZ HERE
+
+            if (weakList.includes(password)) {
+                // PASSWORD IS WEAK
+
+                registration_password.classList.add("password_error");
+
+                if (!passwordStrengthMessage) {
+                    passwordStrengthMessage = document.createElement("p");
+                    passwordStrengthMessage.className = "password-error-message";
+                    passwordStrengthMessage.textContent = "Password is too weak.";
+                    registration_password_container.appendChild(passwordStrengthMessage);
+                }
+
+
+            } else {
+                // PASSWORD IS STRONG
+
+                registration_password.classList.remove("password_error");
+                if (passwordStrengthMessage) {
+                    passwordStrengthMessage.remove();
+                    passwordStrengthMessage = null;
+                }
+
+                registration_form.submit();
+            }
+        } else {
+            alert("Unable to verify password strength (Server Error). Please try again.");
+        }
+    };
+
+    request.send();
 });
