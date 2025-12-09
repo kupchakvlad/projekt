@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="prodolzaju delat' cookie na dark mode 7">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +77,7 @@
     &quot;PHP Script.registration_form.php.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/vlad-kupchak/Desktop/projekt&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
@@ -106,8 +103,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-PS-252.28238.9" />
-        <option value="bundled-php-predefined-a98d8de5180a-58f58c5035b3-com.jetbrains.php.sharedIndexes-PS-252.28238.9" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-PS-253.28294.345" />
+        <option value="bundled-php-predefined-a98d8de5180a-09080813851e-com.jetbrains.php.sharedIndexes-PS-253.28294.345" />
       </set>
     </attachedChunks>
   </component>
@@ -132,23 +129,11 @@
       <workItem from="1764609609616" duration="17837000" />
       <workItem from="1764705135846" duration="97000" />
       <workItem from="1765029583925" duration="28878000" />
-      <workItem from="1765110460582" duration="6723000" />
-    </task>
-    <task id="LOCAL-00030" summary="peresmotrel login.php">
-      <option name="closed" value="true" />
-      <created>1765033665691</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1765033665692</updated>
-    </task>
-    <task id="LOCAL-00031" summary="dobavil soobsenije pri osybke vhcoda s loginom">
-      <option name="closed" value="true" />
-      <created>1765034722013</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1765034722013</updated>
+      <workItem from="1765110460582" duration="6892000" />
+      <workItem from="1765207223732" duration="1666000" />
+      <workItem from="1765228194467" duration="63000" />
+      <workItem from="1765228258267" duration="334000" />
+      <workItem from="1765277283112" duration="726000" />
     </task>
     <task id="LOCAL-00032" summary="nuzno dobavit cookies">
       <option name="closed" value="true" />
@@ -526,7 +511,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765116883388</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="prodolzaju delat' cookie na dark mode 8">
+      <option name="closed" value="true" />
+      <created>1765117194985</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1765117194985</updated>
+    </task>
+    <task id="LOCAL-00080" summary="nakonecto sdelal cookie na dark mod vezde">
+      <option name="closed" value="true" />
+      <created>1765117304231</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1765117304231</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,8 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dobavil cookie na dark mode 21" />
-    <MESSAGE value="dobavil cookie na dark mode 22" />
     <MESSAGE value="dobavil cookie na dark mode 23" />
     <MESSAGE value="dobavil cookie na dark mode 24" />
     <MESSAGE value="dobavil cookie na dark mode 25" />
@@ -581,6 +580,8 @@
     <MESSAGE value="prodolzaju delat' cookie na dark mode 5" />
     <MESSAGE value="prodolzaju delat' cookie na dark mode 6" />
     <MESSAGE value="prodolzaju delat' cookie na dark mode 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="prodolzaju delat' cookie na dark mode 7" />
+    <MESSAGE value="prodolzaju delat' cookie na dark mode 8" />
+    <MESSAGE value="nakonecto sdelal cookie na dark mod vezde" />
+    <option name="LAST_COMMIT_MESSAGE" value="nakonecto sdelal cookie na dark mod vezde" />
   </component>
 </project>

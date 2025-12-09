@@ -52,7 +52,7 @@ mysqli_stmt_close($stmt);
     <div class="user-email"><?php echo htmlspecialchars($email); ?></div>
 </div>
 
-<form id="profile-form" method="POST" action="update_account.php">
+<form id="profile-form" method="POST" action="account_back.php">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($name); ?>" required>
 
