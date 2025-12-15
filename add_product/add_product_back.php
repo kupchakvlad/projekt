@@ -1,3 +1,45 @@
 <?php
 
+session_start();
+
+$host = "localhost";
+$username = "kupchvla";
+$password = "webove aplikace";
+$database = "kupchvla";
+
+$connection = mysqli_connect($host, $username, $password, $database);
+
+if (!$connection) {
+    die("Connect failed: \n". mysqli_connect_error());
+}
+
+if (isset($_POST["submit"])) {
+
+	$user_id = $_SESSION["user_id"]; // neznaju jesli nuzen
+
+	$product_name = trim($_POST["product_name"]);
+	$product_category = trim($_POST["product_category"]);
+	$product_fabric = trim($_POST["product_fabric"]);
+	$product_season = trim($_POST["season"]);
+	$product_size = trim($_POST["product_size"]);
+	$product_price = trim($_POST["product_price"]);
+
+	$insert_product_query = "INSERT INTO products (name, category, fabric, season, size, price) VALUES (?, ?, ?, ?, ?, ?)";
+	$stmt = mysqli_prepare($connection, $insert_product_query);
+
+	if (!$stmt) {
+		die("FATAL: Insert statement preparation failed: " . mysqli_stmt_error($connection));
+	}
+
+	mysqli_stmt_bind_param($stmt, "ssssii", $product_name, $product_category, $product_fabric, $product_season, $product_size, $product_price);
+
+	if (!mysqli_stmt_execute($stmt)) {
+		die("Execution failed" . mysqli_stmt_error($stmt));
+	}
+
+	header("Location: ../main/main.php");
+	exit;
+
+}
+
 ?>

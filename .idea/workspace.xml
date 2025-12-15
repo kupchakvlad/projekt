@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="">
+    <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_product/add_product_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product_back.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,15 +134,13 @@
       <workItem from="1765207223732" duration="1666000" />
       <workItem from="1765228194467" duration="63000" />
       <workItem from="1765228258267" duration="334000" />
-      <workItem from="1765277283112" duration="726000" />
-    </task>
-    <task id="LOCAL-00032" summary="nuzno dobavit cookies">
-      <option name="closed" value="true" />
-      <created>1765045832406</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1765045832406</updated>
+      <workItem from="1765277283112" duration="1123000" />
+      <workItem from="1765280169081" duration="2000" />
+      <workItem from="1765364389190" duration="1419000" />
+      <workItem from="1765367632874" duration="144000" />
+      <workItem from="1765368246354" duration="2445000" />
+      <workItem from="1765379631674" duration="1309000" />
+      <workItem from="1765821043534" duration="8631000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />
@@ -527,7 +526,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765117304231</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="pomenjal nazvanije v account back end">
+      <option name="closed" value="true" />
+      <created>1765278252372</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1765278252372</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +564,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dobavil cookie na dark mode 23" />
     <MESSAGE value="dobavil cookie na dark mode 24" />
     <MESSAGE value="dobavil cookie na dark mode 25" />
     <MESSAGE value="dobavil cookie na dark mode 26" />
@@ -582,6 +588,7 @@
     <MESSAGE value="prodolzaju delat' cookie na dark mode 7" />
     <MESSAGE value="prodolzaju delat' cookie na dark mode 8" />
     <MESSAGE value="nakonecto sdelal cookie na dark mod vezde" />
-    <option name="LAST_COMMIT_MESSAGE" value="nakonecto sdelal cookie na dark mod vezde" />
+    <MESSAGE value="pomenjal nazvanije v account back end" />
+    <option name="LAST_COMMIT_MESSAGE" value="pomenjal nazvanije v account back end" />
   </component>
 </project>

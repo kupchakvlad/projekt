@@ -29,30 +29,30 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
             <input type="file" id="Photo" accept="image/*" multiple>
         </label>
         <label for="ProductName">Enter your product name:
-            <input type="text" id="ProductName" required>
+            <input type="text" name="product_name" id="ProductName" required>
         </label>
         <label for="ProductCategory">Enter your product category:
-            <input type="text" id="ProductCategory" required>
+            <input type="text" name="product_category" id="ProductCategory" required>
         </label>
         <label for="ProductManufacturer">Enter your product manufacturer:
-            <input type="text" id="ProductManufacturer" required>
+            <input type="text" name="product_fabric" id="ProductManufacturer" required>
         </label>
         <label for="Season">Enter the season your shoes are made for.
             <select name="season" id="Season">
                 <option value="winter">Winter</option>
-                <option value="winter">Spring</option>
-                <option value="winter">Summer</option>
-                <option value="winter">Autumn</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="autumn">Autumn</option>
             </select>
         </label>
         <label for="slider"> Enter shoes size: 
-            <input type="range" id="slider" min="28" max="48" step="1" value="36">
+            <input type="range" name="product_size" id="slider" min="28" max="48" step="1" value="36">
         </label>
         <span id="size-value">36</span>
         <label for="ProductPrice">Enter price:
-            <input type="text" id="ProductPrice">
+            <input type="text" name="product_price" id="ProductPrice">
         </label>
-        <input type="submit" class="submit-button" value="Add product">
+        <input type="submit" class="submit-button" name="submit" value="Add product">
     </form>
 
 </body>
