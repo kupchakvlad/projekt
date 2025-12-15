@@ -21,17 +21,17 @@ if (isset($_POST["submit"])) {
 	$product_category = trim($_POST["product_category"]);
 	$product_fabric = trim($_POST["product_fabric"]);
 	$product_season = trim($_POST["season"]);
-	$product_size = trim($_POST["product_size"]);
-	$product_price = trim($_POST["product_price"]);
+	$product_size = (int) trim($_POST["product_size"]);
+	$product_price = (int) trim($_POST["product_price"]);
 
-	$insert_product_query = "INSERT INTO products (name, category, fabric, season, size, price) VALUES (?, ?, ?, ?, ?, ?)";
+	$insert_product_query = "INSERT INTO products (user_id, name, category, fabric, season, size, price) VALUES (?, ?, ?, ?, ?, ?)";
 	$stmt = mysqli_prepare($connection, $insert_product_query);
 
 	if (!$stmt) {
 		die("FATAL: Insert statement preparation failed: " . mysqli_stmt_error($connection));
 	}
 
-	mysqli_stmt_bind_param($stmt, "ssssii", $product_name, $product_category, $product_fabric, $product_season, $product_size, $product_price);
+	mysqli_stmt_bind_param($stmt, "issssii", $user_id, $product_name, $product_category, $product_fabric, $product_season, $product_size, $product_price);
 
 	if (!mysqli_stmt_execute($stmt)) {
 		die("Execution failed" . mysqli_stmt_error($stmt));
