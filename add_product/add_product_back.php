@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
 	$product_size = (int) trim($_POST["product_size"]);
 	$product_price = (int) trim($_POST["product_price"]);
 
-	$insert_product_query = "INSERT INTO products (user_id, name, category, fabric, season, size, price) VALUES (?, ?, ?, ?, ?, ?)";
+	$insert_product_query = "INSERT INTO products (user_id, name, category, fabric, season, size, price) VALUES (?, ?, ?, ?, ?, ?, ?)";
 	$stmt = mysqli_prepare($connection, $insert_product_query);
 
 	if (!$stmt) {
