@@ -15,7 +15,7 @@ if (!$connection) {
 
 if (isset($_POST["submit"])) {
 
-	$upload_directory = "projekt/photo/";
+	$upload_directory = __DIR__ . "/../photo/";
 
 	$user_id = $_SESSION["user_id"];
 	$file_name = basename($_FILES["photo"]["name"]);
