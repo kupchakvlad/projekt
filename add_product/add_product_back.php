@@ -36,7 +36,6 @@ if (isset($_POST["submit"])) {
 		$file_size = $photos['size'][$index];
 
 		$product_name = trim($_POST["product_name"]);
-		$product_category = trim($_POST["product_category"]);
 		$product_fabric = trim($_POST["product_fabric"]);
 		$product_season = trim($_POST["season"]);
 		$product_size = (int) trim($_POST["product_size"]);
@@ -53,11 +52,10 @@ if (isset($_POST["submit"])) {
 			file_type,
 			file_size,
 			name,
-			category,
 			fabric,
 			season,
 			size,
-			price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		$stmt = mysqli_prepare($connection, $insert_product_query);
 
 		if (!$stmt) {
@@ -71,7 +69,6 @@ if (isset($_POST["submit"])) {
 		$file_type,
 		$file_size,
 		$product_name,
-		$product_category,
 		$product_fabric,
 		$product_season,
 		$product_size,
