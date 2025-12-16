@@ -13,6 +13,15 @@ if (!$connection) {
     die("Connection failed: \n". mysqli_connect_error());
 }
 
+$photos = $_FILES["photo"];
+if (!is_array($photos['tmp_name'])) {
+    $photos['tmp_name'] = [$photos['tmp_name']];
+    $photos['name']     = [$photos['name']];
+    $photos['type']     = [$photos['type']];
+    $photos['size']     = [$photos['size']];
+    $photos['error']    = [$photos['error']];
+}
+
 if (isset($_POST["submit"])) {
 
 	foreach ($_FILES["photo"]["tmp_name"] as $index => $tmpName) {
