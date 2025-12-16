@@ -27,15 +27,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    input.addEventListener('change', () => {
+    input.addEventListener('change', (e) => {
+        console.log('Change event triggered!');
+        console.log('Input files:', input.files);
+        console.log('Files length:', input.files.length);
+        
         fileList.innerHTML = '';
         const files = Array.from(input.files);
-
-        files.forEach(file => {
+        
+        console.log('Files array:', files);
+        
+        if (files.length === 0) {
+            fileList.innerHTML = '<p>No files selected</p>';
+        }
+        
+        files.forEach((file, index) => {
+            console.log(`File ${index}:`, file.name);
             const div = document.createElement('div');
             div.className = 'preview-container';
-            div.textContent = file.name; 
+            div.textContent = file.name;
+            div.style.padding = '10px';
+            div.style.marginBottom = '5px';
+            div.style.backgroundColor = '#f0f0f0';
+            div.style.borderRadius = '5px';
             fileList.appendChild(div);
+            console.log('Div added to fileList');
         });
+        
+        console.log('FileList innerHTML:', fileList.innerHTML);
     });
 });
