@@ -24,22 +24,13 @@ BackBtn.addEventListener("click", () => {
     window.location.href = "../main/main.php";
 });
 
-function showFiles() {
-    console.log("showFiles function");
-    fileList.innerHTML = '';
-    
-    if (input.files.length === 0) {
-        return;
-    }
-    
-    for (let i = 0; i < input.files.length; i++) {
-        const div = document.createElement('div');
-        div.className = 'preview-container';
-        div.textContent = input.files[i].name;
-        fileList.appendChild(div);
-}
+input.addEventListener("change", () => {
+    fileList.innerHTML = "";
+    let files = Array.from(input.files);
+    files.forEach((file, index) => {
+        let fileItem = docuemnt.createElement("div");
+        fileItem.textContent = file.name;
+        fileList.appendChild(fileItem);
+    });
 
-if (input) {
-        input.addEventListener('change', showFiles);
-        showFiles(); 
-    }
+});
