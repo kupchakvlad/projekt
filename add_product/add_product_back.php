@@ -10,63 +10,68 @@ $database = "kupchvla";
 $connection = mysqli_connect($host, $username, $password, $database);
 
 if (!$connection) {
-    die("Connect failed: \n". mysqli_connect_error());
+    die("Connection failed: \n". mysqli_connect_error());
 }
 
 if (isset($_POST["submit"])) {
 
-	$upload_directory = "/home/kupchvla/www/projekt/photo/";
+	foreach ($_FILES["photo"]["tmp_name"] as $index => $tmpName) {
 
-	$user_id = $_SESSION["user_id"];
-	$file_name = basename($_FILES["photo"]["name"]);
-	$file_path = $upload_directory . $file_name;
-	$file_type = $_FILES["photo"]["type"];
-	$file_size = $_FILES["photo"]["size"];
+		$upload_directory = "/home/kupchvla/www/projekt/photo/";
 
-	$product_name = trim($_POST["product_name"]);
-	$product_category = trim($_POST["product_category"]);
-	$product_fabric = trim($_POST["product_fabric"]);
-	$product_season = trim($_POST["season"]);
-	$product_size = (int) trim($_POST["product_size"]);
-	$product_price = (int) trim($_POST["product_price"]);
+		$user_id = $_SESSION["user_id"];
+		$file_name = basename($_FILES["photo"]["name"][$index]);
+		$file_path = $upload_directory . $file_name;
+		$file_type = $_FILES["photo"]["type"][$index];
+		$file_size = $_FILES["photo"]["size"][$index];
 
-	if (!move_uploaded_file($_FILES["photo"]["tmp_name"], $file_path)) {
-        die("File upload failed");
-    }
+		$product_name = trim($_POST["product_name"]);
+		$product_category = trim($_POST["product_category"]);
+		$product_fabric = trim($_POST["product_fabric"]);
+		$product_season = trim($_POST["season"]);
+		$product_size = (int) trim($_POST["product_size"]);
+		$product_price = (int) trim($_POST["product_price"]);
 
-	$insert_product_query = "INSERT INTO products (
-		user_id,
-		file_path,
-		file_type,
-		file_size,
-		name,
-		category,
-		fabric,
-		season,
-		size,
-		price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	$stmt = mysqli_prepare($connection, $insert_product_query);
+		if (!move_uploaded_file($tmpName, $file_path)) {
+        	die("File upload failed for $file_name");
+        	continue;
+    	}
 
-	if (!$stmt) {
-		die("FATAL: Insert statement preparation failed: " . mysqli_stmt_error($connection));
+		$insert_product_query = "INSERT INTO products (
+			user_id,
+			file_path,
+			file_type,
+			file_size,
+			name,
+			category,
+			fabric,
+			season,
+			size,
+			price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$stmt = mysqli_prepare($connection, $insert_product_query);
+
+		if (!$stmt) {
+			die("FATAL: Insert statement preparation failed: " . mysqli_stmt_error($connection));
+		}
+
+		mysqli_stmt_bind_param($stmt,
+		"ississssii",
+		$user_id,
+		$file_path,
+		$file_type,
+		$file_size,
+		$product_name,
+		$product_category,
+		$product_fabric,
+		$product_season,
+		$product_size,
+		$product_price);
+
+		if (!mysqli_stmt_execute($stmt)) {
+			die("Execution failed" . mysqli_stmt_error($stmt));
+		}	
 	}
 
-	mysqli_stmt_bind_param($stmt,
-	"ississssii",
-	$user_id,
-	$file_path,
-	$file_type,
-	$file_size,
-	$product_name,
-	$product_category,
-	$product_fabric,
-	$product_season,
-	$product_size,
-	$product_price);
-
-	if (!mysqli_stmt_execute($stmt)) {
-		die("Execution failed" . mysqli_stmt_error($stmt));
-	}
 
 	header("Location: ../main/main.php");
 	exit;
