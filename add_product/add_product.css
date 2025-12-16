@@ -117,9 +117,9 @@ input[type="file"] {
 
 .file-preview {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 8px;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
 }
 
 .preview-container {
@@ -129,12 +129,11 @@ input[type="file"] {
     border: 1px solid #ccc;
     font-size: 0.85rem;
     color: #333;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .preview-container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* ---------- Dark Mode ---------- */

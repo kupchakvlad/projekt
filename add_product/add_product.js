@@ -25,8 +25,12 @@ BackBtn.addEventListener("click", () => {
 });
 
 
+
 input.addEventListener('change', () => {
     fileList.innerHTML = '';
+
+    if (input.files.length === 0) return;
+
     for (const file of input.files) {
         const div = document.createElement('div');
         div.className = 'preview-container';
