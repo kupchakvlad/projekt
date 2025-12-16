@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slider = document.getElementById("slider");
     const output = document.getElementById("size-value");
     const darkModeBtn = document.getElementById("dark-mode-btn");
-    const BackBtn = document.querySelector(".back-to-main")
+    const BackBtn = document.querySelector(".back-to-main");
     const input = document.getElementById('Photo');
     const fileList = document.getElementById('file-list');
 
@@ -27,18 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
     input.addEventListener('change', () => {
-            fileList.innerHTML = ''; // Clear previous list
+        fileList.innerHTML = '';
+        const files = Array.from(input.files);
 
-            const files = Array.from(input.files); // Convert FileList to Array
-
-            files.forEach(file => {
-                const div = document.createElement('div');
-                div.className = 'preview-container';
-                div.textContent = `${file.name} (${Math.round(file.size / 1024)} KB)`;
-                fileList.appendChild(div);
+        files.forEach(file => {
+            const div = document.createElement('div');
+            div.className = 'preview-container';
+            div.textContent = file.name; 
+            fileList.appendChild(div);
         });
     });
-
 });
