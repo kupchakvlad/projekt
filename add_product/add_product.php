@@ -24,9 +24,9 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
     <button class="back-to-main"> ← </button>
     <button type="button" id="dark-mode-btn" class="dark-mode-btn">Dark Mode</button>
 
-    <form action="add_product_back.php" method="POST">
+    <form action="add_product_back.php" method="POST" enctype="multipart/form-data">
         <label for="Photo">Upload photo of product:
-            <input type="file" id="Photo" accept="image/*" multiple>
+            <input type="file" id="Photo" name="photo" accept="image/*" multiple>
         </label>
         <label for="ProductName">Enter your product name:
             <input type="text" name="product_name" id="ProductName" required>
