@@ -63,7 +63,7 @@ if (isset($_POST["submit"])) {
 		}
 
 		mysqli_stmt_bind_param($stmt,
-		"ississssii",
+		"ississsii",
 		$user_id,
 		$file_path,
 		$file_type,
