@@ -24,13 +24,20 @@ BackBtn.addEventListener("click", () => {
     window.location.href = "../main/main.php";
 });
 
-input.addEventListener('change', () => {
+input.addEventListener('change', showFiles);
+input.addEventListener('input', showFiles);
+
+function showFiles() {
     fileList.innerHTML = '';
-    const files = Array.from(input.files);
-    files.forEach(file => {
+    
+    if (input.files.length === 0) {
+        return;
+    }
+    
+    for (let i = 0; i < input.files.length; i++) {
         const div = document.createElement('div');
         div.className = 'preview-container';
-        div.textContent = file.name; 
+        div.textContent = input.files[i].name;
         fileList.appendChild(div);
-    });
-});
+    }
+}
