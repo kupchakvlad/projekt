@@ -24,8 +24,6 @@ BackBtn.addEventListener("click", () => {
     window.location.href = "../main/main.php";
 });
 
-input.addEventListener('change', showFiles);
-
 function showFiles() {
     console.log("showFiles function");
     fileList.innerHTML = '';
@@ -40,3 +38,8 @@ function showFiles() {
         div.textContent = input.files[i].name;
         fileList.appendChild(div);
 }
+
+if (input) {
+        input.addEventListener('change', showFiles);
+        showFiles(); 
+    }
