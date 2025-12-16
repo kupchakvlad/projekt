@@ -25,9 +25,9 @@ BackBtn.addEventListener("click", () => {
 });
 
 input.addEventListener('change', showFiles);
-input.addEventListener('input', showFiles);
 
 function showFiles() {
+    console.log("showFiles function");
     fileList.innerHTML = '';
     
     if (input.files.length === 0) {
@@ -39,5 +39,4 @@ function showFiles() {
         div.className = 'preview-container';
         div.textContent = input.files[i].name;
         fileList.appendChild(div);
-    }
 }
