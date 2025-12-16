@@ -24,7 +24,7 @@ if (!is_array($photos['tmp_name'])) {
 
 if (isset($_POST["submit"])) {
 
-	foreach ($_FILES["photo"]["tmp_name"] as $index => $tmpName) {
+	foreach ($photos["tmp_name"] as $index => $tmpName) {
 
 		$upload_directory = "/home/kupchvla/www/projekt/photo/";
 
