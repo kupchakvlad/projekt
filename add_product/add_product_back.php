@@ -26,13 +26,14 @@ if (isset($_POST["submit"])) {
 
 	foreach ($photos["tmp_name"] as $index => $tmpName) {
 
+
 		$upload_directory = "/home/kupchvla/www/projekt/photo/";
 
 		$user_id = $_SESSION["user_id"];
-		$file_name = basename($_FILES["photo"]["name"][$index]);
+    	$file_name = basename($photos['name'][$index]);
 		$file_path = $upload_directory . $file_name;
-		$file_type = $_FILES["photo"]["type"][$index];
-		$file_size = $_FILES["photo"]["size"][$index];
+    	$file_type = $photos['type'][$index];
+		$file_size = $photos['size'][$index];
 
 		$product_name = trim($_POST["product_name"]);
 		$product_category = trim($_POST["product_category"]);

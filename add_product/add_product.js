@@ -2,7 +2,8 @@ const slider = document.getElementById("slider");
 const output = document.getElementById("size-value");
 const darkModeBtn = document.getElementById("dark-mode-btn");
 const BackBtn = document.querySelector(".back-to-main")
-
+const input = document.getElementById('Photo');
+const fileList = document.getElementById('file-list');
 
 output.textContent = slider.value;
 slider.addEventListener("input", () => {
@@ -21,4 +22,14 @@ darkModeBtn.addEventListener("click", () => {
 
 BackBtn.addEventListener("click", () => {
     window.location.href = "../main/main.php";
+});
+
+
+input.addEventListener('change', () => {
+    fileList.innerHTML = '';
+    for (const file of input.files) {
+        const li = document.createElement('li');
+        li.textContent = `${file.name} (${Math.round(file.size / 1024)} KB)`;
+        fileList.appendChild(li);
+    }
 });
