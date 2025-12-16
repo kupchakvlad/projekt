@@ -27,14 +27,14 @@ BackBtn.addEventListener("click", () => {
 
 
 input.addEventListener('change', () => {
-    fileList.innerHTML = '';
+        fileList.innerHTML = ''; // Clear previous list
 
-    if (input.files.length === 0) return;
+        const files = Array.from(input.files); // Convert FileList to Array
 
-    for (const file of input.files) {
-        const div = document.createElement('div');
-        div.className = 'preview-container';
-        div.textContent = `${file.name} (${Math.round(file.size / 1024)} KB)`;
-        fileList.appendChild(div);
-    }
+        files.forEach(file => {
+            const div = document.createElement('div');
+            div.className = 'preview-container';
+            div.textContent = `${file.name} (${Math.round(file.size / 1024)} KB)`;
+            fileList.appendChild(div);
+    });
 });
