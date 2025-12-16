@@ -23,14 +23,3 @@ darkModeBtn.addEventListener("click", () => {
 BackBtn.addEventListener("click", () => {
     window.location.href = "../main/main.php";
 });
-
-input.addEventListener("change", () => {
-    fileList.innerHTML = "";
-    let files = Array.from(input.files);
-    files.forEach((file, index) => {
-        let fileItem = docuemnt.createElement("div");
-        fileItem.textContent = file.name;
-        fileList.appendChild(fileItem);
-    });
-
-});

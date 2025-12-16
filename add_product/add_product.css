@@ -115,28 +115,6 @@ input[type="file"] {
   margin-left: 10px;
 }
 
-.file-preview {
-    height: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-top: 6px;
-}
-
-.preview-container {
-    background-color: #f9f9f9;
-    padding: 6px 8px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 0.85rem;
-    color: #333;
-}
-
-.preview-container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
 /* ---------- Dark Mode ---------- */
 body.dark {
   background-color: #1e1e1e;
@@ -174,13 +152,6 @@ body.dark .dark-mode-btn:hover {
 body.dark form label {
     color: white;
 }
-
-body.dark .preview-container {
-    background-color: #2a2a2a;
-    border-color: #555;
-    color: #f2f2f2;
-}
-
 
 .submit-button {
   background-color: #28a745;
