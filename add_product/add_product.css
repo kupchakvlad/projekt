@@ -115,48 +115,26 @@ input[type="file"] {
   margin-left: 10px;
 }
 
-/* ---------- File Preview Container ---------- */
 .file-preview {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
 }
 
-/* ---------- Individual File Box ---------- */
 .preview-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 6px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #f9f9f9;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.85rem;
+    color: #333;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .preview-container:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* ---------- Image Styling ---------- */
-.preview-container img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 4px;
-  border: 1px solid #ccc;
-}
-
-/* ---------- Filename Caption ---------- */
-.preview-container span {
-  font-size: 0.8rem;
-  text-align: center;
-  color: #333;
-  word-break: break-word;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* ---------- Dark Mode ---------- */
@@ -198,16 +176,9 @@ body.dark form label {
 }
 
 body.dark .preview-container {
-  background-color: #2a2a2a;
-  border-color: #555;
-}
-
-body.dark .preview-container img {
-  border-color: #555;
-}
-
-body.dark .preview-container span {
-  color: #f2f2f2;
+    background-color: #2a2a2a;
+    border-color: #555;
+    color: #f2f2f2;
 }
 
 

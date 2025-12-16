@@ -28,8 +28,9 @@ BackBtn.addEventListener("click", () => {
 input.addEventListener('change', () => {
     fileList.innerHTML = '';
     for (const file of input.files) {
-        const li = document.createElement('li');
-        li.textContent = `${file.name} (${Math.round(file.size / 1024)} KB)`;
-        fileList.appendChild(li);
+        const div = document.createElement('div');
+        div.className = 'preview-container';
+        div.textContent = `${file.name} (${Math.round(file.size / 1024)} KB)`;
+        fileList.appendChild(div);
     }
 });

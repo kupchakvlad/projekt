@@ -27,7 +27,7 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
     <form action="add_product_back.php" method="POST" enctype="multipart/form-data">
         <label for="Photo">Upload photo of product:
             <input type="file" id="Photo" name="photo[]" accept="image/*" multiple>
-            <ul id="file-list"></ul>
+            <div id="file-list" class="file-preview"></div>
         </label>
         <label for="ProductName">Enter your product name:
             <input type="text" name="product_name" id="ProductName" required>
