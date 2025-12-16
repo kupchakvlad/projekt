@@ -25,11 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
     BackBtn.addEventListener("click", () => {
         window.location.href = "../main/main.php";
     });
+});
 
-
-     if (input) {
-        input.onchange = function() {
-            alert('Files selected: ' + this.files.length);
+window.addEventListener('load', () => {
+    const input = document.getElementById('Photo');
+    const fileList = document.getElementById('file-list');
+    
+    if (input && fileList) {
+        input.addEventListener('change', function() {
             fileList.innerHTML = '';
             for (let i = 0; i < this.files.length; i++) {
                 const div = document.createElement('div');
@@ -37,8 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 div.textContent = this.files[i].name;
                 fileList.appendChild(div);
             }
-        };
-    } else {
-        alert('Input element not found!');
+        });
     }
 });
