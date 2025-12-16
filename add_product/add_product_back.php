@@ -15,7 +15,13 @@ if (!$connection) {
 
 if (isset($_POST["submit"])) {
 
-	$user_id = $_SESSION["user_id"]; // neznaju jesli nuzen
+	$upload_directory = "projekt/photo/";
+
+	$user_id = $_SESSION["user_id"];
+	$file_name = basename($_FILES["photo"]["name"]);
+	$file_path = $upload_directory . $file_name;
+	$file_type = $_FILES["photo"]["type"];
+	$file_size = $_FILES["photo"]["size"];
 
 	$product_name = trim($_POST["product_name"]);
 	$product_category = trim($_POST["product_category"]);
@@ -24,14 +30,39 @@ if (isset($_POST["submit"])) {
 	$product_size = (int) trim($_POST["product_size"]);
 	$product_price = (int) trim($_POST["product_price"]);
 
-	$insert_product_query = "INSERT INTO products (user_id, name, category, fabric, season, size, price) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	if (!move_uploaded_file($_FILES["photo"]["tmp_name"], $file_path)) {
+        die("File upload failed");
+    }
+
+	$insert_product_query = "INSERT INTO products (
+		user_id,
+		file_path,
+		file_type,
+		file_size,
+		name,
+		category,
+		fabric,
+		season,
+		size,
+		price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	$stmt = mysqli_prepare($connection, $insert_product_query);
 
 	if (!$stmt) {
 		die("FATAL: Insert statement preparation failed: " . mysqli_stmt_error($connection));
 	}
 
-	mysqli_stmt_bind_param($stmt, "issssii", $user_id, $product_name, $product_category, $product_fabric, $product_season, $product_size, $product_price);
+	mysqli_stmt_bind_param($stmt,
+	"ississssii",
+	$user_id,
+	$file_path,
+	$file_type,
+	$file_size,
+	$product_name,
+	$product_category,
+	$product_fabric,
+	$product_season,
+	$product_size,
+	$product_price);
 
 	if (!mysqli_stmt_execute($stmt)) {
 		die("Execution failed" . mysqli_stmt_error($stmt));
