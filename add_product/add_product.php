@@ -31,9 +31,6 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
         <label for="ProductName">Enter your product name:
             <input type="text" name="product_name" id="ProductName" required>
         </label>
-        <label for="ProductCategory">Enter your product category:
-            <input type="text" name="product_category" id="ProductCategory" required>
-        </label>
         <label for="ProductManufacturer">Enter your product manufacturer:
             <input type="text" name="product_fabric" id="ProductManufacturer" required>
         </label>
