@@ -13,33 +13,22 @@ if (!$connection) {
     die("Connection failed: \n". mysqli_connect_error());
 }
 
-$photos = $_FILES["photo"];
-if (!is_array($photos['tmp_name'])) {
-    $photos['tmp_name'] = [$photos['tmp_name']];
-    $photos['name']     = [$photos['name']];
-    $photos['type']     = [$photos['type']];
-    $photos['size']     = [$photos['size']];
-    $photos['error']    = [$photos['error']];
-}
 
 if (isset($_POST["submit"])) {
-
-	foreach ($photos["tmp_name"] as $index => $tmpName) {
-
 
 		$upload_directory = "/home/kupchvla/www/projekt/photo/";
 
 		$user_id = $_SESSION["user_id"];
-    	$file_name = basename($photos['name'][$index]);
+    	$file_name = basename($_FILES["photo"]["name"]);
 		$file_path = $upload_directory . $file_name;
-    	$file_type = $photos['type'][$index];
-		$file_size = $photos['size'][$index];
+    	$file_type = $_FILES["photo"]["type"];
+		$file_size = $_FILES["photo"]["size"];
 
 		$product_name = trim($_POST["product_name"]);
 		$product_fabric = trim($_POST["product_fabric"]);
 		$product_season = trim($_POST["season"]);
-		$product_size = (int) trim($_POST["product_size"]);
-		$product_price = (int) trim($_POST["product_price"]);
+		$product_size = trim($_POST["product_size"]);
+		$product_price = trim($_POST["product_price"]);
 
 		if (!move_uploaded_file($tmpName, $file_path)) {
         	die("File upload failed for $file_name");
@@ -77,8 +66,6 @@ if (isset($_POST["submit"])) {
 		if (!mysqli_stmt_execute($stmt)) {
 			die("Execution failed" . mysqli_stmt_error($stmt));
 		}	
-	}
-
 
 	header("Location: ../main/main.php");
 	exit;
