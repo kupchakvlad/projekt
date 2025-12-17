@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
 		$product_size = trim($_POST["product_size"]);
 		$product_price = trim($_POST["product_price"]);
 
-		if (!move_uploaded_file($tmpName, $file_path)) {
+		if (!move_uploaded_file($_FILES["photo"]["tmp_name"], $file_path)) {
         	die("File upload failed for $file_name");
     	}
 
