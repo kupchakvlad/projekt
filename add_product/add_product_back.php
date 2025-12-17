@@ -32,7 +32,6 @@ if (isset($_POST["submit"])) {
 
 		if (!move_uploaded_file($tmpName, $file_path)) {
         	die("File upload failed for $file_name");
-        	continue;
     	}
 
 		$insert_product_query = "INSERT INTO products (
