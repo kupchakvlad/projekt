@@ -212,7 +212,9 @@ body.dark .logo {
     color: white;
 }
 
-body.dark .header a {
+body.dark .header #add-product,
+body.dark .header #account,
+body.dark .header #dark-mode-toggle {
   color: white;
 }
 
