@@ -212,12 +212,6 @@ body.dark .logo {
     color: white;
 }
 
-body.dark .header #add-product,
-body.dark .header #account,
-body.dark .header #dark-mode-toggle {
-  color: white;
-}
-
 body.dark input, body.dark select {
   background-color: #2a2a2a;
   color: #eee;
