@@ -17,12 +17,8 @@ if (!$connection) {
 if (isset($_POST["submit"])) {
 
 		$upload_directory = "/home/kupchvla/www/projekt/photo/";
-
 		$user_id = $_SESSION["user_id"];
-    	$file_name = basename($_FILES["photo"]["name"]);
-		$file_path = $upload_directory . $file_name;
-    	$file_type = $_FILES["photo"]["type"];
-		$file_size = $_FILES["photo"]["size"];
+
 
 		$product_name = trim($_POST["product_name"]);
 		$product_fabric = trim($_POST["product_fabric"]);
@@ -30,9 +26,6 @@ if (isset($_POST["submit"])) {
 		$product_size = trim($_POST["product_size"]);
 		$product_price = trim($_POST["product_price"]);
 
-		if (!move_uploaded_file($_FILES["photo"]["tmp_name"], $file_path)) {
-        	die("File upload failed for $file_name");
-    	}
 
 		$insert_product_query = "INSERT INTO products (
 			user_id,
@@ -47,24 +40,40 @@ if (isset($_POST["submit"])) {
 		$stmt = mysqli_prepare($connection, $insert_product_query);
 
 		if (!$stmt) {
-			die("FATAL: Insert statement preparation failed: " . mysqli_stmt_error($connection));
+			die("Insert statement preparation failed: " . mysqli_stmt_error($connection));
 		}
 
-		mysqli_stmt_bind_param($stmt,
-		"ississsii",
-		$user_id,
-		$file_path,
-		$file_type,
-		$file_size,
-		$product_name,
-		$product_fabric,
-		$product_season,
-		$product_size,
-		$product_price);
+		for ($i = 0; $i < count($_FILES["photo"]["name"]); $i++) {
 
-		if (!mysqli_stmt_execute($stmt)) {
-			die("Execution failed" . mysqli_stmt_error($stmt));
-		}	
+	    	$file_name = time() . "_" . basename($_FILES["photo"]["name"][$i]);
+	    	$file_tmp = $_FILES["photo"]["tmp_name"][$i];
+			$file_path = $upload_directory . $file_name;
+	    	$file_type = $_FILES["photo"]["type"][$i];
+			$file_size = $_FILES["photo"]["size"][$i];
+
+			if (!move_uploaded_file($file_tmp, $file_path)) {
+				die("Failed to upload file: $file_name");
+			}
+
+
+			mysqli_stmt_bind_param($stmt,
+			"ississsii",
+			$user_id,
+			$file_path,
+			$file_type,
+			$file_size,
+			$product_name,
+			$product_fabric,
+			$product_season,
+			$product_size,
+			$product_price);
+
+			if (!mysqli_stmt_execute($stmt)) {
+				die("Execution failed" . mysqli_stmt_error($stmt));
+			}
+
+		}
+
 
 	header("Location: ../main/main.php");
 	exit;
