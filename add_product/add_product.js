@@ -28,7 +28,6 @@ const fileInput = document.getElementById("Photo");
 const fileList  = document.getElementById("file-list");
 
 fileInput.addEventListener("change", () => {
-    fileList.innerHTML = "";
 
     Array.from(fileInput.files).forEach(file => {
         const li = document.createElement("li");
