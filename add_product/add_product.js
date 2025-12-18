@@ -20,6 +20,21 @@ darkModeBtn.addEventListener("click", () => {
     request.send(`mode=${newMode}`);
 });
 
+
 BackBtn.addEventListener("click", () => {
     window.location.href = "../main/main.php";
+});
+
+
+const fileInput = document.getElementById("Photo");
+const fileList  = document.getElementById("file-list");
+
+fileInput.addEventListener("change", () => {
+    fileList.innerHTML = "";
+
+    Array.from(fileInput.files).forEach(file => {
+        const li = document.createElement("li");
+        li.textContent = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        fileList.appendChild(li);
+    });
 });
