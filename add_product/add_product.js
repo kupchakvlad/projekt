@@ -2,8 +2,6 @@ const slider = document.getElementById("slider");
 const output = document.getElementById("size-value");
 const darkModeBtn = document.getElementById("dark-mode-btn");
 const BackBtn = document.querySelector(".back-to-main");
-const input = document.getElementById('Photo');
-const fileList = document.getElementById('file-list');
 
 output.textContent = slider.value;
 slider.addEventListener("input", () => {
