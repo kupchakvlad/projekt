@@ -27,11 +27,32 @@ BackBtn.addEventListener("click", () => {
 const fileInput = document.getElementById("Photo");
 const fileList  = document.getElementById("file-list");
 
+
+let selectedFiles = [];
 fileInput.addEventListener("change", () => {
 
-    Array.from(fileInput.files).forEach(file => {
-        const li = document.createElement("li");
-        li.textContent = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
-        fileList.appendChild(li);
-    });
+    let newFiles = fileInput.files;
+
+    for (let i = 0; i < newFiles.length; i++) {
+        let file = newFiles[i];
+
+        // Check if file is already in selectedFiles
+        let alreadyAdded = false;
+        for (let j = 0; j < selectedFiles.length; j++) {
+            if (selectedFiles[j].name === file.name && selectedFiles[j].size === file.size) {
+                alreadyAdded = true;
+                break;
+            }
+        }
+
+        if (!alreadyAdded) {
+            selectedFiles.push(file);
+
+            let li = document.createElement("li");
+            li.textContent = file.name + " (" + Math.round(file.size / 1024) + " KB)";
+            fileList.appendChild(li);
+        } else {
+            alert("File \"" + file.name + "\" is already in the list!");
+        }
+    }
 });
