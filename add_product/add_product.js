@@ -25,32 +25,3 @@ darkModeBtn.addEventListener("click", () => {
 BackBtn.addEventListener("click", () => {
     window.location.href = "../main/main.php";
 });
-
-
-let selectedFiles = [];
-fileInput.addEventListener("change", () => {
-
-    let newFiles = fileInput.files;
-
-    for (let i = 0; i < newFiles.length; i++) {
-        let file = newFiles[i];
-
-        let alreadyAdded = false;
-        for (let j = 0; j < selectedFiles.length; j++) {
-            if (selectedFiles[j].name === file.name && selectedFiles[j].size === file.size) {
-                alreadyAdded = true;
-                break;
-            }
-        }
-
-        if (!alreadyAdded) {
-            selectedFiles.push(file);
-
-            let li = document.createElement("li");
-            li.textContent = file.name + " (" + Math.round(file.size / 1024) + " KB)";
-            fileList.appendChild(li);
-        } else {
-            continue;
-        }
-    }
-});
