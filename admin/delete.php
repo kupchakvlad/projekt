@@ -17,7 +17,7 @@ $stmt = mysqli_prepare($connection, $delete_user_query);
 mysqli_stmt_bind_param($stmt, "i", $user_id);
 
 if (mysqli_stmt_execute($stmt)) {
-    header("Location: /admin.php");
+    header("Location: ~kupchvla/projekt/admin/admin.php");
     exit;
 } else {
     echo "User cannot be deleted";
