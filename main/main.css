@@ -53,11 +53,13 @@ main {
   gap: 20px;
   padding: 20px;
   flex: 1;
+  flex-wrap: wrap; /* ensures proper layout in Firefox */
 }
 
 /* ---------- Filter Sidebar ---------- */
 .filter {
   width: 250px;
+  min-width: 250px;
   background: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -82,11 +84,11 @@ main {
   border-radius: 5px;
 }
 
-/* ---------- Range Sliders (Cross-browser) ---------- */
+/* ---------- Cross-browser Range Sliders ---------- */
 input[type="range"] {
-  -webkit-appearance: none; /* Chrome/Safari */
-  -moz-appearance: none;    /* Firefox */
-  appearance: none;         /* Standard */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
   height: 6px;
   border-radius: 3px;
@@ -94,7 +96,7 @@ input[type="range"] {
   cursor: pointer;
 }
 
-/* Chrome/Safari Thumb */
+/* Chrome/Safari */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 18px;
@@ -106,7 +108,7 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -6px;
 }
 
-/* Firefox Thumb */
+/* Firefox */
 input[type="range"]::-moz-range-thumb {
   width: 18px;
   height: 18px;
@@ -116,7 +118,14 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
 }
 
-/* IE/Edge Thumb */
+/* Track for Firefox */
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: #2563eb;
+}
+
+/* IE/Edge */
 input[type="range"]::-ms-thumb {
   width: 18px;
   height: 18px;
@@ -172,6 +181,7 @@ input[type="range"]::-ms-thumb {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   flex: 1;
+  min-width: 0; /* prevents overflow in Firefox */
 }
 
 /* ---------- Product Card ---------- */
