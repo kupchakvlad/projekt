@@ -112,8 +112,8 @@ main {
 }
 
 /* Убираем подчеркивание внутри ссылок карточки */
-.product-card,
-.product-card * {
+.product-card a,
+.product-card a * {
     text-decoration: none !important;
     color: inherit !important;
 }
