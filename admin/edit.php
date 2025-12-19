@@ -10,7 +10,7 @@ if (!$connection) {
     die("Connection failed: \n". mysqli_connect_error());
 }
 
-$user_id = $_GET['user_id'];
+$user_id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
