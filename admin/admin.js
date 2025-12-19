@@ -6,4 +6,4 @@ deleteButton.forEach(function(button) {
             event.preventDefault();
         }
     });
-})
+});
