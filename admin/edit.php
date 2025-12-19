@@ -16,7 +16,9 @@ $user_id = $_GET['id'];
 <!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+    <link href="edit.css" rel="stylesheet">
+</head>
 
 <body>
     <form method="POST">
