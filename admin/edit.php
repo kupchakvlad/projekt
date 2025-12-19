@@ -30,6 +30,7 @@ $user_id = $_GET['id'];
             Email:
             <input type="text" name="edited_email" required>
         </label>
+        <input type="submit" name="edit" value="Edit">
     </form>
 </body>
 
