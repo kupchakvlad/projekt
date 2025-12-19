@@ -215,7 +215,9 @@ body.dark .logo {
 body.dark .header .header-buttons a{
   color: white;
 }
-
+body.dark .header-buttons a:hover {
+  color: #2563eb;
+}
 
 body.dark input, body.dark select {
   background-color: #2a2a2a;
