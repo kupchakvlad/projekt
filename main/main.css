@@ -224,3 +224,99 @@ body.dark input, body.dark select {
   color: #eee;
   border: 1px solid #555;
 }
+
+/* ---------- Контейнер с товарами ---------- */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: flex-start; /* выравнивание по левому краю */
+  cursor: pointer;
+}
+
+/* ---------- Каждая карточка товара ---------- */
+.product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 10px;
+  width: 200px;      /* фиксированная ширина */
+  height: 320px;     /* фиксированная высота */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* легкое поднятие при наведении */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ---------- Картинка ---------- */
+.product-card img {
+  width: 100%;       /* картинка по ширине карточки */
+  height: 180px;     /* фиксированная высота */
+  object-fit: cover; /* картинка заполняет блок, не искажается */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ---------- Название товара ---------- */
+.product-card .product-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+  margin: 5px 0 2px 0;
+}
+
+/* ---------- Бренд товара ---------- */
+.product-card .product-brand {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #3a2e2e;
+  margin-bottom: 5px;
+}
+
+/* ---------- Остальной текст ---------- */
+.product-card p {
+  font-size: 0.8rem;
+  margin: 2px 0;
+}
+
+/* ---------- Цена ---------- */
+.product-card .price {
+  font-weight: bolder;
+  color: #333;
+  margin-top: auto; /* цена всегда внизу карточки */
+}
+
+/* ---------- Карточки товаров в Dark Mode ---------- */
+body.dark .product-card {
+  background-color: #2a2a2a;  /* серый фон карточки */
+  color: #fff;                 /* белые тексты по умолчанию */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+body.dark .product-card .product-name {
+  color: #fff;  /* имя товара */
+}
+
+body.dark .product-card .product-brand {
+  color: #ccc;  /* бренд чуть светлее */
+}
+
+body.dark .product-card p {
+  color: #ddd;  /* остальные тексты */
+}
+
+body.dark .product-card .price {
+  color: #fff;  /* цена внизу */
+}
+
+body.dark .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
