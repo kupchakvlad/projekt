@@ -16,7 +16,7 @@ if (!$connection) {
 
 if (isset($_POST["submit"])) {
 
-		$upload_directory = "../photo/";
+		$upload_directory = "/home/kupchvla/www/projekt/photo/";
 		$user_id = $_SESSION["user_id"];
 
 
