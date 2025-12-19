@@ -83,7 +83,7 @@ main {
   border-radius: 5px;
 }
 
-//* ---------- Products Container ---------- */
+/* ---------- Products Container ---------- */
 .products {
   flex: 1;
   display: flex;
@@ -103,20 +103,26 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 180px;                /* фиксированная ширина */
+  width: 180px; 
+  height: 300px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  text-decoration: none; /* убираем линии под текстом */
+  color: inherit;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* Убираем подчеркивание внутри ссылок карточки */
+.product-card,
+.product-card * {
+    text-decoration: none !important;
+    color: inherit !important;
 }
+
 
 /* ---------- Product Image ---------- */
 .product-card img {
   width: 100%;
-  height: 150px;               /* чуть меньше, чем раньше */
+  height: 150px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -124,15 +130,15 @@ main {
 
 /* ---------- Product Text ---------- */
 .product-card .product-name {
-  font-size: 0.95rem;
-  font-weight: bold;
+  font-size: 1rem;       /* чуть больше */
+  font-weight: 700;      /* жирнее */
   color: #222;
   margin: 4px 0 2px 0;
 }
 
 .product-card .product-brand {
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 0.9rem;     /* чуть больше */
+  font-weight: 600;      /* жирнее */
   color: #555;
   margin-bottom: 4px;
 }
@@ -144,10 +150,18 @@ main {
 
 /* ---------- Price ---------- */
 .product-card .price {
-  font-weight: bold;
+  font-size: 0.95rem;    /* чуть больше */
+  font-weight: 700;      /* жирнее */
   color: #333;
   margin-top: auto;
 }
+
+/* ---------- Hover Effect ---------- */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 
 /* ---------- Range Sliders (Cross-browser) ---------- */
 input[type="range"] {
