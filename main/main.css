@@ -83,10 +83,10 @@ main {
 /* ---------- Size ---------- */
 /* ---------- Ползунок размера ---------- */
 .size-container input[type="range"] {
+  -webkit-appearance: none;
   flex: 1;
   height: 6px;
   border-radius: 3px;
-  webkit-appearance: none;
   background: #2563eb;
 }
 
@@ -211,6 +211,11 @@ body.dark .filter {
 body.dark .logo {
     color: white;
 }
+
+body.dark .header .header-buttons a{
+  color: white;
+}
+
 
 body.dark input, body.dark select {
   background-color: #2a2a2a;
