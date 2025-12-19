@@ -1,0 +1,99 @@
+/* ---------- Reset and Base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* ---------- Product Page ---------- */
+.product-page {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* ---------- Image ---------- */
+.product-page img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* ---------- Title ---------- */
+.product-page h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* ---------- Brand ---------- */
+.product-page .brand {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* ---------- Description ---------- */
+.product-page p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+/* ---------- Price ---------- */
+.product-page .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+  margin-top: 15px;
+}
+
+/* ---------- Back Link ---------- */
+.product-page a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.product-page a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Dark Mode ---------- */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark .product-page {
+  background: #2a2a2a;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .product-page .brand {
+  color: #ccc;
+}
+
+body.dark .product-page .price {
+  color: #fff;
+}
+
+body.dark .product-page a {
+  color: #88b7ff;
+}
