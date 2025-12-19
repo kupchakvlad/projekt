@@ -100,14 +100,14 @@ $result = mysqli_query($conn, $query);
 
 if ($result) {
     while ($product = mysqli_fetch_array($result)) {
-        echo '<div class="product-card">';
+        echo '<a class="product-card" href="product.php?id=' . $product['id'] . '">';
         echo '<img src="' . str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', $product['file_path']) . '" alt="product">';
         echo '<p class="product-name">' . $product["name"] . '</p>';
         echo '<p class="product-brand">' . $product["fabric"] . '</p>';
         echo '<p> Season:' . $product["season"] . '</p>';
         echo '<p> Size:' . $product["size"] . '</p>';
-        echo '<p class="price"> Price:' . $product["price"] . ' CZK </p>';
-        echo '</div>';
+        echo '<p class="price"> Price:' . $product["price"] . ' CZK</p>';
+        echo '</a>';
     }
 }
 ?>
