@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
-      <change afterPath="$PROJECT_DIR$/admin/admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/admin_back.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +25,8 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="PHP File" />
         <option value="JavaScript File" />
+        <option value="PHP File" />
       </list>
     </option>
   </component>
@@ -143,7 +145,7 @@
       <workItem from="1765368246354" duration="2445000" />
       <workItem from="1765379631674" duration="1309000" />
       <workItem from="1765821043534" duration="8631000" />
-      <workItem from="1766160673912" duration="4750000" />
+      <workItem from="1766160673912" duration="5541000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />
