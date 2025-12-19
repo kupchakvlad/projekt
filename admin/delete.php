@@ -10,14 +10,14 @@ if (!$connection) {
     die("Connection failed: \n". mysqli_connect_error());
 }
 
-$user_id = $_GET['user_id'];
+$user_id = $_GET['id'];
 
 $delete_user_query = "DELETE FROM users WHERE id = ?";
 $stmt = mysqli_prepare($connection, $delete_user_query);
 mysqli_stmt_bind_param($stmt, "i", $user_id);
 
 if (mysqli_stmt_execute($stmt)) {
-    header("Location: admin.php");
+    header("Location: projekt/admin/admin.php");
     exit;
 } else {
     echo "User cannot be deleted";

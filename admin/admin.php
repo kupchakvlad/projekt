@@ -41,8 +41,8 @@ $result = mysqli_query($connection, $select_users_query);
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
                 echo "<td>";
-                echo "<a href='edit_user.php?id=" . $row["id"] . "'>Edit</a>";
-                echo "<a href='delete_user.php?id=" . $row["id"] . "' class='delete_button'>Delete</a>";
+                echo "<a href='edit.php?id=" . $row["id"] . "'>Edit</a>";
+                echo "<a href='delete.php?id=" . $row["id"] . "' class='delete_button'>Delete</a>";
                 echo "</td>";
                 echo "</tr>";
 
