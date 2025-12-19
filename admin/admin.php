@@ -20,6 +20,7 @@ $result = mysqli_query($connection, $select_users_query);
     <meta charset="UTF-8">
     <title>(Admin mode)</title>
     <link href="admin.css" rel="stylesheet">
+    <script src="admin.js" defer><script>
 </head>
 <body>
 
