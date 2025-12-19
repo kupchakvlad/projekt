@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
+      <change afterPath="$PROJECT_DIR$/admin/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product_back.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +21,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="PHP File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -104,8 +105,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-PS-253.28294.345" />
-        <option value="bundled-php-predefined-a98d8de5180a-09080813851e-com.jetbrains.php.sharedIndexes-PS-253.28294.345" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PS-253.29346.151" />
+        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.29346.151" />
       </set>
     </attachedChunks>
   </component>
@@ -141,6 +142,7 @@
       <workItem from="1765368246354" duration="2445000" />
       <workItem from="1765379631674" duration="1309000" />
       <workItem from="1765821043534" duration="8631000" />
+      <workItem from="1766160673912" duration="1488000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />
