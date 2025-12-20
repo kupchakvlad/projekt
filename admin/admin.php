@@ -1,7 +1,8 @@
 <?php
+session_start();
 
 if (!isset($_SESSION['user_id']) || !$_SESSION['is_admin']) {
-    header("Location: registration_form.php");
+    header("Location: ../registration_form/registration_form.php");
     exit;
 }
 
@@ -52,13 +53,12 @@ $result = mysqli_query($connection, $select_users_query);
                 echo "<td>" . $row["email"] . "</td>";
                 echo "<td>" . $row["admin"] . "</td>";
                 echo "<td>";
-                echo "<a href='edit.php?id=" . $row["id"] . "'>Edit</a>";
-                echo "<a href='delete.php?id=" . $row["id"] . "' class='delete_button'>Delete</a>";
+                echo "<a href='edit.php?id=" . htmlspecialchars($row["id"]) . "'>Edit</a>";
+                echo "<a href='delete.php?id=" . htmlspecialchars($row["id"]) . "' class='delete_button'>Delete</a>";
                 if ($row["id"] == $current_user_id) {
-                    header("Location: admin.php");
-                    exit;
+                    echo '<script>alert("You are the current admin!");</script>';
                 } else {
-                    echo "<a href='admin_handling.php?id=" . $row["id"] . "'>Change Admin</a>";
+                    echo "<a href='admin_handling.php?id=" . htmlspecialchars($row["id"]) . "'>Change Admin</a>";
                 }
                 echo "</td>";
                 echo "</tr>";

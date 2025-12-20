@@ -24,7 +24,7 @@ if (!isset($_GET["id"])) {
 
 $user_id = $_GET["id"];
 
-if ($user_id == $_SESSION["user_id"]) {
+if ($user_id === $_SESSION["user_id"]) {
     header("Location: admin.php");
     exit;
 }
