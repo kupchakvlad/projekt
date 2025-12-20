@@ -63,7 +63,6 @@ $result = mysqli_query($connection, $select_users_query);
                 echo "<a href='admin_handling.php?id=" . htmlspecialchars($row["id"]) . "'>Change Admin</a>";
                 echo "</td>";
                 echo "</tr>";
-
             }
         }
         ?>
