@@ -13,7 +13,7 @@ if (!$connection) {
 }
 
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['admin'])) {
-    header("Location: registration_form.php");
+    header("Location: ../registration_form/registration_form.php");
     exit;
 }
 
