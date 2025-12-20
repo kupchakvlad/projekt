@@ -36,10 +36,10 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($result)) {
-    if ($row["admin"] == 1) {
-        $new_admin_value = 0;  // was admin, now remove admin
+    if ($row["admin"] == "true") {
+        $new_admin_value = "false";  // was admin, now remove admin
     } else {
-        $new_admin_value = 1;  // was not admin, now make admin
+        $new_admin_value = "true";  // was not admin, now make admin
     }
 } else {
     header("Location: admin.php");
@@ -50,7 +50,7 @@ mysqli_stmt_close($stmt);
 
 $update_query = "UPDATE users SET admin = ? WHERE id = ?";
 $update_stmt = mysqli_prepare($connection, $update_query);
-mysqli_stmt_bind_param($update_stmt, "ii", $new_admin_value, $user_id);
+mysqli_stmt_bind_param($update_stmt, "si", $new_admin_value, $user_id);
 if (mysqli_stmt_execute($update_stmt)) {
     header("Location: admin.php");
     exit;
@@ -58,6 +58,4 @@ if (mysqli_stmt_execute($update_stmt)) {
     header("Location: admin_handling.php");
     exit;
 }
-mysqli_stmt_close($update_stmt);
-mysqli_close($connection);
 ?>
