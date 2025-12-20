@@ -22,6 +22,10 @@ if ($id === false) {
     die("Invalid ID");
 }
 
+
+
+
+// USER EDITING
 if (isset($_POST["edit"]) && !empty($_POST["edited_username"]) && !empty($_POST["edited_email"])) {
 
     $username = trim($_POST["edited_username"]);
