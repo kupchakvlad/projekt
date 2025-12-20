@@ -30,6 +30,8 @@ $result = mysqli_query($connection, $select_users_query);
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
+        <th>Admin status</th>
+        <th>User handling</th>
     </tr>
     </thead>
     <tbody class="users">
@@ -40,9 +42,12 @@ $result = mysqli_query($connection, $select_users_query);
                 echo "<td>" . $row["id"] . "</td>";
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
+                echo "<td>" . "None" . "</td>";
                 echo "<td>";
                 echo "<a href='edit.php?id=" . $row["id"] . "'>Edit</a>";
                 echo "<a href='delete.php?id=" . $row["id"] . "' class='delete_button'>Delete</a>";
+                echo "<a href='admin_handling.php?id=" . $row["id"] . "'>Make Admin</a>";
+                echo "<a href='admin_handling.php?id=" . $row["id"] . "'>Unmake Admin</a>";
                 echo "</td>";
                 echo "</tr>";
 
