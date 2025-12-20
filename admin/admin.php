@@ -1,4 +1,10 @@
 <?php
+
+if (!isset($_SESSION['user_id']) || !$_SESSION['is_admin']) {
+    header("Location: registration_form.php");
+    exit;
+}
+
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -9,6 +15,8 @@ $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) {
     die("Connection failed: \n". mysqli_connect_error());
 }
+
+$current_user_id = $_SESSION['user_id'];
 
 $select_users_query = "SELECT id, name, email, admin FROM users";
 $result = mysqli_query($connection, $select_users_query);
@@ -46,8 +54,11 @@ $result = mysqli_query($connection, $select_users_query);
                 echo "<td>";
                 echo "<a href='edit.php?id=" . $row["id"] . "'>Edit</a>";
                 echo "<a href='delete.php?id=" . $row["id"] . "' class='delete_button'>Delete</a>";
-                echo "<a href='admin_handling.php?id=" . $row["id"] . "'>Make Admin</a>";
-                echo "<a href='admin_handling.php?id=" . $row["id"] . "'>Unmake Admin</a>";
+                if ($row["id"] == $current_user_id) {
+                    echo "<script> alert("You cant change your status yourself."); </script>";
+                } else {
+                    echo "<a href='admin_handling.php?id=" . $row["id"] . "'>Change Admin</a>";
+                }
                 echo "</td>";
                 echo "</tr>";
 
