@@ -99,16 +99,28 @@ ORDER BY id DESC
 $result = mysqli_query($conn, $query);
 
 if ($result) {
+    if ($result) {
     while ($product = mysqli_fetch_array($result)) {
+        // 1. Разбиваем строку путей на массив
+        $images = explode(',', $product['file_path']);
+        
+        // 2. Берем только ПЕРВУЮ картинку для превью
+        $first_image = trim($images[0]);
+        
+        // 3. Формируем URL
+        $img_url = str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', $first_image);
+        
         echo '<a class="product-card" href="product.php?id=' . $product['id'] . '">';
-        echo '<img src="' . str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', $product['file_path']) . '" alt="product">';
-        echo '<p class="product-name">' . $product["name"] . '</p>';
-        echo '<p class="product-brand">' . $product["fabric"] . '</p>';
-        echo '<p> Season:' . $product["season"] . '</p>';
-        echo '<p> Size:' . $product["size"] . '</p>';
-        echo '<p class="price"> Price:' . $product["price"] . ' CZK</p>';
+        // Выводим только одну картинку
+        echo '<img src="' . $img_url . '" alt="product" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">';
+        echo '<p class="product-name">' . htmlspecialchars($product["name"]) . '</p>';
+        echo '<p class="product-brand">' . htmlspecialchars($product["fabric"]) . '</p>';
+        echo '<p> Season: ' . htmlspecialchars($product["season"]) . '</p>';
+        echo '<p> Size: ' . htmlspecialchars($product["size"]) . '</p>';
+        echo '<p class="price"> Price: ' . htmlspecialchars($product["price"]) . ' CZK</p>';
         echo '</a>';
     }
+  }
 }
 ?>
 
