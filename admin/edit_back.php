@@ -33,8 +33,9 @@ if (isset($_POST["edit"]) && !empty($_POST["edited_username"]) && !empty($_POST[
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("Location: admin.php");
-    exit;
 }
+
+header("Location: admin.php");
+exit;
 
 ?>
