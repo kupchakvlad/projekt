@@ -55,11 +55,7 @@ $result = mysqli_query($connection, $select_users_query);
                 echo "<td>";
                 echo "<a href='edit.php?id=" . htmlspecialchars($row["id"]) . "'>Edit</a>";
                 echo "<a href='delete.php?id=" . htmlspecialchars($row["id"]) . "' class='delete_button'>Delete</a>";
-                if ($row["id"] == $current_user_id) {
-                    echo '<script>alert("You are the current admin!");</script>';
-                } else {
-                    echo "<a href='admin_handling.php?id=" . htmlspecialchars($row["id"]) . "'>Change Admin</a>";
-                }
+                echo "<a href='admin_handling.php?id=" . htmlspecialchars($row["id"]) . "'>Change Admin</a>";
                 echo "</td>";
                 echo "</tr>";
 
