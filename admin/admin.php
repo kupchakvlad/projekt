@@ -31,6 +31,7 @@ $result = mysqli_query($connection, $select_users_query);
         <th>Name</th>
         <th>Email</th>
         <th>Admin status</th>
+        <th>User handling</th>
     </tr>
     </thead>
     <tbody class="users">
