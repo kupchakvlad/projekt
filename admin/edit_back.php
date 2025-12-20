@@ -29,7 +29,7 @@ if (isset($_POST["edit"]) && !empty($_POST["edited_username"]) && !empty($_POST[
 
     $edit_query = "UPDATE `users` SET name = ?, email = ? WHERE id = ?";
     $stmt = mysqli_prepare($connection, $edit_query);
-    mysqli_stmt_bind_param($stmt, "ssi", $username, $email, $_GET["id"]);
+    mysqli_stmt_bind_param($stmt, "ssi", $username, $email, $id);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
