@@ -55,7 +55,8 @@ $result = mysqli_query($connection, $select_users_query);
                 echo "<a href='edit.php?id=" . $row["id"] . "'>Edit</a>";
                 echo "<a href='delete.php?id=" . $row["id"] . "' class='delete_button'>Delete</a>";
                 if ($row["id"] == $current_user_id) {
-                    echo "<script> alert("You cant change your status yourself."); </script>";
+                    header("Location: admin.php");
+                    exit;
                 } else {
                     echo "<a href='admin_handling.php?id=" . $row["id"] . "'>Change Admin</a>";
                 }
