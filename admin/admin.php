@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id']) || !$_SESSION['admin']) {
+if (!isset($_SESSION['user_id']) || !$_SESSION['admin'] || !$_SESSION["admin"]) {
     header("Location: ../registration_form/registration_form.php");
     exit;
 }
