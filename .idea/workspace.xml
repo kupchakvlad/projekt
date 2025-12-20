@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admin_handling.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin_handling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

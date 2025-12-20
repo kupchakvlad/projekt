@@ -24,18 +24,17 @@ if (isset($_POST['login_submit'])) {
         $error_message = "Email and password are required";
 
     } else {
-        $query = "SELECT id, password FROM users WHERE email = ?";
+        $query = "SELECT id, password, admin FROM users WHERE email = ?";
         $stmt = mysqli_prepare($connection, $query);
         mysqli_stmt_bind_param($stmt, "s", $login_email);
         mysqli_stmt_execute($stmt);
-        // return user_id i hashed_password
-        mysqli_stmt_bind_result($stmt, $user_id, $hashed_password);
-        mysqli_stmt_fetch($stmt);
-        mysqli_stmt_close($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-        if ($user_id) {
-            if (password_verify($login_password, $hashed_password)) {
-                $_SESSION["user_id"] = $user_id;
+        if ($row = mysqli_fetch_assoc($result)) {
+            if (password_verify($login_password, $row["password"])) {
+                $_SESSION["user_id"] = $row["id"];
+                $_SESSION["admin"] = $row["admin"];
+                mysqli_stmt_close($stmt);
                 header("Location: ../main/main.php");
                 exit;
             } else {
