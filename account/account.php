@@ -63,6 +63,8 @@ mysqli_stmt_close($stmt);
     <input type="password" id="password" name="password" placeholder="Enter new password">
 
     <button type="submit" class="submit-button">Save Changes</button>
+
+    <a href="logOut.php" class="logout-link">Log Out</a>
 </form>
 </body>
 </html>

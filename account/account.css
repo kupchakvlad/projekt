@@ -176,3 +176,28 @@ body.dark .user-panel .welcome-text {
     color: #60a5fa;
 }
 
+.logout-link {
+    display: block;
+    text-align: center;
+    padding: 10px 16px;
+    margin-top: 10px;
+    background-color: #ef4444;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout-link:hover {
+    background-color: #dc2626;
+}
+
+/* Для темной темы */
+body.dark .logout-link {
+    background-color: #991b1b;
+}
+
+body.dark .logout-link:hover {
+    background-color: #b91c1c;
+}
