@@ -63,12 +63,12 @@ $result = mysqli_query($conn, $query);
 <div class="price-container">
   <div class="price-slider-row">
     <label>Min:</label>
-    <input type="range" id="min-price" min="0" max="9999" value="100">
+    <input type="range" id="min-price" min="0" max="999999" value="100">
     <span id="min-price-value">100</span> CZK
   </div>
   <div class="price-slider-row">
     <label>Max:</label>
-    <input type="range" id="max-price" min="0" max="10000" value="700">
+    <input type="range" id="max-price" min="0" max="1000000" value="700">
     <span id="max-price-value">700</span> CZK
   </div>
 </div>

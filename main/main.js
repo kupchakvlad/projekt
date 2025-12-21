@@ -44,12 +44,30 @@ seasonOptions.forEach(option => {
   });
 });
 
+// фильтр
 document.getElementById("apply-filters").addEventListener("click", () => {
-  const search = document.getElementById("search").value.toLowerCase();
-  const size = parseInt(sizeSlider.value);
-  const minPrice = parseInt(minPriceSlider.value);
-  const maxPrice = parseInt(maxPriceSlider.value);
-  const season = document.querySelector('input[name="season"]:checked').value;
+  const search = document.getElementById("search").value;
+  const size = sizeSlider.value;
+  const minPrice = minPriceSlider.value;
+  const maxPrice = maxPriceSlider.value;
+  const seasonInput = document.querySelector('input[name="season"]:checked');
+  const season = seasonInput ? seasonInput.value : '';
+  const param = "search=" + search + "&size=" + size + "&min=" + minPrice + "&max=" + maxPrice + "&season=" + season;
+  const url = "filter.php?" + param;
+
+  const req = new XMLHttpRequest();
+
+  req.onload = function () {
+    if ( req.status === 200) {
+      document.getElementById("products").innerHTML = req.responseText; //Преподаватель может спросить: «А почему ты используешь innerHTML, а не textContent?»
+                                                                        //Правильный ответ: «Я использую innerHTML, потому что сервер присылает мне готовый HTML-разметку (теги <a>, <img>, <p>). Если бы я использовал textContent, браузер не превратил бы это в карточки товаров, а просто вывел бы весь код как обычный текст».
+    } else {
+      console.error("Error server:" + req.status);
+    }
+
+  };
+  req.open('GET', url , true);
+  req.send();
 
   console.log({ search, size, minPrice, maxPrice, season });
 });
