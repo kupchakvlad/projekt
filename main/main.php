@@ -38,6 +38,7 @@ $result = mysqli_query($conn, $query);
 <header class="header">
   <a href="main.php" class="logo">Botovo</a>
   <nav class="header-buttons">
+    <a href="../admin/admin.php" id="admin-button">Admin</a>
     <a href="../add_product/add_product.php" id="add-product">Add Product</a>
     <a href="../account/account.php" id="account">Account</a>
     <a id="dark-mode-toggle">Dark Mode</a>
