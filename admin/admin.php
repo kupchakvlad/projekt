@@ -64,5 +64,7 @@ $result = mysqli_query($connection, $select_users_query);
     </tbody>
 </table>
 
+<a href="../main/main.php">Back to main</a>
+
 </body>
 </html>
