@@ -66,7 +66,7 @@ if (!empty($_POST['registration_email']) && !empty($_POST['registration_password
         $admin_status = 0;
 
         // ---------------- INSERT USER ----------------
-        $insert_user_query = "INSERT INTO users (name, email, password, admin) VALUES (?, ?, ?, ?)";
+        $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
         $stmt = mysqli_prepare($connection, $insert_user_query);
 
         if (!$stmt) {
