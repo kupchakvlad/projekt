@@ -61,10 +61,6 @@ if (!empty($_POST['registration_email']) && !empty($_POST['registration_password
         // ---------------- HASH PASSWORD ----------------
         $hashed_password = password_hash($registration_password, PASSWORD_DEFAULT);
 
-        // ---------------- ADMIN STATUS ----------------
-
-        $admin_status = 0;
-
         // ---------------- INSERT USER ----------------
         $insert_user_query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
         $stmt = mysqli_prepare($connection, $insert_user_query);
@@ -73,7 +69,7 @@ if (!empty($_POST['registration_email']) && !empty($_POST['registration_password
             die("FATAL: Insert statement preparation failed: " . mysqli_error($connection));
         }
 
-        mysqli_stmt_bind_param($stmt, "sssi", $registration_name, $registration_email, $hashed_password, $admin_status);
+        mysqli_stmt_bind_param($stmt, "sssi", $registration_name, $registration_email, $hashed_password);
 
         if (!mysqli_stmt_execute($stmt)) {
             die("Execution failed: " . mysqli_stmt_error($stmt));
