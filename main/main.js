@@ -1,4 +1,4 @@
-// ===== Header =====
+// ===== Header (Dark Mode) =====
 document.getElementById("dark-mode-toggle").addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark");
     const newMode = isDark ? 'dark' : 'light';
@@ -8,65 +8,85 @@ document.getElementById("dark-mode-toggle").addEventListener("click", () => {
     request.send(`mode=${newMode}`);
 });
 
-// ===== Size =====
+// ===== Size (Размер) =====
 const sizeSlider = document.getElementById("size-slider");
 const sizeValue = document.getElementById("size-value");
 
 function updateSize() {
-  sizeValue.textContent = sizeSlider.value;
+  if (sizeSlider.value == "27") {
+    sizeValue.textContent = "All";
+  } else {
+    sizeValue.textContent = sizeSlider.value;
+  }
 }
 
+// Инициализация при загрузке
 updateSize();
 sizeSlider.addEventListener("input", updateSize);
 
-// ===== Price =====
+// ===== Price (Цена) =====
 const minPriceSlider = document.getElementById("min-price");
 const maxPriceSlider = document.getElementById("max-price");
-const minPriceValue = document.getElementById("min-price-value");
-const maxPriceValue = document.getElementById("max-price-value");
+const minPriceInput = document.getElementById("min-price-input");
+const maxPriceInput = document.getElementById("max-price-input");
 
-function updatePrice(slider, valueEl) {
-  valueEl.textContent = slider.value;
+// Функция синхронизации: из слайдера в инпут
+function syncSliderToInput(slider, input) {
+    input.value = slider.value;
 }
 
-updatePrice(minPriceSlider, minPriceValue);
-updatePrice(maxPriceSlider, maxPriceValue);
+// Функция синхронизации: из инпута в слайдер
+function syncInputToSlider(input, slider) {
+    slider.value = input.value;
+}
 
-minPriceSlider.addEventListener("input", () => updatePrice(minPriceSlider, minPriceValue));
-maxPriceSlider.addEventListener("input", () => updatePrice(maxPriceSlider, maxPriceValue));
+// Слушатели для слайдеров
+minPriceSlider.addEventListener("input", () => syncSliderToInput(minPriceSlider, minPriceInput));
+maxPriceSlider.addEventListener("input", () => syncSliderToInput(maxPriceSlider, maxPriceInput));
 
+// Слушатели для текстовых полей
+minPriceInput.addEventListener("input", () => syncInputToSlider(minPriceInput, minPriceSlider));
+maxPriceInput.addEventListener("input", () => syncInputToSlider(maxPriceInput, maxPriceSlider));
+
+// ===== Season (Сезоны) =====
 const seasonOptions = document.querySelectorAll(".season-option");
 seasonOptions.forEach(option => {
   option.addEventListener("click", () => {
     seasonOptions.forEach(o => o.classList.remove("selected"));
     option.classList.add("selected");
-    option.querySelector("input").checked = true;
+    const radio = option.querySelector("input");
+    if (radio) radio.checked = true;
   });
 });
 
-// фильтр
+//Filter
 document.getElementById("apply-filters").addEventListener("click", () => {
   const search = document.getElementById("search").value;
   const size = sizeSlider.value;
-  const minPrice = minPriceSlider.value;
-  const maxPrice = maxPriceSlider.value;
+  
+  const minPrice = minPriceInput.value;
+  const maxPrice = maxPriceInput.value;
+  
   const seasonInput = document.querySelector('input[name="season"]:checked');
   const season = seasonInput ? seasonInput.value : '';
+  
+  // Собираем параметры
   const param = "search=" + search + "&size=" + size + "&min=" + minPrice + "&max=" + maxPrice + "&season=" + season;
+                
   const url = "filter.php?" + param;
 
   const req = new XMLHttpRequest();
 
   req.onload = function () {
-    if ( req.status === 200) {
-      document.getElementById("products").innerHTML = req.responseText; //Преподаватель может спросить: «А почему ты используешь innerHTML, а не textContent?»
-                                                                        //Правильный ответ: «Я использую innerHTML, потому что сервер присылает мне готовый HTML-разметку (теги <a>, <img>, <p>). Если бы я использовал textContent, браузер не превратил бы это в карточки товаров, а просто вывел бы весь код как обычный текст».
+    if (req.status === 200) {
+      // innerHTML используется, так как сервер возвращает готовую верстку карточек
+      document.getElementById("products").innerHTML = req.responseText;
     } else {
       console.error("Error server:" + req.status);
     }
-
   };
-  req.open('GET', url , true);
+  
+  req.open('GET', url, true);
   req.send();
 
   console.log({ search, size, minPrice, maxPrice, season });

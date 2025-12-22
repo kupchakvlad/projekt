@@ -83,6 +83,14 @@ main {
   border-radius: 5px;
 }
 
+#min-price-input, #max-price-input {
+    width: 70px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+
 /* ---------- Products Container ---------- */
 .products {
   flex: 1;

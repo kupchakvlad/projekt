@@ -31,7 +31,7 @@ if (isset($_GET["min"])) {
 if (isset($_GET["max"])) {
     $max = (int) $_GET["max"];
 } else {
-    $max = 10000;
+    $max = 100000;
 }
 
 if (isset($_GET['season'])) {
@@ -52,7 +52,7 @@ if ($season != "") {
     $req = $req . " AND season = '$seasonSafing' ";
 }
 
-if ($size > 0) {
+if ($size > 27) {
     $req = $req . " AND size = $size";
 }
 
@@ -66,9 +66,12 @@ if (mysqli_num_rows($final_request) > 0) {
         $img_path = trim($images[0]);
         $img_url = str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', $img_path);
 
-        echo '<a class="product-card" href="../product/product.php?id=' . $product['id'] . '">';
+        echo '<a class="product-card" href="product.php?id=' . $product['id'] . '">';
         echo '  <img src="' . $img_url . '" alt="Product">';
         echo '  <p class="product-name">' . htmlspecialchars($product['name']) . '</p>';
+        echo '<p class="product-brand">' . htmlspecialchars($product["fabric"]) . '</p>';
+        echo '<p> Season: ' . htmlspecialchars($product["season"]) . '</p>';
+        echo '<p> Size: ' . htmlspecialchars($product["size"]) . '</p>';
         echo '  <p class="price">' . $product['price'] . ' CZK</p>';
         echo '</a>';
     }

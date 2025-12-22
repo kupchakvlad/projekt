@@ -58,8 +58,8 @@ $result = mysqli_query($conn, $query);
 
 <h4>Size</h4>
 <div class="size-container">
-  <input type="range" id="size-slider" min="28" max="48" value="38">
-  <span id="size-value">38</span>
+  <input type="range" id="size-slider" min="27" max="48" value="27">
+  <span id="size-value">All</span>
 </div>
 
 
@@ -67,13 +67,13 @@ $result = mysqli_query($conn, $query);
 <div class="price-container">
   <div class="price-slider-row">
     <label>Min:</label>
-    <input type="range" id="min-price" min="0" max="999999" value="100">
-    <span id="min-price-value">100</span> CZK
+    <input type="range" id="min-price" min="0" max="100000" value="100">
+    <input type="number" id="min-price-input" value="100" min="0" max="100000"> CZK
   </div>
   <div class="price-slider-row">
     <label>Max:</label>
-    <input type="range" id="max-price" min="0" max="1000000" value="700">
-    <span id="max-price-value">700</span> CZK
+    <input type="range" id="max-price" min="0" max="100000" value="700">
+    <input type="number" id="max-price-input" value="700" min="0" max="100000"> CZK
   </div>
 </div>
 
