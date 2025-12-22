@@ -78,7 +78,7 @@ if (!empty($_POST['registration_email']) && !empty($_POST['registration_password
         // ---------------- SESSION ID OF REGISTERED USER ----------------
         $user_id = mysqli_insert_id($connection);
         $_SESSION["user_id"] = $user_id;
-        $_SESSION["admin"] = false;
+        $_SESSION["admin"] = 0;
 
         mysqli_stmt_close($stmt);
         mysqli_close($connection);

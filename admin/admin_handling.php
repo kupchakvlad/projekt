@@ -42,9 +42,9 @@ $result = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($result)) {
     if ($row["admin"] == "true") {
-        $new_admin_value = "false";  // was admin, now remove admin
+        $new_admin_value = 0;  // was admin, now remove admin
     } else {
-        $new_admin_value = "true";  // was not admin, now make admin
+        $new_admin_value = 1;  // was not admin, now make admin
     }
 } else {
     header("Location: admin.php");
