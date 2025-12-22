@@ -12,13 +12,8 @@ if (!$connection) {
     die("Connection failed: \n". mysqli_connect_error());
 }
 
-if (!isset($_SESSION['user_id']) || !$_SESSION["admin"]) {
-    header("Location: ../registration_form/registration_form.php");
-    exit;
-}
-
-if (!isset($_SESSION['admin'])) {
-    header("Location: ../");
+if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION["admin"] != 1) {
+    header("Location: ../main/main.php");
     exit;
 }
 
@@ -41,7 +36,7 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($result)) {
-    if ($row["admin"] == "true") {
+    if ($row["admin"] == 1) {
         $new_admin_value = 0;  // was admin, now remove admin
     } else {
         $new_admin_value = 1;  // was not admin, now make admin
@@ -55,7 +50,7 @@ mysqli_stmt_close($stmt);
 
 $update_query = "UPDATE users SET admin = ? WHERE id = ?";
 $update_stmt = mysqli_prepare($connection, $update_query);
-mysqli_stmt_bind_param($update_stmt, "si", $new_admin_value, $user_id);
+mysqli_stmt_bind_param($update_stmt, "ii", $new_admin_value, $user_id);
 if (mysqli_stmt_execute($update_stmt)) {
     header("Location: admin.php");
     exit;
