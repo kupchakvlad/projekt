@@ -57,7 +57,7 @@ main {
 
 /* Sidebar */
 .filter {
-  flex: 0 0 250px; /* fixed width */
+  flex: 0 0 250px;
   background: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -83,12 +83,39 @@ main {
   border-radius: 5px;
 }
 
-#min-price-input, #max-price-input {
-    width: 70px;
-    margin-left: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 2px 5px;
+/* Price number inputs*/
+#min-price-input,
+#max-price-input {
+  width: 110px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#min-price-input:focus,
+#max-price-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+#reset-filters {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #4c98b7;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#reset-filters:hover {
+    background-color: #387086;
 }
 
 /* ---------- Products Container ---------- */

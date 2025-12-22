@@ -60,7 +60,7 @@ seasonOptions.forEach(option => {
 });
 
 //Filter
-document.getElementById("apply-filters").addEventListener("click", () => {
+function sendFilterRequest() {
   const search = document.getElementById("search").value;
   const size = sizeSlider.value;
   
@@ -90,4 +90,28 @@ document.getElementById("apply-filters").addEventListener("click", () => {
   req.send();
 
   console.log({ search, size, minPrice, maxPrice, season });
+};
+
+document.getElementById("apply-filters").addEventListener("click", sendFilterRequest);
+
+//reset
+
+document.getElementById("reset-filters").addEventListener("click", () => {
+  document.getElementById("search").value = "";
+
+  sizeSlider.value = 27;
+  updateSize();
+
+  minPriceInput.value = 0;
+  minPriceSlider.value = 0;
+  maxPriceInput.value = 100000;
+  maxPriceSlider.value = 100000;
+
+  const seasonOptions = document.querySelectorAll(".season-option");
+  seasonOptions.forEach(option => {
+    option.classList.remove("selected");
+    const radio = option.querySelector("input");
+    if (radio) radio.checked = false;
+  });
+  sendFilterRequest();
 });
