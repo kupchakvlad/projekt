@@ -291,7 +291,7 @@ body.dark .logout-link:hover {
         height: 40px;
         width: 100%;
         margin-top: 5px;
-        color: transparent !important; /* Vymaže aktuální Username a Email z papíru */
+        color: black !important; /* Vymaže aktuální Username a Email z papíru */
     }
 
     /* Změna placeholderu u hesla, aby byl vidět i při tisku jako instrukce */
