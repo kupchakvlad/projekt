@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,7 @@
       <workItem from="1766351517616" duration="185000" />
       <workItem from="1766363355589" duration="3232000" />
       <workItem from="1766442763538" duration="1047000" />
-      <workItem from="1766521443031" duration="3621000" />
+      <workItem from="1766521443031" duration="3738000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />

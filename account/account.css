@@ -201,3 +201,122 @@ body.dark .logout-link {
 body.dark .logout-link:hover {
     background-color: #b91c1c;
 }
+
+                                                  /* ctrl + p */
+@media print {
+    /* Základní tiskový reset */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    body {
+        display: block;
+        height: auto;
+        padding: 0;
+    }
+
+    /* Skrytí UI tlačítek a nepodstatných prvků */
+    .top-button,
+    .submit-button,
+    .logout-link {
+        display: none !important;
+    }
+
+    /* Úprava horního panelu s informacemi */
+    .user-panel {
+        border: 2px solid black;
+        padding: 15px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .user-panel .welcome-text {
+        font-size: 12pt;
+    }
+
+    /* V tiskové verzi skryjeme konkrétní jméno a email uživatele,
+       aby formulář zůstal anonymní/univerzální pro ruční vyplnění */
+    .user-panel .user-name,
+    .user-panel .user-email {
+        visibility: hidden;
+    }
+
+    .user-panel::after {
+        content: "Current Account Information (to be verified)";
+        display: block;
+        font-size: 10pt;
+        font-style: italic;
+        margin-top: -20px;
+    }
+
+    /* Úprava formuláře */
+    form {
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+        border: 3px solid black;
+        padding: 20px;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    /* Nadpis tiskopisu */
+    header {
+        margin-top: 0;
+    }
+
+    header h1::after {
+        content: " - CHANGE REQUEST FORM";
+        display: inline;
+    }
+
+    /* Popisky polí */
+    label {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 15px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    /* Prázdné vstupy pro psaní rukou */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        border: 2px solid black !important;
+        background: white !important;
+        border-radius: 0;
+        height: 40px;
+        width: 100%;
+        margin-top: 5px;
+        color: transparent !important; /* Vymaže aktuální Username a Email z papíru */
+    }
+
+    /* Změna placeholderu u hesla, aby byl vidět i při tisku jako instrukce */
+    #password::placeholder {
+        color: black !important;
+        opacity: 1;
+    }
+
+    /* Pseudo-tlačítko "Uložit" na konci */
+    form::after {
+        content: "CONFIRM CHANGES (SIGNATURE)";
+        display: inline-block;
+        border: 2px solid black;
+        padding: 10px 30px;
+        font-weight: bold;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    /* Informace o datu podání na konci stránky */
+    body::after {
+        content: "Form generated on: ___________  Place: ___________";
+        display: block;
+        margin-top: 50px;
+        font-size: 10pt;
+        text-align: center;
+    }
+}
