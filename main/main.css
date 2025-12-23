@@ -619,7 +619,12 @@ body.dark select {
   }
 
   .product-card img {
-    display: none; /* Šetříme toner */
+      display: block !important; /* Vynutíme zobrazení */
+      width: 60px !important;    /* Fixní malá šířka */
+      height: 60px !important;   /* Fixní malá výška */
+      object-fit: cover;         /* Zachová poměry stran, neořízne ošklivě */
+      margin-right: 15px;        /* Mezera mezi fotkou a textem */
+      border: 0.5px solid #eee;  /* Jemný rámeček kolem fotky */
   }
 
   .product-card .product-name {
