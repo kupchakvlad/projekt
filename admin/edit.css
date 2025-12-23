@@ -55,3 +55,68 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #1e40af;
 }
+
+                                               /* ctrl + p */
+@media print {
+    /* Základní tiskový reset */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    body {
+        display: block;
+        padding: 0;
+    }
+
+    /* Skrytí odesílacího tlačítka a navigace */
+    input[type="submit"], .back-link {
+        display: none !important;
+    }
+
+    /* Úprava formuláře na tiskopis */
+    form {
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+        border: 3px solid black;
+        padding: 20px;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    /* Nadpis dokumentu */
+    form::before {
+        content: "USER DATA MODIFICATION FORM";
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16pt;
+        margin-bottom: 25px;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+    }
+
+    /* Popisky polí */
+    label {
+        font-size: 12pt;
+        font-weight: bold;
+        margin-top: 20px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    /* Zobrazení stávajících dat v polích a linka pro ruční změnu */
+    input[type="text"] {
+        border: none !important;
+        border-bottom: 2px solid black !important; /* Černá linka pro zápis */
+        background: transparent !important;
+        color: black !important; /* Ponecháme viditelné jméno/email */
+        font-size: 14pt;
+        width: 100%;
+        padding: 5px 0;
+        margin-top: 5px;
+        border-radius: 0;
+    }
+}
