@@ -190,56 +190,89 @@ body.dark-mode #dark-mode-btn:hover {
 }
 
                                                           /* ctrl + p */
+/* ========================= */
+/* ===== PRINT STYLES ===== */
+/* ========================= */
+
 @media print {
 
+    /* reset vzhledu */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
     body {
-        background: white;
-        color: black;
         display: block;
         height: auto;
     }
 
-    /* Zobraz všechny formuláře */
-    form {
-        display: block;
-    }
-
-    /* Skryj tlačítka a přepínače */
-    button,
-    input[type="submit"],
+    /* skryj UI prvky */
     #dark-mode-btn,
-    .top-buttons {
-        display: none;
+    .top-buttons,
+    .submit,
+    .login-error,
+    .email-error-message {
+        display: none !important;
     }
 
-    /* Formulář bez boxu */
+    /* kontejner přes celou stránku */
     .form-container {
         width: 100%;
         height: auto;
-        box-shadow: none;
         border: none;
         padding: 0;
     }
 
-    /* Vstupy jako prázdná políčka na psaní */
-    input {
-        border: 1px solid black;
-        background: white;
-        color: black;
-        margin-bottom: 12px;
+    /* zobraz jen registration form */
+    #login_form {
+        display: none !important;
     }
 
-    label {
-        font-weight: bold;
+    #registration_form {
+        display: block !important;
+    }
+
+    /* nadpis formuláře */
+    #registration_form::before {
+        content: "REGISTRAČNÍ FORMULÁŘ";
         display: block;
-        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-    /* Chybové hlášky jen jako text */
-    .login-error,
-    .email-error-message {
-        background: none;
-        border: none;
-        color: black;
+    /* pole */
+    label {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 15px;
+        display: block;
+    }
+
+    /* vstupy jako pole pro psaní rukou */
+    input[type="text"],
+    input[type="password"] {
+        border: 2px solid black !important;
+        background: white !important;
+        border-radius: 0;
+        height: 40px;
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    /* větší mezery mezi poli */
+    #registration_form label {
+        margin-bottom: 20px;
+    }
+
+    /* podpis */
+    #registration_form::after {
+        content: "Podpis: _____________________________      Datum: ______________";
+        display: block;
+        margin-top: 50px;
+        font-size: 14px;
     }
 }
