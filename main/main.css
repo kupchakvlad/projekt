@@ -481,3 +481,146 @@ body.dark select {
     font-weight: bold;
 }
 
+                                                 /* ctrl + p */
+/* ========================= */
+/* ===== PRINT STYLES ===== */
+/* ========================= */
+
+@media print {
+
+  /* reset */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  body {
+    display: block;
+  }
+
+  /* skrytí interaktivních věcí */
+  header,
+  #dark-mode-toggle,
+  #apply-filters,
+  #reset-filters,
+  .loader,
+  .pagination {
+    display: none !important;
+  }
+
+  /* layout */
+  main {
+    display: block;
+    padding: 0;
+  }
+
+  /* ===== FILTERS ===== */
+  .filter {
+    border: 3px solid black;
+    padding: 20px;
+    margin-bottom: 40px;
+    page-break-after: always;
+  }
+
+  .filter::before {
+    content: "FILTRY (vyplň ručně)";
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .filter label,
+  .filter h3,
+  .filter h4 {
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  .filter input[type="text"],
+  .filter input[type="number"] {
+    border: 2px solid black !important;
+    border-radius: 0;
+    height: 35px;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  /* range → jen čára */
+  .filter input[type="range"] {
+    border: none;
+    height: 2px;
+    background: black !important;
+  }
+
+  /* radio jako boxy */
+  .season-option {
+    border: 2px solid black;
+    border-radius: 0;
+    padding: 6px 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  /* ===== PRODUCTS ===== */
+  .products {
+    display: block;
+    padding: 0;
+  }
+
+  .products::before {
+    content: "SEZNAM PRODUKTŮ";
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* karta → řádkový záznam */
+  .product-card {
+    width: 100%;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 15px;
+    padding: 10px;
+    page-break-inside: avoid;
+  }
+
+  /* obrázky skryj */
+  .product-card img {
+    display: none;
+  }
+
+  .product-card .product-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .product-card .product-brand {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .product-card p {
+    font-size: 13px;
+  }
+
+  .product-card .price {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  /* footer */
+  footer {
+    margin-top: 40px;
+    border-top: 2px solid black;
+    padding-top: 10px;
+    color: black;
+  }
+}
