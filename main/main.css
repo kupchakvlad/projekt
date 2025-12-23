@@ -483,26 +483,34 @@ body.dark select {
 
                                                  /* ctrl + p */
 @media print {
-
-  /* reset */
+  /* Reset a základní nastavení */
   * {
     background: white !important;
     color: black !important;
     box-shadow: none !important;
+    text-shadow: none !important;
   }
 
   body {
     display: block;
+    font-size: 12pt;
   }
 
-  /* skrytí interaktivních prvků */
+  /* Skrytí nepotřebných a interaktivních prvků */
   header,
+  footer,
   #dark-mode-toggle,
   #apply-filters,
   #reset-filters,
   .loader,
-  .pagination {
+  .pagination,
+  input[type="range"] { /* Skryjeme všechny slidery */
     display: none !important;
+  }
+
+  /* Skrytí placeholderu u vyhledávání */
+  #search::placeholder {
+    color: transparent !important;
   }
 
   main {
@@ -510,154 +518,124 @@ body.dark select {
     padding: 0;
   }
 
-  /* ===== FILTERS ===== */
+  /* --- FILTRY --- */
   .filter {
-    border: 3px solid black;
-    padding: 20px;
-    margin-bottom: 40px;
-    page-break-after: always;
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 30px;
+    page-break-after: avoid; /* Chceme filtry na stejné stránce pokud možno */
   }
 
   .filter::before {
-    content: "FILTRY (vyplň ručně)";
+    content: "POŽADAVKY NA VÝBĚR (vyplňte ručně)";
     display: block;
-    font-size: 18px;
+    font-size: 16pt;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
+    border-bottom: 1px solid black;
   }
 
-  .filter h3,
-  .filter h4,
-  .filter label {
-    font-weight: bold;
-    margin-top: 15px;
-  }
-
-  /* Search */
+  /* Úprava vyhledávacího pole */
   #search {
-    border: 2px solid black !important;
-    border-radius: 0;
-    height: 35px;
+    border: 1px solid black !important;
+    height: 30px;
     width: 100%;
-    margin-top: 5px;
+    background: none !important;
   }
 
-  /* ===== Velikosti (zakroužkovat) ===== */
+  /* --- VELIKOSTI (Mřížka pro zaškrtávání) --- */
   .size-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: block;
     margin-top: 10px;
   }
 
-  .size-container span {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    border: 2px solid black;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 35px;
-    font-weight: bold;
-    cursor: default;
+  /* Skryjeme původní text "All" nebo slider v kontejneru */
+  #size-value { display: none; }
+
+  /* Vytvoření vizuálních boxů pro velikosti 27-48 pomocí CSS */
+  .size-container::after {
+    content: "27 [ ]  28 [ ]  29 [ ]  30 [ ]  31 [ ]  32 [ ]  33 [ ]  34 [ ]  35 [ ]  36 [ ]  37 [ ]  38 [ ]  39 [ ]  40 [ ]  41 [ ]  42 [ ]  43 [ ]  44 [ ]  45 [ ]  46 [ ]  47 [ ]  48 [ ]";
+    display: block;
+    line-height: 2;
+    word-spacing: 10px;
+    font-family: monospace;
+    font-size: 11pt;
   }
 
-  /* ===== Sezóny (zakroužkovat) ===== */
-  .season-option {
-    display: inline-block;
-    width: 80px;
-    height: 30px;
-    border: 2px solid black;
-    text-align: center;
-    line-height: 30px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: default;
-  }
-
-  .season-option input {
-    display: none;
-  }
-
-  /* ===== Cena - prázdná pole ===== */
+  /* --- CENA (Prázdná pole) --- */
   .price-container {
     margin-top: 10px;
   }
 
-  .price-container label {
-    font-weight: bold;
-    margin-top: 10px;
-    display: block;
+  .price-slider-row {
+    margin-bottom: 10px;
   }
 
+  /* Skryjeme hodnoty v inputech pro tisk, aby byly prázdné */
   #min-price-input,
   #max-price-input {
-    width: 80px;
-    border: 2px solid black;
-    border-radius: 0;
-    height: 30px;
-    text-align: center;
-    margin-top: 5px;
+    width: 100px;
+    border: 1px solid black !important;
+    color: transparent !important; /* Skryje vepsané číslo */
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
   }
 
-  /* ===== PRODUKTY ===== */
+  /* --- SEZÓNY --- */
+  .season-option {
+    display: inline-block;
+    border: 1px solid black !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+    margin: 5px !important;
+    background: none !important;
+  }
+
+  .season-option::before {
+    content: "[ ] "; /* Přidá políčko před název sezóny */
+  }
+
+  /* --- PRODUKTY --- */
   .products {
     display: block;
-    padding: 0;
   }
 
   .products::before {
-    content: "SEZNAM PRODUKTŮ";
+    content: "AKTUÁLNÍ NABÍDKA";
     display: block;
-    font-size: 18px;
+    font-size: 16pt;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin: 20px 0;
     text-align: center;
   }
 
   .product-card {
     width: 100%;
     height: auto;
-    border: 2px solid black;
-    border-radius: 0;
-    box-shadow: none;
-    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
     padding: 10px;
+    display: flex;
+    flex-direction: row; /* Na papíře je lepší seznam pod sebou */
+    justify-content: space-between;
     page-break-inside: avoid;
   }
 
   .product-card img {
-    display: none;
+    display: none; /* Šetříme toner */
   }
 
   .product-card .product-name {
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .product-card .product-brand {
-    font-size: 14px;
-    margin-bottom: 4px;
-  }
-
-  .product-card p {
-    font-size: 13px;
+    font-size: 12pt;
+    text-align: left;
+    flex: 2;
   }
 
   .product-card .price {
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-
-  /* footer */
-  footer {
-    margin-top: 40px;
-    border-top: 2px solid black;
-    padding-top: 10px;
-    color: black;
+    flex: 1;
+    text-align: right;
+    font-size: 12pt;
   }
 }
