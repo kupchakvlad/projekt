@@ -189,61 +189,57 @@ body.dark-mode #dark-mode-btn:hover {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* ctrl + p */
+                                                          /* ctrl + p */
 @media print {
 
-    /* Základ – bílé pozadí, černý text */
-    * {
-        background: none !important;
-        color: black !important;
-        box-shadow: none !important;
-    }
-
     body {
-        background: white !important;
+        background: white;
+        color: black;
         display: block;
         height: auto;
-        margin: 0;
-        padding: 0;
     }
 
-    /* Skryj interaktivní a zbytečné prvky */
-    .top-buttons,
-    #dark-mode-btn,
-    button,
-    input[type="submit"] {
-        display: none !important;
-    }
-
-    /* Zobraz formulář vždy (i když je jiný skrytý) */
+    /* Zobraz všechny formuláře */
     form {
-        display: block !important;
+        display: block;
     }
 
-    /* Upravení formuláře pro tisk */
+    /* Skryj tlačítka a přepínače */
+    button,
+    input[type="submit"],
+    #dark-mode-btn,
+    .top-buttons {
+        display: none;
+    }
+
+    /* Formulář bez boxu */
     .form-container {
         width: 100%;
         height: auto;
-        padding: 0;
-        border: none;
         box-shadow: none;
+        border: none;
+        padding: 0;
     }
 
+    /* Vstupy jako prázdná políčka na psaní */
     input {
-        border: 1px solid black !important;
-        background: white !important;
-        color: black !important;
+        border: 1px solid black;
+        background: white;
+        color: black;
+        margin-bottom: 12px;
     }
 
     label {
         font-weight: bold;
+        display: block;
+        margin-top: 10px;
     }
 
-    /* Chybové hlášky – jen text, bez barev */
+    /* Chybové hlášky jen jako text */
     .login-error,
     .email-error-message {
-        border: 1px solid black;
         background: none;
+        border: none;
         color: black;
     }
 }
