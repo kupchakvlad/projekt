@@ -79,10 +79,10 @@ $result = mysqli_query($conn, $query);
 
 
   <h4>Season</h4>
-  <label class="season-option"><input type="radio" name="season" value="autumn" checked> Autumn</label>
-  <label class="season-option"><input type="radio" name="season" value="winter" checked> Winter</label>
-  <label class="season-option"><input type="radio" name="season" value="spring" checked> Spring</label>
-  <label class="season-option"><input type="radio" name="season" value="summer" checked> Summer</label>
+  <label class="season-option"><input type="radio" name="season" value="autumn"> Autumn</label>
+  <label class="season-option"><input type="radio" name="season" value="winter"> Winter</label>
+  <label class="season-option"><input type="radio" name="season" value="spring"> Spring</label>
+  <label class="season-option"><input type="radio" name="season" value="summer"> Summer</label>
 
   <button id="apply-filters">Find</button>
   <button type="button" id="reset-filters">Reset</button>
@@ -90,43 +90,7 @@ $result = mysqli_query($conn, $query);
 
 
   <section class="products" id="products">
-    <?php
-$query = "
-SELECT * 
-FROM products
-WHERE id IN (
-    SELECT MIN(id)
-    FROM products
-    GROUP BY name
-)
-ORDER BY id DESC
-";
-
-$result = mysqli_query($conn, $query);
-
-if ($result) {
-    while ($product = mysqli_fetch_array($result)) {
-        // 1. Разбиваем строку путей на массив
-        $images = explode(',', $product['file_path']);
-        
-        // Берем только ПЕРВУЮ картинку для превью
-        $first_image = trim($images[0]);
-        
-        $img_url = str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', $first_image);
-        
-        echo '<a class="product-card" href="product.php?id=' . $product['id'] . '">';
-
-        echo '<img src="' . $img_url . '" alt="product" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">';
-        echo '<p class="product-name">' . htmlspecialchars($product["name"]) . '</p>';
-        echo '<p class="product-brand">' . htmlspecialchars($product["fabric"]) . '</p>';
-        echo '<p> Season: ' . htmlspecialchars($product["season"]) . '</p>';
-        echo '<p> Size: ' . htmlspecialchars($product["size"]) . '</p>';
-        echo '<p class="price"> Price: ' . htmlspecialchars($product["price"]) . ' CZK</p>';
-        echo '</a>';
-    }
-}
-?>
-
+       <div class="loader">Loading products...</div>
   </section>
 </main>
 

@@ -120,12 +120,13 @@ main {
 
 /* ---------- Products Container ---------- */
 .products {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;             /* перенос карточек на новые строки */
-  gap: 16px;                   /* расстояние между карточками */
-  justify-content: flex-start; /* выравнивание по левому краю */
-  padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;           /* карточки в ряд */
+    gap: 20px;
+    justify-content: flex-start; /* или center, если хочешь центр карточек */
+    min-height: 400px;         /* минимальная высота секции */
+    position: relative;         /* чтобы пагинация позиционировалась относительно секции */
+    padding-bottom: 80px;       /* пространство снизу для кнопок */
 }
 
 /* ---------- Product Card ---------- */
@@ -426,4 +427,48 @@ body.dark select {
   border: 1px solid #555;
 }
 
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;    /* центрируем кнопки */
+    position: absolute;         /* привязка к секции */
+    bottom: 10px;               /* немного выше низа секции */
+    left: 0;
+    right: 0;
+    gap: 8px;
+}
+
+/* Кнопки */
+.page-btn {
+    padding: 6px 12px;
+    min-width: 36px;
+    height: 36px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.page-btn:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.page-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.page-btn.prev,
+.page-btn.next {
+    font-weight: bold;
+}
 

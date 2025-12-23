@@ -40,6 +40,19 @@ if (isset($_GET['season'])) {
     $season = '';
 }
 
+if (isset($_GET["page"])) {
+    $page = (int) $_GET["page"];
+} else {
+    $page = 1;
+}
+
+if ($page < 1) {
+    $page = 1;
+}
+
+$perPage = 6;
+
+
 $req = "SELECT * FROM products WHERE price BETWEEN $min AND $max";
 
 if ($search !="") {
@@ -56,12 +69,28 @@ if ($size > 27) {
     $req = $req . " AND size = $size";
 }
 
-$req = $req . " ORDER BY id DESC";
-
 $final_request = mysqli_query($conn, $req);
 
-if (mysqli_num_rows($final_request) > 0) {
-    while ($product = mysqli_fetch_assoc($final_request)) {
+$all_products = [];
+
+while($row = mysqli_fetch_assoc($final_request)) {
+    $all_products[] = $row;
+}
+
+$totalProducts = count($all_products);
+$totalPages = ceil($totalProducts / $perPage);
+
+if ($page > 0) {
+    $start = ($page - 1) * $perPage;
+    $pageProducts = array_slice($all_products, $start, $perPage);
+} else {
+    $pageProducts = [];
+}
+
+$req = $req . " ORDER BY id DESC";
+
+if (count($pageProducts) > 0) {
+     foreach ($pageProducts as $product) {
         $images = explode(',', $product['file_path']);
         $img_path = trim($images[0]);
         $img_url = str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', $img_path);
@@ -76,7 +105,38 @@ if (mysqli_num_rows($final_request) > 0) {
         echo '</a>';
     }
     } else {
-    echo "<p class='no-results'>No products found matching your filters.</p>";
+    echo "<p>No products found</p>";
     }
 
+if ($totalPages > 1) {
+    if ($totalPages > 1) {
+    echo '<div class="pagination">';
+
+    //"Prev"
+    if ($page > 1) {
+        $prevPage = $page - 1;
+        echo '<button class="page-btn" data-page="' . $prevPage . '">Prev</button>';
+    } else {
+        echo '';
+    }
+
+    for ($i = 1; $i <= $totalPages; $i++) {
+        if ($i == $page) {
+            echo '<button class="page-btn active" data-page="' . $i . '">' . $i . '</button>';
+        } else {
+            echo '<button class="page-btn" data-page="' . $i . '">' . $i . '</button>';
+        }
+    }
+
+    if ($page < $totalPages) {
+        $nextPage = $page + 1;
+        echo '<button class="page-btn" data-page="' . $nextPage . '">Next</button>';
+    } else {
+        echo '';
+    }
+
+    echo '</div>';
+}
+
+}
 mysqli_close($conn);?>
