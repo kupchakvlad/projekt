@@ -190,10 +190,6 @@ body.dark-mode #dark-mode-btn:hover {
 }
 
                                                           /* ctrl + p */
-/* ========================= */
-/* ===== PRINT STYLES ===== */
-/* ========================= */
-
 @media print {
 
     * {
@@ -247,11 +243,11 @@ body.dark-mode #dark-mode-btn:hover {
 
     /* nadpisy formulářů */
     #registration_form::before {
-        content: "AKTIVNÍ FORMULÁŘ – REGISTRACE";
+        content: "Registration form";
     }
 
     #login_form::before {
-        content: "NEAKTIVNÍ FORMULÁŘ – PŘIHLÁŠENÍ";
+        content: "Login form";
     }
 
     #registration_form::before,
@@ -291,11 +287,11 @@ body.dark-mode #dark-mode-btn:hover {
 
     /* pseudo-tlačítka */
     #registration_form::after {
-        content: " [ REGISTROVAT SE ] ";
+        content: "REGISTROVAT SE";
     }
 
     #login_form::after {
-        content: " [ PŘIHLÁSIT SE ] ";
+        content: "PŘIHLÁSIT SE";
     }
 
     #registration_form::after,
