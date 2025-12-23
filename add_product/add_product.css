@@ -235,12 +235,7 @@ body.dark form label {
 
   /* Pole pro nahrání fotky upravené pro tisk */
   input[type="file"] {
-    border: 2px dashed black !important;
-    height: 100px;
-    width: 100%;
-    margin-top: 5px;
-    color: transparent !important;
-    position: relative;
+    display: none !important;
   }
 
   input[type="file"]::after {
