@@ -576,6 +576,7 @@ body.dark select {
   #min-price-input,
   #max-price-input {
     width: 100px;
+    visibility: visible;
     border: 1px solid black !important;
     color: transparent !important; /* Skryje vepsané číslo */
     height: 25px;
