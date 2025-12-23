@@ -162,6 +162,7 @@ main {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 /* ---------- Product Text ---------- */
@@ -182,6 +183,14 @@ main {
 .product-card p {
   font-size: 0.75rem;
   margin: 2px 0;
+}
+
+.product-name, .product-brand {
+    width: 100%;
+    white-space: nowrap;      /* Запрещаем перенос на новую строку */
+    overflow: hidden;         /* Скрываем то, что не влезло */
+    text-overflow: ellipsis;  /* Добавляем троеточие в конце (...) */
+    display: block;
 }
 
 /* ---------- Price ---------- */
