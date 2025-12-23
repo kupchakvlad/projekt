@@ -58,7 +58,7 @@ input[type="submit"]:hover {
 
                                                /* ctrl + p */
 @media print {
-    /* Základní tiskový reset */
+    /* 1. Základní reset pro čistý tisk */
     * {
         background: white !important;
         color: black !important;
@@ -67,56 +67,77 @@ input[type="submit"]:hover {
 
     body {
         display: block;
+        height: auto;
         padding: 0;
     }
 
-    /* Skrytí odesílacího tlačítka a navigace */
-    input[type="submit"], .back-link {
+    /* 2. Skrytí navigace a systémového tlačítka */
+    input[type="submit"],
+    .back-link {
         display: none !important;
     }
 
-    /* Úprava formuláře na tiskopis */
+    /* 3. Stylování formuláře jako tiskopisu */
     form {
         display: block !important;
         width: 100%;
         max-width: 100%;
-        border: 3px solid black;
+        border: 3px solid black; /* Stejná tloušťka jako u ostatních stran */
         padding: 20px;
         margin: 0;
         box-shadow: none;
+        border-radius: 0;
     }
 
-    /* Nadpis dokumentu */
+    /* Nadpis formuláře */
     form::before {
-        content: "USER DATA MODIFICATION FORM";
+        content: "USER DATA EDIT FORM";
         display: block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
         text-align: center;
-        font-weight: bold;
-        font-size: 16pt;
-        margin-bottom: 25px;
-        border-bottom: 2px solid black;
-        padding-bottom: 10px;
-    }
-
-    /* Popisky polí */
-    label {
-        font-size: 12pt;
-        font-weight: bold;
-        margin-top: 20px;
-        display: block;
         text-transform: uppercase;
     }
 
-    /* Zobrazení stávajících dat v polích a linka pro ruční změnu */
+    /* 4. Pole a popisky */
+    label {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 15px;
+        display: block;
+    }
+
+    /* Vstupy s viditelným textem a černým ohraničením */
     input[type="text"] {
-        border: none !important;
-        border-bottom: 2px solid black !important; /* Černá linka pro zápis */
-        background: transparent !important;
-        color: black !important; /* Ponecháme viditelné jméno/email */
-        font-size: 14pt;
-        width: 100%;
-        padding: 5px 0;
-        margin-top: 5px;
+        border: 2px solid black !important;
+        background: white !important;
         border-radius: 0;
+        height: 40px;
+        width: 100%;
+        margin-top: 5px;
+        padding: 5px 10px;
+        color: black !important; /* Data z PHP budou vidět */
+        font-size: 14px;
+    }
+
+    /* 5. Pseudo-tlačítko na konci (jen rámeček s textem) */
+    form::after {
+        content: "SAVE CHANGES (OFFICIAL SIGNATURE)";
+        display: inline-block;
+        border: 2px solid black;
+        padding: 10px 30px;
+        font-weight: bold;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    /* 6. Patička pro identifikaci */
+    body::after {
+        content: "Authorized edit of User ID: <?php echo $id; ?>  |  Date: ___________";
+        display: block;
+        margin-top: 40px;
+        font-size: 10pt;
+        text-align: center;
     }
 }
