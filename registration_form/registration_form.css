@@ -196,7 +196,6 @@ body.dark-mode #dark-mode-btn:hover {
 
 @media print {
 
-    /* reset vzhledu */
     * {
         background: white !important;
         color: black !important;
@@ -208,7 +207,7 @@ body.dark-mode #dark-mode-btn:hover {
         height: auto;
     }
 
-    /* skryj UI prvky */
+    /* skrytí UI */
     #dark-mode-btn,
     .top-buttons,
     .submit,
@@ -217,28 +216,48 @@ body.dark-mode #dark-mode-btn:hover {
         display: none !important;
     }
 
-    /* kontejner přes celou stránku */
     .form-container {
         width: 100%;
         height: auto;
-        border: none;
         padding: 0;
+        border: none;
     }
 
-    /* zobraz jen registration form */
-    #login_form {
-        display: none !important;
-    }
-
+    /* oba formuláře zobrazit */
+    #login_form,
     #registration_form {
         display: block !important;
+        margin-bottom: 60px;
     }
 
-    /* nadpis formuláře */
+    /* AKTIVNÍ FORMULÁŘ */
+    form.active {
+        order: 1;
+        border: 3px solid black;
+        padding: 20px;
+    }
+
+    /* NEAKTIVNÍ FORMULÁŘ */
+    form:not(.active) {
+        order: 2;
+        border: 2px dashed black;
+        padding: 20px;
+        opacity: 0.85;
+    }
+
+    /* nadpisy formulářů */
     #registration_form::before {
-        content: "REGISTRAČNÍ FORMULÁŘ";
+        content: "AKTIVNÍ FORMULÁŘ – REGISTRACE";
+    }
+
+    #login_form::before {
+        content: "NEAKTIVNÍ FORMULÁŘ – PŘIHLÁŠENÍ";
+    }
+
+    #registration_form::before,
+    #login_form::before {
         display: block;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
         margin-bottom: 20px;
         text-align: center;
@@ -252,27 +271,40 @@ body.dark-mode #dark-mode-btn:hover {
         display: block;
     }
 
-    /* vstupy jako pole pro psaní rukou */
+    /* vstupy pro psaní rukou */
     input[type="text"],
     input[type="password"] {
         border: 2px solid black !important;
         background: white !important;
         border-radius: 0;
         height: 40px;
-        margin-top: 5px;
         width: 100%;
+        margin-top: 5px;
     }
 
-    /* větší mezery mezi poli */
-    #registration_form label {
-        margin-bottom: 20px;
-    }
-
-    /* podpis */
-    #registration_form::after {
-        content: "Podpis: _____________________________      Datum: ______________";
+    /* "tlačítka" – jen rámeček */
+    form::after {
+        content: "";
         display: block;
-        margin-top: 50px;
-        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    /* pseudo-tlačítka */
+    #registration_form::after {
+        content: " [ REGISTROVAT SE ] ";
+    }
+
+    #login_form::after {
+        content: " [ PŘIHLÁSIT SE ] ";
+    }
+
+    #registration_form::after,
+    #login_form::after {
+        display: inline-block;
+        border: 2px solid black;
+        padding: 10px 30px;
+        font-weight: bold;
+        margin-top: 20px;
     }
 }
+
