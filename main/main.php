@@ -72,15 +72,15 @@ $result = mysqli_query($conn, $query);
   </div>
   <div class="price-slider-row">
     <label>Max:</label>
-    <input type="range" id="max-price" min="0" max="100000" value="700">
-    <input type="number" id="max-price-input" value="700" min="0" max="100000"> CZK
+    <input type="range" id="max-price" min="0" max="100000" value="100000">
+    <input type="number" id="max-price-input" value="100000" min="0" max="100000"> CZK
   </div>
 </div>
 
 
   <h4>Season</h4>
   <label class="season-option"><input type="radio" name="season" value="autumn" checked> Autumn</label>
-  <label class="season-option"><input type="radio" name="season" value="winter"> Winter</label>
+  <label class="season-option"><input type="radio" name="season" value="winter" checked> Winter</label>
   <label class="season-option"><input type="radio" name="season" value="spring" checked> Spring</label>
   <label class="season-option"><input type="radio" name="season" value="summer" checked> Summer</label>
 
@@ -105,7 +105,6 @@ ORDER BY id DESC
 $result = mysqli_query($conn, $query);
 
 if ($result) {
-    if ($result) {
     while ($product = mysqli_fetch_array($result)) {
         // 1. Разбиваем строку путей на массив
         $images = explode(',', $product['file_path']);
@@ -125,7 +124,6 @@ if ($result) {
         echo '<p class="price"> Price: ' . htmlspecialchars($product["price"]) . ' CZK</p>';
         echo '</a>';
     }
-  }
 }
 ?>
 
