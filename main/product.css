@@ -182,3 +182,133 @@ body.dark .buy-message {
   background: #064e3b;
   color: #a7f3d0;
 }
+
+                                                /* ctrl + p */
+@media print {
+    /* Základní tiskový reset */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        display: block;
+        padding: 0;
+    }
+
+    /* Skrytí navigace a interaktivních prvků */
+    .back-link,
+    .gallery-btn,
+    .buy-btn,
+    .buy-message {
+        display: none !important;
+    }
+
+    /* Úprava hlavního kontejneru */
+    .product-page {
+        margin: 0;
+        padding: 20px;
+        border: 3px solid black;
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    /* Nadpis listu */
+    .product-page::before {
+        content: "PRODUCT DETAIL SHEET";
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+    }
+
+    /* Rozvržení - fotka vlevo, text vpravo */
+    .product-top {
+        display: flex;
+        gap: 30px;
+        grid-template-columns: none; /* zrušení gridu pro lepší kompatibilitu */
+    }
+
+    /* Galerie - zobrazíme jen první fotku jako hlavní */
+    .gallery-container {
+        width: 300px;
+        height: 300px;
+        overflow: visible;
+        margin: 0;
+        border: 2px solid black;
+    }
+
+    .product-gallery {
+        display: block;
+        overflow: visible;
+    }
+
+    /* Skryjeme všechny fotky kromě první */
+    .product-image {
+        display: none;
+    }
+
+    .product-image:first-child {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain;
+    }
+
+    /* Informace o produktu */
+    .product-info {
+        flex: 1;
+    }
+
+    .product-info h1 {
+        font-size: 24pt;
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+    .product-info .brand {
+        font-size: 16pt;
+        border-bottom: 1px solid black;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+        color: black !important;
+    }
+
+    .product-info p {
+        font-size: 12pt;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    /* Cena - výrazná */
+    .product-info .price {
+        font-size: 20pt;
+        margin-top: 30px;
+        padding: 10px;
+        border: 2px solid black;
+        display: inline-block;
+    }
+
+    /* Meta info (kdo přidal a kdy) */
+    .product-meta {
+        margin-top: 40px;
+        font-style: italic;
+        border-top: 1px dotted black;
+        padding-top: 10px;
+    }
+
+    /* Pseudo-tlačítko nebo potvrzení na konci */
+    .product-page::after {
+        content: "OFFICIAL BOTOVO PRODUCT LISTING";
+        display: block;
+        text-align: right;
+        font-size: 10px;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+}
