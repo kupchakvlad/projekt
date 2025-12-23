@@ -167,3 +167,126 @@ body.dark form label {
 .submit-button:hover {
   background-color: #218838;
 }
+
+                                                     /* ctrl + p */
+@media print {
+  /* Základní tiskový reset */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  body {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+
+  /* Skrytí interaktivních prvků a UI */
+  .back-to-main,
+  .dark-mode-btn,
+  .submit-button,
+  #size-value,
+  input[type="range"] {
+    display: none !important;
+  }
+
+  /* Úprava kontejneru formuláře */
+  form {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    border: 3px solid black;
+    padding: 20px;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  /* Nadpis formuláře pro tisk */
+  form::before {
+    content: "ADD NEW PRODUCT FORM";
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Popisky polí */
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+  }
+
+  /* Vstupy pro psaní rukou - smazání textu a černé ohraničení */
+  input[type="text"],
+  select {
+    border: 2px solid black !important;
+    background: white !important;
+    border-radius: 0;
+    height: 40px;
+    width: 100%;
+    margin-top: 5px;
+    color: transparent !important; /* Skryje text vepsaný v prohlížeči */
+  }
+
+  /* Pole pro nahrání fotky upravené pro tisk */
+  input[type="file"] {
+    border: 2px dashed black !important;
+    height: 100px;
+    width: 100%;
+    margin-top: 5px;
+    color: transparent !important;
+    position: relative;
+  }
+
+  input[type="file"]::after {
+    content: "ATTACH PRODUCT PHOTO HERE";
+    color: black !important;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  /* Výpis velikostí pro zaškrtnutí (místo slideru) */
+  label[for="slider"]::after {
+    content: "\A 28  29  30  31  32  33  34  35  36  37  38  \A 39  40  41  42  43  44  45  46  47  48";
+    display: block;
+    white-space: pre;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 2;
+    margin-top: 10px;
+  }
+
+  /* Výpis sezón pro zaškrtnutí (místo selectu) */
+  label[for="Season"]::after {
+    content: "\A [ ] Winter   [ ] Spring   [ ] Summer   [ ] Autumn";
+    display: block;
+    white-space: pre;
+    font-weight: normal;
+    margin-top: 10px;
+  }
+
+  /* Skrytí původního selectu, aby nezavazel pod textem */
+  #Season {
+    display: none !important;
+  }
+
+  /* Pseudo-tlačítko na konci formuláře */
+  form::after {
+    content: "ADD PRODUCT";
+    display: inline-block;
+    border: 2px solid black;
+    padding: 10px 30px;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+  }
+}

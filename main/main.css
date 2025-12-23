@@ -598,7 +598,7 @@ body.dark select {
   }
 
   .products::before {
-    content: "AKTUÁLNÍ NABÍDKA";
+    content: "SELLINGS";
     display: block;
     font-size: 16pt;
     font-weight: bold;
