@@ -59,8 +59,16 @@ seasonOptions.forEach(option => {
   });
 });
 
+
+
+
 //Filter
-function sendFilterRequest() {
+function sendFilterRequest(page = 1) {
+
+  const section = document.getElementById("products");
+  if (section) {
+  section.innerHTML = '<div class="loader">Loading products...</div>';
+  }
   const search = document.getElementById("search").value;
   const size = sizeSlider.value;
   
@@ -71,7 +79,12 @@ function sendFilterRequest() {
   const season = seasonInput ? seasonInput.value : '';
   
   // Собираем параметры
-  const param = "search=" + search + "&size=" + size + "&min=" + minPrice + "&max=" + maxPrice + "&season=" + season;
+  const param = "search=" + encodeURIComponent(search) +
+              "&size=" + size +
+              "&min=" + minPrice +
+              "&max=" + maxPrice +
+              "&season=" + encodeURIComponent(season) +
+              "&page=" + page;
                 
   const url = "filter.php?" + param;
 
@@ -92,7 +105,7 @@ function sendFilterRequest() {
   console.log({ search, size, minPrice, maxPrice, season });
 };
 
-document.getElementById("apply-filters").addEventListener("click", sendFilterRequest);
+document.getElementById("apply-filters").addEventListener("click", () => sendFilterRequest(1));
 
 //reset
 
@@ -113,5 +126,16 @@ document.getElementById("reset-filters").addEventListener("click", () => {
     const radio = option.querySelector("input");
     if (radio) radio.checked = false;
   });
-  sendFilterRequest();
+  sendFilterRequest(1);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  sendFilterRequest(1);
+});
+
+document.addEventListener("click", function(e) {
+  if (e.target.dataset.page) {
+    const page = parseInt(e.target.getAttribute("data-page"));
+    sendFilterRequest(page);
+  }
 });
