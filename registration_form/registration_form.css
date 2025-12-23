@@ -188,3 +188,62 @@ body.dark-mode #dark-mode-btn:hover {
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
+
+/* ctrl + p */
+@media print {
+
+    /* Základ – bílé pozadí, černý text */
+    * {
+        background: none !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    body {
+        background: white !important;
+        display: block;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Skryj interaktivní a zbytečné prvky */
+    .top-buttons,
+    #dark-mode-btn,
+    button,
+    input[type="submit"] {
+        display: none !important;
+    }
+
+    /* Zobraz formulář vždy (i když je jiný skrytý) */
+    form {
+        display: block !important;
+    }
+
+    /* Upravení formuláře pro tisk */
+    .form-container {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    input {
+        border: 1px solid black !important;
+        background: white !important;
+        color: black !important;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    /* Chybové hlášky – jen text, bez barev */
+    .login-error,
+    .email-error-message {
+        border: 1px solid black;
+        background: none;
+        color: black;
+    }
+}
