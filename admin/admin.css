@@ -69,3 +69,82 @@ tbody a {
   background-color: #fee2e2;
   color: #991b1b;
 }
+
+                                                      /* ctrl + p */
+@media print {
+  /* Základní tiskový reset */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Skrytí navigace a tlačítek, která na papíře nefungují */
+  .back-link,
+  tbody a {
+    display: none !important;
+  }
+
+  /* Nadpis dokumentu */
+  body::before {
+    content: "ADMINISTRATION: USER LIST REPORT";
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18pt;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
+  }
+
+  /* Úprava tabulky pro tisk */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    box-shadow: none;
+  }
+
+  /* Hlavička tabulky */
+  thead th {
+    background-color: #eee !important; /* Šedý podklad pro čitelnost */
+    color: black !important;
+    border: 1px solid black;
+    text-transform: uppercase;
+    font-size: 11pt;
+  }
+
+  /* Buňky tabulky */
+  tbody td {
+    border: 1px solid black;
+    padding: 8px;
+    font-size: 10pt;
+  }
+
+  /* Změna sloupce "User handling" na "Notes" */
+  /* Schováme obsah poslední buňky, ale necháme ji jako prostor pro poznámky */
+  thead th:last-child::after {
+    content: " (NOTES)";
+    display: inline;
+  }
+
+  /* Zajistíme, aby se tabulka na dlouhých seznamech správně lámala */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* Patička s datem vygenerování */
+  body::after {
+    content: "Report generated on: ___________  Verified by: ___________";
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 10pt;
+  }
+}
