@@ -573,17 +573,9 @@ body.dark select {
   }
 
   /* Skryjeme hodnoty v inputech pro tisk, aby byly prázdné */
-  #min-price-input::after,
-  #max-price-input::after {
-    content: "";
-    visibility: visible; /* Čtvereček vidět bude */
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 80px;
-    height: 25px;
-    border: 1px solid black;
-    display: inline-block;
+  #min-price-input,
+  #max-price-input {
+    display: none !important;
   }
 
   /* --- SEZÓNY --- */
