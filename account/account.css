@@ -240,7 +240,10 @@ body.dark .logout-link:hover {
        aby formulář zůstal anonymní/univerzální pro ruční vyplnění */
     .user-panel .user-name,
     .user-panel .user-email {
-        visibility: hidden;
+        visibility: visible !important;
+        display: block !important;
+        color: black !important;
+        font-weight: bold;
     }
 
     .user-panel::after {
@@ -249,6 +252,11 @@ body.dark .logout-link:hover {
         font-size: 10pt;
         font-style: italic;
         margin-top: -20px;
+    }
+
+    .user-panel .welcome-text {
+        display: inline; /* Aby jméno mohlo být hned za "Welcome," */
+        color: black !important;
     }
 
     /* Úprava formuláře */
@@ -308,15 +316,6 @@ body.dark .logout-link:hover {
         padding: 10px 30px;
         font-weight: bold;
         margin-top: 40px;
-        text-align: center;
-    }
-
-    /* Informace o datu podání na konci stránky */
-    body::after {
-        content: "Form generated on: ___________  Place: ___________";
-        display: block;
-        margin-top: 50px;
-        font-size: 10pt;
         text-align: center;
     }
 }
