@@ -139,12 +139,29 @@ tbody a {
     page-break-inside: avoid;
   }
 
-  /* Patička s datem vygenerování */
-  body::after {
-    content: "Report generated on: ___________  Verified by: ___________";
+  /* Skrytí původních odkazů/tlačítek */
+  tbody a {
+    display: none !important;
+  }
+
+  /* Přidání textové reprezentace tlačítek do buňky User Handling */
+  tbody td:last-child::before {
+    content: "[ ] Edit   [ ] Delete   [ ] Change Admin";
+    font-family: monospace;
+    font-size: 9pt;
+    white-space: nowrap;
     display: block;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 10pt;
+    color: black !important;
+  }
+
+  /* Úprava šířky posledního sloupce, aby se tam text vešel */
+  th:last-child, td:last-child {
+    width: 250px;
+    text-align: left;
+  }
+
+  /* Zvětšení odsazení řádků pro lepší přehlednost při ručním vpisování */
+  tbody td {
+    padding: 15px 8px;
   }
 }
