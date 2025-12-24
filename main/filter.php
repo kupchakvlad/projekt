@@ -69,6 +69,8 @@ if ($size > 27) {
     $req = $req . " AND size = $size";
 }
 
+$req = $req . " ORDER BY id DESC";
+
 $final_request = mysqli_query($conn, $req);
 
 $all_products = [];
@@ -86,8 +88,6 @@ if ($page > 0) {
 } else {
     $pageProducts = [];
 }
-
-$req = $req . " ORDER BY id DESC";
 
 if (count($pageProducts) > 0) {
      foreach ($pageProducts as $product) {
@@ -108,35 +108,54 @@ if (count($pageProducts) > 0) {
     echo "<p>No products found</p>";
     }
 
+if ($page > $totalPages && $totalPages > 0) {
+    $page = $totalPages;
+}
+
 if ($totalPages > 1) {
-    if ($totalPages > 1) {
     echo '<div class="pagination">';
 
     //"Prev"
     if ($page > 1) {
         $prevPage = $page - 1;
         echo '<button class="page-btn" data-page="' . $prevPage . '">Prev</button>';
-    } else {
-        echo '';
     }
 
-    for ($i = 1; $i <= $totalPages; $i++) {
-        if ($i == $page) {
-            echo '<button class="page-btn active" data-page="' . $i . '">' . $i . '</button>';
-        } else {
-            echo '<button class="page-btn" data-page="' . $i . '">' . $i . '</button>';
+    if ($totalPages <= 5) {
+        for ($i = 1 ; $i <= $totalPages; $i++) {
+            if ($i > 0 && $i <= $totalPages) {
+                if ($i == $page) {
+                echo '<button class="page-btn active">' . $i . '</button>';
+            } else {
+                echo '<button class="page-btn" data-page="' . $i . '">' . $i . '</button>';
+                }
+            }
         }
-    }
+    } else {
+        if ($page > 3) {
+            echo '<button class="page-btn" data-page="1">1</button>';
+            echo '<span class="dots">...</span>';
+        }
 
+        for ($i = $page - 2; $i <= $page + 2; $i++) {
+            if ($i > 0 && $i <= $totalPages) {
+                if ($i == $page) {
+                    echo '<button class="page-btn active">'.$i.'</button>';
+                } else {
+                    echo '<button class="page-btn" data-page="'.$i.'">'.$i.'</button>';
+                }
+            }
+        }
+        
+    if ($totalPages > 5 && $page < $totalPages - 2) {
+    echo '<span class="dots">...</span>';
+    echo '<button class="page-btn" data-page="' . $totalPages . '">' . $totalPages . '</button>';
+    }
+}
     if ($page < $totalPages) {
         $nextPage = $page + 1;
-        echo '<button class="page-btn" data-page="' . $nextPage . '">Next</button>';
-    } else {
-        echo '';
-    }
-
+    echo '<button class="page-btn" data-page="' . $nextPage . '">Next</button>';
+        }
     echo '</div>';
-}
-
-}
+    }
 mysqli_close($conn);?>
