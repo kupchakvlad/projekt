@@ -110,7 +110,8 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
     <form action="registration.php" method="POST" id="registration_form" class="active">
 
         <?php
-        if (!empty($registration_errors) || !empty($name_reg_error) || !empty($email_reg_error) || !empty($password_reg_error) || !empty($confirm_reg_error)) {
+        // FIXED: Removed $registration_errors (already unset) and use direct checks
+        if (!empty($name_reg_error) || !empty($email_reg_error) || !empty($password_reg_error) || !empty($confirm_reg_error)) {
             echo '<div class="error-box">';
             echo '<strong>Please fix these errors:</strong>';
             echo '<ul>';
@@ -136,11 +137,11 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
                id="registration_name"
                name="registration_name"
                value="<?php echo htmlspecialchars($name_value); ?>"
-               <?php
-               if ($name_has_error) {
-                   echo 'class="error-input"';
-               }
-               ?>
+                <?php
+                if ($name_has_error) {
+                    echo 'class="error-input"';
+                }
+                ?>
                required>
 
         <div id="registration_email_container">
