@@ -55,7 +55,7 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
                 <label for="registration_password">Enter password: <span class="required">*</span>
                     <input type="password" id="registration_password" name="registration_password" required>
                 </label>
-                <label for="registration_password_confirmation">Enter password once again:
+                <label for="registration_password_confirmation">Enter password once again: <span class="required">*</span>
                     <input type="password" id="registration_password_confirmation" name="registration_password_confirmation" required>
                 </label>
                 <?php if ($registration_error): ?>
