@@ -216,6 +216,33 @@ body.dark-mode .password-error-message {
     font-weight: bold;
 }
 
+.error-box {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 2px solid #dc2626;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.error-box ul {
+    list-style: disc;
+    text-align: left;
+    margin: 10px 0 0 20px;
+}
+
+.error-box li {
+    margin-bottom: 6px;
+}
+
+body.dark-mode .error-box {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+    border-color: #f87171;
+}
+
 /* PRINT STYLES - LEFT COMPLETELY UNTOUCHED */
 @media print {
 
