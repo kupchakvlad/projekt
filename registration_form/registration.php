@@ -50,7 +50,6 @@ if (isset($_POST['registration_submit'])) {
         $errors[] = 'confirm';
     }
 
-    // Check if email already exists
     if (!in_array('email', $errors)) {
         $query = "SELECT id FROM users WHERE email = ?";
         $stmt = mysqli_prepare($connection, $query);
@@ -63,7 +62,6 @@ if (isset($_POST['registration_submit'])) {
         mysqli_stmt_close($stmt);
     }
 
-    // If errors → save and go back to form
     if (!empty($errors)) {
         $_SESSION['registration_errors'] = $errors;
         $_SESSION['registration_data'] = [
@@ -74,7 +72,6 @@ if (isset($_POST['registration_submit'])) {
         exit;
     }
 
-    // Success → register user
     $hashed = password_hash($pass, PASSWORD_DEFAULT);
     $insert = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($connection, $insert);
@@ -92,7 +89,6 @@ if (isset($_POST['registration_submit'])) {
     exit;
 }
 
-// If someone opens this file directly
 header("Location: registration_form.php");
 exit;
 ?>

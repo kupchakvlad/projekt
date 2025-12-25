@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-
-//DATABASE
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -22,7 +20,6 @@ if (isset($_POST['login_submit'])) {
 
     if (empty($login_email) || empty($login_password)) {
         $error_message = "Email and password are required";
-
     } else {
         $query = "SELECT id, password, admin FROM users WHERE email = ?";
         $stmt = mysqli_prepare($connection, $query);

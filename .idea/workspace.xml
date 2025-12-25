@@ -6,31 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/account_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account_back.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/logOut.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/logOut.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product.css" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product_back.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin_handling.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin_handling.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/edit_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_back.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/filter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main_back.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/product.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +150,7 @@
       <workItem from="1766363355589" duration="3232000" />
       <workItem from="1766442763538" duration="1047000" />
       <workItem from="1766521443031" duration="4716000" />
-      <workItem from="1766659611011" duration="20056000" />
+      <workItem from="1766659611011" duration="22164000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />
