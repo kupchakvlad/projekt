@@ -25,7 +25,7 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
 
     <form action="add_product_back.php" method="POST" enctype="multipart/form-data">
         <label for="Photo">Upload photo of product: <span class="required">*</span>
-            <input type="file" id="Photo" name="photo[]" accept="image/*" multiple>
+            <input type="file" id="Photo" name="photo[]" accept="image/*" multiple required>
         </label>
         <label for="ProductName">Enter your product name: <span class="required">*</span>
             <input type="text" name="product_name" id="ProductName" required>
@@ -42,11 +42,11 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
             </select>
         </label>
         <label for="slider"> Enter shoes size: <span class="required">*</span>
-            <input type="range" name="product_size" id="slider" min="28" max="48" step="1" value="36">
+            <input type="range" name="product_size" id="slider" min="28" max="48" step="1" value="36" required>
         </label>
         <span id="size-value">36</span>
         <label for="ProductPrice">Enter price: <span class="required">*</span>
-            <input type="text" name="product_price" id="ProductPrice">
+            <input type="text" name="product_price" id="ProductPrice" required>
         </label>
         <input type="submit" class="submit-button" name="submit" value="Add product">
     </form>

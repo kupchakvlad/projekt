@@ -19,8 +19,8 @@ if (isset($_POST["submit"])) {
     $product_name = trim($_POST["product_name"]);
     $product_fabric = trim($_POST["product_fabric"]);
     $product_season = trim($_POST["season"]);
-    $product_size = trim($_POST["product_size"]);
-    $product_price = trim($_POST["product_price"]);
+    $product_size = (int) trim($_POST["product_size"]);
+    $product_price = (int) trim($_POST["product_price"]);
 
     $all_file_paths = [];
 
