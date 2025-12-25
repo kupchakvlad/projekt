@@ -78,7 +78,7 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
     <script src="registration_form.js" defer></script>
 </head>
 
-<body <?php if ($body_has_dark_mode): ?>class="dark-mode"<?php endif; ?>>
+<body <?php if ($body_has_dark_mode) { echo 'class="dark-mode"'; } ?>>
 
 <button type="button" id="dark-mode-btn">Dark Mode</button>
 
