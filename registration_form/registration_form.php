@@ -28,10 +28,10 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
         </div>
         
         <form action="login.php" method="POST" id="login_form">
-            <label for="login_email">Enter your email:
+            <label for="login_email">Enter your email: <span class="required">*</span>
                 <input type="text" id="login_email" name="login_email" required>
             </label>
-            <label for="login_password">Enter your password:
+            <label for="login_password">Enter your password: <span class="required">*</span>
                 <input type="password" id="login_password" name="login_password" required>
             </label>
             
@@ -43,16 +43,16 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
         </form>
         
         <form action="registration.php" method="POST" id="registration_form" class="active">
-            <label for="registration_name">Enter name: 
+            <label for="registration_name">Enter name: <span class="required">*</span>
                 <input type="text" id="registration_name" name="registration_name" required>
             </label>
             <div id="registration_email_container">
-                <label for="registration_email">Enter email: 
+                <label for="registration_email">Enter email: <span class="required">*</span>
                     <input type="text" id="registration_email" name="registration_email" required>
                 </label>
             </div>
             <div id="registration_password_container">
-                <label for="registration_password">Enter password:
+                <label for="registration_password">Enter password: <span class="required">*</span>
                     <input type="password" id="registration_password" name="registration_password" required>
                 </label>
                 <label for="registration_password_confirmation">Enter password once again:

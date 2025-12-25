@@ -168,6 +168,11 @@ body.dark form label {
   background-color: #218838;
 }
 
+.required {
+  color: red;
+  font-weight: bold;
+}
+
                                                      /* ctrl + p */
 @media print {
   /* Základní tiskový reset */

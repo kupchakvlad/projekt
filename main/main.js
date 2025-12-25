@@ -79,7 +79,7 @@ function sendFilterRequest(page = 1) {
   const season = seasonInput ? seasonInput.value : '';
   
   // Собираем параметры
-  const param = "search=" + encodeURIComponent(search) +
+  const param = "&search=" + encodeURIComponent(search) +
               "&size=" + size +
               "&min=" + minPrice +
               "&max=" + maxPrice +

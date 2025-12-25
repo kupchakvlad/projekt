@@ -189,6 +189,11 @@ body.dark-mode #dark-mode-btn:hover {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.required {
+    color: red;
+    font-weight: bold;
+}
+
                                                           /* ctrl + p */
 @media print {
 
