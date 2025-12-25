@@ -1,21 +1,17 @@
 <?php
 session_start();
 
-// --------------------------
 // 1. LOGIN ERROR
-// --------------------------
-$show_login_error = false;        // Will we show the error box?
-$login_error_text = '';           // What text to show?
+$show_login_error = false;
+$login_error_text = '';
 
 if (isset($_SESSION['login_error']) && $_SESSION['login_error'] != '') {
     $show_login_error = true;
     $login_error_text = $_SESSION['login_error'];
-    unset($_SESSION['login_error']);  // clear it after reading
+    unset($_SESSION['login_error']);
 }
 
-// --------------------------
 // 2. REGISTRATION OLD DATA AND ERRORS
-// --------------------------
 $name_value = '';
 $email_value = '';
 
@@ -49,18 +45,16 @@ if (isset($_SESSION['registration_errors'])) {
     }
     if (in_array('password', $errors)) {
         $password_has_error = true;
-        $reg_error_3 = 'Password must be at least 8 characters and not too weak.';
+        $reg_error_3 = 'Password must be at least 8 characters and not too common.';
     }
     if (in_array('confirm', $errors)) {
         $confirm_has_error = true;
-        $password_has_error = true;  // also highlight password field
+        $password_has_error = true; // also highlight password field
         $reg_error_4 = 'Passwords do not match.';
     }
 }
 
-// --------------------------
 // 3. DARK MODE
-// --------------------------
 $body_has_dark_mode = false;
 if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
     $body_has_dark_mode = true;
@@ -109,6 +103,19 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
     <!-- ====================== REGISTRATION FORM ====================== -->
     <form action="registration.php" method="POST" id="registration_form" class="active">
 
+        <!-- NEW: ERROR BOX SHOWN AFTER SUBMISSION -->
+        <?php if (!empty($registration_errors) || !empty($reg_error_1) || !empty($reg_error_2) || !empty($reg_error_3) || !empty($reg_error_4)): ?>
+            <div class="error-box">
+                <strong>Please fix these errors:</strong>
+                <ul>
+                    <?php if ($reg_error_1): ?><li><?php echo $reg_error_1; ?></li><?php endif; ?>
+                    <?php if ($reg_error_2): ?><li><?php echo $reg_error_2; ?></li><?php endif; ?>
+                    <?php if ($reg_error_3): ?><li><?php echo $reg_error_3; ?></li><?php endif; ?>
+                    <?php if ($reg_error_4): ?><li><?php echo $reg_error_4; ?></li><?php endif; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
         <label for="registration_name">Enter name: <span class="required">*</span></label>
         <input type="text"
                id="registration_name"
@@ -143,13 +150,13 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
                    <?php if ($confirm_has_error): ?>class="error-input"<?php endif; ?>
                    required>
 
-            <!-- Show registration errors only if there are any -->
-            <?php if ($reg_error_1 != '' || $reg_error_2 != '' || $reg_error_3 != '' || $reg_error_4 != ''): ?>
+            <!-- Individual error messages under password (optional, can remove if you prefer only the box) -->
+            <?php if ($reg_error_1 || $reg_error_2 || $reg_error_3 || $reg_error_4): ?>
                 <div class="error-messages">
-                    <?php if ($reg_error_1 != ''): ?><p class="password-error-message"><?php echo $reg_error_1; ?></p><?php endif; ?>
-                    <?php if ($reg_error_2 != ''): ?><p class="password-error-message"><?php echo $reg_error_2; ?></p><?php endif; ?>
-                    <?php if ($reg_error_3 != ''): ?><p class="password-error-message"><?php echo $reg_error_3; ?></p><?php endif; ?>
-                    <?php if ($reg_error_4 != ''): ?><p class="password-error-message"><?php echo $reg_error_4; ?></p><?php endif; ?>
+                    <?php if ($reg_error_1): ?><p class="password-error-message"><?php echo $reg_error_1; ?></p><?php endif; ?>
+                    <?php if ($reg_error_2): ?><p class="password-error-message"><?php echo $reg_error_2; ?></p><?php endif; ?>
+                    <?php if ($reg_error_3): ?><p class="password-error-message"><?php echo $reg_error_3; ?></p><?php endif; ?>
+                    <?php if ($reg_error_4): ?><p class="password-error-message"><?php echo $reg_error_4; ?></p><?php endif; ?>
                 </div>
             <?php endif; ?>
 
