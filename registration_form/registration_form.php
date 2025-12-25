@@ -29,10 +29,10 @@ if (isset($_SESSION['registration_data'])) {
     unset($_SESSION['registration_data']);
 }
 
-$login_email_value = $email_value;
+$login_email_value = '';
 
-if (isset($_SESSION['registration_data'])) {
-    $login_email_value = $_SESSION['registration_data']['email'] ?? '';
+if (!empty($email_value)) {
+    $login_email_value = $email_value;
 }
 
 if (isset($_SESSION['last_login_email'])) {
