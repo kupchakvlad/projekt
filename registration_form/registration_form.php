@@ -31,6 +31,11 @@ if (isset($_SESSION['registration_data'])) {
 
 $login_email_value = '';
 
+if (isset($_SESSION['login_data'])) {
+    $login_email_value = $_SESSION['login_data']['email'] ?? '';
+    unset($_SESSION['login_data']);
+}
+
 if (!empty($email_value)) {
     $login_email_value = $email_value;
 }
