@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['admin'] != 1) {
+    header("Location: ../main/main.php");
+    exit;
+}
+
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -13,7 +18,7 @@ if (!$connection) {
 }
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-if ($id === false) {
+if ($id === false || $id === null) {
     die("Invalid ID");
 }
 

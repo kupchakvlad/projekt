@@ -22,10 +22,8 @@ if (isset($_POST["submit"])) {
     $product_size = trim($_POST["product_size"]);
     $product_price = trim($_POST["product_price"]);
 
-    // Массив для хранения путей всех загруженных файлов
     $all_file_paths = [];
 
-    // 1. Сначала загружаем ВСЕ файлы и собираем их пути в массив
     for ($i = 0; $i < count($_FILES["photo"]["name"]); $i++) {
         if ($_FILES["photo"]["error"][$i] == 0) {
             $file_name = time() . "_" . $i . "_" . basename($_FILES["photo"]["name"][$i]);
@@ -33,15 +31,13 @@ if (isset($_POST["submit"])) {
             $file_path = $upload_directory . $file_name;
 
             if (move_uploaded_file($file_tmp, $file_path)) {
-                $all_file_paths[] = $file_path; // Добавляем путь в массив
+                $all_file_paths[] = $file_path;
             }
         }
     }
 
-    // 2. Склеиваем все пути в одну строку через запятую
     $final_file_paths = implode(',', $all_file_paths);
 
-    // 3. Делаем ВСЕГО ОДИН запрос в базу данных
     $insert_product_query = "INSERT INTO products (
         user_id, file_path, name, fabric, season, size, price
     ) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -51,7 +47,7 @@ if (isset($_POST["submit"])) {
     if ($stmt) {
         mysqli_stmt_bind_param($stmt, "issssii", 
             $user_id, 
-            $final_file_paths, // Тут теперь строка вида "путь1,путь2,путь3"
+            $final_file_paths,
             $product_name, 
             $product_fabric, 
             $product_season, 

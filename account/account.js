@@ -11,8 +11,6 @@ darkModeToggle.addEventListener('click', function() {
 
 // Back button
 const backButton = document.getElementById('back-button');
-if (backButton) {
-    backButton.addEventListener('click', function() {
-        window.location.href = "../main/main.php";
-    });
-}
+backButton.addEventListener('click', function() {
+    window.location.href = "../main/main.php";
+});

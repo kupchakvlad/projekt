@@ -1,4 +1,3 @@
-/* ---------- Reset and Base ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -17,20 +16,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ---------- Header ---------- */
-header {
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  color: #2563eb;
-}
-
-/* ---------- Buttons ---------- */
 .back-to-main,
 .dark-mode-btn {
   background-color: #2563eb;
@@ -51,7 +36,6 @@ header h1 {
   background-color: #1e40af;
 }
 
-/* Place buttons in corners */
 .back-to-main {
   left: 1rem;
 }
@@ -60,7 +44,6 @@ header h1 {
   right: 1rem;
 }
 
-/* ---------- Form Container ---------- */
 form {
   display: flex;
   flex-direction: column;
@@ -74,13 +57,11 @@ form {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ---------- Labels ---------- */
 label {
   font-weight: 600;
   color: #333;
 }
 
-/* ---------- Inputs ---------- */
 input[type="text"],
 input[type="file"],
 select {
@@ -102,7 +83,6 @@ input[type="file"] {
   padding: 8px;
 }
 
-/* ---------- Slider ---------- */
 #slider {
   width: 100%;
   accent-color: #2563eb;
@@ -115,7 +95,6 @@ input[type="file"] {
   margin-left: 10px;
 }
 
-/* ---------- Dark Mode ---------- */
 body.dark {
   background-color: #1e1e1e;
   color: #f2f2f2;
@@ -175,7 +154,6 @@ body.dark form label {
 
                                                      /* ctrl + p */
 @media print {
-  /* Základní tiskový reset */
   * {
     background: white !important;
     color: black !important;
@@ -188,7 +166,6 @@ body.dark form label {
     padding: 0;
   }
 
-  /* Skrytí interaktivních prvků a UI */
   .back-to-main,
   .dark-mode-btn,
   .submit-button,
@@ -197,7 +174,6 @@ body.dark form label {
     display: none !important;
   }
 
-  /* Úprava kontejneru formuláře */
   form {
     display: block !important;
     width: 100%;
@@ -208,7 +184,6 @@ body.dark form label {
     box-shadow: none;
   }
 
-  /* Nadpis formuláře pro tisk */
   form::before {
     content: "ADD NEW PRODUCT FORM";
     display: block;
@@ -218,7 +193,6 @@ body.dark form label {
     text-align: center;
   }
 
-  /* Popisky polí */
   label {
     font-size: 14px;
     font-weight: bold;
@@ -226,7 +200,6 @@ body.dark form label {
     display: block;
   }
 
-  /* Vstupy pro psaní rukou - smazání textu a černé ohraničení */
   input[type="text"],
   select {
     border: 2px solid black !important;
@@ -235,10 +208,9 @@ body.dark form label {
     height: 40px;
     width: 100%;
     margin-top: 5px;
-    color: transparent !important; /* Skryje text vepsaný v prohlížeči */
+    color: transparent !important;
   }
 
-  /* Pole pro nahrání fotky upravené pro tisk */
   input[type="file"] {
     display: none !important;
   }
@@ -254,7 +226,6 @@ body.dark form label {
     font-size: 12px;
   }
 
-  /* Výpis velikostí pro zaškrtnutí (místo slideru) */
   label[for="slider"]::after {
     content: "\A 28  29  30  31  32  33  34  35  36  37  38  \A 39  40  41  42  43  44  45  46  47  48";
     display: block;
@@ -265,7 +236,6 @@ body.dark form label {
     margin-top: 10px;
   }
 
-  /* Výpis sezón pro zaškrtnutí (místo selectu) */
   label[for="Season"]::after {
     content: "\A [ ] Winter   [ ] Spring   [ ] Summer   [ ] Autumn";
     display: block;
@@ -274,12 +244,10 @@ body.dark form label {
     margin-top: 10px;
   }
 
-  /* Skrytí původního selectu, aby nezavazel pod textem */
   #Season {
     display: none !important;
   }
 
-  /* Pseudo-tlačítko na konci formuláře */
   form::after {
     content: "ADD PRODUCT";
     display: inline-block;

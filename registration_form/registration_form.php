@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// 1. LOGIN ERROR
 $show_login_error = false;
 $login_error_text = '';
 
@@ -11,7 +10,6 @@ if (isset($_SESSION['login_error']) && $_SESSION['login_error'] != '') {
     unset($_SESSION['login_error']);
 }
 
-// 2. REGISTRATION OLD DATA AND ERRORS
 $name_value = '';
 $email_value = '';
 
@@ -20,13 +18,13 @@ $email_has_error = false;
 $password_has_error = false;
 $confirm_has_error = false;
 
-$reg_error_1 = '';
-$reg_error_2 = '';
-$reg_error_3 = '';
-$reg_error_4 = '';
+$name_reg_error = '';
+$email_reg_error = '';
+$password_reg_error = '';
+$confirm_reg_error = '';
 
 if (isset($_SESSION['registration_data'])) {
-    $name_value  = $_SESSION['registration_data']['name']  ?? '';
+    $name_value = $_SESSION['registration_data']['name'] ?? '';
     $email_value = $_SESSION['registration_data']['email'] ?? '';
     unset($_SESSION['registration_data']);
 }
@@ -37,24 +35,23 @@ if (isset($_SESSION['registration_errors'])) {
 
     if (in_array('name', $errors)) {
         $name_has_error = true;
-        $reg_error_1 = 'Name is required.';
+        $name_reg_error = 'Name is required.';
     }
     if (in_array('email', $errors)) {
         $email_has_error = true;
-        $reg_error_2 = 'Please enter a valid email address.';
+        $email_reg_error = 'Please enter a valid email address.';
     }
     if (in_array('password', $errors)) {
         $password_has_error = true;
-        $reg_error_3 = 'Password must be at least 8 characters and not too common.';
+        $password_reg_error = 'Password must be at least 8 characters and not too common.';
     }
     if (in_array('confirm', $errors)) {
         $confirm_has_error = true;
-        $password_has_error = true; // also highlight password field
-        $reg_error_4 = 'Passwords do not match.';
+        $password_has_error = true;
+        $confirm_reg_error = 'Passwords do not match.';
     }
 }
 
-// 3. DARK MODE
 $body_has_dark_mode = false;
 if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
     $body_has_dark_mode = true;
@@ -82,7 +79,6 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
         <button id="login_button" class="login-form">Login</button>
     </div>
 
-    <!-- ====================== LOGIN FORM ====================== -->
     <form action="login.php" method="POST" id="login_form">
 
         <label for="login_email">Enter your email: <span class="required">*</span></label>
@@ -91,37 +87,49 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
         <label for="login_password">Enter your password: <span class="required">*</span></label>
         <input type="password" id="login_password" name="login_password" required>
 
-        <?php if ($show_login_error): ?>
-            <div class="login-error">
-                <?php echo htmlspecialchars($login_error_text); ?>
-            </div>
-        <?php endif; ?>
+        <?php
+        if ($show_login_error) {
+            echo '<div class="login-error">' . htmlspecialchars($login_error_text) . '</div>';
+        }
+        ?>
 
         <input type="submit" id="login_submit" name="login_submit" class="submit" value="Sign-in">
     </form>
 
-    <!-- ====================== REGISTRATION FORM ====================== -->
     <form action="registration.php" method="POST" id="registration_form" class="active">
 
-        <!-- NEW: ERROR BOX SHOWN AFTER SUBMISSION -->
-        <?php if (!empty($registration_errors) || !empty($reg_error_1) || !empty($reg_error_2) || !empty($reg_error_3) || !empty($reg_error_4)): ?>
-            <div class="error-box">
-                <strong>Please fix these errors:</strong>
-                <ul>
-                    <?php if ($reg_error_1): ?><li><?php echo $reg_error_1; ?></li><?php endif; ?>
-                    <?php if ($reg_error_2): ?><li><?php echo $reg_error_2; ?></li><?php endif; ?>
-                    <?php if ($reg_error_3): ?><li><?php echo $reg_error_3; ?></li><?php endif; ?>
-                    <?php if ($reg_error_4): ?><li><?php echo $reg_error_4; ?></li><?php endif; ?>
-                </ul>
-            </div>
-        <?php endif; ?>
+        <?php
+        if (!empty($registration_errors) || !empty($name_reg_error) || !empty($email_reg_error) || !empty($password_reg_error) || !empty($confirm_reg_error)) {
+            echo '<div class="error-box">';
+            echo '<strong>Please fix these errors:</strong>';
+            echo '<ul>';
+            if ($name_reg_error) {
+                echo '<li>' . htmlspecialchars($name_reg_error) . '</li>';
+            }
+            if ($email_reg_error) {
+                echo '<li>' . htmlspecialchars($email_reg_error) . '</li>';
+            }
+            if ($password_reg_error) {
+                echo '<li>' . htmlspecialchars($password_reg_error) . '</li>';
+            }
+            if ($confirm_reg_error) {
+                echo '<li>' . htmlspecialchars($confirm_reg_error) . '</li>';
+            }
+            echo '</ul>';
+            echo '</div>';
+        }
+        ?>
 
         <label for="registration_name">Enter name: <span class="required">*</span></label>
         <input type="text"
                id="registration_name"
                name="registration_name"
                value="<?php echo htmlspecialchars($name_value); ?>"
-               <?php if ($name_has_error): ?>class="error-input"<?php endif; ?>
+               <?php
+               if ($name_has_error) {
+                   echo 'class="error-input"';
+               }
+               ?>
                required>
 
         <div id="registration_email_container">
@@ -130,7 +138,11 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
                    id="registration_email"
                    name="registration_email"
                    value="<?php echo htmlspecialchars($email_value); ?>"
-                   <?php if ($email_has_error): ?>class="error-input"<?php endif; ?>
+                    <?php
+                    if ($email_has_error) {
+                        echo 'class="error-input"';
+                    }
+                    ?>
                    required>
         </div>
 
@@ -140,33 +152,26 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
             <input type="password"
                    id="registration_password"
                    name="registration_password"
-                   <?php if ($password_has_error): ?>class="error-input"<?php endif; ?>
+                    <?php
+                    if ($password_has_error) {
+                        echo 'class="error-input"';
+                    }
+                    ?>
                    required>
 
             <label for="registration_password_confirmation">Enter password once again: <span class="required">*</span></label>
             <input type="password"
                    id="registration_password_confirmation"
                    name="registration_password_confirmation"
-                   <?php if ($confirm_has_error): ?>class="error-input"<?php endif; ?>
+                    <?php
+                    if ($confirm_has_error) {
+                        echo 'class="error-input"';
+                    }
+                    ?>
                    required>
-
-            <!-- Individual error messages under password (optional, can remove if you prefer only the box) -->
-            <?php if ($reg_error_1 || $reg_error_2 || $reg_error_3 || $reg_error_4): ?>
-                <div class="error-messages">
-                    <?php if ($reg_error_1): ?><p class="password-error-message"><?php echo $reg_error_1; ?></p><?php endif; ?>
-                    <?php if ($reg_error_2): ?><p class="password-error-message"><?php echo $reg_error_2; ?></p><?php endif; ?>
-                    <?php if ($reg_error_3): ?><p class="password-error-message"><?php echo $reg_error_3; ?></p><?php endif; ?>
-                    <?php if ($reg_error_4): ?><p class="password-error-message"><?php echo $reg_error_4; ?></p><?php endif; ?>
-                </div>
-            <?php endif; ?>
-
         </div>
 
-        <input type="submit"
-               name="registration_submit"
-               class="submit"
-               id="registration_submit"
-               value="Sign-up">
+        <input type="submit" name="registration_submit" class="submit" id="registration_submit" value="Sign-up">
 
     </form>
 

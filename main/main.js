@@ -1,4 +1,3 @@
-// ===== Header (Dark Mode) =====
 document.getElementById("dark-mode-toggle").addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark");
     const newMode = isDark ? 'dark' : 'light';
@@ -8,7 +7,6 @@ document.getElementById("dark-mode-toggle").addEventListener("click", () => {
     request.send(`mode=${newMode}`);
 });
 
-// ===== Size (Размер) =====
 const sizeSlider = document.getElementById("size-slider");
 const sizeValue = document.getElementById("size-value");
 
@@ -20,35 +18,29 @@ function updateSize() {
   }
 }
 
-// Инициализация при загрузке
 updateSize();
 sizeSlider.addEventListener("input", updateSize);
 
-// ===== Price (Цена) =====
 const minPriceSlider = document.getElementById("min-price");
 const maxPriceSlider = document.getElementById("max-price");
 const minPriceInput = document.getElementById("min-price-input");
 const maxPriceInput = document.getElementById("max-price-input");
 
-// Функция синхронизации: из слайдера в инпут
 function syncSliderToInput(slider, input) {
     input.value = slider.value;
 }
 
-// Функция синхронизации: из инпута в слайдер
 function syncInputToSlider(input, slider) {
     slider.value = input.value;
 }
 
-// Слушатели для слайдеров
+
 minPriceSlider.addEventListener("input", () => syncSliderToInput(minPriceSlider, minPriceInput));
 maxPriceSlider.addEventListener("input", () => syncSliderToInput(maxPriceSlider, maxPriceInput));
 
-// Слушатели для текстовых полей
 minPriceInput.addEventListener("input", () => syncInputToSlider(minPriceInput, minPriceSlider));
 maxPriceInput.addEventListener("input", () => syncInputToSlider(maxPriceInput, maxPriceSlider));
 
-// ===== Season (Сезоны) =====
 const seasonOptions = document.querySelectorAll(".season-option");
 seasonOptions.forEach(option => {
   option.addEventListener("click", () => {
@@ -60,9 +52,6 @@ seasonOptions.forEach(option => {
 });
 
 
-
-
-//Filter
 function sendFilterRequest(page = 1) {
 
   const section = document.getElementById("products");
@@ -92,7 +81,6 @@ function sendFilterRequest(page = 1) {
 
   req.onload = function () {
     if (req.status === 200) {
-      // innerHTML используется, так как сервер возвращает готовую верстку карточек
       document.getElementById("products").innerHTML = req.responseText;
     } else {
       console.error("Error server:" + req.status);
@@ -106,8 +94,6 @@ function sendFilterRequest(page = 1) {
 };
 
 document.getElementById("apply-filters").addEventListener("click", () => sendFilterRequest(1));
-
-//reset
 
 document.getElementById("reset-filters").addEventListener("click", () => {
   document.getElementById("search").value = "";

@@ -1,4 +1,3 @@
-/* ===== Base ===== */
 body {
   margin: 0;
   padding: 30px;
@@ -7,7 +6,6 @@ body {
   color: #333;
 }
 
-/* ===== Back link ===== */
 .back-link {
   display: inline-block;
   margin-bottom: 20px;
@@ -21,7 +19,6 @@ body {
   text-decoration: underline;
 }
 
-/* ===== Table ===== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -31,7 +28,6 @@ table {
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* Header */
 thead th {
   background-color: #2563eb;
   color: white;
@@ -40,7 +36,6 @@ thead th {
   font-size: 14px;
 }
 
-/* Rows */
 tbody td {
   padding: 12px 14px;
   border-bottom: 1px solid #e5e7eb;
@@ -63,8 +58,6 @@ tbody a {
   color: #111;
 }
 
-
-/* Delete button */
 .delete_button {
   background-color: #fee2e2;
   color: #991b1b;
@@ -72,7 +65,6 @@ tbody a {
 
                                                       /* ctrl + p */
 @media print {
-  /* Základní tiskový reset */
   * {
     background: white !important;
     color: black !important;
@@ -85,13 +77,11 @@ tbody a {
     margin: 0;
   }
 
-  /* Skrytí navigace a tlačítek, která na papíře nefungují */
   .back-link,
   tbody a {
     display: none !important;
   }
 
-  /* Nadpis dokumentu */
   body::before {
     content: "ADMINISTRATION: USER LIST REPORT";
     display: block;
@@ -103,7 +93,6 @@ tbody a {
     border-bottom: 3px solid black;
   }
 
-  /* Úprava tabulky pro tisk */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -111,40 +100,33 @@ tbody a {
     box-shadow: none;
   }
 
-  /* Hlavička tabulky */
   thead th {
-    background-color: #eee !important; /* Šedý podklad pro čitelnost */
+    background-color: #eee !important;
     color: black !important;
     border: 1px solid black;
     text-transform: uppercase;
     font-size: 11pt;
   }
 
-  /* Buňky tabulky */
   tbody td {
     border: 1px solid black;
     padding: 8px;
     font-size: 10pt;
   }
 
-  /* Změna sloupce "User handling" na "Notes" */
-  /* Schováme obsah poslední buňky, ale necháme ji jako prostor pro poznámky */
   thead th:last-child::after {
     content: " (NOTES)";
     display: inline;
   }
 
-  /* Zajistíme, aby se tabulka na dlouhých seznamech správně lámala */
   tr {
     page-break-inside: avoid;
   }
 
-  /* Skrytí původních odkazů/tlačítek */
   tbody a {
     display: none !important;
   }
 
-  /* Přidání textové reprezentace tlačítek do buňky User Handling */
   tbody td:last-child::before {
     content: "[ ] Edit   [ ] Delete   [ ] Change Admin";
     font-family: monospace;
@@ -154,13 +136,11 @@ tbody a {
     color: black !important;
   }
 
-  /* Úprava šířky posledního sloupce, aby se tam text vešel */
   th:last-child, td:last-child {
     width: 250px;
     text-align: left;
   }
 
-  /* Zvětšení odsazení řádků pro lepší přehlednost při ručním vpisování */
   tbody td {
     padding: 15px 8px;
   }

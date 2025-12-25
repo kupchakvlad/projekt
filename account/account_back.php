@@ -18,14 +18,12 @@ $new_name = $_POST['username'];
 $new_email = $_POST['email'];
 $new_password = $_POST['password'];
 
-// Если пароль заполнен, хэшируем
 if (!empty($new_password)) {
     $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
     $query = "UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?";
     $stmt = mysqli_prepare($connection, $query);
     mysqli_stmt_bind_param($stmt, "sssi", $new_name, $new_email, $hashed_password, $user_id);
 } else {
-    // Если пароль пустой, меняем только имя и email
     $query = "UPDATE users SET name = ?, email = ? WHERE id = ?";
     $stmt = mysqli_prepare($connection, $query);
     mysqli_stmt_bind_param($stmt, "ssi", $new_name, $new_email, $user_id);

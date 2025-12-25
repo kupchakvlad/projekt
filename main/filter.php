@@ -82,12 +82,10 @@ while($row = mysqli_fetch_assoc($final_request)) {
 $totalProducts = count($all_products);
 $totalPages = ceil($totalProducts / $perPage);
 
-if ($page > 0) {
-    $start = ($page - 1) * $perPage;
-    $pageProducts = array_slice($all_products, $start, $perPage);
-} else {
-    $pageProducts = [];
-}
+
+$offset = ($page - 1) * $perPage;
+$pageProducts = array_slice($all_products, $offset, $perPage);
+
 
 if (count($pageProducts) > 0) {
      foreach ($pageProducts as $product) {
@@ -115,7 +113,6 @@ if ($page > $totalPages && $totalPages > 0) {
 if ($totalPages > 1) {
     echo '<div class="pagination">';
 
-    //"Prev"
     if ($page > 1) {
         $prevPage = $page - 1;
         echo '<button class="page-btn" data-page="' . $prevPage . '">Prev</button>';
@@ -158,4 +155,5 @@ if ($totalPages > 1) {
         }
     echo '</div>';
     }
-mysqli_close($conn);?>
+mysqli_close($conn);
+?>

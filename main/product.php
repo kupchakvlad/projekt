@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Проверка сессии
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
@@ -19,7 +18,7 @@ if (!$conn) die("DB error");
 
 if (!isset($_GET["id"])) die("This product does not exist");
 
-$id = (int)$_GET['id'];
+$id = (int) $_GET['id'];
 
 $query = "
     SELECT p.*, u.name AS user_name
@@ -31,7 +30,6 @@ $result = mysqli_query($conn, $query);
 $product = mysqli_fetch_array($result);
 if (!$product) die("This product does not exist");
 
-// Формат даты через DateTime
 $added_date = 'Unknown';
 if (!empty($product['created_at'])) {
     $added_date = date('d M Y', strtotime($product['created_at']));
@@ -62,9 +60,9 @@ if (!empty($product['created_at'])) {
         <?php
                 $images = explode(',', $product['file_path']);
                 foreach ($images as $img) {
-                $img_url = str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', trim($img));
-                echo '<img class="product-image" src="' . $img_url . '" alt="product">';
-}
+                    $img_url = str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', trim($img));
+                    echo '<img class="product-image" src="' . $img_url . '" alt="product">';
+                }
 
         ?>
     </div>

@@ -17,8 +17,6 @@ if (!$connection) {
     die("Connection failed: \n". mysqli_connect_error());
 }
 
-$current_user_id = $_SESSION['user_id'];
-
 $select_users_query = "SELECT id, name, email, admin FROM users";
 $result = mysqli_query($connection, $select_users_query);
 ?>

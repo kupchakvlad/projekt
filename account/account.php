@@ -16,7 +16,6 @@ $database = "kupchvla";
 $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
 
-// Получение данных пользователя
 $user_id = $_SESSION["user_id"];
 $query = "SELECT name, email FROM users WHERE id = ?";
 $stmt = mysqli_prepare($connection, $query);

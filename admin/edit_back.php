@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['admin'] != 1) {
+    header("Location: ../main/main.php");
+    exit;
+}
+
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -23,10 +28,7 @@ if ($id === false) {
 }
 
 
-
-
-// USER EDITING
-if (isset($_POST["edit"]) && !empty($_POST["edited_username"]) && !empty($_POST["edited_email"])) {
+if (isset($_POST["edit"]) && !empty($_POST["edited_username"]) && !empty($_POST["edited_email"]) && filter_var($_POST["edited_email"], FILTER_VALIDATE_EMAIL)) {
 
     $username = trim($_POST["edited_username"]);
     $email = trim($_POST["edited_email"]);

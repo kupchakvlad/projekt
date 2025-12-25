@@ -37,9 +37,9 @@ $result = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($result)) {
     if ($row["admin"] == 1) {
-        $new_admin_value = 0;  // was admin, now remove admin
+        $new_admin_value = 0;
     } else {
-        $new_admin_value = 1;  // was not admin, now make admin
+        $new_admin_value = 1;
     }
 } else {
     header("Location: admin.php");
@@ -55,7 +55,7 @@ if (mysqli_stmt_execute($update_stmt)) {
     header("Location: admin.php");
     exit;
 } else {
-    header("Location: admin_handling.php");
+    header("Location: admin.php");
     exit;
 }
 ?>
