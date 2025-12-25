@@ -346,7 +346,7 @@ body.dark-mode .password-error-message {
         display: block;
         margin-top: 30px;
     }
-    
+
     #registration_form::after {
         content: "REGISTROVAT SE";
     }

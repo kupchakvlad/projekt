@@ -29,6 +29,17 @@ if (isset($_SESSION['registration_data'])) {
     unset($_SESSION['registration_data']);
 }
 
+$login_email_value = '';
+
+if (isset($_SESSION['registration_data'])) {
+    $login_email_value = $_SESSION['registration_data']['email'] ?? '';
+}
+
+if (isset($_SESSION['last_login_email'])) {
+    $login_email_value = $_SESSION['last_login_email'];
+    unset($_SESSION['last_login_email']);
+}
+
 if (isset($_SESSION['registration_errors'])) {
     $errors = $_SESSION['registration_errors'];
     unset($_SESSION['registration_errors']);
@@ -82,7 +93,7 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
     <form action="login.php" method="POST" id="login_form">
 
         <label for="login_email">Enter your email: <span class="required">*</span></label>
-        <input type="text" id="login_email" name="login_email" required>
+        <input type="text" id="login_email" name="login_email" value="<?php echo htmlspecialchars($login_email_value); ?>" required>
 
         <label for="login_password">Enter your password: <span class="required">*</span></label>
         <input type="password" id="login_password" name="login_password" required>
