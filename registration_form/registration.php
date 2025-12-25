@@ -21,7 +21,7 @@ function loadWeakPasswords($file) {
 $weakPasswords = loadWeakPasswords($weakPasswordsFile);
 
 // Only run when form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registration_submit'])) {
+if (isset($_POST['registration_submit'])) {
 
     $errors = [];
     $name  = trim($_POST['registration_name'] ?? '');

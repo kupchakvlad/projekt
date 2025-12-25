@@ -32,6 +32,7 @@ mysqli_stmt_close($prefill_stmt);
 
 <head>
     <link href="edit.css" rel="stylesheet">
+    <title> Edit </title>
 </head>
 
 <body>
