@@ -243,6 +243,26 @@ body.dark-mode .error-box {
     border-color: #f87171;
 }
 
+.error-input {
+    border: 2px solid #dc2626 !important;
+    background-color: #fee2e2 !important;
+}
+
+body.dark-mode .error-input {
+    background-color: #7f1d1d !important;
+}
+
+.password-error-message {
+    color: #b91c1c;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    padding-left: 4px;
+}
+
+body.dark-mode .password-error-message {
+    color: #fca5a5;
+}
+
 /* PRINT STYLES - LEFT COMPLETELY UNTOUCHED */
 @media print {
 

@@ -44,7 +44,75 @@ let passwordMessage_8 = null;
 let passwordMessage_confirmation = null;
 let passwordStrengthMessage = null;
 
-// VALIDATION FUNCTIONS
+// Helper functions for showing/clearing errors
+function showError(container, messageNode, text, input) {
+    if (!messageNode) {
+        messageNode = document.createElement("p");
+        messageNode.className = "password-error-message";
+        container.appendChild(messageNode);
+    }
+    messageNode.textContent = text;
+    input.classList.add("error-input");
+    return messageNode;
+}
+
+function clearError(container, messageNode, input) {
+    if (messageNode && messageNode.parentNode) {
+        messageNode.remove();
+    }
+    input.classList.remove("error-input");
+    return null;
+}
+
+// REAL-TIME VALIDATION ON BLUR (when cursor leaves the field)
+
+// Email validation
+registration_email.addEventListener("blur", () => {
+    const email_value = registration_email.value.trim();
+
+    if (email_value === "") {
+        emailMessage = showError(registration_email_container, emailMessage, "Email is required.", registration_email);
+    } else if (email_value.indexOf("@") === -1) {
+        emailMessage = showError(registration_email_container, emailMessage, "Email is not entered properly.", registration_email);
+    } else {
+        emailMessage = clearError(registration_email_container, emailMessage, registration_email);
+    }
+});
+
+// Password length validation
+registration_password.addEventListener("blur", () => {
+    const password = registration_password.value.trim();
+
+    if (password.length > 0 && password.length < 8) {
+        passwordMessage_8 = showError(registration_password_container, passwordMessage_8, "At least 8 characters.", registration_password);
+    } else {
+        passwordMessage_8 = clearError(registration_password_container, passwordMessage_8, registration_password);
+    }
+
+    // Re-check confirmation when password changes
+    registration_password_confirmation.dispatchEvent(new Event("blur"));
+});
+
+// Password confirmation match
+registration_password_confirmation.addEventListener("blur", () => {
+    const password = registration_password.value.trim();
+    const password_confirmation = registration_password_confirmation.value.trim();
+
+    if (password_confirmation !== "" && password !== password_confirmation) {
+        passwordMessage_confirmation = showError(
+            registration_password_container,
+            passwordMessage_confirmation,
+            "The entered passwords do not match.",
+            registration_password_confirmation
+        );
+        registration_password.classList.add("error-input"); // also highlight first password field
+    } else if (password === password_confirmation) {
+        passwordMessage_confirmation = clearError(registration_password_container, passwordMessage_confirmation, registration_password_confirmation);
+        registration_password.classList.remove("error-input");
+    }
+});
+
+// VALIDATION FUNCTIONS (kept exactly as before, only small adjustments for consistency)
 function validateForm() {
     let valid = true;
     const email_value = registration_email.value.trim();
@@ -52,64 +120,34 @@ function validateForm() {
     const password_confirmation = registration_password_confirmation.value.trim();
 
     // EMAIL CHECK
-    if (email_value.indexOf("@") === -1) {
+    if (email_value === "" || email_value.indexOf("@") === -1) {
         valid = false;
-        registration_email.classList.add("email_error");
-        if (!emailMessage) {
-            emailMessage = document.createElement("p");
-            emailMessage.className = "password-error-message";
-            emailMessage.textContent = "Email is not entered properly.";
-            registration_email_container.appendChild(emailMessage);
-        }
-    } else {
-        registration_email.classList.remove("email_error");
-        if (emailMessage) {
-            emailMessage.remove();
-            emailMessage = null;
-        }
+        registration_email.classList.add("error-input");
     }
 
     // PASSWORD LENGTH CHECK
     if (password.length < 8) {
         valid = false;
-        registration_password.classList.add("password_error");
-        if (!passwordMessage_8) {
-            passwordMessage_8 = document.createElement("p");
-            passwordMessage_8.className = "password-error-message";
-            passwordMessage_8.textContent = "At least 8 characters.";
-            registration_password_container.appendChild(passwordMessage_8);
-        }
-    } else {
-        registration_password.classList.remove("password_error");
-        if (passwordMessage_8) {
-            passwordMessage_8.remove();
-            passwordMessage_8 = null;
-        }
+        registration_password.classList.add("error-input");
     }
 
     // PASSWORD MATCH CHECK
     if (password !== password_confirmation) {
         valid = false;
-        registration_password.classList.add("password_error");
-        registration_password_confirmation.classList.add("password_error");
-        if (!passwordMessage_confirmation) {
-            passwordMessage_confirmation = document.createElement("p");
-            passwordMessage_confirmation.className = "password-error-message";
-            passwordMessage_confirmation.textContent = "The entered passwords do not match.";
-            registration_password_container.appendChild(passwordMessage_confirmation);
-        }
-    } else {
-        registration_password_confirmation.classList.remove("password_error");
-        if (passwordMessage_confirmation) {
-            passwordMessage_confirmation.remove();
-            passwordMessage_confirmation = null;
-        }
+        registration_password.classList.add("error-input");
+        registration_password_confirmation.classList.add("error-input");
     }
 
     return valid;
 }
+
 registration_form.addEventListener("submit", function (event) {
     event.preventDefault();
+
+    // Trigger blur events to show any missing errors immediately
+    registration_email.dispatchEvent(new Event("blur"));
+    registration_password.dispatchEvent(new Event("blur"));
+    registration_password_confirmation.dispatchEvent(new Event("blur"));
 
     if (!validateForm()) {
         return; // STOP IF BASIC VALIDATION FAIL
@@ -130,7 +168,7 @@ registration_form.addEventListener("submit", function (event) {
             if (weakList.includes(password)) {
                 // PASSWORD IS WEAK
 
-                registration_password.classList.add("password_error");
+                registration_password.classList.add("error-input");
 
                 if (!passwordStrengthMessage) {
                     passwordStrengthMessage = document.createElement("p");
@@ -139,11 +177,10 @@ registration_form.addEventListener("submit", function (event) {
                     registration_password_container.appendChild(passwordStrengthMessage);
                 }
 
-
             } else {
                 // PASSWORD IS STRONG
 
-                registration_password.classList.remove("password_error");
+                registration_password.classList.remove("error-input");
                 if (passwordStrengthMessage) {
                     passwordStrengthMessage.remove();
                     passwordStrengthMessage = null;
