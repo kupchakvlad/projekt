@@ -20,9 +20,34 @@ if (isset($_POST["submit"])) {
     $product_fabric = trim($_POST["product_fabric"]);
     $product_season = trim($_POST["season"]);
     $product_size = (int) trim($_POST["product_size"]);
-    $product_price = (int) trim($_POST["product_price"]);
+    $product_price = trim($_POST["product_price"]);
 
     $all_file_paths = [];
+    $errors = [];
+    if (count($_FILES["photo"]["name"]) === 0 || $_FILES["photo"]["error"][0] != 0) {
+        $errors['photo'] = "At least one photo is required.";
+    }
+
+    if (empty($product_price) || !is_numeric($product_price) || (float)$product_price <= 0) {
+        $errors['price'] = "Valid price greater than 0 is required.";
+    }
+
+    if (empty($product_name)) {
+    $errors['name'] = "Product name is required.";
+    }
+
+    if (!empty($errors)) {
+        $_SESSION['add_product_errors'] = $errors;
+        $_SESSION['add_product_data'] = [
+            'product_name' => $product_name,
+            'product_fabric' => $product_fabric,
+            'product_season' => $product_season,
+            'product_size' => $product_size,
+            'product_price' => $product_price
+        ];
+        header("Location: add_product.php");
+        exit;
+    }
 
     for ($i = 0; $i < count($_FILES["photo"]["name"]); $i++) {
         if ($_FILES["photo"]["error"][$i] == 0) {
@@ -37,6 +62,7 @@ if (isset($_POST["submit"])) {
     }
 
     $final_file_paths = implode(',', $all_file_paths);
+    $product_price = (float) $product_price;
 
     $insert_product_query = "INSERT INTO products (
         user_id, file_path, name, fabric, season, size, price

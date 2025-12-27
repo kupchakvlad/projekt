@@ -152,6 +152,12 @@ body.dark form label {
   font-weight: bold;
 }
 
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
                                                      /* ctrl + p */
 @media print {
   * {

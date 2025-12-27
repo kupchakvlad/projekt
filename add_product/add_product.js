@@ -2,7 +2,10 @@ const slider = document.getElementById("slider");
 const output = document.getElementById("size-value");
 const darkModeBtn = document.getElementById("dark-mode-btn");
 const BackBtn = document.querySelector(".back-to-main");
-
+const form = document.getElementById("add-product-form");
+const photoInput = document.getElementById("Photo");
+const priceInput = document.getElementById("ProductPrice");
+const nameInput = document.getElementById("ProductName");
 
 output.textContent = slider.value;
 slider.addEventListener("input", () => {
@@ -22,4 +25,27 @@ darkModeBtn.addEventListener("click", () => {
 
 BackBtn.addEventListener("click", () => {
     window.location.href = "../main/main.php";
+});
+
+form.addEventListener("submit", (event) => {
+    let valid = true;
+    if (photoInput.files.length === 0) {
+        valid = false;
+        alert("Please upload at least one photo.");
+    }
+
+    const price = priceInput.value.trim();
+    if (!price || isNaN(price) || parseFloat(price) <= 0) {
+        valid = false;
+        alert("Please enter a valid price greater than 0.");
+    }
+
+    if (nameInput.value.trim() === '') {
+    valid = false;
+    alert("Please enter a product name");
+}
+
+    if (!valid) {
+        event.preventDefault();
+    }
 });
