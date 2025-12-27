@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_product/add_product_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product_back.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set_dark_mode_cookie.php" beforeDir="false" afterPath="$PROJECT_DIR$/set_dark_mode_cookie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +147,8 @@
       <workItem from="1766363355589" duration="3232000" />
       <workItem from="1766442763538" duration="1047000" />
       <workItem from="1766521443031" duration="4716000" />
-      <workItem from="1766659611011" duration="25022000" />
+      <workItem from="1766659611011" duration="25105000" />
+      <workItem from="1766863700167" duration="227000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />
