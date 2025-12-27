@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION["user_id"])) {
-    header("Location: /registration_form/registration_form.php");
+    header("Location: registration_form/registration_form.php");
     exit;
 }
 
