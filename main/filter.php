@@ -50,7 +50,7 @@ if ($page < 1) {
     $page = 1;
 }
 
-$perPage = 6;
+$perPage = 12;
 
 
 $req = "SELECT * FROM products WHERE price BETWEEN $min AND $max";
