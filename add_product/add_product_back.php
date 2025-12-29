@@ -1,6 +1,7 @@
 <?php
 /**
- * Backend skript pro zpracování přidání nového produktu.
+ * @brief Backend skript pro zpracování přidání nového produktu.
+ *
  * Tento soubor zpracovává POST data a nahrané soubory z formuláře add_product.php.
  * Provádí validaci vstupů (fotky, název, cena), nahrává obrázky na server,
  * ukládá jejich cesty do databáze a vkládá záznam o produktu do tabulky `products`.
@@ -15,7 +16,7 @@
 session_start();
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -27,7 +28,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 $connection = mysqli_connect($host, $username, $password, $database);
@@ -37,23 +38,23 @@ if (!$connection) {
 }
 
 /**
- * @brief Hlavní logika: Zpracování POST požadavku z formuláře.
- * @brief Validuje vstupy (název, cena, fotky atd.), nahrává soubory a vkládá do tabulky 'products'.
- * @brief Pokud jsou errory, ukládá je do session a přesměruje zpět.
+ * Hlavní logika: Zpracování POST požadavku z formuláře.
+ * Validuje vstupy (název, cena, fotky atd.), nahrává soubory a vkládá do tabulky 'products'.
+ * Pokud jsou errory, ukládá je do session a přesměruje zpět.
  *
  * @return void Přesměruje na main.php při úspěchu, jinak zpět na add_product.php.
  */
 if (isset($_POST["submit"])) {
 
     /**
-     * @brief Cesta k adresáři pro nahrávání fotek produktu.
+     * Cesta k adresáři pro nahrávání fotek produktu.
      * @var string $upload_directory Absolutní cesta na serveru.
      */
     $upload_directory = "/home/kupchvla/www/projekt/photo/";
     $user_id = $_SESSION["user_id"];
 
     /**
-     * @brief Načtení a očištění vstupních dat z formuláře.
+     * Načtení a očištění vstupních dat z formuláře.
      *
      * @var string $product_name Název produktu.
      * @var string $product_fabric Výrobce / materiál.
@@ -68,7 +69,7 @@ if (isset($_POST["submit"])) {
     $product_price = trim($_POST["product_price"]);
 
     /**
-     * @brief Pole pro uložení cest k nahraným souborům a chyb validace.
+     * Pole pro uložení cest k nahraným souborům a chyb validace.
      *
      * @var array $all_file_paths Úspěšně nahrané cesty k fotkám.
      * @var array $errors Pole chybových hlášek (klíče: 'photo', 'price', 'name').
@@ -88,7 +89,7 @@ if (isset($_POST["submit"])) {
     }
 
     /**
-     * @brief Pokud jsou validační chyby – uložit data a errory do session a přesměrovat zpět.
+     * Pokud jsou validační chyby – uložit data a errory do session a přesměrovat zpět.
      */
     if (!empty($errors)) {
         $_SESSION['add_product_errors'] = $errors;
@@ -104,7 +105,7 @@ if (isset($_POST["submit"])) {
     }
 
     /**
-     * @brief Nahrávání souborů na server.
+     * Nahrávání souborů na server.
      * Prochází všechny nahrané fotky, generuje unikátní jména a přesouvá je do cílového adresáře.
      */
     for ($i = 0; $i < count($_FILES["photo"]["name"]); $i++) {
@@ -120,14 +121,14 @@ if (isset($_POST["submit"])) {
     }
 
     /**
-     * @brief Nahrávání souborů na server.
+     * Nahrávání souborů na server.
      * Prochází všechny nahrané fotky, generuje unikátní jména a přesouvá je do cílového adresáře.
      */
     $final_file_paths = implode(',', $all_file_paths);
     $product_price = (float) $product_price;
 
     /**
-     * @brief SQL dotaz pro vložení nového produktu.
+     * SQL dotaz pro vložení nového produktu.
      * Používá prepared statement pro bezpečnost.
      *
      * @var string $insert_product_query SQL INSERT dotaz.
@@ -152,7 +153,7 @@ if (isset($_POST["submit"])) {
     );
     
         /**
-         * @brief Provedení vložení.
+         * Provedení vložení.
          * Při úspěchu přesměruje na hlavní stránku, při chybě vypíše error.
          */
         if (mysqli_stmt_execute($stmt)) {

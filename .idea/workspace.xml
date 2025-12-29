@@ -16,6 +16,85 @@
       <change beforePath="$PROJECT_DIR$/admin/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/edit_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_back.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/account_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/account_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/account_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/account_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/account__back_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/account__back_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/account__back_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/account__back_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/add__product_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/add__product_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/add__product_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/add__product_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/add__product__back_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/add__product__back_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/add__product__back_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/add__product__back_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/admin_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/admin_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/admin_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/admin_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/admin__handling_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/admin__handling_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/admin__handling_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/admin__handling_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/delete_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/delete_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/delete_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/delete_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/dir_37ef5da71bf16cd93bf20edf8e681c26.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/dir_37ef5da71bf16cd93bf20edf8e681c26.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/dir_531f5523481d633dc5a20f72246f9c6d.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/dir_531f5523481d633dc5a20f72246f9c6d.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/dir_5c982d53a68cdbcd421152b4020263a9.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/dir_5c982d53a68cdbcd421152b4020263a9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/dir_a18692421b0b31c3dc9d584c3ebc75f2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/dir_a18692421b0b31c3dc9d584c3ebc75f2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/dir_b56013ff87e0b8a9fb902ef4a07a6990.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/dir_b56013ff87e0b8a9fb902ef4a07a6990.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/edit_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/edit_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/edit_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/edit_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/edit__back_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/edit__back_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/edit__back_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/edit__back_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/filter_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/filter_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/filter_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/filter_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/get__passwords_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/get__passwords_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/logOut_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/logOut_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/logOut_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/logOut_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/login_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/login_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/login_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/login_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/main_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/main_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/main_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/main_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/product_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/product_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/product_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/product_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/registration_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/registration_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/registration_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/registration_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/registration__form_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/registration__form_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/registration__form_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/registration__form_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/set__dark__mode__cookie_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/set__dark__mode__cookie_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/set__dark__mode__cookie_8php_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/set__dark__mode__cookie_8php_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/account_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/account_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/account_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/account_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/account__back_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/account__back_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/account__back_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/account__back_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/add__product_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/add__product_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/add__product_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/add__product_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/add__product__back_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/add__product__back_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/add__product__back_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/add__product__back_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/admin_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/admin_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/admin_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/admin_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/admin__handling_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/admin__handling_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/admin__handling_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/admin__handling_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/delete_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/delete_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/delete_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/delete_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/dir_37ef5da71bf16cd93bf20edf8e681c26.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/dir_37ef5da71bf16cd93bf20edf8e681c26.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/dir_531f5523481d633dc5a20f72246f9c6d.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/dir_531f5523481d633dc5a20f72246f9c6d.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/dir_5c982d53a68cdbcd421152b4020263a9.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/dir_5c982d53a68cdbcd421152b4020263a9.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/dir_a18692421b0b31c3dc9d584c3ebc75f2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/dir_a18692421b0b31c3dc9d584c3ebc75f2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/dir_b56013ff87e0b8a9fb902ef4a07a6990.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/dir_b56013ff87e0b8a9fb902ef4a07a6990.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/edit_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/edit_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/edit_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/edit_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/edit__back_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/edit__back_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/edit__back_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/edit__back_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/files.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/files.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/filter_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/filter_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/filter_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/filter_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/get__passwords_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/get__passwords_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/logOut_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/logOut_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/logOut_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/logOut_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/login_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/login_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/main_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/main_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/main_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/main_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/product_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/product_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/product_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/product_8php_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/registration_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/registration_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/registration__form_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/registration__form_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/set__dark__mode__cookie_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/set__dark__mode__cookie_8php.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/set__dark__mode__cookie_8php_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/set__dark__mode__cookie_8php_source.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/filter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/product.php" afterDir="false" />
@@ -167,7 +246,8 @@
       <workItem from="1766659611011" duration="25105000" />
       <workItem from="1766863700167" duration="1157000" />
       <workItem from="1767032508855" duration="470000" />
-      <workItem from="1767042393526" duration="4839000" />
+      <workItem from="1767042393526" duration="5280000" />
+      <workItem from="1767050162742" duration="1238000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />

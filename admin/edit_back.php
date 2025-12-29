@@ -1,6 +1,7 @@
 <?php
 /**
- * Backend skript pro uložení editovaných údajů uživatele (administrátorská akce).
+ * @brief Backend skript pro uložení editovaných údajů uživatele (administrátorská akce).
+ *
  * Tento soubor je přístupný pouze přihlášeným administrátorům.
  * Na základě ID z GET parametru a dat z POST (edited_username, edited_email)
  * provede validaci vstupů (neprazdné pole, platný email) a aktualizuje
@@ -15,7 +16,7 @@
 session_start();
 
 /**
- * @brief Kontrola oprávnění – pouze přihlášený administrátor.
+ * Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud podmínky nejsou splněny, přesměruje na hlavní stránku.
  */
 if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['admin'] != 1) {
@@ -24,7 +25,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
 }
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -36,7 +37,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 $connection = mysqli_connect($host, $username, $password, $database);
@@ -46,7 +47,7 @@ if (!$connection) {
 }
 
 /**
- * @brief Kontrola existence ID uživatele v GET parametru.
+ * Kontrola existence ID uživatele v GET parametru.
  * Pokud chybí, přesměruje zpět na admin panel.
  */
 if (!isset($_GET["id"])) {
@@ -55,7 +56,7 @@ if (!isset($_GET["id"])) {
 }
 
 /**
- * @brief Validace ID uživatele z GET parametru.
+ * Validace ID uživatele z GET parametru.
  * Používá filter_input s FILTER_VALIDATE_INT pro bezpečnost.
  * Pokud ID není platné číslo, ukončí skript s chybovou zprávou.
  *
@@ -67,7 +68,7 @@ if ($id === false) {
 }
 
 /**
- * @brief Zpracování POST dat z editačního formuláře.
+ * Zpracování POST dat z editačního formuláře.
  * Provádí se pouze pokud je odeslán submit ("edit") a vstupy splňují základní validaci:
  * - edited_username není prázdný
  * - edited_email není prázdný a je platný email
@@ -81,7 +82,7 @@ if (isset($_POST["edit"]) && !empty($_POST["edited_username"]) && !empty($_POST[
     $email = trim($_POST["edited_email"]);
 
     /**
-     * @brief SQL dotaz pro aktualizaci jména a emailu uživatele.
+     * SQL dotaz pro aktualizaci jména a emailu uživatele.
      * Používá prepared statement pro ochranu proti SQL injection.
      *
      * @var string $edit_query SQL UPDATE dotaz.

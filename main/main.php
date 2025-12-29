@@ -1,6 +1,7 @@
 <?php
 /**
- * Hlavní stránka e-shopu Botovo (seznam produktů).
+ * @brief Hlavní stránka e-shopu Botovo (seznam produktů).
+ *
  * Tento soubor je vstupní bod pro přihlášené uživatele – zobrazuje filtr, seznam produktů
  * a navigaci. Kontroluje přihlášení, načítá tmavý režim z cookie, připojuje se k databázi
  * (pro budoucí použití) a generuje základní HTML strukturu stránky.
@@ -18,7 +19,7 @@
 session_start();
 
 /**
- * @brief Kontrola přihlášení uživatele.
+ * Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 if (!isset($_SESSION["user_id"])) {
@@ -27,7 +28,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 /**
- * @brief Nastavení třídy pro tmavý režim.
+ * Nastavení třídy pro tmavý režim.
  * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
@@ -35,7 +36,7 @@ if (!isset($_SESSION["user_id"])) {
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * Tyto proměnné definují přístupové údaje k MySQL databázi.
  * V produkci by měly být uloženy v bezpečném prostředí (např. env soubor).
  *
@@ -50,7 +51,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 $conn = mysqli_connect($host, $username, $password, $database);
@@ -77,7 +78,7 @@ if (!$conn) {
   <nav class="header-buttons">
       <?php
       /**
-       * @brief Zobrazení odkazu na admin panel.
+       * Zobrazení odkazu na admin panel.
        * Viditelný pouze pro uživatele s admin=1.
        */
       if (isset($_SESSION["user_id"]) && $_SESSION["admin"] == 1) {

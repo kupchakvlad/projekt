@@ -1,6 +1,7 @@
 <?php
 /**
- * Administrátorské rozhraní – seznam uživatelů.
+ * @brief Administrátorské rozhraní – seznam uživatelů.
+ *
  * Tento soubor je přístupný pouze přihlášeným administrátorům (admin = 1).
  * Zobrazuje tabulku všech uživatelů z databáze s možností editace, smazání
  * a změny admin statusu. Používá htmlspecialchars pro ochranu proti XSS.
@@ -21,7 +22,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
 }
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -33,7 +34,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 $connection = mysqli_connect($host, $username, $password, $database);
@@ -43,7 +44,7 @@ if (!$connection) {
 }
 
 /**
- * @brief SQL dotaz pro načtení všech uživatelů.
+ * SQL dotaz pro načtení všech uživatelů.
  * Vyberá ID, jméno, email a admin status.
  *
  * @var string $select_users_query SQL dotaz.
@@ -78,7 +79,7 @@ $result = mysqli_query($connection, $select_users_query);
     <tbody class="users">
         <?php
         /**
-         * @brief Výpis řádků tabulky s uživateli.
+         * Výpis řádků tabulky s uživateli.
          * Pokud jsou data, prochází výsledky a generuje řádky s odkazy na akce.
          * Používá htmlspecialchars pro bezpečné vypsání ID v URL.
          */

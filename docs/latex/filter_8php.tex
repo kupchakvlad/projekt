@@ -1,5 +1,10 @@
 \doxysection{main/filter.php File Reference}
 \hypertarget{filter_8php}{}\label{filter_8php}\index{main/filter.php@{main/filter.php}}
+
+
+AJAX pro filtrování a paginaci produktů.  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,11 +19,11 @@
 \mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
 \item 
 \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(isset(\$\+\_\+\+GET\mbox{[}"{}search"{}\mbox{]})) \mbox{\hyperlink{filter_8php_a6c22310bec25156fce32de1c72754e06}{else}}
-\begin{DoxyCompactList}\small\item\em Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "{}\+No products found"{}. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$per\+Page}} = 12
 \item 
 \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}} = "{}SELECT \texorpdfstring{$\ast$}{*} FROM products WHERE price BETWEEN \$min AND \$max"{}
-\begin{DoxyCompactList}\small\item\em Přidání řazení podle ID descending. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{\$final\+\_\+request}} = mysqli\+\_\+query(\$conn, \$req)
 \item 
 \mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\+\_\+products}} = \mbox{[}$\,$\mbox{]}
@@ -34,7 +39,9 @@
 
 
 \doxysubsection{Detailed Description}
-AJAX pro filtrování a paginaci produktů. Tento soubor zpracovává GET parametry z frontend filtru (main.\+js), sestavuje dynamický SQL query na základě filtrů (search, size, price range, season, page), vrací HTML s produkty a paginací. Používá se pro dynamické načítání produktů bez reloadu stránky. Výstup je přímo HTML pro vložení do \#products elementu.
+AJAX pro filtrování a paginaci produktů. 
+
+Tento soubor zpracovává GET parametry z frontend filtru (main.\+js), sestavuje dynamický SQL query na základě filtrů (search, size, price range, season, page), vrací HTML s produkty a paginací. Používá se pro dynamické načítání produktů bez reloadu stránky. Výstup je přímo HTML pro vložení do \#products elementu.
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{main_8php}{main.\+php} Pro frontend stránku s filtry. 
@@ -58,7 +65,7 @@ Definition in file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00129}{129}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00130}{130}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}\label{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877} 
 \index{filter.php@{filter.php}!\$conn@{\$conn}}
@@ -68,7 +75,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00129}{129}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00034}{34}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00035}{35}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
 \index{filter.php@{filter.php}!\$database@{\$database}}
@@ -78,7 +85,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00034}{34}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00028}{28}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00029}{29}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_aed9b35627951d4c8838db95aa60db4ae}\label{filter_8php_aed9b35627951d4c8838db95aa60db4ae} 
 \index{filter.php@{filter.php}!\$final\_request@{\$final\_request}}
@@ -88,7 +95,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00028}{28}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00127}{127}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00128}{128}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a711797613cb863ca0756df789c396bf2}\label{filter_8php_a711797613cb863ca0756df789c396bf2} 
 \index{filter.php@{filter.php}!\$host@{\$host}}
@@ -98,7 +105,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00127}{127}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00025}{25}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00026}{26}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}\label{filter_8php_aec4de82415d7f05cb9748d12d3a95a87} 
 \index{filter.php@{filter.php}!\$offset@{\$offset}}
@@ -108,7 +115,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00025}{25}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00143}{143}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00144}{144}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}\label{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca} 
 \index{filter.php@{filter.php}!\$pageProducts@{\$pageProducts}}
@@ -118,7 +125,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00143}{143}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00144}{144}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00145}{145}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
 \index{filter.php@{filter.php}!\$password@{\$password}}
@@ -128,7 +135,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00144}{144}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00027}{27}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00028}{28}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_aeac52724d4edab556efa0d2cf6aec342}\label{filter_8php_aeac52724d4edab556efa0d2cf6aec342} 
 \index{filter.php@{filter.php}!\$perPage@{\$perPage}}
@@ -138,7 +145,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00027}{27}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00095}{95}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00096}{96}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a680c36b8034239c2f48e395c70eae451}\label{filter_8php_a680c36b8034239c2f48e395c70eae451} 
 \index{filter.php@{filter.php}!\$req@{\$req}}
@@ -146,13 +153,9 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00095}{95}} of file \mbo
 \doxysubsubsection{\texorpdfstring{\$req}{\$req}}
 {\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}( \$search !="{}"{}) \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(\$season !="{}"{}) \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} ( \$size $>$ 27) \$req = "{}SELECT \texorpdfstring{$\ast$}{*} FROM products WHERE price BETWEEN \$min AND \$max"{}}
 
-
-
 Přidání řazení podle ID descending. 
 
-
-
-Definition at line \mbox{\hyperlink{filter_8php_source_l00101}{101}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00102}{102}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a9d270d95ca53a5ae61ad917752416d12}\label{filter_8php_a9d270d95ca53a5ae61ad917752416d12} 
 \index{filter.php@{filter.php}!\$totalPages@{\$totalPages}}
@@ -162,7 +165,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00101}{101}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00141}{141}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00142}{142}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a5370121aba814a7911e700a54b06e4b8}\label{filter_8php_a5370121aba814a7911e700a54b06e4b8} 
 \index{filter.php@{filter.php}!\$totalProducts@{\$totalProducts}}
@@ -172,7 +175,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00141}{141}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00140}{140}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00141}{141}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
 \index{filter.php@{filter.php}!\$username@{\$username}}
@@ -182,7 +185,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00140}{140}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{filter_8php_source_l00026}{26}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00027}{27}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
 \Hypertarget{filter_8php_a6c22310bec25156fce32de1c72754e06}\label{filter_8php_a6c22310bec25156fce32de1c72754e06} 
 \index{filter.php@{filter.php}!else@{else}}
@@ -196,11 +199,7 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00026}{26}} of file \mbo
 \DoxyCodeLine{\ \ \ \ \$search\ =\ \textcolor{stringliteral}{"{}"{}}}
 
 \end{DoxyCode}
-
-
 Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "{}\+No products found"{}. 
 
-
-
-Definition at line \mbox{\hyperlink{filter_8php_source_l00053}{53}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
+Definition at line \mbox{\hyperlink{filter_8php_source_l00054}{54}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 

@@ -1,5 +1,10 @@
 \doxysection{main/product.php File Reference}
 \hypertarget{product_8php}{}\label{product_8php}\index{main/product.php@{main/product.php}}
+
+
+Stránka detailu produktu.  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,13 +33,15 @@
 \mbox{\hyperlink{product_8php_a61f68fda6675a8db974b3ec211398bd2}{if}} (!empty( \$product\mbox{[} \textquotesingle{}created\+\_\+at\textquotesingle{}\mbox{]})) = \$product\mbox{[}"{}name"{}\mbox{]}
 \item 
 \mbox{\hyperlink{product_8php_ab0c7013419fc5ee6238d17eff2554afe}{\$images}} = explode(\textquotesingle{},\textquotesingle{}, \$product\mbox{[}\textquotesingle{}file\+\_\+path\textquotesingle{}\mbox{]})
-\begin{DoxyCompactList}\small\item\em Zpracování a výpis obrázků produktu. Cesta k obrázkům je uložena jako čárkou oddělený seznam v sloupci file\+\_\+path. Každá cesta se trimuje a převádí na veřejnou URL. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{product_8php_ad17618ef02af16a04b18544d03c794cd}{foreach}} ( \$images as \$img) = \$product\mbox{[}\textquotesingle{}price\textquotesingle{}\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Stránka detailu produktu. Tento soubor zobrazuje detail jednoho produktu na základě ID z GET parametru. Kontroluje přihlášení uživatele, načítá tmavý režim z cookie, připojuje se k databázi, načítá data produktu včetně informací o prodejci (JOIN s tabulkou users), převádí cestu k obrázkům na veřejnou URL a generuje HTML s galerií obrázků, informacemi o produktu a tlačítkem pro "{}koupi"{}.
+Stránka detailu produktu. 
+
+Tento soubor zobrazuje detail jednoho produktu na základě ID z GET parametru. Kontroluje přihlášení uživatele, načítá tmavý režim z cookie, připojuje se k databázi, načítá data produktu včetně informací o prodejci (JOIN s tabulkou users), převádí cestu k obrázkům na veřejnou URL a generuje HTML s galerií obrázků, informacemi o produktu a tlačítkem pro "{}koupi"{}.
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{main_8php}{main.\+php} Pro výpis produktů a odkaz na tento detail. 
@@ -60,7 +67,7 @@ Definition in file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00094}{94}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00095}{95}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_aa8a5a87b9c1a6a0819b88447cbe41877}\label{product_8php_aa8a5a87b9c1a6a0819b88447cbe41877} 
 \index{product.php@{product.php}!\$conn@{\$conn}}
@@ -70,7 +77,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00094}{94}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00051}{51}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00052}{52}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_a25fcfe1f44ff29a7918826d202844f23}\label{product_8php_a25fcfe1f44ff29a7918826d202844f23} 
 \index{product.php@{product.php}!\$dark\_mode\_class@{\$dark\_mode\_class}}
@@ -80,7 +87,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00051}{51}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00033}{33}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00034}{34}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{product_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
 \index{product.php@{product.php}!\$database@{\$database}}
@@ -90,7 +97,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00033}{33}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00045}{45}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00046}{46}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_a711797613cb863ca0756df789c396bf2}\label{product_8php_a711797613cb863ca0756df789c396bf2} 
 \index{product.php@{product.php}!\$host@{\$host}}
@@ -100,7 +107,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00045}{45}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00042}{42}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00043}{43}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_ae97941710d863131c700f069b109991e}\label{product_8php_ae97941710d863131c700f069b109991e} 
 \index{product.php@{product.php}!\$id@{\$id}}
@@ -110,7 +117,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00042}{42}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00064}{64}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00065}{65}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_ab0c7013419fc5ee6238d17eff2554afe}\label{product_8php_ab0c7013419fc5ee6238d17eff2554afe} 
 \index{product.php@{product.php}!\$images@{\$images}}
@@ -118,13 +125,9 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00064}{64}} of file \mb
 \doxysubsubsection{\texorpdfstring{\$images}{\$images}}
 {\footnotesize\ttfamily \$images = explode(\textquotesingle{},\textquotesingle{}, \$product\mbox{[}\textquotesingle{}file\+\_\+path\textquotesingle{}\mbox{]})}
 
-
-
 Zpracování a výpis obrázků produktu. Cesta k obrázkům je uložena jako čárkou oddělený seznam v sloupci file\+\_\+path. Každá cesta se trimuje a převádí na veřejnou URL. 
 
-
-
-Definition at line \mbox{\hyperlink{product_8php_source_l00126}{126}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00127}{127}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{product_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
 \index{product.php@{product.php}!\$password@{\$password}}
@@ -134,7 +137,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00126}{126}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00044}{44}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00045}{45}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_a67d8e3a58e5644af40e14f6db1504f01}\label{product_8php_a67d8e3a58e5644af40e14f6db1504f01} 
 \index{product.php@{product.php}!\$product@{\$product}}
@@ -144,7 +147,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00044}{44}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00084}{84}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00085}{85}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_af59a5f7cd609e592c41dc3643efd3c98}\label{product_8php_af59a5f7cd609e592c41dc3643efd3c98} 
 \index{product.php@{product.php}!\$query@{\$query}}
@@ -163,7 +166,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00084}{84}} of file \mb
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00072}{72}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00073}{73}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_a112ef069ddc0454086e3d1e6d8d55d07}\label{product_8php_a112ef069ddc0454086e3d1e6d8d55d07} 
 \index{product.php@{product.php}!\$result@{\$result}}
@@ -173,7 +176,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00072}{72}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00083}{83}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00084}{84}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{product_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
 \index{product.php@{product.php}!\$username@{\$username}}
@@ -183,7 +186,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00083}{83}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00043}{43}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00044}{44}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_ad17618ef02af16a04b18544d03c794cd}\label{product_8php_ad17618ef02af16a04b18544d03c794cd} 
 \index{product.php@{product.php}!foreach@{foreach}}
@@ -193,7 +196,7 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00043}{43}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00127}{127}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00128}{128}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 
 \Hypertarget{product_8php_a61f68fda6675a8db974b3ec211398bd2}\label{product_8php_a61f68fda6675a8db974b3ec211398bd2} 
 \index{product.php@{product.php}!if@{if}}
@@ -203,5 +206,5 @@ Definition at line \mbox{\hyperlink{product_8php_source_l00127}{127}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{product_8php_source_l00095}{95}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
+Definition at line \mbox{\hyperlink{product_8php_source_l00096}{96}} of file \mbox{\hyperlink{product_8php_source}{product.\+php}}.
 

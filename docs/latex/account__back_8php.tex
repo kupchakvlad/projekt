@@ -1,5 +1,10 @@
 \doxysection{account/account\+\_\+back.php File Reference}
 \hypertarget{account__back_8php}{}\label{account__back_8php}\index{account/account\_back.php@{account/account\_back.php}}
+
+
+Backend skript pro uložení změn v uživatelském profilu.  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,7 +25,9 @@
 
 
 \doxysubsection{Detailed Description}
-Backend skript pro uložení změn v uživatelském profilu. Tento soubor zpracovává POST data z formuláře na \doxylink{account_8php}{account.\+php}. Aktualizuje jméno, email a případně heslo přihlášeného uživatele v tabulce {\ttfamily users}. Pokud je zadáno nové heslo, hashuje ho pomocí password\+\_\+hash. Používá prepared statements pro ochranu proti SQL injection. Po úspěšné aktualizaci přesměruje zpět na \doxylink{account_8php}{account.\+php}.
+Backend skript pro uložení změn v uživatelském profilu. 
+
+Tento soubor zpracovává POST data z formuláře na \doxylink{account_8php}{account.\+php}. Aktualizuje jméno, email a případně heslo přihlášeného uživatele v tabulce {\ttfamily users}. Pokud je zadáno nové heslo, hashuje ho pomocí password\+\_\+hash. Používá prepared statements pro ochranu proti SQL injection. Po úspěšné aktualizaci přesměruje zpět na \doxylink{account_8php}{account.\+php}.
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{account_8php}{account.\+php} Frontend stránka s formulářem pro úpravu profilu. 
@@ -40,7 +47,7 @@ Definition in file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back
 
 
 
-Definition at line \mbox{\hyperlink{account__back_8php_source_l00041}{41}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{account__back_8php_source_l00042}{42}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
 
 \Hypertarget{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
 \index{account\_back.php@{account\_back.php}!\$database@{\$database}}
@@ -50,7 +57,7 @@ Definition at line \mbox{\hyperlink{account__back_8php_source_l00041}{41}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{account__back_8php_source_l00035}{35}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{account__back_8php_source_l00036}{36}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
 
 \Hypertarget{account__back_8php_a711797613cb863ca0756df789c396bf2}\label{account__back_8php_a711797613cb863ca0756df789c396bf2} 
 \index{account\_back.php@{account\_back.php}!\$host@{\$host}}
@@ -60,7 +67,7 @@ Definition at line \mbox{\hyperlink{account__back_8php_source_l00035}{35}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{account__back_8php_source_l00032}{32}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{account__back_8php_source_l00033}{33}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
 
 \Hypertarget{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
 \index{account\_back.php@{account\_back.php}!\$password@{\$password}}
@@ -70,7 +77,7 @@ Definition at line \mbox{\hyperlink{account__back_8php_source_l00032}{32}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{account__back_8php_source_l00034}{34}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{account__back_8php_source_l00035}{35}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
 
 \Hypertarget{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
 \index{account\_back.php@{account\_back.php}!\$username@{\$username}}
@@ -80,7 +87,7 @@ Definition at line \mbox{\hyperlink{account__back_8php_source_l00034}{34}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{account__back_8php_source_l00033}{33}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{account__back_8php_source_l00034}{34}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
 
 \Hypertarget{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}\label{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce} 
 \index{account\_back.php@{account\_back.php}!email@{email}}
@@ -90,7 +97,7 @@ Definition at line \mbox{\hyperlink{account__back_8php_source_l00033}{33}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{account__back_8php_source_l00068}{68}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{account__back_8php_source_l00069}{69}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
 
 \Hypertarget{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}\label{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd} 
 \index{account\_back.php@{account\_back.php}!password@{password}}
@@ -109,5 +116,5 @@ Definition at line \mbox{\hyperlink{account__back_8php_source_l00068}{68}} of fi
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{account__back_8php_source_l00068}{68}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{account__back_8php_source_l00069}{69}} of file \mbox{\hyperlink{account__back_8php_source}{account\+\_\+back.\+php}}.
 

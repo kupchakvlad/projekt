@@ -1,6 +1,7 @@
 <?php
 /**
- * Administrátorská stránka pro editaci údajů uživatele.
+ * @brief Administrátorská stránka pro editaci údajů uživatele.
+ *
  * Tento soubor je přístupný pouze přihlášeným administrátorům.
  * Na základě ID z GET parametru načte aktuální jméno a email uživatele z databáze
  * pomocí prepared statement a předvyplní jimi jednoduchý editační formulář.
@@ -15,7 +16,7 @@
  */
 session_start();
 /**
- * @brief Kontrola oprávnění – pouze přihlášený administrátor.
+ * Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud podmínky nejsou splněny, přesměruje na hlavní stránku.
  */
 if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['admin'] != 1) {
@@ -24,7 +25,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
 }
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -36,7 +37,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 $connection = mysqli_connect($host, $username, $password, $database);
@@ -46,7 +47,7 @@ if (!$connection) {
 }
 
 /**
- * @brief Získání a validace ID uživatele z GET parametru.
+ * Získání a validace ID uživatele z GET parametru.
  * Používá filter_input s FILTER_VALIDATE_INT pro bezpečnou validaci.
  * Pokud ID není platné číslo nebo chybí, ukončí skript s chybovou zprávou.
  *
@@ -58,7 +59,7 @@ if ($id === false || $id === null) {
 }
 
 /**
- * @brief Načtení aktuálních údajů uživatele (jméno a email) pro předvyplnění formuláře.
+ * Načtení aktuálních údajů uživatele (jméno a email) pro předvyplnění formuláře.
  * Používá prepared statement pro ochranu proti SQL injection.
  *
  * @var string $prefill_query SQL SELECT dotaz.

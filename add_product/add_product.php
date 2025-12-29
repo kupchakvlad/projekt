@@ -1,6 +1,7 @@
 <?php
 /**
- * Stránka pro přidání nového produktu.
+ * @brief Stránka pro přidání nového produktu.
+ *
  * Tento soubor je přístupný pouze přihlášeným uživatelům.
  * Zobrazuje formulář pro nahrání fotek a zadání údajů o produktu (název, výrobce, sezóna, velikost, cena).
  * Podporuje předvyplnění polí a zobrazení chybových hlášek z session po neúspěšném odeslání (z add_product_back.php).
@@ -15,7 +16,7 @@
 session_start();
 
 /**
- * @brief Kontrola přihlášení uživatele.
+ * Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 if (!isset($_SESSION["user_id"])) {
@@ -24,7 +25,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 /**
- * @brief Nastavení třídy pro tmavý režim.
+ * Nastavení třídy pro tmavý režim.
  * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
@@ -32,7 +33,7 @@ if (!isset($_SESSION["user_id"])) {
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
- * @brief Načtení předvyplněných hodnot z session.
+ * Načtení předvyplněných hodnot z session.
  * Používá se po neúspěšném odeslání formuláře pro zachování zadaných dat.
  *
  * @var string $product_name_value Předvyplněný název produktu.
@@ -48,7 +49,7 @@ $product_size_value = $_SESSION['add_product_data']['product_size'] ?? '36';
 $product_price_value = $_SESSION['add_product_data']['product_price'] ?? '';
 
 /**
- * @brief Načtení chybových hlášek z session.
+ * Načtení chybových hlášek z session.
  * Chyby jsou uloženy backendem při validaci (foto, cena, název).
  *
  * @var array $errors Pole chyb (klíče: 'photo', 'price', 'name').

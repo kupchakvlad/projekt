@@ -1,5 +1,10 @@
 \doxysection{add\+\_\+product/add\+\_\+product.php File Reference}
 \hypertarget{add__product_8php}{}\label{add__product_8php}\index{add\_product/add\_product.php@{add\_product/add\_product.php}}
+
+
+Stránka pro přidání nového produktu.  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,7 +21,7 @@
 \mbox{\hyperlink{add__product_8php_ab26784c15753272c2666c43dc2eb60af}{\$product\+\_\+price\+\_\+value}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+price\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
 \item 
 \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+errors\textquotesingle{}\mbox{]} ?? \mbox{[}$\,$\mbox{]}
-\begin{DoxyCompactList}\small\item\em Hlavní logika\+: Zpracování POST požadavku z registračního formuláře. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{add__product_8php_a54fdd9abb36ef6f009cf1e599de49782}{\$photo\+\_\+error}} = \$errors\mbox{[}\textquotesingle{}photo\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
 \item 
 \mbox{\hyperlink{add__product_8php_a3f0d8760978556529d1838ab730f794e}{\$price\+\_\+error}} = \$errors\mbox{[}\textquotesingle{}price\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
@@ -26,7 +31,9 @@
 
 
 \doxysubsection{Detailed Description}
-Stránka pro přidání nového produktu. Tento soubor je přístupný pouze přihlášeným uživatelům. Zobrazuje formulář pro nahrání fotek a zadání údajů o produktu (název, výrobce, sezóna, velikost, cena). Podporuje předvyplnění polí a zobrazení chybových hlášek z session po neúspěšném odeslání (z \doxylink{add__product__back_8php}{add\+\_\+product\+\_\+back.\+php}). Tmavý režim je načítán z cookie. Formulář odesílá data (včetně souborů) na \doxylink{add__product__back_8php}{add\+\_\+product\+\_\+back.\+php}.
+Stránka pro přidání nového produktu. 
+
+Tento soubor je přístupný pouze přihlášeným uživatelům. Zobrazuje formulář pro nahrání fotek a zadání údajů o produktu (název, výrobce, sezóna, velikost, cena). Podporuje předvyplnění polí a zobrazení chybových hlášek z session po neúspěšném odeslání (z \doxylink{add__product__back_8php}{add\+\_\+product\+\_\+back.\+php}). Tmavý režim je načítán z cookie. Formulář odesílá data (včetně souborů) na \doxylink{add__product__back_8php}{add\+\_\+product\+\_\+back.\+php}.
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{add__product__back_8php}{add\+\_\+product\+\_\+back.\+php} Backend pro zpracování a uložení produktu. 
@@ -50,7 +57,7 @@ Definition in file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00032}{32}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00033}{33}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}\label{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e} 
 \index{add\_product.php@{add\_product.php}!\$errors@{\$errors}}
@@ -58,15 +65,7 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00032}{32}} of fil
 \doxysubsubsection{\texorpdfstring{\$errors}{\$errors}}
 {\footnotesize\ttfamily ifarray \$errors = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+errors\textquotesingle{}\mbox{]} ?? \mbox{[}$\,$\mbox{]}}
 
-
-
-Hlavní logika\+: Zpracování POST požadavku z registračního formuláře. 
-
-Validuje vstupy (jméno, email, heslo, potvrzení hesla), kontroluje duplicitu emailu v DB,
-
-hashuje heslo a vkládá nového uživatele do tabulky \textquotesingle{}users\textquotesingle{}.
-
-Pokud jsou errory, ukládá je do session a přesměruje zpět na formulář.
+Hlavní logika\+: Zpracování POST požadavku z registračního formuláře. Validuje vstupy (jméno, email, heslo, potvrzení hesla), kontroluje duplicitu emailu v DB, hashuje heslo a vkládá nového uživatele do tabulky \textquotesingle{}users\textquotesingle{}. Pokud jsou errory, ukládá je do session a přesměruje zpět na formulář.
 
 \begin{DoxyReturn}{Returns}
 void Přesměruje na \doxylink{main_8php}{main.\+php} při úspěchu, jinak zpět na \doxylink{registration__form_8php}{registration\+\_\+form.\+php}. 
@@ -78,7 +77,7 @@ void Přesměruje na \doxylink{main_8php}{main.\+php} při úspěchu, jinak zpě
 \end{DoxyExceptions}
 SQL query pro kontrolu existence emailu v tabulce users. Používá prepared statement pro ochranu proti SQL injection.
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00059}{59}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00060}{60}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_a3e64b5fd676f347134bb0d100c7a0648}\label{add__product_8php_a3e64b5fd676f347134bb0d100c7a0648} 
 \index{add\_product.php@{add\_product.php}!\$name\_error@{\$name\_error}}
@@ -88,7 +87,7 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00059}{59}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00063}{63}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00064}{64}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_a54fdd9abb36ef6f009cf1e599de49782}\label{add__product_8php_a54fdd9abb36ef6f009cf1e599de49782} 
 \index{add\_product.php@{add\_product.php}!\$photo\_error@{\$photo\_error}}
@@ -98,7 +97,7 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00063}{63}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00061}{61}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00062}{62}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_a3f0d8760978556529d1838ab730f794e}\label{add__product_8php_a3f0d8760978556529d1838ab730f794e} 
 \index{add\_product.php@{add\_product.php}!\$price\_error@{\$price\_error}}
@@ -108,7 +107,7 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00061}{61}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00062}{62}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00063}{63}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_a71cf83ad637094a7c1215f7fcaa19847}\label{add__product_8php_a71cf83ad637094a7c1215f7fcaa19847} 
 \index{add\_product.php@{add\_product.php}!\$product\_fabric\_value@{\$product\_fabric\_value}}
@@ -118,7 +117,7 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00062}{62}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00045}{45}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00046}{46}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_a9093d09a054725ac06d2cc59f46691d2}\label{add__product_8php_a9093d09a054725ac06d2cc59f46691d2} 
 \index{add\_product.php@{add\_product.php}!\$product\_name\_value@{\$product\_name\_value}}
@@ -128,7 +127,7 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00045}{45}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00044}{44}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00045}{45}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_ab26784c15753272c2666c43dc2eb60af}\label{add__product_8php_ab26784c15753272c2666c43dc2eb60af} 
 \index{add\_product.php@{add\_product.php}!\$product\_price\_value@{\$product\_price\_value}}
@@ -138,7 +137,7 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00044}{44}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00048}{48}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00049}{49}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_af3017924d121952811088f6cdae65a52}\label{add__product_8php_af3017924d121952811088f6cdae65a52} 
 \index{add\_product.php@{add\_product.php}!\$product\_season\_value@{\$product\_season\_value}}
@@ -148,7 +147,7 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00048}{48}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00046}{46}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00047}{47}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 
 \Hypertarget{add__product_8php_a4a87649cedacd4e2c9e5c97c96a95da4}\label{add__product_8php_a4a87649cedacd4e2c9e5c97c96a95da4} 
 \index{add\_product.php@{add\_product.php}!\$product\_size\_value@{\$product\_size\_value}}
@@ -158,5 +157,5 @@ Definition at line \mbox{\hyperlink{add__product_8php_source_l00046}{46}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{add__product_8php_source_l00047}{47}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
+Definition at line \mbox{\hyperlink{add__product_8php_source_l00048}{48}} of file \mbox{\hyperlink{add__product_8php_source}{add\+\_\+product.\+php}}.
 

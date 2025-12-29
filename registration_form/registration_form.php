@@ -1,6 +1,6 @@
 <?php
 /**
- * Frontend formulář pro registraci a přihlášení uživatelů.
+ * @brief Frontend formulář pro registraci a přihlášení uživatelů.
  * Tento soubor generuje HTML stránku s přepínači mezi přihlašovacím a registračním formulářem.
  * Zpracovává data a errory z session (např. předvyplnění polí, zobrazení chyb),
  * a zajišťuje bezpečné escapování výstupů pomocí htmlspecialchars.
@@ -32,7 +32,7 @@ if (isset($_SESSION['login_error']) && $_SESSION['login_error'] != '') {
 }
 
 /**
- * @brief Výchozí hodnoty pro registrační formulář.
+ * Výchozí hodnoty pro registrační formulář.
  * Inicializuje prázdné hodnoty pro jméno a email.
  *
  * @var string $name_value Předvyplněné jméno z session.
@@ -42,7 +42,7 @@ $name_value = '';
 $email_value = '';
 
 /**
- * @brief Flags pro chyby v registračním formuláři.
+ * Flags pro chyby v registračním formuláři.
  * Nastavují se na základě 'registration_errors' v session pro označení chybných polí.
  *
  * @var bool $name_has_error Flag pro chybu v poli jména.
@@ -56,7 +56,7 @@ $password_has_error = false;
 $confirm_has_error = false;
 
 /**
- * @brief Texty chyb pro registrační formulář.
+ * Texty chyb pro registrační formulář.
  * Specifické chybové zprávy pro jednotlivá pole.
  *
  * @var string $name_reg_error Chybová zpráva pro jméno.
@@ -70,7 +70,7 @@ $password_reg_error = '';
 $confirm_reg_error = '';
 
 /**
- * @brief Předvyplnění registračního formuláře z session.
+ * Předvyplnění registračního formuláře z session.
  * Pokud existuje 'registration_data' v session, načte hodnoty a unsetne session.
  */
 if (isset($_SESSION['registration_data'])) {
@@ -80,7 +80,7 @@ if (isset($_SESSION['registration_data'])) {
 }
 
 /**
- * @brief Předvyplnění emailu pro přihlašovací formulář.
+ * Předvyplnění emailu pro přihlašovací formulář.
  * Načte z 'login_data', 'registration_data' nebo 'last_login_email' v session.
  *
  * @var string $login_email_value Předvyplněný email pro přihlášení.
@@ -102,7 +102,7 @@ if (isset($_SESSION['last_login_email'])) {
 }
 
 /**
- * @brief Zpracování chyb registračního formuláře z session.
+ * Zpracování chyb registračního formuláře z session.
  * Pokud existuje 'registration_errors' v session, nastaví flags a chybové texty pro pole.
  */
 if (isset($_SESSION['registration_errors'])) {
@@ -129,7 +129,7 @@ if (isset($_SESSION['registration_errors'])) {
 }
 
 /**
- * @brief Nastavení tmavého režimu na základě cookie.
+ * Nastavení tmavého režimu na základě cookie.
  * Pokud cookie 'mode' je 'dark', přidá třídu 'dark-mode' k body.
  *
  * @var string $dark_mode_class Třída pro tmavý režim ('dark-mode' nebo prázdná).

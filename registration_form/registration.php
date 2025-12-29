@@ -1,6 +1,6 @@
 <?php
 /**
- * Backend skript pro zpracování registračního formuláře.
+ * @brief Backend skript pro zpracování registračního formuláře.
  * Tento soubor zpracovává POST data z registration_form.php, validuje vstupy,
  * kontroluje duplicitu emailu, hashuje heslo a vkládá nového uživatele do databáze.
  * Pokud dojde k chybám, ukládá errory do session a přesměruje zpět na formulář.
@@ -14,7 +14,7 @@
 session_start();
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * Tyto proměnné definují přístupové údaje k MySQL databázi.
  *
  * @var string $host Hostitel databáze (výchozí: localhost).
@@ -28,7 +28,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * Vytvoří připojení pomocí mysqli_connect a ukončí skript při chybě.
  *
  * @var mysqli $connection Objekt připojení k databázi.
@@ -41,7 +41,7 @@ if (!$connection) {
 
 /**
  * Načte seznam slabých hesel ze souboru.
- * @brief Tato funkce čte soubor řádek po řádku, trimuje řádky a vrací pole slabých hesel.
+ * Tato funkce čte soubor řádek po řádku, trimuje řádky a vrací pole slabých hesel.
  * Používá se pro validaci hesla uživatele, aby se zabránilo použití běžných slabých hesel.
  *
  * @param string $file Cesta k souboru se slabými hesly (např. 'weak_passwords.txt').
@@ -55,10 +55,10 @@ function loadWeakPasswords($file) {
 $weakPasswords = loadWeakPasswords($weakPasswordsFile);
 
 /**
- * @brief Hlavní logika: Zpracování POST požadavku z registračního formuláře.
- * @brief Validuje vstupy (jméno, email, heslo, potvrzení hesla), kontroluje duplicitu emailu v DB,
- * @brief hashuje heslo a vkládá nového uživatele do tabulky 'users'.
- * @brief Pokud jsou errory, ukládá je do session a přesměruje zpět na formulář.
+ * Hlavní logika: Zpracování POST požadavku z registračního formuláře.
+ * Validuje vstupy (jméno, email, heslo, potvrzení hesla), kontroluje duplicitu emailu v DB,
+ * hashuje heslo a vkládá nového uživatele do tabulky 'users'.
+ * Pokud jsou errory, ukládá je do session a přesměruje zpět na formulář.
  *
  * @return void Přesměruje na main.php při úspěchu, jinak zpět na registration_form.php.
  * @throws Exception Pokud dojde k chybě při DB operacích (např. prepare selže).
@@ -66,8 +66,8 @@ $weakPasswords = loadWeakPasswords($weakPasswordsFile);
 if (isset($_POST['registration_submit'])) {
 
     /**
-     * @brief Pole chyb validace.
-     * @brief Obsahuje klíče jako 'name', 'email', 'password', 'confirm' pro označení chyb.
+     * Pole chyb validace.
+     * Obsahuje klíče jako 'name', 'email', 'password', 'confirm' pro označení chyb.
      *
      * @var array $errors
      */
@@ -104,7 +104,7 @@ if (isset($_POST['registration_submit'])) {
     // Kontrola duplicity emailu v databázi (pouze pokud není chyba v emailu).
     if (!in_array('email', $errors)) {
         /**
-         * @brief SQL query pro kontrolu existence emailu v tabulce users.
+         * SQL query pro kontrolu existence emailu v tabulce users.
          * Používá prepared statement pro ochranu proti SQL injection.
          *
          * @var string $query
@@ -135,7 +135,7 @@ if (isset($_POST['registration_submit'])) {
     $hashed = password_hash($pass, PASSWORD_DEFAULT);
 
     /**
-     * @brief SQL insert pro přidání nového uživatele.
+     * SQL insert pro přidání nového uživatele.
      * Používá prepared statement pro bezpečnost.
      *
      * @var string $insert

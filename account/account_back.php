@@ -1,6 +1,7 @@
 <?php
 /**
- * Backend skript pro uložení změn v uživatelském profilu.
+ * @brief Backend skript pro uložení změn v uživatelském profilu.
+ *
  * Tento soubor zpracovává POST data z formuláře na account.php.
  * Aktualizuje jméno, email a případně heslo přihlášeného uživatele v tabulce `users`.
  * Pokud je zadáno nové heslo, hashuje ho pomocí password_hash.
@@ -14,7 +15,7 @@
 session_start();
 
 /**
- * @brief Kontrola přihlášení uživatele.
+ * Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 if (!isset($_SESSION['user_id'])) {
@@ -23,7 +24,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -35,14 +36,14 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
 
 /**
- * @brief Načtení dat z POST formuláře a ID uživatele ze session.
+ * Načtení dat z POST formuláře a ID uživatele ze session.
  *
  * @var int $user_id ID přihlášeného uživatele.
  * @var string $new_name Nové jméno uživatele.
@@ -55,7 +56,7 @@ $new_email = $_POST['email'];
 $new_password = $_POST['password'];
 
 /**
- * @brief Příprava a provedení UPDATE dotazu.
+ * Příprava a provedení UPDATE dotazu.
  * Pokud je zadáno nové heslo, aktualizuje i sloupec password (s hashováním).
  * Jinak aktualizuje pouze jméno a email.
  *
@@ -78,7 +79,7 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_close($stmt);
 
 /**
- * @brief Přesměrování zpět na stránku profilu po uložení změn.
+ * Přesměrování zpět na stránku profilu po uložení změn.
  */
 header("Location: account.php");
 exit;

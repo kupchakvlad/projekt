@@ -1,5 +1,10 @@
 \doxysection{registration\+\_\+form/registration\+\_\+form.php File Reference}
 \hypertarget{registration__form_8php}{}\label{registration__form_8php}\index{registration\_form/registration\_form.php@{registration\_form/registration\_form.php}}
+
+
+Frontend formulář pro registraci a přihlášení uživatelů. Tento soubor generuje HTML stránku s přepínači mezi přihlašovacím a registračním formulářem. Zpracovává data a errory z session (např. předvyplnění polí, zobrazení chyb), a zajišťuje bezpečné escapování výstupů pomocí htmlspecialchars. Formuláře odesílají data na backend skripty (\doxylink{registration_8php}{registration.\+php} a \doxylink{login_8php}{login.\+php}).  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,7 +41,7 @@ if(isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}mode\textquotesingle{}\mbox
 
 
 \doxysubsection{Detailed Description}
-Frontend formulář pro registraci a přihlášení uživatelů. Tento soubor generuje HTML stránku s přepínači mezi přihlašovacím a registračním formulářem. Zpracovává data a errory z session (např. předvyplnění polí, zobrazení chyb), a zajišťuje bezpečné escapování výstupů pomocí htmlspecialchars. Formuláře odesílají data na backend skripty (\doxylink{registration_8php}{registration.\+php} a \doxylink{login_8php}{login.\+php}).
+Frontend formulář pro registraci a přihlášení uživatelů. Tento soubor generuje HTML stránku s přepínači mezi přihlašovacím a registračním formulářem. Zpracovává data a errory z session (např. předvyplnění polí, zobrazení chyb), a zajišťuje bezpečné escapování výstupů pomocí htmlspecialchars. Formuláře odesílají data na backend skripty (\doxylink{registration_8php}{registration.\+php} a \doxylink{login_8php}{login.\+php}). 
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{registration_8php}{registration.\+php} Pro backend zpracování registrace. 

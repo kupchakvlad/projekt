@@ -3,72 +3,72 @@
 \mbox{\hyperlink{admin_8php}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{admin_8php_source_l00001}00001\ <?php}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00016}00016\ session\_start();}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00018}00018\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'user\_id'}])\ ||\ !isset(\$\_SESSION[\textcolor{stringliteral}{"{}admin"{}}])\ ||\ \$\_SESSION[\textcolor{stringliteral}{'admin'}]\ !=\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00019}00019\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../main/main.php"{}});}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00021}00021\ \}}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00030}\mbox{\hyperlink{admin_8php_a711797613cb863ca0756df789c396bf2}{00030}}\ \mbox{\hyperlink{admin_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00031}\mbox{\hyperlink{admin_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00031}}\ \mbox{\hyperlink{admin_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00032}\mbox{\hyperlink{admin_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00032}}\ \mbox{\hyperlink{admin_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00033}\mbox{\hyperlink{admin_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00033}}\ \mbox{\hyperlink{admin_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00039}\mbox{\hyperlink{admin_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00039}}\ \mbox{\hyperlink{admin_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{admin_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{admin_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{admin_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{admin_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00041}00041\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{admin_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ \{}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00042}00042\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connection\ failed:\ \(\backslash\)n"{}}.\ mysqli\_connect\_error());}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00043}00043\ \}}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00052}\mbox{\hyperlink{admin_8php_a7a33a3890f68be95a926a8caa4089566}{00052}}\ \mbox{\hyperlink{admin_8php_a7a33a3890f68be95a926a8caa4089566}{\$select\_users\_query}}\ =\ \textcolor{stringliteral}{"{}SELECT\ id,\ name,\ email,\ admin\ FROM\ users"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00053}\mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{00053}}\ \mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}}\ =\ mysqli\_query(\mbox{\hyperlink{admin_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{admin_8php_a7a33a3890f68be95a926a8caa4089566}{\$select\_users\_query}});}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00054}00054\ ?>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00056}00056\ <!DOCTYPE\ html>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00057}00057\ <html\ lang=\textcolor{stringliteral}{"{}en"{}}>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00058}00058\ <head>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00059}00059\ \ \ \ \ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00060}00060\ \ \ \ \ <title>(Admin\ mode)</title>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00061}00061\ \ \ \ \ <link\ href=\textcolor{stringliteral}{"{}admin.css"{}}\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00062}00062\ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}admin.js"{}}\ defer></script>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00063}00063\ </head>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00064}00064\ <body>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00066}00066\ <a\ href=\textcolor{stringliteral}{"{}../main/main.php"{}}\ \textcolor{keyword}{class}\ =\ \textcolor{stringliteral}{"{}back-\/link"{}}>←\ Back\ to\ main</a>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00068}00068\ <table>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00069}00069\ \ \ \ \ <thead>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00070}00070\ \ \ \ \ <tr>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00071}00071\ \ \ \ \ \ \ \ \ <th>ID</th>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00072}00072\ \ \ \ \ \ \ \ \ <th>Name</th>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00073}00073\ \ \ \ \ \ \ \ \ <th>Email</th>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00074}00074\ \ \ \ \ \ \ \ \ <th>Admin\ status</th>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00075}00075\ \ \ \ \ \ \ \ \ <th>User\ handling</th>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00076}00076\ \ \ \ \ </tr>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00077}00077\ \ \ \ \ </thead>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00078}00078\ \ \ \ \ <tbody\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}users"{}}>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00079}00079\ \ \ \ \ \ \ \ \ <?php}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mysqli\_num\_rows(\mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}})\ >\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\$row\ =\ mysqli\_fetch\_assoc(\mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}}))\ \{}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}}\ .\ \$row[\textcolor{stringliteral}{"{}id"{}}]\ .\ \textcolor{stringliteral}{"{}</td>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}}\ .\ \$row[\textcolor{stringliteral}{"{}name"{}}]\ .\ \textcolor{stringliteral}{"{}</td>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}}\ .\ \$row[\textcolor{stringliteral}{"{}email"{}}]\ .\ \textcolor{stringliteral}{"{}</td>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}}\ .\ \$row[\textcolor{stringliteral}{"{}admin"{}}]\ .\ \textcolor{stringliteral}{"{}</td>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<a\ href='edit.php?id="{}}\ .\ htmlspecialchars(\$row[\textcolor{stringliteral}{"{}id"{}}])\ .\ \textcolor{stringliteral}{"{}'>Edit</a>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<a\ href='delete.php?id="{}}\ .\ htmlspecialchars(\$row[\textcolor{stringliteral}{"{}id"{}}])\ .\ \textcolor{stringliteral}{"{}'\ class='delete\_button'>Delete</a>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<a\ href='admin\_handling.php?id="{}}\ .\ htmlspecialchars(\$row[\textcolor{stringliteral}{"{}id"{}}])\ .\ \textcolor{stringliteral}{"{}'>Change\ Admin</a>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}</td>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}</tr>"{}};}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ ?>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00101}00101\ \ \ \ \ </tbody>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00102}00102\ </table>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00104}00104\ </body>}
-\DoxyCodeLine{\Hypertarget{admin_8php_source_l00105}00105\ </html>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00017}00017\ session\_start();}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00019}00019\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'user\_id'}])\ ||\ !isset(\$\_SESSION[\textcolor{stringliteral}{"{}admin"{}}])\ ||\ \$\_SESSION[\textcolor{stringliteral}{'admin'}]\ !=\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00020}00020\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../main/main.php"{}});}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00031}\mbox{\hyperlink{admin_8php_a711797613cb863ca0756df789c396bf2}{00031}}\ \mbox{\hyperlink{admin_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00032}\mbox{\hyperlink{admin_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00032}}\ \mbox{\hyperlink{admin_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00033}\mbox{\hyperlink{admin_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00033}}\ \mbox{\hyperlink{admin_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00034}\mbox{\hyperlink{admin_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00034}}\ \mbox{\hyperlink{admin_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00040}\mbox{\hyperlink{admin_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00040}}\ \mbox{\hyperlink{admin_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{admin_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{admin_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{admin_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{admin_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00042}00042\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{admin_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ \{}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00043}00043\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connection\ failed:\ \(\backslash\)n"{}}.\ mysqli\_connect\_error());}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00053}\mbox{\hyperlink{admin_8php_a7a33a3890f68be95a926a8caa4089566}{00053}}\ \mbox{\hyperlink{admin_8php_a7a33a3890f68be95a926a8caa4089566}{\$select\_users\_query}}\ =\ \textcolor{stringliteral}{"{}SELECT\ id,\ name,\ email,\ admin\ FROM\ users"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00054}\mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{00054}}\ \mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}}\ =\ mysqli\_query(\mbox{\hyperlink{admin_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{admin_8php_a7a33a3890f68be95a926a8caa4089566}{\$select\_users\_query}});}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00055}00055\ ?>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00057}00057\ <!DOCTYPE\ html>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00058}00058\ <html\ lang=\textcolor{stringliteral}{"{}en"{}}>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00059}00059\ <head>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00060}00060\ \ \ \ \ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00061}00061\ \ \ \ \ <title>(Admin\ mode)</title>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00062}00062\ \ \ \ \ <link\ href=\textcolor{stringliteral}{"{}admin.css"{}}\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00063}00063\ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}admin.js"{}}\ defer></script>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00064}00064\ </head>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00065}00065\ <body>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00067}00067\ <a\ href=\textcolor{stringliteral}{"{}../main/main.php"{}}\ \textcolor{keyword}{class}\ =\ \textcolor{stringliteral}{"{}back-\/link"{}}>←\ Back\ to\ main</a>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00069}00069\ <table>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00070}00070\ \ \ \ \ <thead>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00071}00071\ \ \ \ \ <tr>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00072}00072\ \ \ \ \ \ \ \ \ <th>ID</th>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00073}00073\ \ \ \ \ \ \ \ \ <th>Name</th>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00074}00074\ \ \ \ \ \ \ \ \ <th>Email</th>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00075}00075\ \ \ \ \ \ \ \ \ <th>Admin\ status</th>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00076}00076\ \ \ \ \ \ \ \ \ <th>User\ handling</th>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00077}00077\ \ \ \ \ </tr>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00078}00078\ \ \ \ \ </thead>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00079}00079\ \ \ \ \ <tbody\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}users"{}}>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mysqli\_num\_rows(\mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}})\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\$row\ =\ mysqli\_fetch\_assoc(\mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}}))\ \{}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<tr>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}}\ .\ \$row[\textcolor{stringliteral}{"{}id"{}}]\ .\ \textcolor{stringliteral}{"{}</td>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}}\ .\ \$row[\textcolor{stringliteral}{"{}name"{}}]\ .\ \textcolor{stringliteral}{"{}</td>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}}\ .\ \$row[\textcolor{stringliteral}{"{}email"{}}]\ .\ \textcolor{stringliteral}{"{}</td>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}}\ .\ \$row[\textcolor{stringliteral}{"{}admin"{}}]\ .\ \textcolor{stringliteral}{"{}</td>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<td>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<a\ href='edit.php?id="{}}\ .\ htmlspecialchars(\$row[\textcolor{stringliteral}{"{}id"{}}])\ .\ \textcolor{stringliteral}{"{}'>Edit</a>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<a\ href='delete.php?id="{}}\ .\ htmlspecialchars(\$row[\textcolor{stringliteral}{"{}id"{}}])\ .\ \textcolor{stringliteral}{"{}'\ class='delete\_button'>Delete</a>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<a\ href='admin\_handling.php?id="{}}\ .\ htmlspecialchars(\$row[\textcolor{stringliteral}{"{}id"{}}])\ .\ \textcolor{stringliteral}{"{}'>Change\ Admin</a>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}</td>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}</tr>"{}};}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00101}00101\ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00102}00102\ \ \ \ \ </tbody>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00103}00103\ </table>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00105}00105\ </body>}
+\DoxyCodeLine{\Hypertarget{admin_8php_source_l00106}00106\ </html>}
 
 \end{DoxyCode}

@@ -4,10 +4,10 @@
 \begin{DoxyCompactItemize}
 \item 
 file \mbox{\hyperlink{get__passwords_8php}{get\+\_\+passwords.\+php}}
-\begin{DoxyCompactList}\small\item\em Vrací obsah souboru. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Vrací obsah souboru s běžnými/slabými hesly (\href{https://zwa.toad.cz/passwords.txt}{\texttt{ https\+://zwa.\+toad.\+cz/passwords.\+txt}}) ve formátu plain text. \end{DoxyCompactList}\item 
 file \mbox{\hyperlink{login_8php}{login.\+php}}
-\item 
+\begin{DoxyCompactList}\small\item\em Backend skript pro zpracování přihlašovacího formuláře. Tento soubor zpracovává POST data z \doxylink{registration__form_8php}{registration\+\_\+form.\+php} (přihlašovací část), validuje vstupy, kontroluje existenci uživatele podle emailu, ověřuje heslo a nastavuje session. Pokud dojde k chybám, ukládá error message do session a přesměruje zpět na formulář. Při úspěchu nastaví session pro uživatele (user\+\_\+id a admin) a přesměruje na hlavní stránku. \end{DoxyCompactList}\item 
 file \mbox{\hyperlink{registration_8php}{registration.\+php}}
-\item 
+\begin{DoxyCompactList}\small\item\em Backend skript pro zpracování registračního formuláře. Tento soubor zpracovává POST data z \doxylink{registration__form_8php}{registration\+\_\+form.\+php}, validuje vstupy, kontroluje duplicitu emailu, hashuje heslo a vkládá nového uživatele do databáze. Pokud dojde k chybám, ukládá errory do session a přesměruje zpět na formulář. Při úspěchu nastaví session pro uživatele a přesměruje na hlavní stránku. \end{DoxyCompactList}\item 
 file \mbox{\hyperlink{registration__form_8php}{registration\+\_\+form.\+php}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Frontend formulář pro registraci a přihlášení uživatelů. Tento soubor generuje HTML stránku s přepínači mezi přihlašovacím a registračním formulářem. Zpracovává data a errory z session (např. předvyplnění polí, zobrazení chyb), a zajišťuje bezpečné escapování výstupů pomocí htmlspecialchars. Formuláře odesílají data na backend skripty (\doxylink{registration_8php}{registration.\+php} a \doxylink{login_8php}{login.\+php}). \end{DoxyCompactList}\end{DoxyCompactItemize}

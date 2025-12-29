@@ -99,81 +99,81 @@ $(document).ready(function(){initNavTree('admin_8php_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="admin_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>&lt;?php</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>session_start();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordflow">if</span> (!isset($_SESSION[<span class="stringliteral">&#39;user_id&#39;</span>]) || !isset($_SESSION[<span class="stringliteral">&quot;admin&quot;</span>]) || $_SESSION[<span class="stringliteral">&#39;admin&#39;</span>] != 1) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    header(<span class="stringliteral">&quot;Location: ../main/main.php&quot;</span>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="admin_8php.html#a711797613cb863ca0756df789c396bf2">   30</a></span><a class="code hl_variable" href="admin_8php.html#a711797613cb863ca0756df789c396bf2">$host</a> = <span class="stringliteral">&quot;localhost&quot;</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="admin_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">   31</a></span><a class="code hl_variable" href="admin_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a> = <span class="stringliteral">&quot;kupchvla&quot;</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="admin_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">   32</a></span><a class="code hl_variable" href="admin_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a> = <span class="stringliteral">&quot;webove aplikace&quot;</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="admin_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">   33</a></span><a class="code hl_variable" href="admin_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a> = <span class="stringliteral">&quot;kupchvla&quot;</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">   39</a></span><a class="code hl_variable" href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a> = mysqli_connect(<a class="code hl_variable" href="admin_8php.html#a711797613cb863ca0756df789c396bf2">$host</a>, <a class="code hl_variable" href="admin_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a>, <a class="code hl_variable" href="admin_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a>, <a class="code hl_variable" href="admin_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordflow">if</span> (!<a class="code hl_variable" href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a>) {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    die(<span class="stringliteral">&quot;Connection failed: \n&quot;</span>. mysqli_connect_error());</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="admin_8php.html#a7a33a3890f68be95a926a8caa4089566">   52</a></span><a class="code hl_variable" href="admin_8php.html#a7a33a3890f68be95a926a8caa4089566">$select_users_query</a> = <span class="stringliteral">&quot;SELECT id, name, email, admin FROM users&quot;</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">   53</a></span><a class="code hl_variable" href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">$result</a> = mysqli_query(<a class="code hl_variable" href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a>, <a class="code hl_variable" href="admin_8php.html#a7a33a3890f68be95a926a8caa4089566">$select_users_query</a>);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>?&gt;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>&lt;!DOCTYPE html&gt;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>&lt;html lang=<span class="stringliteral">&quot;en&quot;</span>&gt;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>&lt;head&gt;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    &lt;meta charset=<span class="stringliteral">&quot;UTF-8&quot;</span>&gt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    &lt;title&gt;(Admin mode)&lt;/title&gt;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    &lt;link href=<span class="stringliteral">&quot;admin.css&quot;</span> rel=<span class="stringliteral">&quot;stylesheet&quot;</span>&gt;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    &lt;script src=<span class="stringliteral">&quot;admin.js&quot;</span> defer&gt;&lt;/script&gt;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>&lt;/head&gt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>&lt;body&gt;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>&lt;a href=<span class="stringliteral">&quot;../main/main.php&quot;</span> <span class="keyword">class</span> = <span class="stringliteral">&quot;back-link&quot;</span>&gt;← Back to main&lt;/a&gt;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>&lt;table&gt;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    &lt;thead&gt;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    &lt;tr&gt;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        &lt;th&gt;ID&lt;/th&gt;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        &lt;th&gt;Name&lt;/th&gt;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        &lt;th&gt;Email&lt;/th&gt;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        &lt;th&gt;Admin status&lt;/th&gt;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        &lt;th&gt;User handling&lt;/th&gt;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    &lt;/tr&gt;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    &lt;/thead&gt;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    &lt;tbody <span class="keyword">class</span>=<span class="stringliteral">&quot;users&quot;</span>&gt;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        &lt;?php</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (mysqli_num_rows(<a class="code hl_variable" href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">$result</a>) &gt; 0) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordflow">while</span>($row = mysqli_fetch_assoc(<a class="code hl_variable" href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">$result</a>)) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                echo <span class="stringliteral">&quot;&lt;tr&gt;&quot;</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span> . $row[<span class="stringliteral">&quot;id&quot;</span>] . <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span> . $row[<span class="stringliteral">&quot;name&quot;</span>] . <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span> . $row[<span class="stringliteral">&quot;email&quot;</span>] . <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span> . $row[<span class="stringliteral">&quot;admin&quot;</span>] . <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                echo <span class="stringliteral">&quot;&lt;a href=&#39;edit.php?id=&quot;</span> . htmlspecialchars($row[<span class="stringliteral">&quot;id&quot;</span>]) . <span class="stringliteral">&quot;&#39;&gt;Edit&lt;/a&gt;&quot;</span>;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                echo <span class="stringliteral">&quot;&lt;a href=&#39;delete.php?id=&quot;</span> . htmlspecialchars($row[<span class="stringliteral">&quot;id&quot;</span>]) . <span class="stringliteral">&quot;&#39; class=&#39;delete_button&#39;&gt;Delete&lt;/a&gt;&quot;</span>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                echo <span class="stringliteral">&quot;&lt;a href=&#39;admin_handling.php?id=&quot;</span> . htmlspecialchars($row[<span class="stringliteral">&quot;id&quot;</span>]) . <span class="stringliteral">&quot;&#39;&gt;Change Admin&lt;/a&gt;&quot;</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                echo <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                echo <span class="stringliteral">&quot;&lt;/tr&gt;&quot;</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        ?&gt;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    &lt;/tbody&gt;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>&lt;/table&gt;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>&lt;/body&gt;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>&lt;/html&gt;</div>
-<div class="ttc" id="aadmin_8php_html_a0d9c79b9b86b3f5891c6d3892f12c6a0"><div class="ttname"><a href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a></div><div class="ttdeci">$connection</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00039">admin.php:39</a></div></div>
-<div class="ttc" id="aadmin_8php_html_a0eb82aa5f81cf845de4b36cd653c42cf"><div class="ttname"><a href="admin_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a></div><div class="ttdeci">$username</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00031">admin.php:31</a></div></div>
-<div class="ttc" id="aadmin_8php_html_a112ef069ddc0454086e3d1e6d8d55d07"><div class="ttname"><a href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">$result</a></div><div class="ttdeci">$result</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00053">admin.php:53</a></div></div>
-<div class="ttc" id="aadmin_8php_html_a607686ef9f99ea7c42f4f3dd3dbb2b0d"><div class="ttname"><a href="admin_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a></div><div class="ttdeci">$password</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00032">admin.php:32</a></div></div>
-<div class="ttc" id="aadmin_8php_html_a711797613cb863ca0756df789c396bf2"><div class="ttname"><a href="admin_8php.html#a711797613cb863ca0756df789c396bf2">$host</a></div><div class="ttdeci">$host</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00030">admin.php:30</a></div></div>
-<div class="ttc" id="aadmin_8php_html_a7691c0162d89de0b6ba47edcd8ba8878"><div class="ttname"><a href="admin_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a></div><div class="ttdeci">$database</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00033">admin.php:33</a></div></div>
-<div class="ttc" id="aadmin_8php_html_a7a33a3890f68be95a926a8caa4089566"><div class="ttname"><a href="admin_8php.html#a7a33a3890f68be95a926a8caa4089566">$select_users_query</a></div><div class="ttdeci">$select_users_query</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00052">admin.php:52</a></div></div>
-<div class="ttc" id="alogOut_8php_html_a6733eb5f605d09eaede9845835d71c4e"><div class="ttname"><a href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a></div><div class="ttdeci">exit</div><div class="ttdef"><b>Definition</b> <a href="logOut_8php_source.html#l00014">logOut.php:14</a></div></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>session_start();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordflow">if</span> (!isset($_SESSION[<span class="stringliteral">&#39;user_id&#39;</span>]) || !isset($_SESSION[<span class="stringliteral">&quot;admin&quot;</span>]) || $_SESSION[<span class="stringliteral">&#39;admin&#39;</span>] != 1) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    header(<span class="stringliteral">&quot;Location: ../main/main.php&quot;</span>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_variable" href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="admin_8php.html#a711797613cb863ca0756df789c396bf2">   31</a></span><a class="code hl_variable" href="admin_8php.html#a711797613cb863ca0756df789c396bf2">$host</a> = <span class="stringliteral">&quot;localhost&quot;</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="admin_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">   32</a></span><a class="code hl_variable" href="admin_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a> = <span class="stringliteral">&quot;kupchvla&quot;</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="admin_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">   33</a></span><a class="code hl_variable" href="admin_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a> = <span class="stringliteral">&quot;webove aplikace&quot;</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="admin_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">   34</a></span><a class="code hl_variable" href="admin_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a> = <span class="stringliteral">&quot;kupchvla&quot;</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">   40</a></span><a class="code hl_variable" href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a> = mysqli_connect(<a class="code hl_variable" href="admin_8php.html#a711797613cb863ca0756df789c396bf2">$host</a>, <a class="code hl_variable" href="admin_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a>, <a class="code hl_variable" href="admin_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a>, <a class="code hl_variable" href="admin_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordflow">if</span> (!<a class="code hl_variable" href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a>) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    die(<span class="stringliteral">&quot;Connection failed: \n&quot;</span>. mysqli_connect_error());</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="admin_8php.html#a7a33a3890f68be95a926a8caa4089566">   53</a></span><a class="code hl_variable" href="admin_8php.html#a7a33a3890f68be95a926a8caa4089566">$select_users_query</a> = <span class="stringliteral">&quot;SELECT id, name, email, admin FROM users&quot;</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">   54</a></span><a class="code hl_variable" href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">$result</a> = mysqli_query(<a class="code hl_variable" href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a>, <a class="code hl_variable" href="admin_8php.html#a7a33a3890f68be95a926a8caa4089566">$select_users_query</a>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>?&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>&lt;!DOCTYPE html&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>&lt;html lang=<span class="stringliteral">&quot;en&quot;</span>&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>&lt;head&gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    &lt;meta charset=<span class="stringliteral">&quot;UTF-8&quot;</span>&gt;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    &lt;title&gt;(Admin mode)&lt;/title&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    &lt;link href=<span class="stringliteral">&quot;admin.css&quot;</span> rel=<span class="stringliteral">&quot;stylesheet&quot;</span>&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    &lt;script src=<span class="stringliteral">&quot;admin.js&quot;</span> defer&gt;&lt;/script&gt;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>&lt;/head&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>&lt;body&gt;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>&lt;a href=<span class="stringliteral">&quot;../main/main.php&quot;</span> <span class="keyword">class</span> = <span class="stringliteral">&quot;back-link&quot;</span>&gt;← Back to main&lt;/a&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>&lt;table&gt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    &lt;thead&gt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    &lt;tr&gt;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        &lt;th&gt;ID&lt;/th&gt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        &lt;th&gt;Name&lt;/th&gt;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        &lt;th&gt;Email&lt;/th&gt;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        &lt;th&gt;Admin status&lt;/th&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        &lt;th&gt;User handling&lt;/th&gt;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    &lt;/tr&gt;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    &lt;/thead&gt;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    &lt;tbody <span class="keyword">class</span>=<span class="stringliteral">&quot;users&quot;</span>&gt;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        &lt;?php</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span> (mysqli_num_rows(<a class="code hl_variable" href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">$result</a>) &gt; 0) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">while</span>($row = mysqli_fetch_assoc(<a class="code hl_variable" href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">$result</a>)) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                echo <span class="stringliteral">&quot;&lt;tr&gt;&quot;</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span> . $row[<span class="stringliteral">&quot;id&quot;</span>] . <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span> . $row[<span class="stringliteral">&quot;name&quot;</span>] . <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span> . $row[<span class="stringliteral">&quot;email&quot;</span>] . <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span> . $row[<span class="stringliteral">&quot;admin&quot;</span>] . <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                echo <span class="stringliteral">&quot;&lt;td&gt;&quot;</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                echo <span class="stringliteral">&quot;&lt;a href=&#39;edit.php?id=&quot;</span> . htmlspecialchars($row[<span class="stringliteral">&quot;id&quot;</span>]) . <span class="stringliteral">&quot;&#39;&gt;Edit&lt;/a&gt;&quot;</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                echo <span class="stringliteral">&quot;&lt;a href=&#39;delete.php?id=&quot;</span> . htmlspecialchars($row[<span class="stringliteral">&quot;id&quot;</span>]) . <span class="stringliteral">&quot;&#39; class=&#39;delete_button&#39;&gt;Delete&lt;/a&gt;&quot;</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                echo <span class="stringliteral">&quot;&lt;a href=&#39;admin_handling.php?id=&quot;</span> . htmlspecialchars($row[<span class="stringliteral">&quot;id&quot;</span>]) . <span class="stringliteral">&quot;&#39;&gt;Change Admin&lt;/a&gt;&quot;</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                echo <span class="stringliteral">&quot;&lt;/td&gt;&quot;</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                echo <span class="stringliteral">&quot;&lt;/tr&gt;&quot;</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        ?&gt;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    &lt;/tbody&gt;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>&lt;/table&gt;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>&lt;/body&gt;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>&lt;/html&gt;</div>
+<div class="ttc" id="aadmin_8php_html_a0d9c79b9b86b3f5891c6d3892f12c6a0"><div class="ttname"><a href="admin_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a></div><div class="ttdeci">$connection</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00040">admin.php:40</a></div></div>
+<div class="ttc" id="aadmin_8php_html_a0eb82aa5f81cf845de4b36cd653c42cf"><div class="ttname"><a href="admin_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a></div><div class="ttdeci">$username</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00032">admin.php:32</a></div></div>
+<div class="ttc" id="aadmin_8php_html_a112ef069ddc0454086e3d1e6d8d55d07"><div class="ttname"><a href="admin_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">$result</a></div><div class="ttdeci">$result</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00054">admin.php:54</a></div></div>
+<div class="ttc" id="aadmin_8php_html_a607686ef9f99ea7c42f4f3dd3dbb2b0d"><div class="ttname"><a href="admin_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a></div><div class="ttdeci">$password</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00033">admin.php:33</a></div></div>
+<div class="ttc" id="aadmin_8php_html_a711797613cb863ca0756df789c396bf2"><div class="ttname"><a href="admin_8php.html#a711797613cb863ca0756df789c396bf2">$host</a></div><div class="ttdeci">$host</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00031">admin.php:31</a></div></div>
+<div class="ttc" id="aadmin_8php_html_a7691c0162d89de0b6ba47edcd8ba8878"><div class="ttname"><a href="admin_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a></div><div class="ttdeci">$database</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00034">admin.php:34</a></div></div>
+<div class="ttc" id="aadmin_8php_html_a7a33a3890f68be95a926a8caa4089566"><div class="ttname"><a href="admin_8php.html#a7a33a3890f68be95a926a8caa4089566">$select_users_query</a></div><div class="ttdeci">$select_users_query</div><div class="ttdef"><b>Definition</b> <a href="admin_8php_source.html#l00053">admin.php:53</a></div></div>
+<div class="ttc" id="alogOut_8php_html_a6733eb5f605d09eaede9845835d71c4e"><div class="ttname"><a href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a></div><div class="ttdeci">exit</div><div class="ttdef"><b>Definition</b> <a href="logOut_8php_source.html#l00015">logOut.php:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -3,161 +3,161 @@
 \mbox{\hyperlink{filter_8php}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{filter_8php_source_l00001}00001\ <?php}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00025}\mbox{\hyperlink{filter_8php_a711797613cb863ca0756df789c396bf2}{00025}}\ \mbox{\hyperlink{filter_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00026}\mbox{\hyperlink{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00026}}\ \mbox{\hyperlink{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00027}\mbox{\hyperlink{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00027}}\ \mbox{\hyperlink{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00028}\mbox{\hyperlink{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00028}}\ \mbox{\hyperlink{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00034}\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{00034}}\ \mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}}\ =\ mysqli\_connect(\mbox{\hyperlink{filter_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00036}00036\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}})\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00037}00037\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connection\ failed:\ "{}}\ .\ mysqli\_connect\_error());}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00038}00038\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00051}00051\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}search"{}}]))\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00052}00052\ \ \ \ \ \$search\ =\ \$\_GET[\textcolor{stringliteral}{"{}search"{}}];}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00053}\mbox{\hyperlink{filter_8php_a6c22310bec25156fce32de1c72754e06}{00053}}\ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00054}00054\ \ \ \ \ \$search\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00055}00055\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00057}00057\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}size"{}}]))\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00058}00058\ \ \ \ \ \$size\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{"{}size"{}}];}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00059}00059\ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00060}00060\ \ \ \ \ \$size\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00061}00061\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00063}00063\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}min"{}}]))\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00064}00064\ \ \ \ \ \$min\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{"{}min"{}}];}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00065}00065\ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00066}00066\ \ \ \ \ \$min\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00067}00067\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00069}00069\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}max"{}}]))\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00070}00070\ \ \ \ \ \$max\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{"{}max"{}}];}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00071}00071\ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00072}00072\ \ \ \ \ \$max\ =\ 100000;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00073}00073\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00075}00075\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{'season'}]))\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00076}00076\ \ \ \ \ \$season\ =\ \$\_GET[\textcolor{stringliteral}{'season'}];}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00077}00077\ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00078}00078\ \ \ \ \ \$season\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00079}00079\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00081}00081\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}page"{}}]))\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00082}00082\ \ \ \ \ \$page\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{"{}page"{}}];}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00083}00083\ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00084}00084\ \ \ \ \ \$page\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00085}00085\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00087}00087\ \textcolor{keywordflow}{if}\ (\$page\ <\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00088}00088\ \ \ \ \ \$page\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00089}00089\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00095}\mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{00095}}\ \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$perPage}}\ =\ 12;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00096}00096\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00101}\mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{00101}}\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ products\ WHERE\ price\ BETWEEN\ \$min\ AND\ \$max"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00102}00102\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00103}00103\ \textcolor{keywordflow}{if}\ (\$search\ !=\textcolor{stringliteral}{"{}"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00104}00104\ \ \ \ \ \$searchSafing\ =\ mysqli\_real\_escape\_string(\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}},\ \$search);}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ .\ \textcolor{stringliteral}{"{}\ AND\ name\ LIKE\ '\%\$searchSafing\%'\ "{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00106}00106\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00107}00107\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00108}00108\ \textcolor{keywordflow}{if}\ (\$season\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00109}00109\ \ \ \ \ \$seasonSafing\ =\ mysqli\_real\_escape\_string(\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}},\ \$season);}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ .\ \textcolor{stringliteral}{"{}\ AND\ season\ =\ '\$seasonSafing'\ "{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00111}00111\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00112}00112\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00113}00113\ \textcolor{keywordflow}{if}\ (\$size\ >\ 27)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ .\ \textcolor{stringliteral}{"{}\ AND\ size\ =\ \$size"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00115}00115\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00116}00116\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00120}00120\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ .\ \textcolor{stringliteral}{"{}\ ORDER\ BY\ id\ DESC"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00127}\mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{00127}}\ \mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{\$final\_request}}\ =\ mysqli\_query(\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}},\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}});}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00128}00128\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00129}\mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{00129}}\ \mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\_products}}\ =\ [];}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00130}00130\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00131}00131\ \textcolor{keywordflow}{while}(\$row\ =\ mysqli\_fetch\_assoc(\mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{\$final\_request}}))\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\_products}}[]\ =\ \$row;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00133}00133\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00134}00134\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00140}\mbox{\hyperlink{filter_8php_a5370121aba814a7911e700a54b06e4b8}{00140}}\ \mbox{\hyperlink{filter_8php_a5370121aba814a7911e700a54b06e4b8}{\$totalProducts}}\ =\ count(\mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\_products}});}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00141}\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{00141}}\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ =\ ceil(\mbox{\hyperlink{filter_8php_a5370121aba814a7911e700a54b06e4b8}{\$totalProducts}}\ /\ \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$perPage}});}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00142}00142\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00143}\mbox{\hyperlink{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}{00143}}\ \mbox{\hyperlink{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}{\$offset}}\ =\ (\$page\ -\/\ 1)\ *\ \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$perPage}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00144}\mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{00144}}\ \mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{\$pageProducts}}\ =\ array\_slice(\mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\_products}},\ \mbox{\hyperlink{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}{\$offset}},\ \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$perPage}});}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00145}00145\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00150}00150\ \textcolor{keywordflow}{if}\ (count(\mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{\$pageProducts}})\ >\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00151}00151\ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{\$pageProducts}}\ as\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}})\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00152}00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{product_8php_ab0c7013419fc5ee6238d17eff2554afe}{\$images}}\ =\ explode(\textcolor{charliteral}{','},\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'file\_path'}]);}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00153}00153\ \ \ \ \ \ \ \ \ \$img\_path\ =\ trim(\mbox{\hyperlink{product_8php_ab0c7013419fc5ee6238d17eff2554afe}{\$images}}[0]);}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00154}00154\ \ \ \ \ \ \ \ \ \$img\_url\ =\ str\_replace(\textcolor{stringliteral}{'/home/kupchvla/www'},\ \textcolor{stringliteral}{'https://zwa.toad.cz/\string~kupchvla'},\ \$img\_path);}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00155}00155\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00156}00156\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<a\ class="{}product-\/card"{}\ href="{}product.php?id='}\ .\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'id'}]\ .\ \textcolor{stringliteral}{'"{}>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00157}00157\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'\ \ <img\ src="{}'}\ .\ \$img\_url\ .\ \textcolor{stringliteral}{'"{}\ alt="{}Product"{}>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00158}00158\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'\ \ <p\ class="{}product-\/name"{}>'}\ .\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'name'}])\ .\ \textcolor{stringliteral}{'</p>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00159}00159\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<p\ class="{}product-\/brand"{}>'}\ .\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{"{}fabric"{}}])\ .\ \textcolor{stringliteral}{'</p>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00160}00160\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<p>\ Season:\ '}\ .\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{"{}season"{}}])\ .\ \textcolor{stringliteral}{'</p>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00161}00161\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<p>\ Size:\ '}\ .\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{"{}size"{}}])\ .\ \textcolor{stringliteral}{'</p>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00162}00162\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'\ \ <p\ class="{}price"{}>'}\ .\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'price'}]\ .\ \textcolor{stringliteral}{'\ CZK</p>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00163}00163\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</a>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00164}00164\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00165}00165\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00166}00166\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<p>No\ products\ found</p>"{}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00167}00167\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00168}00168\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00172}00172\ \textcolor{keywordflow}{if}\ (\$page\ >\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ \&\&\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ >\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00173}00173\ \ \ \ \ \$page\ =\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00174}00174\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00175}00175\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00181}00181\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ >\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00182}00182\ \ \ \ \ echo\ \textcolor{stringliteral}{'<div\ class="{}pagination"{}>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00183}00183\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$page\ >\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00185}00185\ \ \ \ \ \ \ \ \ \$prevPage\ =\ \$page\ -\/\ 1;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00186}00186\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}\ .\ \$prevPage\ .\ \textcolor{stringliteral}{'"{}>Prev</button>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00187}00187\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00188}00188\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ <=\ 5)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\$i\ =\ 1\ ;\ \$i\ <=\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}};\ \$i++)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$i\ >\ 0\ \&\&\ \$i\ <=\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}})\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$i\ ==\ \$page)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn\ active"{}>'}\ .\ \$i\ .\ \textcolor{stringliteral}{'</button>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}\ .\ \$i\ .\ \textcolor{stringliteral}{'"{}>'}\ .\ \$i\ .\ \textcolor{stringliteral}{'</button>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00199}00199\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$page\ >\ 3)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}1"{}>1</button>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<span\ class="{}dots"{}>...</span>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00204}00204\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\$i\ =\ \$page\ -\/\ 2;\ \$i\ <=\ \$page\ +\ 2;\ \$i++)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$i\ >\ 0\ \&\&\ \$i\ <=\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}})\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$i\ ==\ \$page)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn\ active"{}>'}.\$i.\textcolor{stringliteral}{'</button>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}.\$i.\textcolor{stringliteral}{'"{}>'}.\$i.\textcolor{stringliteral}{'</button>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00214}00214\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00215}00215\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ >\ 5\ \&\&\ \$page\ <\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ -\/\ 2)\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00216}00216\ \ \ \ \ echo\ \textcolor{stringliteral}{'<span\ class="{}dots"{}>...</span>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00217}00217\ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}\ .\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ .\ \textcolor{stringliteral}{'"{}>'}\ .\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ .\ \textcolor{stringliteral}{'</button>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00218}00218\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00219}00219\ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00220}00220\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$page\ <\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}})\ \{}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00221}00221\ \ \ \ \ \ \ \ \ \$nextPage\ =\ \$page\ +\ 1;}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00222}00222\ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}\ .\ \$nextPage\ .\ \textcolor{stringliteral}{'"{}>Next</button>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00223}00223\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00224}00224\ \ \ \ \ echo\ \textcolor{stringliteral}{'</div>'};}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00225}00225\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00226}00226\ }
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00230}00230\ mysqli\_close(\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}});}
-\DoxyCodeLine{\Hypertarget{filter_8php_source_l00231}00231\ ?>}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00026}\mbox{\hyperlink{filter_8php_a711797613cb863ca0756df789c396bf2}{00026}}\ \mbox{\hyperlink{filter_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00027}\mbox{\hyperlink{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00027}}\ \mbox{\hyperlink{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00028}\mbox{\hyperlink{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00028}}\ \mbox{\hyperlink{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00029}\mbox{\hyperlink{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00029}}\ \mbox{\hyperlink{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00035}\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{00035}}\ \mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}}\ =\ mysqli\_connect(\mbox{\hyperlink{filter_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00037}00037\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}})\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00038}00038\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connection\ failed:\ "{}}\ .\ mysqli\_connect\_error());}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00052}00052\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}search"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00053}00053\ \ \ \ \ \$search\ =\ \$\_GET[\textcolor{stringliteral}{"{}search"{}}];}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00054}\mbox{\hyperlink{filter_8php_a6c22310bec25156fce32de1c72754e06}{00054}}\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00055}00055\ \ \ \ \ \$search\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00058}00058\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}size"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00059}00059\ \ \ \ \ \$size\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{"{}size"{}}];}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00060}00060\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00061}00061\ \ \ \ \ \$size\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00064}00064\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}min"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00065}00065\ \ \ \ \ \$min\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{"{}min"{}}];}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00066}00066\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00067}00067\ \ \ \ \ \$min\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00070}00070\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}max"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00071}00071\ \ \ \ \ \$max\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{"{}max"{}}];}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00072}00072\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00073}00073\ \ \ \ \ \$max\ =\ 100000;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00076}00076\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{'season'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00077}00077\ \ \ \ \ \$season\ =\ \$\_GET[\textcolor{stringliteral}{'season'}];}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00078}00078\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00079}00079\ \ \ \ \ \$season\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00082}00082\ \textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{"{}page"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00083}00083\ \ \ \ \ \$page\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{"{}page"{}}];}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00084}00084\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00085}00085\ \ \ \ \ \$page\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00088}00088\ \textcolor{keywordflow}{if}\ (\$page\ <\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00089}00089\ \ \ \ \ \$page\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00096}\mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{00096}}\ \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$perPage}}\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00102}\mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{00102}}\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ products\ WHERE\ price\ BETWEEN\ \$min\ AND\ \$max"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00104}00104\ \textcolor{keywordflow}{if}\ (\$search\ !=\textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00105}00105\ \ \ \ \ \$searchSafing\ =\ mysqli\_real\_escape\_string(\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}},\ \$search);}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ .\ \textcolor{stringliteral}{"{}\ AND\ name\ LIKE\ '\%\$searchSafing\%'\ "{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00109}00109\ \textcolor{keywordflow}{if}\ (\$season\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00110}00110\ \ \ \ \ \$seasonSafing\ =\ mysqli\_real\_escape\_string(\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}},\ \$season);}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ .\ \textcolor{stringliteral}{"{}\ AND\ season\ =\ '\$seasonSafing'\ "{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00114}00114\ \textcolor{keywordflow}{if}\ (\$size\ >\ 27)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ .\ \textcolor{stringliteral}{"{}\ AND\ size\ =\ \$size"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00121}00121\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ =\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}}\ .\ \textcolor{stringliteral}{"{}\ ORDER\ BY\ id\ DESC"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00128}\mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{00128}}\ \mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{\$final\_request}}\ =\ mysqli\_query(\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}},\ \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}});}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00130}\mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{00130}}\ \mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\_products}}\ =\ [];}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00132}00132\ \textcolor{keywordflow}{while}(\$row\ =\ mysqli\_fetch\_assoc(\mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{\$final\_request}}))\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00133}00133\ \ \ \ \ \mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\_products}}[]\ =\ \$row;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00134}00134\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00141}\mbox{\hyperlink{filter_8php_a5370121aba814a7911e700a54b06e4b8}{00141}}\ \mbox{\hyperlink{filter_8php_a5370121aba814a7911e700a54b06e4b8}{\$totalProducts}}\ =\ count(\mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\_products}});}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00142}\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{00142}}\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ =\ ceil(\mbox{\hyperlink{filter_8php_a5370121aba814a7911e700a54b06e4b8}{\$totalProducts}}\ /\ \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$perPage}});}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00144}\mbox{\hyperlink{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}{00144}}\ \mbox{\hyperlink{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}{\$offset}}\ =\ (\$page\ -\/\ 1)\ *\ \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$perPage}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00145}\mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{00145}}\ \mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{\$pageProducts}}\ =\ array\_slice(\mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\_products}},\ \mbox{\hyperlink{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}{\$offset}},\ \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$perPage}});}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00151}00151\ \textcolor{keywordflow}{if}\ (count(\mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{\$pageProducts}})\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00152}00152\ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{\$pageProducts}}\ as\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}})\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00153}00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{product_8php_ab0c7013419fc5ee6238d17eff2554afe}{\$images}}\ =\ explode(\textcolor{charliteral}{','},\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'file\_path'}]);}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00154}00154\ \ \ \ \ \ \ \ \ \$img\_path\ =\ trim(\mbox{\hyperlink{product_8php_ab0c7013419fc5ee6238d17eff2554afe}{\$images}}[0]);}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00155}00155\ \ \ \ \ \ \ \ \ \$img\_url\ =\ str\_replace(\textcolor{stringliteral}{'/home/kupchvla/www'},\ \textcolor{stringliteral}{'https://zwa.toad.cz/\string~kupchvla'},\ \$img\_path);}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00157}00157\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<a\ class="{}product-\/card"{}\ href="{}product.php?id='}\ .\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'id'}]\ .\ \textcolor{stringliteral}{'"{}>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00158}00158\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'\ \ <img\ src="{}'}\ .\ \$img\_url\ .\ \textcolor{stringliteral}{'"{}\ alt="{}Product"{}>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00159}00159\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'\ \ <p\ class="{}product-\/name"{}>'}\ .\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'name'}])\ .\ \textcolor{stringliteral}{'</p>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00160}00160\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<p\ class="{}product-\/brand"{}>'}\ .\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{"{}fabric"{}}])\ .\ \textcolor{stringliteral}{'</p>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00161}00161\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<p>\ Season:\ '}\ .\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{"{}season"{}}])\ .\ \textcolor{stringliteral}{'</p>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00162}00162\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<p>\ Size:\ '}\ .\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{"{}size"{}}])\ .\ \textcolor{stringliteral}{'</p>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00163}00163\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'\ \ <p\ class="{}price"{}>'}\ .\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'price'}]\ .\ \textcolor{stringliteral}{'\ CZK</p>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00164}00164\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</a>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00166}00166\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00167}00167\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}<p>No\ products\ found</p>"{}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00173}00173\ \textcolor{keywordflow}{if}\ (\$page\ >\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ \&\&\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00174}00174\ \ \ \ \ \$page\ =\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00182}00182\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ >\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00183}00183\ \ \ \ \ echo\ \textcolor{stringliteral}{'<div\ class="{}pagination"{}>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$page\ >\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00186}00186\ \ \ \ \ \ \ \ \ \$prevPage\ =\ \$page\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00187}00187\ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}\ .\ \$prevPage\ .\ \textcolor{stringliteral}{'"{}>Prev</button>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00188}00188\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00190}00190\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ <=\ 5)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\$i\ =\ 1\ ;\ \$i\ <=\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}};\ \$i++)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$i\ >\ 0\ \&\&\ \$i\ <=\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}})\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$i\ ==\ \$page)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn\ active"{}>'}\ .\ \$i\ .\ \textcolor{stringliteral}{'</button>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}\ .\ \$i\ .\ \textcolor{stringliteral}{'"{}>'}\ .\ \$i\ .\ \textcolor{stringliteral}{'</button>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00199}00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00200}00200\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$page\ >\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}1"{}>1</button>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<span\ class="{}dots"{}>...</span>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\$i\ =\ \$page\ -\/\ 2;\ \$i\ <=\ \$page\ +\ 2;\ \$i++)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$i\ >\ 0\ \&\&\ \$i\ <=\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}})\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$i\ ==\ \$page)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn\ active"{}>'}.\$i.\textcolor{stringliteral}{'</button>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}.\$i.\textcolor{stringliteral}{'"{}>'}.\$i.\textcolor{stringliteral}{'</button>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00214}00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00215}00215\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00216}00216\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ >\ 5\ \&\&\ \$page\ <\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ -\/\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00217}00217\ \ \ \ \ echo\ \textcolor{stringliteral}{'<span\ class="{}dots"{}>...</span>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00218}00218\ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}\ .\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ .\ \textcolor{stringliteral}{'"{}>'}\ .\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}}\ .\ \textcolor{stringliteral}{'</button>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00220}00220\ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{if}\ (\$page\ <\ \mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$totalPages}})\ \{}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00222}00222\ \ \ \ \ \ \ \ \ \$nextPage\ =\ \$page\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00223}00223\ \ \ \ \ echo\ \textcolor{stringliteral}{'<button\ class="{}page-\/btn"{}\ data-\/page="{}'}\ .\ \$nextPage\ .\ \textcolor{stringliteral}{'"{}>Next</button>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00224}00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00225}00225\ \ \ \ \ echo\ \textcolor{stringliteral}{'</div>'};}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00226}00226\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00231}00231\ mysqli\_close(\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}});}
+\DoxyCodeLine{\Hypertarget{filter_8php_source_l00232}00232\ ?>}
 
 \end{DoxyCode}

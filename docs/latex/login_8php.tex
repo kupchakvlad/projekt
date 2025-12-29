@@ -1,5 +1,10 @@
 \doxysection{registration\+\_\+form/login.php File Reference}
 \hypertarget{login_8php}{}\label{login_8php}\index{registration\_form/login.php@{registration\_form/login.php}}
+
+
+Backend skript pro zpracování přihlašovacího formuláře. Tento soubor zpracovává POST data z \doxylink{registration__form_8php}{registration\+\_\+form.\+php} (přihlašovací část), validuje vstupy, kontroluje existenci uživatele podle emailu, ověřuje heslo a nastavuje session. Pokud dojde k chybám, ukládá error message do session a přesměruje zpět na formulář. Při úspěchu nastaví session pro uživatele (user\+\_\+id a admin) a přesměruje na hlavní stránku.  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,7 +21,7 @@
 
 
 \doxysubsection{Detailed Description}
-Backend skript pro zpracování přihlašovacího formuláře. Tento soubor zpracovává POST data z \doxylink{registration__form_8php}{registration\+\_\+form.\+php} (přihlašovací část), validuje vstupy, kontroluje existenci uživatele podle emailu, ověřuje heslo a nastavuje session. Pokud dojde k chybám, ukládá error message do session a přesměruje zpět na formulář. Při úspěchu nastaví session pro uživatele (user\+\_\+id a admin) a přesměruje na hlavní stránku.
+Backend skript pro zpracování přihlašovacího formuláře. Tento soubor zpracovává POST data z \doxylink{registration__form_8php}{registration\+\_\+form.\+php} (přihlašovací část), validuje vstupy, kontroluje existenci uživatele podle emailu, ověřuje heslo a nastavuje session. Pokud dojde k chybám, ukládá error message do session a přesměruje zpět na formulář. Při úspěchu nastaví session pro uživatele (user\+\_\+id a admin) a přesměruje na hlavní stránku. 
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{registration__form_8php}{registration\+\_\+form.\+php} Pro frontend formulář (přihlašovací část). 

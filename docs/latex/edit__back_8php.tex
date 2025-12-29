@@ -1,5 +1,10 @@
 \doxysection{admin/edit\+\_\+back.php File Reference}
 \hypertarget{edit__back_8php}{}\label{edit__back_8php}\index{admin/edit\_back.php@{admin/edit\_back.php}}
+
+
+Backend skript pro uložení editovaných údajů uživatele (administrátorská akce).  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,7 +25,9 @@
 
 
 \doxysubsection{Detailed Description}
-Backend skript pro uložení editovaných údajů uživatele (administrátorská akce). Tento soubor je přístupný pouze přihlášeným administrátorům. Na základě ID z GET parametru a dat z POST (edited\+\_\+username, edited\+\_\+email) provede validaci vstupů (neprazdné pole, platný email) a aktualizuje jméno a email uživatele v tabulce {\ttfamily users} pomocí prepared statement. Po zpracování (úspěšném i neúspěšném) vždy přesměruje zpět na \doxylink{admin_8php}{admin.\+php}.
+Backend skript pro uložení editovaných údajů uživatele (administrátorská akce). 
+
+Tento soubor je přístupný pouze přihlášeným administrátorům. Na základě ID z GET parametru a dat z POST (edited\+\_\+username, edited\+\_\+email) provede validaci vstupů (neprazdné pole, platný email) a aktualizuje jméno a email uživatele v tabulce {\ttfamily users} pomocí prepared statement. Po zpracování (úspěšném i neúspěšném) vždy přesměruje zpět na \doxylink{admin_8php}{admin.\+php}.
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{edit_8php}{edit.\+php} Frontend formulář pro editaci uživatele. 
@@ -42,7 +49,7 @@ Definition in file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php
 
 
 
-Definition at line \mbox{\hyperlink{edit__back_8php_source_l00042}{42}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{edit__back_8php_source_l00043}{43}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
 
 \Hypertarget{edit__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{edit__back_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
 \index{edit\_back.php@{edit\_back.php}!\$database@{\$database}}
@@ -52,7 +59,7 @@ Definition at line \mbox{\hyperlink{edit__back_8php_source_l00042}{42}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{edit__back_8php_source_l00036}{36}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{edit__back_8php_source_l00037}{37}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
 
 \Hypertarget{edit__back_8php_a711797613cb863ca0756df789c396bf2}\label{edit__back_8php_a711797613cb863ca0756df789c396bf2} 
 \index{edit\_back.php@{edit\_back.php}!\$host@{\$host}}
@@ -62,7 +69,7 @@ Definition at line \mbox{\hyperlink{edit__back_8php_source_l00036}{36}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{edit__back_8php_source_l00033}{33}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{edit__back_8php_source_l00034}{34}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
 
 \Hypertarget{edit__back_8php_ae97941710d863131c700f069b109991e}\label{edit__back_8php_ae97941710d863131c700f069b109991e} 
 \index{edit\_back.php@{edit\_back.php}!\$id@{\$id}}
@@ -72,7 +79,7 @@ Definition at line \mbox{\hyperlink{edit__back_8php_source_l00033}{33}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{edit__back_8php_source_l00064}{64}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{edit__back_8php_source_l00065}{65}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
 
 \Hypertarget{edit__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{edit__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
 \index{edit\_back.php@{edit\_back.php}!\$password@{\$password}}
@@ -82,7 +89,7 @@ Definition at line \mbox{\hyperlink{edit__back_8php_source_l00064}{64}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{edit__back_8php_source_l00035}{35}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{edit__back_8php_source_l00036}{36}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
 
 \Hypertarget{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
 \index{edit\_back.php@{edit\_back.php}!\$username@{\$username}}
@@ -92,7 +99,7 @@ Definition at line \mbox{\hyperlink{edit__back_8php_source_l00035}{35}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{edit__back_8php_source_l00034}{34}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{edit__back_8php_source_l00035}{35}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
 
 \Hypertarget{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}\label{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e} 
 \index{edit\_back.php@{edit\_back.php}!exit@{exit}}
@@ -102,5 +109,5 @@ Definition at line \mbox{\hyperlink{edit__back_8php_source_l00034}{34}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{edit__back_8php_source_l00099}{99}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
+Definition at line \mbox{\hyperlink{edit__back_8php_source_l00100}{100}} of file \mbox{\hyperlink{edit__back_8php_source}{edit\+\_\+back.\+php}}.
 

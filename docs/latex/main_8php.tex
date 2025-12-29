@@ -1,5 +1,10 @@
 \doxysection{main/main.php File Reference}
 \hypertarget{main_8php}{}\label{main_8php}\index{main/main.php@{main/main.php}}
+
+
+Hlavní stránka e-\/shopu Botovo (seznam produktů).  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,11 +21,13 @@
 \mbox{\hyperlink{main_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
 \item 
 \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} (! \$conn)
-\begin{DoxyCompactList}\small\item\em Kontrola oprávnění – pouze přihlášený administrátor. Pokud podmínky nejsou splněny, přesměruje na hlavní stránku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Hlavní stránka e-\/shopu Botovo (seznam produktů). Tento soubor je vstupní bod pro přihlášené uživatele – zobrazuje filtr, seznam produktů a navigaci. Kontroluje přihlášení, načítá tmavý režim z cookie, připojuje se k databázi (pro budoucí použití) a generuje základní HTML strukturu stránky. Produkty se dynamicky načítají přes AJAX (\doxylink{filter_8php}{filter.\+php}) pomocí main.\+js.
+Hlavní stránka e-\/shopu Botovo (seznam produktů). 
+
+Tento soubor je vstupní bod pro přihlášené uživatele – zobrazuje filtr, seznam produktů a navigaci. Kontroluje přihlášení, načítá tmavý režim z cookie, připojuje se k databázi (pro budoucí použití) a generuje základní HTML strukturu stránky. Produkty se dynamicky načítají přes AJAX (\doxylink{filter_8php}{filter.\+php}) pomocí main.\+js.
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{filter_8php}{filter.\+php} Pro AJAX filtrování a paginace produktů. 
@@ -50,7 +57,7 @@ Definition in file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
 
 
 
-Definition at line \mbox{\hyperlink{main_8php_source_l00056}{56}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
+Definition at line \mbox{\hyperlink{main_8php_source_l00057}{57}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
 
 \Hypertarget{main_8php_a25fcfe1f44ff29a7918826d202844f23}\label{main_8php_a25fcfe1f44ff29a7918826d202844f23} 
 \index{main.php@{main.php}!\$dark\_mode\_class@{\$dark\_mode\_class}}
@@ -60,7 +67,7 @@ Definition at line \mbox{\hyperlink{main_8php_source_l00056}{56}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{main_8php_source_l00035}{35}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
+Definition at line \mbox{\hyperlink{main_8php_source_l00036}{36}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
 
 \Hypertarget{main_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{main_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
 \index{main.php@{main.php}!\$database@{\$database}}
@@ -70,7 +77,7 @@ Definition at line \mbox{\hyperlink{main_8php_source_l00035}{35}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{main_8php_source_l00050}{50}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
+Definition at line \mbox{\hyperlink{main_8php_source_l00051}{51}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
 
 \Hypertarget{main_8php_a711797613cb863ca0756df789c396bf2}\label{main_8php_a711797613cb863ca0756df789c396bf2} 
 \index{main.php@{main.php}!\$host@{\$host}}
@@ -80,7 +87,7 @@ Definition at line \mbox{\hyperlink{main_8php_source_l00050}{50}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{main_8php_source_l00047}{47}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
+Definition at line \mbox{\hyperlink{main_8php_source_l00048}{48}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
 
 \Hypertarget{main_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{main_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
 \index{main.php@{main.php}!\$password@{\$password}}
@@ -90,7 +97,7 @@ Definition at line \mbox{\hyperlink{main_8php_source_l00047}{47}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{main_8php_source_l00049}{49}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
+Definition at line \mbox{\hyperlink{main_8php_source_l00050}{50}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
 
 \Hypertarget{main_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{main_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
 \index{main.php@{main.php}!\$username@{\$username}}
@@ -100,7 +107,7 @@ Definition at line \mbox{\hyperlink{main_8php_source_l00049}{49}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{main_8php_source_l00048}{48}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
+Definition at line \mbox{\hyperlink{main_8php_source_l00049}{49}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
 
 \Hypertarget{main_8php_a43dd02ab50145011973ca5e9cd22acd8}\label{main_8php_a43dd02ab50145011973ca5e9cd22acd8} 
 \index{main.php@{main.php}!if@{if}}
@@ -114,25 +121,15 @@ Definition at line \mbox{\hyperlink{main_8php_source_l00048}{48}} of file \mbox{
 \DoxyCodeLine{\ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ admin.php"{}})}
 
 \end{DoxyCode}
+Kontrola oprávnění – pouze přihlášený administrátor. Pokud podmínky nejsou splněny, přesměruje na hlavní stránku. Kontrola existence ID uživatele v GET parametru. Pokud chybí, přesměruje zpět na admin panel. ID uživatele, jehož admin status má být změněn. Převedeno na integer pro bezpečnost.
 
-
-Kontrola oprávnění – pouze přihlášený administrátor. Pokud podmínky nejsou splněny, přesměruje na hlavní stránku. 
-
-Zpracování chyb registračního formuláře z session. Pokud existuje \textquotesingle{}registration\+\_\+errors\textquotesingle{} v session, nastaví flags a chybové texty pro pole.
-
-Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "{}\+No products found"{}.
+Kontrola existence ID uživatele v GET parametru. Pokud chybí, přesměruje zpět na admin panel. Validace ID uživatele z GET parametru. Používá filter\+\_\+input s FILTER\+\_\+\+VALIDATE\+\_\+\+INT pro bezpečnost. Pokud ID není platné číslo, ukončí skript s chybovou zprávou.
 
 Přidání řazení podle ID descending.
 
-Kontrola existence ID uživatele v GET parametru. Pokud chybí, přesměruje zpět na admin panel.
+Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "{}\+No products found"{}.
 
-Kontrola existence ID uživatele v GET parametru. Pokud chybí, přesměruje zpět na admin panel.
+Zpracování chyb registračního formuláře z session. Pokud existuje \textquotesingle{}registration\+\_\+errors\textquotesingle{} v session, nastaví flags a chybové texty pro pole. Nastavení tmavého režimu na základě cookie. Pokud cookie \textquotesingle{}mode\textquotesingle{} je \textquotesingle{}dark\textquotesingle{}, přidá třídu \textquotesingle{}dark-\/mode\textquotesingle{} k body. 
 
-ID uživatele, jehož admin status má být změněn. Převedeno na integer pro bezpečnost.
-
-Validace ID uživatele z GET parametru. Používá filter\+\_\+input s FILTER\+\_\+\+VALIDATE\+\_\+\+INT pro bezpečnost. Pokud ID není platné číslo, ukončí skript s chybovou zprávou.
-
-Nastavení tmavého režimu na základě cookie. Pokud cookie \textquotesingle{}mode\textquotesingle{} je \textquotesingle{}dark\textquotesingle{}, přidá třídu \textquotesingle{}dark-\/mode\textquotesingle{} k body. 
-
-Definition at line \mbox{\hyperlink{main_8php_source_l00057}{57}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
+Definition at line \mbox{\hyperlink{main_8php_source_l00058}{58}} of file \mbox{\hyperlink{main_8php_source}{main.\+php}}.
 

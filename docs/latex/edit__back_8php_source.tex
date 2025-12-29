@@ -3,50 +3,50 @@
 \mbox{\hyperlink{edit__back_8php}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00001}00001\ <?php}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00015}00015\ session\_start();}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00021}00021\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'user\_id'}])\ ||\ !isset(\$\_SESSION[\textcolor{stringliteral}{"{}admin"{}}])\ ||\ \$\_SESSION[\textcolor{stringliteral}{'admin'}]\ !=\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00022}00022\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../main/main.php"{}});}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00024}00024\ \}}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00033}\mbox{\hyperlink{edit__back_8php_a711797613cb863ca0756df789c396bf2}{00033}}\ \mbox{\hyperlink{edit__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00034}\mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00034}}\ \mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00035}\mbox{\hyperlink{edit__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00035}}\ \mbox{\hyperlink{edit__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00036}\mbox{\hyperlink{edit__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00036}}\ \mbox{\hyperlink{edit__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00042}\mbox{\hyperlink{edit__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00042}}\ \mbox{\hyperlink{edit__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{edit__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{edit__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{edit__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00044}00044\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{edit__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ \{}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00045}00045\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connection\ failed:\ \(\backslash\)n"{}}.\ mysqli\_connect\_error());}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00046}00046\ \}}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00052}00052\ \textcolor{keywordflow}{if}\ (!isset(\$\_GET[\textcolor{stringliteral}{"{}id"{}}]))\ \{}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00053}00053\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ admin.php"{}});}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00055}00055\ \}}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00064}\mbox{\hyperlink{edit__back_8php_ae97941710d863131c700f069b109991e}{00064}}\ \mbox{\hyperlink{edit__back_8php_ae97941710d863131c700f069b109991e}{\$id}}\ =\ filter\_input(INPUT\_GET,\ \textcolor{stringliteral}{'id'},\ FILTER\_VALIDATE\_INT);}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00065}00065\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{edit__back_8php_ae97941710d863131c700f069b109991e}{\$id}}\ ===\ \textcolor{keyword}{false})\ \{}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00066}00066\ \ \ \ \ die(\textcolor{stringliteral}{"{}Invalid\ ID"{}});}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00067}00067\ \}}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00078}00078\ \textcolor{keywordflow}{if}\ (isset(\$\_POST[\textcolor{stringliteral}{"{}edit"{}}])\ \&\&\ !empty(\$\_POST[\textcolor{stringliteral}{"{}edited\_username"{}}])\ \&\&\ !empty(\$\_POST[\textcolor{stringliteral}{"{}edited\_email"{}}])\ \&\&\ filter\_var(\$\_POST[\textcolor{stringliteral}{"{}edited\_email"{}}],\ FILTER\_VALIDATE\_EMAIL))\ \{}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}edited\_username"{}}]);}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00081}00081\ \ \ \ \ \$email\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}edited\_email"{}}]);}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00082}00082\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00090}00090\ \ \ \ \ \$edit\_query\ =\ \textcolor{stringliteral}{"{}UPDATE\ \`{}users`\ SET\ name\ =\ ?,\ email\ =\ ?\ WHERE\ id\ =\ ?"{}};}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{edit__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \$edit\_query);}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00092}00092\ \ \ \ \ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}ssi"{}},\ \mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \$email,\ \mbox{\hyperlink{edit__back_8php_ae97941710d863131c700f069b109991e}{\$id}});}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00093}00093\ \ \ \ \ mysqli\_stmt\_execute(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00094}00094\ \ \ \ \ mysqli\_stmt\_close(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00096}00096\ \}}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00098}00098\ header(\textcolor{stringliteral}{"{}Location:\ admin.php"{}});}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00099}\mbox{\hyperlink{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}{00099}}\ \mbox{\hyperlink{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00100}00100\ }
-\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00101}00101\ ?>}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00016}00016\ session\_start();}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00022}00022\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'user\_id'}])\ ||\ !isset(\$\_SESSION[\textcolor{stringliteral}{"{}admin"{}}])\ ||\ \$\_SESSION[\textcolor{stringliteral}{'admin'}]\ !=\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00023}00023\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../main/main.php"{}});}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00034}\mbox{\hyperlink{edit__back_8php_a711797613cb863ca0756df789c396bf2}{00034}}\ \mbox{\hyperlink{edit__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00035}\mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00035}}\ \mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00036}\mbox{\hyperlink{edit__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00036}}\ \mbox{\hyperlink{edit__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00037}\mbox{\hyperlink{edit__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00037}}\ \mbox{\hyperlink{edit__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00043}\mbox{\hyperlink{edit__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00043}}\ \mbox{\hyperlink{edit__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{edit__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{edit__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{edit__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00045}00045\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{edit__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ \{}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00046}00046\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connection\ failed:\ \(\backslash\)n"{}}.\ mysqli\_connect\_error());}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00053}00053\ \textcolor{keywordflow}{if}\ (!isset(\$\_GET[\textcolor{stringliteral}{"{}id"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00054}00054\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ admin.php"{}});}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00065}\mbox{\hyperlink{edit__back_8php_ae97941710d863131c700f069b109991e}{00065}}\ \mbox{\hyperlink{edit__back_8php_ae97941710d863131c700f069b109991e}{\$id}}\ =\ filter\_input(INPUT\_GET,\ \textcolor{stringliteral}{'id'},\ FILTER\_VALIDATE\_INT);}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00066}00066\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{edit__back_8php_ae97941710d863131c700f069b109991e}{\$id}}\ ===\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00067}00067\ \ \ \ \ die(\textcolor{stringliteral}{"{}Invalid\ ID"{}});}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00079}00079\ \textcolor{keywordflow}{if}\ (isset(\$\_POST[\textcolor{stringliteral}{"{}edit"{}}])\ \&\&\ !empty(\$\_POST[\textcolor{stringliteral}{"{}edited\_username"{}}])\ \&\&\ !empty(\$\_POST[\textcolor{stringliteral}{"{}edited\_email"{}}])\ \&\&\ filter\_var(\$\_POST[\textcolor{stringliteral}{"{}edited\_email"{}}],\ FILTER\_VALIDATE\_EMAIL))\ \{}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}edited\_username"{}}]);}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00082}00082\ \ \ \ \ \$email\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}edited\_email"{}}]);}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00091}00091\ \ \ \ \ \$edit\_query\ =\ \textcolor{stringliteral}{"{}UPDATE\ \`{}users`\ SET\ name\ =\ ?,\ email\ =\ ?\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{edit__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \$edit\_query);}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00093}00093\ \ \ \ \ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}ssi"{}},\ \mbox{\hyperlink{edit__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \$email,\ \mbox{\hyperlink{edit__back_8php_ae97941710d863131c700f069b109991e}{\$id}});}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00094}00094\ \ \ \ \ mysqli\_stmt\_execute(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00095}00095\ \ \ \ \ mysqli\_stmt\_close(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00099}00099\ header(\textcolor{stringliteral}{"{}Location:\ admin.php"{}});}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00100}\mbox{\hyperlink{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}{00100}}\ \mbox{\hyperlink{edit__back_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{edit__back_8php_source_l00102}00102\ ?>}
 
 \end{DoxyCode}

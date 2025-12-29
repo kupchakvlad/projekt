@@ -1,6 +1,6 @@
 <?php
 /**
- * Backend skript pro zpracování přihlašovacího formuláře.
+ * @brief Backend skript pro zpracování přihlašovacího formuláře.
  * Tento soubor zpracovává POST data z registration_form.php (přihlašovací část), validuje vstupy,
  * kontroluje existenci uživatele podle emailu, ověřuje heslo a nastavuje session.
  * Pokud dojde k chybám, ukládá error message do session a přesměruje zpět na formulář.
@@ -14,7 +14,7 @@
 session_start();
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * Tyto proměnné definují přístupové údaje k MySQL databázi.
  *
  * @var string $host Hostitel databáze (výchozí: localhost).
@@ -28,7 +28,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * Vytvoří připojení pomocí mysqli_connect a ukončí skript při chybě.
  *
  * @var mysqli $connection Objekt připojení k databázi.
@@ -41,10 +41,10 @@ if (!$connection) {
 }
 
 /**
- * @brief Hlavní logika: Zpracování POST požadavku z přihlašovacího formuláře.
- * @brief Validuje vstupy (email a heslo), kontroluje existenci uživatele v DB,
- * @brief ověřuje heslo pomocí password_verify a nastavuje session.
- * @brief Pokud jsou chyby, ukládá error message do session a přesměruje zpět.
+ * Hlavní logika: Zpracování POST požadavku z přihlašovacího formuláře.
+ * Validuje vstupy (email a heslo), kontroluje existenci uživatele v DB,
+ * ověřuje heslo pomocí password_verify a nastavuje session.
+ * Pokud jsou chyby, ukládá error message do session a přesměruje zpět.
  *
  * @return void Přesměruje na main.php při úspěchu, jinak zpět na registration_form.php.
  * @throws Exception Pokud dojde k chybě při DB operacích (např. prepare selže).
@@ -52,7 +52,7 @@ if (!$connection) {
 if (isset($_POST['login_submit'])) {
     /**
      * Vstupní data z formuláře.
-     * @brief Trimuje email a heslo pro odstranění mezer.
+     * Trimuje email a heslo pro odstranění mezer.
      *
      * @var string $login_email Email z POST.
      * @var string $login_password Heslo z POST.
@@ -67,7 +67,7 @@ if (isset($_POST['login_submit'])) {
         $error_message = "Email and password are required";
     } else {
         /**
-         * @brief SQL query pro kontrolu existence uživatele podle emailu.
+         * SQL query pro kontrolu existence uživatele podle emailu.
          * Používá prepared statement pro ochranu proti SQL injection.
          * Získává id, password a admin status.
          *

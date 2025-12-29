@@ -1,6 +1,7 @@
 <?php
 /**
- * Backend skript pro smazání uživatele (administrátorská akce).
+ * @brief Backend skript pro smazání uživatele (administrátorská akce).
+ *
  * Tento soubor je přístupný pouze přihlášeným administrátorům.
  * Na základě ID z GET parametru smaže uživatele z tabulky `users` pomocí prepared statement.
  * Po úspěšném smazání přesměruje zpět na admin.php.
@@ -14,7 +15,7 @@
 session_start();
 
 /**
- * @brief Kontrola oprávnění – pouze přihlášený administrátor.
+ * Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud není session user_id, admin flag nebo admin != 1, přesměruje na hlavní stránku.
  */
 if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['admin'] != 1) {
@@ -23,7 +24,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
 }
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -35,7 +36,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 $connection = mysqli_connect($host, $username, $password, $database);
@@ -45,13 +46,13 @@ if (!$connection) {
 }
 
 /**
- * @brief ID uživatele k smazání z GET parametru.
+ * ID uživatele k smazání z GET parametru.
  * @var int $user_id ID uživatele, který má být smazán.
  */
 $user_id = $_GET['id'];
 
 /**
- * @brief SQL dotaz pro smazání uživatele.
+ * SQL dotaz pro smazání uživatele.
  * Používá prepared statement pro ochranu proti SQL injection.
  *
  * @var string $delete_user_query SQL DELETE dotaz s placeholderem.
@@ -62,7 +63,7 @@ $stmt = mysqli_prepare($connection, $delete_user_query);
 mysqli_stmt_bind_param($stmt, "i", $user_id);
 
 /**
- * @brief Provedení smazání a přesměrování.
+ * Provedení smazání a přesměrování.
  * Pokud je smazání úspěšné, přesměruje na admin.php.
  * V opačném případě vypíše chybovou zprávu.
  */

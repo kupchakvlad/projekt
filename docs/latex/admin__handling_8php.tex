@@ -1,5 +1,10 @@
 \doxysection{admin/admin\+\_\+handling.php File Reference}
 \hypertarget{admin__handling_8php}{}\label{admin__handling_8php}\index{admin/admin\_handling.php@{admin/admin\_handling.php}}
+
+
+Backend skript pro přepnutí administrátorského oprávnění uživatele.  
+
+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,7 +37,9 @@
 
 
 \doxysubsection{Detailed Description}
-Backend skript pro přepnutí administrátorského oprávnění uživatele. Tento soubor je přístupný pouze přihlášeným administrátorům. Na základě ID z GET parametru načte aktuální admin status uživatele, přepne jej (0 → 1 nebo 1 → 0) a uloží změnu do databáze pomocí prepared statements. Zabraňuje přepnutí vlastního účtu a neplatnému ID. Po úspěšné (nebo neúspěšné) operaci přesměruje zpět na \doxylink{admin_8php}{admin.\+php}.
+Backend skript pro přepnutí administrátorského oprávnění uživatele. 
+
+Tento soubor je přístupný pouze přihlášeným administrátorům. Na základě ID z GET parametru načte aktuální admin status uživatele, přepne jej (0 → 1 nebo 1 → 0) a uloží změnu do databáze pomocí prepared statements. Zabraňuje přepnutí vlastního účtu a neplatnému ID. Po úspěšné (nebo neúspěšné) operaci přesměruje zpět na \doxylink{admin_8php}{admin.\+php}.
 
 \begin{DoxySeeAlso}{See also}
 \doxylink{admin_8php}{admin.\+php} Zdroj odkazu "{}\+Change Admin"{} v tabulce uživatelů. 
@@ -52,7 +59,7 @@ Definition in file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+hand
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00032}{32}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00033}{33}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{admin__handling_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
 \index{admin\_handling.php@{admin\_handling.php}!\$database@{\$database}}
@@ -62,7 +69,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00032}{32}} of 
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00026}{26}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00027}{27}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a711797613cb863ca0756df789c396bf2}\label{admin__handling_8php_a711797613cb863ca0756df789c396bf2} 
 \index{admin\_handling.php@{admin\_handling.php}!\$host@{\$host}}
@@ -72,7 +79,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00026}{26}} of 
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00023}{23}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00024}{24}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{admin__handling_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
 \index{admin\_handling.php@{admin\_handling.php}!\$password@{\$password}}
@@ -82,7 +89,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00023}{23}} of 
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00025}{25}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00026}{26}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}\label{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260} 
 \index{admin\_handling.php@{admin\_handling.php}!\$query@{\$query}}
@@ -92,7 +99,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00025}{25}} of 
 
 SQL insert pro přidání nového uživatele. Používá prepared statement pro bezpečnost.
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00081}{81}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00082}{82}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a112ef069ddc0454086e3d1e6d8d55d07}\label{admin__handling_8php_a112ef069ddc0454086e3d1e6d8d55d07} 
 \index{admin\_handling.php@{admin\_handling.php}!\$result@{\$result}}
@@ -102,7 +109,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00081}{81}} of 
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00085}{85}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00086}{86}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}\label{admin__handling_8php_af27a9140d5f2658693e7fd107f716449} 
 \index{admin\_handling.php@{admin\_handling.php}!\$stmt@{\$stmt}}
@@ -112,7 +119,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00085}{85}} of 
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00082}{82}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00083}{83}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a623198785fc0abbfcddbc077f839370e}\label{admin__handling_8php_a623198785fc0abbfcddbc077f839370e} 
 \index{admin\_handling.php@{admin\_handling.php}!\$update\_query@{\$update\_query}}
@@ -122,7 +129,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00082}{82}} of 
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00111}{111}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00112}{112}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a6899ea11a13a94b020b92b44f6ec7bfa}\label{admin__handling_8php_a6899ea11a13a94b020b92b44f6ec7bfa} 
 \index{admin\_handling.php@{admin\_handling.php}!\$update\_stmt@{\$update\_stmt}}
@@ -132,7 +139,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00111}{111}} of
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00112}{112}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00113}{113}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}\label{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b} 
 \index{admin\_handling.php@{admin\_handling.php}!\$user\_id@{\$user\_id}}
@@ -142,7 +149,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00112}{112}} of
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00062}{62}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00063}{63}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{admin__handling_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
 \index{admin\_handling.php@{admin\_handling.php}!\$username@{\$username}}
@@ -152,7 +159,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00062}{62}} of 
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00024}{24}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00025}{25}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a081ecb9303dd5f7952882c6d8309421b}\label{admin__handling_8php_a081ecb9303dd5f7952882c6d8309421b} 
 \index{admin\_handling.php@{admin\_handling.php}!else@{else}}
@@ -168,7 +175,7 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00024}{24}} of 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00097}{97}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00098}{98}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 
 \Hypertarget{admin__handling_8php_a6733eb5f605d09eaede9845835d71c4e}\label{admin__handling_8php_a6733eb5f605d09eaede9845835d71c4e} 
 \index{admin\_handling.php@{admin\_handling.php}!exit@{exit}}
@@ -178,5 +185,5 @@ Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00097}{97}} of 
 
 
 
-Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00099}{99}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
+Definition at line \mbox{\hyperlink{admin__handling_8php_source_l00100}{100}} of file \mbox{\hyperlink{admin__handling_8php_source}{admin\+\_\+handling.\+php}}.
 

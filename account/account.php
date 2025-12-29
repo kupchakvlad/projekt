@@ -1,6 +1,7 @@
 <?php
 /**
- * Stránka uživatelského profilu / účtu (My Account).
+ * @brief Stránka uživatelského profilu / účtu (My Account).
+ *
  * Tento soubor je přístupný pouze přihlášeným uživatelům.
  * Načítá aktuální jméno a email uživatele z databáze, zobrazuje je,
  * umožňuje jejich úpravu a změnu hesla přes formulář (odesílá na account_back.php).
@@ -16,7 +17,7 @@
 session_start();
 
 /**
- * @brief Kontrola přihlášení uživatele.
+ * Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 if (!isset($_SESSION["user_id"])) {
@@ -25,7 +26,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 /**
- * @brief Nastavení třídy pro tmavý režim.
+ * Nastavení třídy pro tmavý režim.
  * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
@@ -33,7 +34,7 @@ if (!isset($_SESSION["user_id"])) {
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
- * @brief Konfigurační proměnné pro připojení k databázi.
+ * Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -45,14 +46,14 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * @brief Připojení k databázi MySQL.
+ * Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
 
 /**
- * @brief Načtení aktuálních údajů uživatele z databáze.
+ * Načtení aktuálních údajů uživatele z databáze.
  * Používá prepared statement pro bezpečnost.
  * Výsledek se použije pro zobrazení a předvyplnění formuláře.
  *
