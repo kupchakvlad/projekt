@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/globals.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/globals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/globals_vars.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/globals_vars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/navtreeindex0.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/navtreeindex0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/search/all_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/search/all_0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/search/variables_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/search/variables_0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/set__dark__mode__cookie_8php.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/set__dark__mode__cookie_8php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/set__dark__mode__cookie_8php.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/set__dark__mode__cookie_8php.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/latex/set__dark__mode__cookie_8php.tex" beforeDir="false" afterPath="$PROJECT_DIR$/docs/latex/set__dark__mode__cookie_8php.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/set_dark_mode_cookie.php" beforeDir="false" afterPath="$PROJECT_DIR$/set_dark_mode_cookie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +158,7 @@
       <workItem from="1766659611011" duration="25105000" />
       <workItem from="1766863700167" duration="1157000" />
       <workItem from="1767032508855" duration="470000" />
-      <workItem from="1767042393526" duration="680000" />
+      <workItem from="1767042393526" duration="1099000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />

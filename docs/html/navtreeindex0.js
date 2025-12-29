@@ -166,5 +166,5 @@ var NAVTREEINDEX0 =
 "registration__form_8php.html#af5f7fce69875f9b42031bdb951b17206":[0,0,4,3,2],
 "registration__form_8php.html#afbab7329d9a5aba838b612c58cbf87df":[0,0,4,3,12],
 "set__dark__mode__cookie_8php.html":[0,0,5],
-"set__dark__mode__cookie_8php.html#ad5fbc8a6cf6110ae161f22a293284165":[0,0,5,0]
+"set__dark__mode__cookie_8php.html#af9dc665153901f4c92c972f159f0e600":[0,0,5,0]
 };
