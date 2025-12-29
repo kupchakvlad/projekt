@@ -1,0 +1,73 @@
+\doxysection{account/account\+\_\+back.php File Reference}
+\hypertarget{account__back_8php}{}\label{account__back_8php}\index{account/account\_back.php@{account/account\_back.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{account__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}} = "{}localhost"{}
+\item 
+\mbox{\hyperlink{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}} = "{}webove aplikace"{}
+\item 
+\mbox{\hyperlink{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
+\item 
+\mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(! \$connection) die("{}Connect failed \mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{email}} = ?
+\item 
+\mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(! \$connection) die("{}Connect failed \mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}\label{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0} 
+\index{account\_back.php@{account\_back.php}!\$connection@{\$connection}}
+\index{\$connection@{\$connection}!account\_back.php@{account\_back.php}}
+\doxysubsubsection{\texorpdfstring{\$connection}{\$connection}}
+{\footnotesize\ttfamily \$connection = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)}
+
+\Hypertarget{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
+\index{account\_back.php@{account\_back.php}!\$database@{\$database}}
+\index{\$database@{\$database}!account\_back.php@{account\_back.php}}
+\doxysubsubsection{\texorpdfstring{\$database}{\$database}}
+{\footnotesize\ttfamily \$database = "{}kupchvla"{}}
+
+\Hypertarget{account__back_8php_a711797613cb863ca0756df789c396bf2}\label{account__back_8php_a711797613cb863ca0756df789c396bf2} 
+\index{account\_back.php@{account\_back.php}!\$host@{\$host}}
+\index{\$host@{\$host}!account\_back.php@{account\_back.php}}
+\doxysubsubsection{\texorpdfstring{\$host}{\$host}}
+{\footnotesize\ttfamily \$host = "{}localhost"{}}
+
+\Hypertarget{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
+\index{account\_back.php@{account\_back.php}!\$password@{\$password}}
+\index{\$password@{\$password}!account\_back.php@{account\_back.php}}
+\doxysubsubsection{\texorpdfstring{\$password}{\$password}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}} = "{}webove aplikace"{}}
+
+\Hypertarget{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
+\index{account\_back.php@{account\_back.php}!\$username@{\$username}}
+\index{\$username@{\$username}!account\_back.php@{account\_back.php}}
+\doxysubsubsection{\texorpdfstring{\$username}{\$username}}
+{\footnotesize\ttfamily \$username = "{}kupchvla"{}}
+
+\Hypertarget{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}\label{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce} 
+\index{account\_back.php@{account\_back.php}!email@{email}}
+\index{email@{email}!account\_back.php@{account\_back.php}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily string \$email\+\_\+reg\+\_\+error Chybová zpráva pro email = ?}
+
+\Hypertarget{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}\label{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd} 
+\index{account\_back.php@{account\_back.php}!password@{password}}
+\index{password@{password}!account\_back.php@{account\_back.php}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} (! \$connection) die("{}Connect failed password}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ ?\ WHERE\ \textcolor{keywordtype}{id}\ =\ ?\textcolor{stringliteral}{"{};}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ \$stmt\ =\ mysqli\_prepare(\$connection,\ \$query);}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ mysqli\_stmt\_bind\_param(\$stmt,\ "{}}sssi\textcolor{stringliteral}{"{},\ \$new\_name,\ \$new\_email,\ \$hashed\_password,\ \$user\_id);}}
+\DoxyCodeLine{\textcolor{stringliteral}{\}\ else\ \{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ \$query\ =\ "{}}UPDATE\ users\ SET\ name\ =\ ?}
+
+\end{DoxyCode}

@@ -1,0 +1,72 @@
+\doxysection{admin/edit.php File Reference}
+\hypertarget{edit_8php}{}\label{edit_8php}\index{admin/edit.php@{admin/edit.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{edit_8php_a711797613cb863ca0756df789c396bf2}{\$host}} = "{}localhost"{}
+\item 
+\mbox{\hyperlink{edit_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{edit_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}} = "{}webove aplikace"{}
+\item 
+\mbox{\hyperlink{edit_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{edit_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
+\item 
+\mbox{\hyperlink{edit_8php_ae97941710d863131c700f069b109991e}{\$id}} = filter\+\_\+input(INPUT\+\_\+\+GET, \textquotesingle{}\mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}}\textquotesingle{}, FILTER\+\_\+\+VALIDATE\+\_\+\+INT)
+\item 
+\mbox{\hyperlink{edit_8php_a83f1f386413ac242ce963f74d6908742}{\$prefill\+\_\+query}} = "{}SELECT name, \mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{email}} FROM users WHERE \mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = ?"{}
+\item 
+\mbox{\hyperlink{edit_8php_af9f2cabbc4ab0857d420f415d3ea7f10}{\$prefill\+\_\+stmt}} = mysqli\+\_\+prepare(\$connection, \$prefill\+\_\+query)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{edit_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}\label{edit_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0} 
+\index{edit.php@{edit.php}!\$connection@{\$connection}}
+\index{\$connection@{\$connection}!edit.php@{edit.php}}
+\doxysubsubsection{\texorpdfstring{\$connection}{\$connection}}
+{\footnotesize\ttfamily \$connection = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)}
+
+\Hypertarget{edit_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{edit_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
+\index{edit.php@{edit.php}!\$database@{\$database}}
+\index{\$database@{\$database}!edit.php@{edit.php}}
+\doxysubsubsection{\texorpdfstring{\$database}{\$database}}
+{\footnotesize\ttfamily \$database = "{}kupchvla"{}}
+
+\Hypertarget{edit_8php_a711797613cb863ca0756df789c396bf2}\label{edit_8php_a711797613cb863ca0756df789c396bf2} 
+\index{edit.php@{edit.php}!\$host@{\$host}}
+\index{\$host@{\$host}!edit.php@{edit.php}}
+\doxysubsubsection{\texorpdfstring{\$host}{\$host}}
+{\footnotesize\ttfamily \$host = "{}localhost"{}}
+
+\Hypertarget{edit_8php_ae97941710d863131c700f069b109991e}\label{edit_8php_ae97941710d863131c700f069b109991e} 
+\index{edit.php@{edit.php}!\$id@{\$id}}
+\index{\$id@{\$id}!edit.php@{edit.php}}
+\doxysubsubsection{\texorpdfstring{\$id}{\$id}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = filter\+\_\+input(INPUT\+\_\+\+GET, \textquotesingle{}\mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}}\textquotesingle{}, FILTER\+\_\+\+VALIDATE\+\_\+\+INT)}
+
+\Hypertarget{edit_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{edit_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
+\index{edit.php@{edit.php}!\$password@{\$password}}
+\index{\$password@{\$password}!edit.php@{edit.php}}
+\doxysubsubsection{\texorpdfstring{\$password}{\$password}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}} = "{}webove aplikace"{}}
+
+\Hypertarget{edit_8php_a83f1f386413ac242ce963f74d6908742}\label{edit_8php_a83f1f386413ac242ce963f74d6908742} 
+\index{edit.php@{edit.php}!\$prefill\_query@{\$prefill\_query}}
+\index{\$prefill\_query@{\$prefill\_query}!edit.php@{edit.php}}
+\doxysubsubsection{\texorpdfstring{\$prefill\_query}{\$prefill\_query}}
+{\footnotesize\ttfamily \$prefill\+\_\+query = "{}SELECT name, \mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{email}} FROM users WHERE \mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = ?"{}}
+
+\Hypertarget{edit_8php_af9f2cabbc4ab0857d420f415d3ea7f10}\label{edit_8php_af9f2cabbc4ab0857d420f415d3ea7f10} 
+\index{edit.php@{edit.php}!\$prefill\_stmt@{\$prefill\_stmt}}
+\index{\$prefill\_stmt@{\$prefill\_stmt}!edit.php@{edit.php}}
+\doxysubsubsection{\texorpdfstring{\$prefill\_stmt}{\$prefill\_stmt}}
+{\footnotesize\ttfamily \$prefill\+\_\+stmt = mysqli\+\_\+prepare(\$connection, \$prefill\+\_\+query)}
+
+\Hypertarget{edit_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{edit_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
+\index{edit.php@{edit.php}!\$username@{\$username}}
+\index{\$username@{\$username}!edit.php@{edit.php}}
+\doxysubsubsection{\texorpdfstring{\$username}{\$username}}
+{\footnotesize\ttfamily \$username = "{}kupchvla"{}}
+

@@ -1,0 +1,118 @@
+\doxysection{admin/admin\+\_\+handling.php File Reference}
+\hypertarget{admin__handling_8php}{}\label{admin__handling_8php}\index{admin/admin\_handling.php@{admin/admin\_handling.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{admin__handling_8php_a711797613cb863ca0756df789c396bf2}{\$host}} = "{}localhost"{}
+\item 
+\mbox{\hyperlink{admin__handling_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{admin__handling_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}} = "{}webove aplikace"{}
+\item 
+\mbox{\hyperlink{admin__handling_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{admin__handling_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
+\item 
+\mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\+\_\+id}} = intval(\$\+\_\+\+GET\mbox{[}"{}id"{}\mbox{]})
+\item 
+\mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}} = "{}SELECT admin FROM users WHERE \mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = ?"{}
+\item 
+\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}} = mysqli\+\_\+prepare(\$connection, \$query)
+\item 
+\mbox{\hyperlink{admin__handling_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}} = mysqli\+\_\+stmt\+\_\+get\+\_\+result(\$stmt)
+\item 
+\mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(\$row=mysqli\+\_\+fetch\+\_\+assoc(\$result)) \mbox{\hyperlink{admin__handling_8php_a081ecb9303dd5f7952882c6d8309421b}{else}}
+\item 
+\mbox{\hyperlink{admin__handling_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}}
+\item 
+\mbox{\hyperlink{admin__handling_8php_a623198785fc0abbfcddbc077f839370e}{\$update\+\_\+query}} = "{}UPDATE users SET admin = ? WHERE \mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = ?"{}
+\item 
+\mbox{\hyperlink{admin__handling_8php_a6899ea11a13a94b020b92b44f6ec7bfa}{\$update\+\_\+stmt}} = mysqli\+\_\+prepare(\$connection, \$update\+\_\+query)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{admin__handling_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}\label{admin__handling_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0} 
+\index{admin\_handling.php@{admin\_handling.php}!\$connection@{\$connection}}
+\index{\$connection@{\$connection}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$connection}{\$connection}}
+{\footnotesize\ttfamily \$connection = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)}
+
+\Hypertarget{admin__handling_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{admin__handling_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
+\index{admin\_handling.php@{admin\_handling.php}!\$database@{\$database}}
+\index{\$database@{\$database}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$database}{\$database}}
+{\footnotesize\ttfamily \$database = "{}kupchvla"{}}
+
+\Hypertarget{admin__handling_8php_a711797613cb863ca0756df789c396bf2}\label{admin__handling_8php_a711797613cb863ca0756df789c396bf2} 
+\index{admin\_handling.php@{admin\_handling.php}!\$host@{\$host}}
+\index{\$host@{\$host}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$host}{\$host}}
+{\footnotesize\ttfamily \$host = "{}localhost"{}}
+
+\Hypertarget{admin__handling_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{admin__handling_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
+\index{admin\_handling.php@{admin\_handling.php}!\$password@{\$password}}
+\index{\$password@{\$password}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$password}{\$password}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}} = "{}webove aplikace"{}}
+
+\Hypertarget{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}\label{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260} 
+\index{admin\_handling.php@{admin\_handling.php}!\$query@{\$query}}
+\index{\$query@{\$query}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$query}{\$query}}
+{\footnotesize\ttfamily string \$query = "{}SELECT admin FROM users WHERE \mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = ?"{}}
+
+SQL insert pro přidání nového uživatele. Používá prepared statement pro bezpečnost.\Hypertarget{admin__handling_8php_a112ef069ddc0454086e3d1e6d8d55d07}\label{admin__handling_8php_a112ef069ddc0454086e3d1e6d8d55d07} 
+\index{admin\_handling.php@{admin\_handling.php}!\$result@{\$result}}
+\index{\$result@{\$result}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$result}{\$result}}
+{\footnotesize\ttfamily \$result = mysqli\+\_\+stmt\+\_\+get\+\_\+result(\$stmt)}
+
+\Hypertarget{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}\label{admin__handling_8php_af27a9140d5f2658693e7fd107f716449} 
+\index{admin\_handling.php@{admin\_handling.php}!\$stmt@{\$stmt}}
+\index{\$stmt@{\$stmt}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$stmt}{\$stmt}}
+{\footnotesize\ttfamily \$stmt = mysqli\+\_\+prepare(\$connection, \$query)}
+
+\Hypertarget{admin__handling_8php_a623198785fc0abbfcddbc077f839370e}\label{admin__handling_8php_a623198785fc0abbfcddbc077f839370e} 
+\index{admin\_handling.php@{admin\_handling.php}!\$update\_query@{\$update\_query}}
+\index{\$update\_query@{\$update\_query}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$update\_query}{\$update\_query}}
+{\footnotesize\ttfamily \$update\+\_\+query = "{}UPDATE users SET admin = ? WHERE \mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = ?"{}}
+
+\Hypertarget{admin__handling_8php_a6899ea11a13a94b020b92b44f6ec7bfa}\label{admin__handling_8php_a6899ea11a13a94b020b92b44f6ec7bfa} 
+\index{admin\_handling.php@{admin\_handling.php}!\$update\_stmt@{\$update\_stmt}}
+\index{\$update\_stmt@{\$update\_stmt}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$update\_stmt}{\$update\_stmt}}
+{\footnotesize\ttfamily \$update\+\_\+stmt = mysqli\+\_\+prepare(\$connection, \$update\+\_\+query)}
+
+\Hypertarget{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}\label{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b} 
+\index{admin\_handling.php@{admin\_handling.php}!\$user\_id@{\$user\_id}}
+\index{\$user\_id@{\$user\_id}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$user\_id}{\$user\_id}}
+{\footnotesize\ttfamily \$user\+\_\+id = intval(\$\+\_\+\+GET\mbox{[}"{}id"{}\mbox{]})}
+
+\Hypertarget{admin__handling_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{admin__handling_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
+\index{admin\_handling.php@{admin\_handling.php}!\$username@{\$username}}
+\index{\$username@{\$username}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{\$username}{\$username}}
+{\footnotesize\ttfamily \$username = "{}kupchvla"{}}
+
+\Hypertarget{admin__handling_8php_a081ecb9303dd5f7952882c6d8309421b}\label{admin__handling_8php_a081ecb9303dd5f7952882c6d8309421b} 
+\index{admin\_handling.php@{admin\_handling.php}!else@{else}}
+\index{else@{else}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} (mysqli\+\_\+stmt\+\_\+execute( \$update\+\_\+stmt)) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ admin.php"{}})}
+
+\end{DoxyCode}
+\Hypertarget{admin__handling_8php_a6733eb5f605d09eaede9845835d71c4e}\label{admin__handling_8php_a6733eb5f605d09eaede9845835d71c4e} 
+\index{admin\_handling.php@{admin\_handling.php}!exit@{exit}}
+\index{exit@{exit}!admin\_handling.php@{admin\_handling.php}}
+\doxysubsubsection{\texorpdfstring{exit}{exit}}
+{\footnotesize\ttfamily exit}
+

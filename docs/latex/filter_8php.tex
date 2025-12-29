@@ -1,0 +1,127 @@
+\doxysection{main/filter.php File Reference}
+\hypertarget{filter_8php}{}\label{filter_8php}\index{main/filter.php@{main/filter.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{filter_8php_a711797613cb863ca0756df789c396bf2}{\$host}} = "{}localhost"{}
+\item 
+\mbox{\hyperlink{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}} = "{}webove aplikace"{}
+\item 
+\mbox{\hyperlink{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
+\item 
+\mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(isset(\$\+\_\+\+GET\mbox{[}"{}search"{}\mbox{]})) \mbox{\hyperlink{filter_8php_a6c22310bec25156fce32de1c72754e06}{else}}
+\item 
+\mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$per\+Page}} = 12
+\item 
+\mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}} = "{}SELECT \texorpdfstring{$\ast$}{*} FROM products WHERE price BETWEEN \$min AND \$max"{}
+\item 
+\mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{\$final\+\_\+request}} = mysqli\+\_\+query(\$conn, \$req)
+\item 
+\mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\+\_\+products}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{filter_8php_a5370121aba814a7911e700a54b06e4b8}{\$total\+Products}} = count(\$all\+\_\+products)
+\item 
+\mbox{\hyperlink{filter_8php_a9d270d95ca53a5ae61ad917752416d12}{\$total\+Pages}} = ceil(\$total\+Products / \$per\+Page)
+\item 
+\mbox{\hyperlink{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}{\$offset}} = (\$page -\/ 1) \texorpdfstring{$\ast$}{*} \$per\+Page
+\item 
+\mbox{\hyperlink{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}{\$page\+Products}} = array\+\_\+slice(\$all\+\_\+products, \$offset, \$per\+Page)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{filter_8php_a323345037d715391bf956c961de05a91}\label{filter_8php_a323345037d715391bf956c961de05a91} 
+\index{filter.php@{filter.php}!\$all\_products@{\$all\_products}}
+\index{\$all\_products@{\$all\_products}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$all\_products}{\$all\_products}}
+{\footnotesize\ttfamily \$all\+\_\+products = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}\label{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877} 
+\index{filter.php@{filter.php}!\$conn@{\$conn}}
+\index{\$conn@{\$conn}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$conn}{\$conn}}
+{\footnotesize\ttfamily \$conn = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)}
+
+\Hypertarget{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{filter_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
+\index{filter.php@{filter.php}!\$database@{\$database}}
+\index{\$database@{\$database}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$database}{\$database}}
+{\footnotesize\ttfamily \$database = "{}kupchvla"{}}
+
+\Hypertarget{filter_8php_aed9b35627951d4c8838db95aa60db4ae}\label{filter_8php_aed9b35627951d4c8838db95aa60db4ae} 
+\index{filter.php@{filter.php}!\$final\_request@{\$final\_request}}
+\index{\$final\_request@{\$final\_request}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$final\_request}{\$final\_request}}
+{\footnotesize\ttfamily \$final\+\_\+request = mysqli\+\_\+query(\$conn, \$req)}
+
+\Hypertarget{filter_8php_a711797613cb863ca0756df789c396bf2}\label{filter_8php_a711797613cb863ca0756df789c396bf2} 
+\index{filter.php@{filter.php}!\$host@{\$host}}
+\index{\$host@{\$host}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$host}{\$host}}
+{\footnotesize\ttfamily \$host = "{}localhost"{}}
+
+\Hypertarget{filter_8php_aec4de82415d7f05cb9748d12d3a95a87}\label{filter_8php_aec4de82415d7f05cb9748d12d3a95a87} 
+\index{filter.php@{filter.php}!\$offset@{\$offset}}
+\index{\$offset@{\$offset}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$offset}{\$offset}}
+{\footnotesize\ttfamily \$offset = (\$page -\/ 1) \texorpdfstring{$\ast$}{*} \$per\+Page}
+
+\Hypertarget{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca}\label{filter_8php_a9621e1782ca5cc8e74c93c5d9df760ca} 
+\index{filter.php@{filter.php}!\$pageProducts@{\$pageProducts}}
+\index{\$pageProducts@{\$pageProducts}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$pageProducts}{\$pageProducts}}
+{\footnotesize\ttfamily \$page\+Products = array\+\_\+slice(\$all\+\_\+products, \$offset, \$per\+Page)}
+
+\Hypertarget{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{filter_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
+\index{filter.php@{filter.php}!\$password@{\$password}}
+\index{\$password@{\$password}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$password}{\$password}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}} = "{}webove aplikace"{}}
+
+\Hypertarget{filter_8php_aeac52724d4edab556efa0d2cf6aec342}\label{filter_8php_aeac52724d4edab556efa0d2cf6aec342} 
+\index{filter.php@{filter.php}!\$perPage@{\$perPage}}
+\index{\$perPage@{\$perPage}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$perPage}{\$perPage}}
+{\footnotesize\ttfamily \$per\+Page = 12}
+
+\Hypertarget{filter_8php_a680c36b8034239c2f48e395c70eae451}\label{filter_8php_a680c36b8034239c2f48e395c70eae451} 
+\index{filter.php@{filter.php}!\$req@{\$req}}
+\index{\$req@{\$req}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$req}{\$req}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}( \$search !="{}"{}) \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(\$season !="{}"{}) \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} ( \$size $>$ 27) \$req = "{}SELECT \texorpdfstring{$\ast$}{*} FROM products WHERE price BETWEEN \$min AND \$max"{}}
+
+Přidání řazení podle ID descending. \Hypertarget{filter_8php_a9d270d95ca53a5ae61ad917752416d12}\label{filter_8php_a9d270d95ca53a5ae61ad917752416d12} 
+\index{filter.php@{filter.php}!\$totalPages@{\$totalPages}}
+\index{\$totalPages@{\$totalPages}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$totalPages}{\$totalPages}}
+{\footnotesize\ttfamily \$total\+Pages = ceil(\$total\+Products / \$per\+Page)}
+
+\Hypertarget{filter_8php_a5370121aba814a7911e700a54b06e4b8}\label{filter_8php_a5370121aba814a7911e700a54b06e4b8} 
+\index{filter.php@{filter.php}!\$totalProducts@{\$totalProducts}}
+\index{\$totalProducts@{\$totalProducts}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$totalProducts}{\$totalProducts}}
+{\footnotesize\ttfamily \$total\+Products = count(\$all\+\_\+products)}
+
+\Hypertarget{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{filter_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
+\index{filter.php@{filter.php}!\$username@{\$username}}
+\index{\$username@{\$username}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{\$username}{\$username}}
+{\footnotesize\ttfamily \$username = "{}kupchvla"{}}
+
+\Hypertarget{filter_8php_a6c22310bec25156fce32de1c72754e06}\label{filter_8php_a6c22310bec25156fce32de1c72754e06} 
+\index{filter.php@{filter.php}!else@{else}}
+\index{else@{else}!filter.php@{filter.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} (count( \$page\+Products) $>$ 0) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \$search\ =\ \textcolor{stringliteral}{"{}"{}}}
+
+\end{DoxyCode}
+Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "{}\+No products found"{}. 

@@ -1,0 +1,87 @@
+\doxysection{admin/delete.php File Reference}
+\hypertarget{delete_8php}{}\label{delete_8php}\index{admin/delete.php@{admin/delete.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{delete_8php_a711797613cb863ca0756df789c396bf2}{\$host}} = "{}localhost"{}
+\item 
+\mbox{\hyperlink{delete_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{delete_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}} = "{}webove aplikace"{}
+\item 
+\mbox{\hyperlink{delete_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{delete_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
+\item 
+\mbox{\hyperlink{delete_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\+\_\+id}} = \$\+\_\+\+GET\mbox{[}\textquotesingle{}\mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}}\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{delete_8php_a5ee94f102f0064cfee30600ef6956c84}{\$delete\+\_\+user\+\_\+query}} = "{}DELETE FROM users WHERE \mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = ?"{}
+\item 
+\mbox{\hyperlink{delete_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}} = mysqli\+\_\+prepare(\$connection, \$delete\+\_\+user\+\_\+query)
+\item 
+\mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(mysqli\+\_\+stmt\+\_\+execute(\$stmt)) \mbox{\hyperlink{delete_8php_a52a1bc2137d271febff4ec5d050b1d29}{else}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{delete_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}\label{delete_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0} 
+\index{delete.php@{delete.php}!\$connection@{\$connection}}
+\index{\$connection@{\$connection}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{\$connection}{\$connection}}
+{\footnotesize\ttfamily \$connection = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)}
+
+\Hypertarget{delete_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{delete_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
+\index{delete.php@{delete.php}!\$database@{\$database}}
+\index{\$database@{\$database}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{\$database}{\$database}}
+{\footnotesize\ttfamily \$database = "{}kupchvla"{}}
+
+\Hypertarget{delete_8php_a5ee94f102f0064cfee30600ef6956c84}\label{delete_8php_a5ee94f102f0064cfee30600ef6956c84} 
+\index{delete.php@{delete.php}!\$delete\_user\_query@{\$delete\_user\_query}}
+\index{\$delete\_user\_query@{\$delete\_user\_query}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{\$delete\_user\_query}{\$delete\_user\_query}}
+{\footnotesize\ttfamily \$delete\+\_\+user\+\_\+query = "{}DELETE FROM users WHERE \mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}} = ?"{}}
+
+\Hypertarget{delete_8php_a711797613cb863ca0756df789c396bf2}\label{delete_8php_a711797613cb863ca0756df789c396bf2} 
+\index{delete.php@{delete.php}!\$host@{\$host}}
+\index{\$host@{\$host}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{\$host}{\$host}}
+{\footnotesize\ttfamily \$host = "{}localhost"{}}
+
+\Hypertarget{delete_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{delete_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
+\index{delete.php@{delete.php}!\$password@{\$password}}
+\index{\$password@{\$password}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{\$password}{\$password}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}} = "{}webove aplikace"{}}
+
+\Hypertarget{delete_8php_af27a9140d5f2658693e7fd107f716449}\label{delete_8php_af27a9140d5f2658693e7fd107f716449} 
+\index{delete.php@{delete.php}!\$stmt@{\$stmt}}
+\index{\$stmt@{\$stmt}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{\$stmt}{\$stmt}}
+{\footnotesize\ttfamily \$stmt = mysqli\+\_\+prepare(\$connection, \$delete\+\_\+user\+\_\+query)}
+
+\Hypertarget{delete_8php_af0fcd925f00973e32f7214859dfb3c6b}\label{delete_8php_af0fcd925f00973e32f7214859dfb3c6b} 
+\index{delete.php@{delete.php}!\$user\_id@{\$user\_id}}
+\index{\$user\_id@{\$user\_id}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{\$user\_id}{\$user\_id}}
+{\footnotesize\ttfamily \$user\+\_\+id = \$\+\_\+\+GET\mbox{[}\textquotesingle{}\mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{id}}\textquotesingle{}\mbox{]}}
+
+\Hypertarget{delete_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{delete_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
+\index{delete.php@{delete.php}!\$username@{\$username}}
+\index{\$username@{\$username}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{\$username}{\$username}}
+{\footnotesize\ttfamily \$username = "{}kupchvla"{}}
+
+\Hypertarget{delete_8php_a52a1bc2137d271febff4ec5d050b1d29}\label{delete_8php_a52a1bc2137d271febff4ec5d050b1d29} 
+\index{delete.php@{delete.php}!else@{else}}
+\index{else@{else}!delete.php@{delete.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} (mysqli\+\_\+stmt\+\_\+execute( \$stmt)) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ echo\ \textcolor{stringliteral}{"{}User\ cannot\ be\ deleted"{}}}
+
+\end{DoxyCode}
+Provedení smazání a přesměrování. Pokud je smazání úspěšné, přesměruje na \doxylink{admin_8php}{admin.\+php}. V opačném případě vypíše chybovou zprávu. 

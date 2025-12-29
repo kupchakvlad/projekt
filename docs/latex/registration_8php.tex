@@ -1,0 +1,82 @@
+\doxysection{registration\+\_\+form/registration.php File Reference}
+\hypertarget{registration_8php}{}\label{registration_8php}\index{registration\_form/registration.php@{registration\_form/registration.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{registration_8php_a711797613cb863ca0756df789c396bf2}{\$host}} = "{}localhost"{}
+\item 
+\mbox{\hyperlink{registration_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{registration_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}} = "{}webove aplikace"{}
+\item 
+\mbox{\hyperlink{registration_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}} = "{}kupchvla"{}
+\item 
+\mbox{\hyperlink{registration_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
+\item 
+\mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(! \$connection) \mbox{\hyperlink{registration_8php_a245a56030ac74d79eeda3079330e4027}{\$weak\+Passwords\+File}} = \textquotesingle{}weak\+\_\+passwords.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{registration_8php_aa96005bc4defeec605358b373c4d98b0}{\$weak\+Passwords}} = load\+Weak\+Passwords(\$weak\+Passwords\+File)
+\item 
+\mbox{\hyperlink{registration_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{registration_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}\label{registration_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0} 
+\index{registration.php@{registration.php}!\$connection@{\$connection}}
+\index{\$connection@{\$connection}!registration.php@{registration.php}}
+\doxysubsubsection{\texorpdfstring{\$connection}{\$connection}}
+{\footnotesize\ttfamily \$connection = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)}
+
+\Hypertarget{registration_8php_a7691c0162d89de0b6ba47edcd8ba8878}\label{registration_8php_a7691c0162d89de0b6ba47edcd8ba8878} 
+\index{registration.php@{registration.php}!\$database@{\$database}}
+\index{\$database@{\$database}!registration.php@{registration.php}}
+\doxysubsubsection{\texorpdfstring{\$database}{\$database}}
+{\footnotesize\ttfamily \$database = "{}kupchvla"{}}
+
+\Hypertarget{registration_8php_a711797613cb863ca0756df789c396bf2}\label{registration_8php_a711797613cb863ca0756df789c396bf2} 
+\index{registration.php@{registration.php}!\$host@{\$host}}
+\index{\$host@{\$host}!registration.php@{registration.php}}
+\doxysubsubsection{\texorpdfstring{\$host}{\$host}}
+{\footnotesize\ttfamily \$host = "{}localhost"{}}
+
+\Hypertarget{registration_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{registration_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d} 
+\index{registration.php@{registration.php}!\$password@{\$password}}
+\index{\$password@{\$password}!registration.php@{registration.php}}
+\doxysubsubsection{\texorpdfstring{\$password}{\$password}}
+{\footnotesize\ttfamily \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}} = "{}webove aplikace"{}}
+
+\Hypertarget{registration_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{registration_8php_a0eb82aa5f81cf845de4b36cd653c42cf} 
+\index{registration.php@{registration.php}!\$username@{\$username}}
+\index{\$username@{\$username}!registration.php@{registration.php}}
+\doxysubsubsection{\texorpdfstring{\$username}{\$username}}
+{\footnotesize\ttfamily \$username = "{}kupchvla"{}}
+
+\Hypertarget{registration_8php_aa96005bc4defeec605358b373c4d98b0}\label{registration_8php_aa96005bc4defeec605358b373c4d98b0} 
+\index{registration.php@{registration.php}!\$weakPasswords@{\$weakPasswords}}
+\index{\$weakPasswords@{\$weakPasswords}!registration.php@{registration.php}}
+\doxysubsubsection{\texorpdfstring{\$weakPasswords}{\$weakPasswords}}
+{\footnotesize\ttfamily \$weak\+Passwords = load\+Weak\+Passwords(\$weak\+Passwords\+File)}
+
+\Hypertarget{registration_8php_a245a56030ac74d79eeda3079330e4027}\label{registration_8php_a245a56030ac74d79eeda3079330e4027} 
+\index{registration.php@{registration.php}!\$weakPasswordsFile@{\$weakPasswordsFile}}
+\index{\$weakPasswordsFile@{\$weakPasswordsFile}!registration.php@{registration.php}}
+\doxysubsubsection{\texorpdfstring{\$weakPasswordsFile}{\$weakPasswordsFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} (! \$connection) \$weak\+Passwords\+File = \textquotesingle{}weak\+\_\+passwords.\+txt\textquotesingle{}}
+
+Načte seznam slabých hesel ze souboru. Tato funkce čte soubor řádek po řádku, trimuje řádky a vrací pole slabých hesel. Používá se pro validaci hesla uživatele, aby se zabránilo použití běžných slabých hesel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file} & Cesta k souboru se slabými hesly (např. \textquotesingle{}weak\+\_\+passwords.\+txt\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Pole trimovaných slabých hesel. Pokud soubor neexistuje, vrátí prázdné pole. 
+\end{DoxyReturn}
+\Hypertarget{registration_8php_a6733eb5f605d09eaede9845835d71c4e}\label{registration_8php_a6733eb5f605d09eaede9845835d71c4e} 
+\index{registration.php@{registration.php}!exit@{exit}}
+\index{exit@{exit}!registration.php@{registration.php}}
+\doxysubsubsection{\texorpdfstring{exit}{exit}}
+{\footnotesize\ttfamily exit}
+

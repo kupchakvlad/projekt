@@ -1,0 +1,98 @@
+\doxysection{add\+\_\+product/add\+\_\+product.php File Reference}
+\hypertarget{add__product_8php}{}\label{add__product_8php}\index{add\_product/add\_product.php@{add\_product/add\_product.php}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{add__product_8php_a25fcfe1f44ff29a7918826d202844f23}{\$dark\+\_\+mode\+\_\+class}} = (isset(\$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]}) \&\& \$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]} === \textquotesingle{}dark\textquotesingle{}) ? \textquotesingle{}dark\textquotesingle{} \+: \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{add__product_8php_a9093d09a054725ac06d2cc59f46691d2}{\$product\+\_\+name\+\_\+value}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+name\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{add__product_8php_a71cf83ad637094a7c1215f7fcaa19847}{\$product\+\_\+fabric\+\_\+value}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+fabric\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{add__product_8php_af3017924d121952811088f6cdae65a52}{\$product\+\_\+season\+\_\+value}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+season\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{add__product_8php_a4a87649cedacd4e2c9e5c97c96a95da4}{\$product\+\_\+size\+\_\+value}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+size\textquotesingle{}\mbox{]} ?? \textquotesingle{}36\textquotesingle{}
+\item 
+\mbox{\hyperlink{add__product_8php_ab26784c15753272c2666c43dc2eb60af}{\$product\+\_\+price\+\_\+value}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+price\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}} = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+errors\textquotesingle{}\mbox{]} ?? \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{add__product_8php_a54fdd9abb36ef6f009cf1e599de49782}{\$photo\+\_\+error}} = \$errors\mbox{[}\textquotesingle{}photo\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{add__product_8php_a3f0d8760978556529d1838ab730f794e}{\$price\+\_\+error}} = \$errors\mbox{[}\textquotesingle{}price\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
+\item 
+\mbox{\hyperlink{add__product_8php_a3e64b5fd676f347134bb0d100c7a0648}{\$name\+\_\+error}} = \$errors\mbox{[}\textquotesingle{}name\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{add__product_8php_a25fcfe1f44ff29a7918826d202844f23}\label{add__product_8php_a25fcfe1f44ff29a7918826d202844f23} 
+\index{add\_product.php@{add\_product.php}!\$dark\_mode\_class@{\$dark\_mode\_class}}
+\index{\$dark\_mode\_class@{\$dark\_mode\_class}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$dark\_mode\_class}{\$dark\_mode\_class}}
+{\footnotesize\ttfamily \$dark\+\_\+mode\+\_\+class = (isset(\$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]}) \&\& \$\+\_\+\+COOKIE\mbox{[}\textquotesingle{}mode\textquotesingle{}\mbox{]} === \textquotesingle{}dark\textquotesingle{}) ? \textquotesingle{}dark\textquotesingle{} \+: \textquotesingle{}\textquotesingle{}}
+
+\Hypertarget{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}\label{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e} 
+\index{add\_product.php@{add\_product.php}!\$errors@{\$errors}}
+\index{\$errors@{\$errors}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$errors}{\$errors}}
+{\footnotesize\ttfamily ifarray \$errors = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+errors\textquotesingle{}\mbox{]} ?? \mbox{[}$\,$\mbox{]}}
+
+Hlavní logika\+: Zpracování POST požadavku z registračního formuláře. Validuje vstupy (jméno, email, heslo, potvrzení hesla), kontroluje duplicitu emailu v DB, hashuje heslo a vkládá nového uživatele do tabulky \textquotesingle{}users\textquotesingle{}. Pokud jsou errory, ukládá je do session a přesměruje zpět na formulář.
+
+\begin{DoxyReturn}{Returns}
+void Přesměruje na \doxylink{main_8php}{main.\+php} při úspěchu, jinak zpět na \doxylink{registration__form_8php}{registration\+\_\+form.\+php}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Pokud dojde k chybě při DB operacích (např. prepare selže). \\
+\hline
+\end{DoxyExceptions}
+SQL query pro kontrolu existence emailu v tabulce users. Používá prepared statement pro ochranu proti SQL injection.\Hypertarget{add__product_8php_a3e64b5fd676f347134bb0d100c7a0648}\label{add__product_8php_a3e64b5fd676f347134bb0d100c7a0648} 
+\index{add\_product.php@{add\_product.php}!\$name\_error@{\$name\_error}}
+\index{\$name\_error@{\$name\_error}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$name\_error}{\$name\_error}}
+{\footnotesize\ttfamily \$name\+\_\+error = \$errors\mbox{[}\textquotesingle{}name\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}}
+
+\Hypertarget{add__product_8php_a54fdd9abb36ef6f009cf1e599de49782}\label{add__product_8php_a54fdd9abb36ef6f009cf1e599de49782} 
+\index{add\_product.php@{add\_product.php}!\$photo\_error@{\$photo\_error}}
+\index{\$photo\_error@{\$photo\_error}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$photo\_error}{\$photo\_error}}
+{\footnotesize\ttfamily \$photo\+\_\+error = \$errors\mbox{[}\textquotesingle{}photo\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}}
+
+\Hypertarget{add__product_8php_a3f0d8760978556529d1838ab730f794e}\label{add__product_8php_a3f0d8760978556529d1838ab730f794e} 
+\index{add\_product.php@{add\_product.php}!\$price\_error@{\$price\_error}}
+\index{\$price\_error@{\$price\_error}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$price\_error}{\$price\_error}}
+{\footnotesize\ttfamily \$price\+\_\+error = \$errors\mbox{[}\textquotesingle{}price\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}}
+
+\Hypertarget{add__product_8php_a71cf83ad637094a7c1215f7fcaa19847}\label{add__product_8php_a71cf83ad637094a7c1215f7fcaa19847} 
+\index{add\_product.php@{add\_product.php}!\$product\_fabric\_value@{\$product\_fabric\_value}}
+\index{\$product\_fabric\_value@{\$product\_fabric\_value}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$product\_fabric\_value}{\$product\_fabric\_value}}
+{\footnotesize\ttfamily \$product\+\_\+fabric\+\_\+value = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+fabric\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}}
+
+\Hypertarget{add__product_8php_a9093d09a054725ac06d2cc59f46691d2}\label{add__product_8php_a9093d09a054725ac06d2cc59f46691d2} 
+\index{add\_product.php@{add\_product.php}!\$product\_name\_value@{\$product\_name\_value}}
+\index{\$product\_name\_value@{\$product\_name\_value}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$product\_name\_value}{\$product\_name\_value}}
+{\footnotesize\ttfamily \$product\+\_\+name\+\_\+value = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+name\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}}
+
+\Hypertarget{add__product_8php_ab26784c15753272c2666c43dc2eb60af}\label{add__product_8php_ab26784c15753272c2666c43dc2eb60af} 
+\index{add\_product.php@{add\_product.php}!\$product\_price\_value@{\$product\_price\_value}}
+\index{\$product\_price\_value@{\$product\_price\_value}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$product\_price\_value}{\$product\_price\_value}}
+{\footnotesize\ttfamily \$product\+\_\+price\+\_\+value = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+price\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}}
+
+\Hypertarget{add__product_8php_af3017924d121952811088f6cdae65a52}\label{add__product_8php_af3017924d121952811088f6cdae65a52} 
+\index{add\_product.php@{add\_product.php}!\$product\_season\_value@{\$product\_season\_value}}
+\index{\$product\_season\_value@{\$product\_season\_value}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$product\_season\_value}{\$product\_season\_value}}
+{\footnotesize\ttfamily \$product\+\_\+season\+\_\+value = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+season\textquotesingle{}\mbox{]} ?? \textquotesingle{}\textquotesingle{}}
+
+\Hypertarget{add__product_8php_a4a87649cedacd4e2c9e5c97c96a95da4}\label{add__product_8php_a4a87649cedacd4e2c9e5c97c96a95da4} 
+\index{add\_product.php@{add\_product.php}!\$product\_size\_value@{\$product\_size\_value}}
+\index{\$product\_size\_value@{\$product\_size\_value}!add\_product.php@{add\_product.php}}
+\doxysubsubsection{\texorpdfstring{\$product\_size\_value}{\$product\_size\_value}}
+{\footnotesize\ttfamily \$product\+\_\+size\+\_\+value = \$\+\_\+\+SESSION\mbox{[}\textquotesingle{}add\+\_\+product\+\_\+data\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}product\+\_\+size\textquotesingle{}\mbox{]} ?? \textquotesingle{}36\textquotesingle{}}
+
