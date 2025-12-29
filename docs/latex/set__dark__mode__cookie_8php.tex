@@ -14,3 +14,19 @@
 \doxysubsubsection{\texorpdfstring{\$new\_mode}{\$new\_mode}}
 {\footnotesize\ttfamily \$new\+\_\+mode = \$\+\_\+\+POST\mbox{[}"{}mode"{}\mbox{]}}
 
+Backend skript pro nastavení cookie s preferencí tmavého režimu.
+
+Tento soubor je volán přes AJAX (POST požadavek) z různých Java\+Script souborů (např. account.\+js, add\+\_\+product.\+js, main.\+js, registration\+\_\+form.\+js) v okamžiku, kdy uživatel přepíná mezi tmavým a světlým režimem.
+
+Přijímá nový režim ("{}dark"{} nebo "{}light"{}) v POST parametru {\ttfamily mode}, nastavuje cookie s názvem {\ttfamily mode} s platností do konce relace prohlížeče a s cestou platnou pro celý web ({\ttfamily /}). Skript nevrací žádný výstup (očekává se tichá odpověď pro AJAX).
+
+@filesource \doxylink{set__dark__mode__cookie_8php}{set\+\_\+dark\+\_\+mode\+\_\+cookie.\+php}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\+\_\+\+POST,\mbox{[}"{}mode"{}\mbox{]}} & Očekávané hodnoty\+: "{}dark"{} nebo "{}light"{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void Skript nic nevypisuje, pouze přidává hlavičku Set-\/\+Cookie. 
+\end{DoxyReturn}

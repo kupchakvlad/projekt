@@ -12,8 +12,6 @@
  * a s cestou platnou pro celý web (`/`).
  * Skript nevrací žádný výstup (očekává se tichá odpověď pro AJAX).
  *
- * @filesource set_dark_mode_cookie.php
- *
  * @param string $_POST["mode"] Očekávané hodnoty: "dark" nebo "light"
  *
  * @return void Skript nic nevypisuje, pouze přidává hlavičku Set-Cookie.
