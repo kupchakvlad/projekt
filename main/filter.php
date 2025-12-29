@@ -15,7 +15,7 @@
  */
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * Tyto proměnné definují přístupové údaje k MySQL databázi.
  *
  * @var string $host Hostitel databáze (výchozí: localhost).
@@ -30,7 +30,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -41,7 +41,7 @@ if (!$conn) {
 }
 
 /**
- * Načtení GET parametrů pro filtr.
+ * @brief Načtení GET parametrů pro filtr.
  * Nastaví výchozí hodnoty, pokud parametry chybí, a přetypuje na int kde je potřeba.
  *
  * @var string $search Hledaný text v názvu produktu (výchozí: "").
@@ -93,14 +93,14 @@ if ($page < 1) {
 }
 
 /**
- * Počet produktů na jednu stránku.
+ * @brief Počet produktů na jednu stránku.
  * @var int $perPage Fixní hodnota 12 produktů na stránku.
  */
 
 $perPage = 12;
 
 /**
- * Základní SQL query s cenovým rozsahem.
+ * @brief Základní SQL query s cenovým rozsahem.
  * @var string $req SQL dotaz, který se postupně rozšiřuje podle filtrů.
  */
 
@@ -121,13 +121,13 @@ if ($size > 27) {
 }
 
 /**
- * Přidání řazení podle ID descending.
+ * @brief Přidání řazení podle ID descending.
  */
 
 $req = $req . " ORDER BY id DESC";
 
 /**
- * Spuštění query a načtení všech vyhovujících produktů do pole.
+ * @brief Spuštění query a načtení všech vyhovujících produktů do pole.
  * @var mysqli_result $final_request Výsledek SQL dotazu.
  * @var array $all_products Pole všech produktů, které prošly filtrem.
  */
@@ -141,7 +141,7 @@ while($row = mysqli_fetch_assoc($final_request)) {
 }
 
 /**
- * Výpočet celkového počtu produktů a počtu stránek.
+ * @brief Výpočet celkového počtu produktů a počtu stránek.
  * @var int $totalProducts Celkový počet filtrovaných produktů.
  * @var int $totalPages Celkový počet stránek (zaokrouhleno nahoru).
  */
@@ -153,7 +153,7 @@ $offset = ($page - 1) * $perPage;
 $pageProducts = array_slice($all_products, $offset, $perPage);
 
 /**
- * Výpis HTML karet produktů pro aktuální stránku.
+ * @brief Výpis HTML karet produktů pro aktuální stránku.
  * Pokud nejsou žádné produkty, vypíše zprávu "No products found".
  */
 
@@ -177,7 +177,7 @@ if (count($pageProducts) > 0) {
     }
 
 /**
- * Oprava stránky, pokud je požadována neexistující stránka.
+ * @brief Oprava stránky, pokud je požadována neexistující stránka.
  */
 
 if ($page > $totalPages && $totalPages > 0) {
@@ -185,7 +185,7 @@ if ($page > $totalPages && $totalPages > 0) {
 }
 
 /**
- * Generování HTML pro paginaci.
+ * @brief Generování HTML pro paginaci.
  * Zobrazí tlačítka Prev/Next a čísla stránek (s ellipsis pro více než 5 stránek).
  * Zobrazí se pouze pokud je více než 1 stránka.
  */
@@ -237,7 +237,7 @@ if ($totalPages > 1) {
     }
 
 /**
- * Uzavření připojení k databázi.
+ * @brief Uzavření připojení k databázi.
  */
 mysqli_close($conn);
 ?>

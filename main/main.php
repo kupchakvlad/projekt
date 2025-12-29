@@ -20,7 +20,7 @@
 session_start();
 
 /**
- * Kontrola přihlášení uživatele.
+ * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 
@@ -30,7 +30,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 /**
- * Nastavení třídy pro tmavý režim.
+ * @brief Nastavení třídy pro tmavý režim.
  * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
@@ -39,7 +39,7 @@ if (!isset($_SESSION["user_id"])) {
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * Tyto proměnné definují přístupové údaje k MySQL databázi.
  * V produkci by měly být uloženy v bezpečném prostředí (např. env soubor).
  *
@@ -55,7 +55,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -84,7 +84,7 @@ if (!$conn) {
       <?php
       
       /**
-       * Zobrazení odkazu na admin panel.
+       * @brief Zobrazení odkazu na admin panel.
        * Viditelný pouze pro uživatele s admin=1.
        */
 

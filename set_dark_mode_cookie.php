@@ -21,7 +21,7 @@
 $new_mode = $_POST["mode"];
 
 /**
- * Nastavení cookie pro tmavý režim.
+ * @brief Nastavení cookie pro tmavý režim.
  *
  * Cookie platí do zavření prohlížeče (session cookie).
  */

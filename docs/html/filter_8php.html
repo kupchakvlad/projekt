@@ -111,10 +111,12 @@ Variables</h2></td></tr>
 <tr class="memitem:aa8a5a87b9c1a6a0819b88447cbe41877" id="r_aa8a5a87b9c1a6a0819b88447cbe41877"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filter_8php.html#aa8a5a87b9c1a6a0819b88447cbe41877">$conn</a> = mysqli_connect($host, $username, $<a class="el" href="account__back_8php.html#ac8b9bcea149376e5e3720ef65b421efd">password</a>, $database)</td></tr>
 <tr class="separator:aa8a5a87b9c1a6a0819b88447cbe41877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c22310bec25156fce32de1c72754e06" id="r_a6c22310bec25156fce32de1c72754e06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="main_8php.html#a43dd02ab50145011973ca5e9cd22acd8">if</a>(isset($_GET[&quot;search&quot;]))&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filter_8php.html#a6c22310bec25156fce32de1c72754e06">else</a></td></tr>
+<tr class="memdesc:a6c22310bec25156fce32de1c72754e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "No products found".  <br /></td></tr>
 <tr class="separator:a6c22310bec25156fce32de1c72754e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeac52724d4edab556efa0d2cf6aec342" id="r_aeac52724d4edab556efa0d2cf6aec342"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filter_8php.html#aeac52724d4edab556efa0d2cf6aec342">$perPage</a> = 12</td></tr>
 <tr class="separator:aeac52724d4edab556efa0d2cf6aec342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680c36b8034239c2f48e395c70eae451" id="r_a680c36b8034239c2f48e395c70eae451"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filter_8php.html#a680c36b8034239c2f48e395c70eae451">$req</a> = &quot;SELECT * FROM products WHERE price BETWEEN $min AND $max&quot;</td></tr>
+<tr class="memdesc:a680c36b8034239c2f48e395c70eae451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Přidání řazení podle ID descending.  <br /></td></tr>
 <tr class="separator:a680c36b8034239c2f48e395c70eae451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed9b35627951d4c8838db95aa60db4ae" id="r_aed9b35627951d4c8838db95aa60db4ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filter_8php.html#aed9b35627951d4c8838db95aa60db4ae">$final_request</a> = mysqli_query($conn, $req)</td></tr>
 <tr class="separator:aed9b35627951d4c8838db95aa60db4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,6 +296,7 @@ main.js Pro AJAX volání. </dd>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Přidání řazení podle ID descending. </p>
 
 <p class="definition">Definition at line <a class="el" href="filter_8php_source.html#l00107">107</a> of file <a class="el" href="filter_8php_source.html">filter.php</a>.</p>
@@ -361,7 +364,8 @@ main.js Pro AJAX volání. </dd>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">    $search = <span class="stringliteral">&quot;&quot;</span></div>
-</div><!-- fragment --><p>Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "No products found". </p>
+</div><!-- fragment -->
+<p>Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "No products found". </p>
 
 <p class="definition">Definition at line <a class="el" href="filter_8php_source.html#l00057">57</a> of file <a class="el" href="filter_8php_source.html">filter.php</a>.</p>
 

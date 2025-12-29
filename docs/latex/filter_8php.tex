@@ -14,11 +14,11 @@
 \mbox{\hyperlink{filter_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
 \item 
 \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(isset(\$\+\_\+\+GET\mbox{[}"{}search"{}\mbox{]})) \mbox{\hyperlink{filter_8php_a6c22310bec25156fce32de1c72754e06}{else}}
-\item 
+\begin{DoxyCompactList}\small\item\em Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "{}\+No products found"{}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{filter_8php_aeac52724d4edab556efa0d2cf6aec342}{\$per\+Page}} = 12
 \item 
 \mbox{\hyperlink{filter_8php_a680c36b8034239c2f48e395c70eae451}{\$req}} = "{}SELECT \texorpdfstring{$\ast$}{*} FROM products WHERE price BETWEEN \$min AND \$max"{}
-\item 
+\begin{DoxyCompactList}\small\item\em Přidání řazení podle ID descending. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{filter_8php_aed9b35627951d4c8838db95aa60db4ae}{\$final\+\_\+request}} = mysqli\+\_\+query(\$conn, \$req)
 \item 
 \mbox{\hyperlink{filter_8php_a323345037d715391bf956c961de05a91}{\$all\+\_\+products}} = \mbox{[}$\,$\mbox{]}
@@ -146,7 +146,11 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00100}{100}} of file \mb
 \doxysubsubsection{\texorpdfstring{\$req}{\$req}}
 {\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}( \$search !="{}"{}) \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(\$season !="{}"{}) \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} ( \$size $>$ 27) \$req = "{}SELECT \texorpdfstring{$\ast$}{*} FROM products WHERE price BETWEEN \$min AND \$max"{}}
 
+
+
 Přidání řazení podle ID descending. 
+
+
 
 Definition at line \mbox{\hyperlink{filter_8php_source_l00107}{107}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 
@@ -192,7 +196,11 @@ Definition at line \mbox{\hyperlink{filter_8php_source_l00028}{28}} of file \mbo
 \DoxyCodeLine{\ \ \ \ \$search\ =\ \textcolor{stringliteral}{"{}"{}}}
 
 \end{DoxyCode}
+
+
 Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "{}\+No products found"{}. 
+
+
 
 Definition at line \mbox{\hyperlink{filter_8php_source_l00057}{57}} of file \mbox{\hyperlink{filter_8php_source}{filter.\+php}}.
 

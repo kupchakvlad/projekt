@@ -113,6 +113,7 @@ Variables</h2></td></tr>
 <tr class="memitem:aa8a5a87b9c1a6a0819b88447cbe41877" id="r_aa8a5a87b9c1a6a0819b88447cbe41877"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8php.html#aa8a5a87b9c1a6a0819b88447cbe41877">$conn</a> = mysqli_connect($host, $username, $<a class="el" href="account__back_8php.html#ac8b9bcea149376e5e3720ef65b421efd">password</a>, $database)</td></tr>
 <tr class="separator:aa8a5a87b9c1a6a0819b88447cbe41877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43dd02ab50145011973ca5e9cd22acd8" id="r_a43dd02ab50145011973ca5e9cd22acd8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8php.html#a43dd02ab50145011973ca5e9cd22acd8">if</a> (! $conn)</td></tr>
+<tr class="memdesc:a43dd02ab50145011973ca5e9cd22acd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kontrola oprávnění – pouze přihlášený administrátor. Pokud podmínky nejsou splněny, přesměruje na hlavní stránku.  <br /></td></tr>
 <tr class="separator:a43dd02ab50145011973ca5e9cd22acd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -244,11 +245,16 @@ main.css Pro styly stránky. </dd>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">    header(<span class="stringliteral">&quot;Location: admin.php&quot;</span>)</div>
-</div><!-- fragment --><p>Kontrola oprávnění – pouze přihlášený administrátor. Pokud podmínky nejsou splněny, přesměruje na hlavní stránku. Kontrola existence ID uživatele v GET parametru. Pokud chybí, přesměruje zpět na admin panel. ID uživatele, jehož admin status má být změněn. Převedeno na integer pro bezpečnost.</p>
-<p>Kontrola existence ID uživatele v GET parametru. Pokud chybí, přesměruje zpět na admin panel. Validace ID uživatele z GET parametru. Používá filter_input s FILTER_VALIDATE_INT pro bezpečnost. Pokud ID není platné číslo, ukončí skript s chybovou zprávou.</p>
-<p>Přidání řazení podle ID descending.</p>
+</div><!-- fragment -->
+<p>Kontrola oprávnění – pouze přihlášený administrátor. Pokud podmínky nejsou splněny, přesměruje na hlavní stránku. </p>
+<p>Zpracování chyb registračního formuláře z session. Pokud existuje 'registration_errors' v session, nastaví flags a chybové texty pro pole.</p>
 <p>Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "No products found".</p>
-<p>Zpracování chyb registračního formuláře z session. Pokud existuje 'registration_errors' v session, nastaví flags a chybové texty pro pole. Nastavení tmavého režimu na základě cookie. Pokud cookie 'mode' je 'dark', přidá třídu 'dark-mode' k body. </p>
+<p>Přidání řazení podle ID descending.</p>
+<p>Kontrola existence ID uživatele v GET parametru. Pokud chybí, přesměruje zpět na admin panel.</p>
+<p>Kontrola existence ID uživatele v GET parametru. Pokud chybí, přesměruje zpět na admin panel.</p>
+<p>ID uživatele, jehož admin status má být změněn. Převedeno na integer pro bezpečnost.</p>
+<p>Validace ID uživatele z GET parametru. Používá filter_input s FILTER_VALIDATE_INT pro bezpečnost. Pokud ID není platné číslo, ukončí skript s chybovou zprávou.</p>
+<p>Nastavení tmavého režimu na základě cookie. Pokud cookie 'mode' je 'dark', přidá třídu 'dark-mode' k body. </p>
 
 <p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00063">63</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
 

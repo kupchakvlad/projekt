@@ -113,6 +113,7 @@ Variables</h2></td></tr>
 <tr class="memitem:ab26784c15753272c2666c43dc2eb60af" id="r_ab26784c15753272c2666c43dc2eb60af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="add__product_8php.html#ab26784c15753272c2666c43dc2eb60af">$product_price_value</a> = $_SESSION['add_product_data']['product_price'] ?? ''</td></tr>
 <tr class="separator:ab26784c15753272c2666c43dc2eb60af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95ac5a5e9d6bfe4807b34cd1b783920e" id="r_a95ac5a5e9d6bfe4807b34cd1b783920e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a> = $_SESSION['add_product_errors'] ?? []</td></tr>
+<tr class="memdesc:a95ac5a5e9d6bfe4807b34cd1b783920e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hlavní logika: Zpracování POST požadavku z registračního formuláře.  <br /></td></tr>
 <tr class="separator:a95ac5a5e9d6bfe4807b34cd1b783920e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54fdd9abb36ef6f009cf1e599de49782" id="r_a54fdd9abb36ef6f009cf1e599de49782"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="add__product_8php.html#a54fdd9abb36ef6f009cf1e599de49782">$photo_error</a> = $errors['photo'] ?? ''</td></tr>
 <tr class="separator:a54fdd9abb36ef6f009cf1e599de49782"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,7 +159,11 @@ add_product.js JavaScript pro slider velikosti, dark mode a klientskou validaci.
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Hlavní logika: Zpracování POST požadavku z registračního formuláře. Validuje vstupy (jméno, email, heslo, potvrzení hesla), kontroluje duplicitu emailu v DB, hashuje heslo a vkládá nového uživatele do tabulky 'users'. Pokud jsou errory, ukládá je do session a přesměruje zpět na formulář.</p>
+
+<p>Hlavní logika: Zpracování POST požadavku z registračního formuláře. </p>
+<p>Validuje vstupy (jméno, email, heslo, potvrzení hesla), kontroluje duplicitu emailu v DB,</p>
+<p>hashuje heslo a vkládá nového uživatele do tabulky 'users'.</p>
+<p>Pokud jsou errory, ukládá je do session a přesměruje zpět na formulář.</p>
 <dl class="section return"><dt>Returns</dt><dd>void Přesměruje na <a class="el" href="main_8php.html">main.php</a> při úspěchu, jinak zpět na <a class="el" href="registration__form_8php.html">registration_form.php</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">

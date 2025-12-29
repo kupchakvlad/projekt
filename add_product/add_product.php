@@ -17,7 +17,7 @@
 session_start();
 
 /**
- * Kontrola přihlášení uživatele.
+ * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 /**
- * Nastavení třídy pro tmavý režim.
+ * @brief Nastavení třídy pro tmavý režim.
  * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
@@ -36,7 +36,7 @@ if (!isset($_SESSION["user_id"])) {
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
- * Načtení předvyplněných hodnot z session.
+ * @brief Načtení předvyplněných hodnot z session.
  * Používá se po neúspěšném odeslání formuláře pro zachování zadaných dat.
  *
  * @var string $product_name_value Předvyplněný název produktu.
@@ -53,7 +53,7 @@ $product_size_value = $_SESSION['add_product_data']['product_size'] ?? '36';
 $product_price_value = $_SESSION['add_product_data']['product_price'] ?? '';
 
 /**
- * Načtení chybových hlášek z session.
+ * @brief Načtení chybových hlášek z session.
  * Chyby jsou uloženy backendem při validaci (foto, cena, název).
  *
  * @var array $errors Pole chyb (klíče: 'photo', 'price', 'name').

@@ -16,7 +16,7 @@
 session_start();
 
 /**
- * Kontrola oprávnění – pouze přihlášený administrátor.
+ * @brief Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud není session user_id, admin flag nebo admin != 1, přesměruje na hlavní stránku.
  */
 
@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
 }
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -39,7 +39,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -50,14 +50,14 @@ if (!$connection) {
 }
 
 /**
- * ID uživatele k smazání z GET parametru.
+ * @brief ID uživatele k smazání z GET parametru.
  * @var int $user_id ID uživatele, který má být smazán.
  */
 
 $user_id = $_GET['id'];
 
 /**
- * SQL dotaz pro smazání uživatele.
+ * @brief SQL dotaz pro smazání uživatele.
  * Používá prepared statement pro ochranu proti SQL injection.
  *
  * @var string $delete_user_query SQL DELETE dotaz s placeholderem.
@@ -69,7 +69,7 @@ $stmt = mysqli_prepare($connection, $delete_user_query);
 mysqli_stmt_bind_param($stmt, "i", $user_id);
 
 /**
- * Provedení smazání a přesměrování.
+ * @brief Provedení smazání a přesměrování.
  * Pokud je smazání úspěšné, přesměruje na admin.php.
  * V opačném případě vypíše chybovou zprávu.
  */

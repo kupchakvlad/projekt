@@ -14,7 +14,7 @@
 \mbox{\hyperlink{registration_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}} = mysqli\+\_\+connect(\$host, \$username, \$\mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}, \$database)
 \item 
 \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}}(! \$connection) \mbox{\hyperlink{registration_8php_a245a56030ac74d79eeda3079330e4027}{\$weak\+Passwords\+File}} = \textquotesingle{}weak\+\_\+passwords.\+txt\textquotesingle{}
-\item 
+\begin{DoxyCompactList}\small\item\em Tato funkce čte soubor řádek po řádku, trimuje řádky a vrací pole slabých hesel. Používá se pro validaci hesla uživatele, aby se zabránilo použití běžných slabých hesel. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{registration_8php_aa96005bc4defeec605358b373c4d98b0}{\$weak\+Passwords}} = load\+Weak\+Passwords(\$weak\+Passwords\+File)
 \item 
 \mbox{\hyperlink{registration_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}}
@@ -102,7 +102,11 @@ Definition at line \mbox{\hyperlink{registration_8php_source_l00056}{56}} of fil
 \doxysubsubsection{\texorpdfstring{\$weakPasswordsFile}{\$weakPasswordsFile}}
 {\footnotesize\ttfamily \mbox{\hyperlink{main_8php_a43dd02ab50145011973ca5e9cd22acd8}{if}} (! \$connection) \$weak\+Passwords\+File = \textquotesingle{}weak\+\_\+passwords.\+txt\textquotesingle{}}
 
-Načte seznam slabých hesel ze souboru. Tato funkce čte soubor řádek po řádku, trimuje řádky a vrací pole slabých hesel. Používá se pro validaci hesla uživatele, aby se zabránilo použití běžných slabých hesel.
+
+
+Tato funkce čte soubor řádek po řádku, trimuje řádky a vrací pole slabých hesel. Používá se pro validaci hesla uživatele, aby se zabránilo použití běžných slabých hesel. 
+
+Načte seznam slabých hesel ze souboru. 
 
 
 \begin{DoxyParams}[1]{Parameters}

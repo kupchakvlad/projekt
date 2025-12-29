@@ -3,7 +3,7 @@
 /**
  * @file logout.php
  *
- * Tento skript slouží k odhlášení uživatele ze systému.
+ * @brief Tento skript slouží k odhlášení uživatele ze systému.
  * Nejprve se spustí session, poté se odstraní všechna
  * session data a session se kompletně zničí.
  * Nakonec je uživatel přesměrován na registrační / přihlašovací stránku.

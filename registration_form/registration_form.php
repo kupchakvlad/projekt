@@ -35,7 +35,7 @@ if (isset($_SESSION['login_error']) && $_SESSION['login_error'] != '') {
 }
 
 /**
- * Výchozí hodnoty pro registrační formulář.
+ * @brief Výchozí hodnoty pro registrační formulář.
  * Inicializuje prázdné hodnoty pro jméno a email.
  *
  * @var string $name_value Předvyplněné jméno z session.
@@ -46,7 +46,7 @@ $name_value = '';
 $email_value = '';
 
 /**
- * Flags pro chyby v registračním formuláři.
+ * @brief Flags pro chyby v registračním formuláři.
  * Nastavují se na základě 'registration_errors' v session pro označení chybných polí.
  *
  * @var bool $name_has_error Flag pro chybu v poli jména.
@@ -61,7 +61,7 @@ $password_has_error = false;
 $confirm_has_error = false;
 
 /**
- * Texty chyb pro registrační formulář.
+ * @brief Texty chyb pro registrační formulář.
  * Specifické chybové zprávy pro jednotlivá pole.
  *
  * @var string $name_reg_error Chybová zpráva pro jméno.
@@ -76,7 +76,7 @@ $password_reg_error = '';
 $confirm_reg_error = '';
 
 /**
- * Předvyplnění registračního formuláře z session.
+ * @brief Předvyplnění registračního formuláře z session.
  * Pokud existuje 'registration_data' v session, načte hodnoty a unsetne session.
  */
 
@@ -87,7 +87,7 @@ if (isset($_SESSION['registration_data'])) {
 }
 
 /**
- * Předvyplnění emailu pro přihlašovací formulář.
+ * @brief Předvyplnění emailu pro přihlašovací formulář.
  * Načte z 'login_data', 'registration_data' nebo 'last_login_email' v session.
  *
  * @var string $login_email_value Předvyplněný email pro přihlášení.
@@ -110,7 +110,7 @@ if (isset($_SESSION['last_login_email'])) {
 }
 
 /**
- * Zpracování chyb registračního formuláře z session.
+ * @brief Zpracování chyb registračního formuláře z session.
  * Pokud existuje 'registration_errors' v session, nastaví flags a chybové texty pro pole.
  */
 
@@ -138,7 +138,7 @@ if (isset($_SESSION['registration_errors'])) {
 }
 
 /**
- * Nastavení tmavého režimu na základě cookie.
+ * @brief Nastavení tmavého režimu na základě cookie.
  * Pokud cookie 'mode' je 'dark', přidá třídu 'dark-mode' k body.
  *
  * @var string $dark_mode_class Třída pro tmavý režim ('dark-mode' nebo prázdná).
@@ -191,7 +191,6 @@ if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
     <form action="registration.php" method="POST" id="registration_form" class="active">
 
         <?php
-        // FIXED: Removed $registration_errors (already unset) and use direct checks
         if (!empty($name_reg_error) || !empty($email_reg_error) || !empty($password_reg_error) || !empty($confirm_reg_error)) {
             echo '<div class="error-box">';
             echo '<strong>Please fix these errors:</strong>';

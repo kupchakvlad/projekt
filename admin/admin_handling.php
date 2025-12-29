@@ -16,7 +16,7 @@
 session_start();
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -29,7 +29,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -40,7 +40,7 @@ if (!$connection) {
 }
 
 /**
- * Kontrola oprávnění – pouze přihlášený administrátor.
+ * @brief Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud podmínky nejsou splněny, přesměruje na hlavní stránku.
  */
 
@@ -50,7 +50,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION["adm
 }
 
 /**
- * Kontrola existence ID uživatele v GET parametru.
+ * @brief Kontrola existence ID uživatele v GET parametru.
  * Pokud chybí, přesměruje zpět na admin panel.
  */
 
@@ -60,7 +60,7 @@ if (!isset($_GET["id"])) {
 }
 
 /**
- * ID uživatele, jehož admin status má být změněn.
+ * @brief ID uživatele, jehož admin status má být změněn.
  * Převedeno na integer pro bezpečnost.
  *
  * @var int $user_id ID cílového uživatele.
@@ -69,7 +69,7 @@ if (!isset($_GET["id"])) {
 $user_id = intval($_GET["id"]);
 
 /**
- * Ochrana před změnou vlastního admin statusu.
+ * @brief Ochrana před změnou vlastního admin statusu.
  * Administrátor si nemůže odebrat vlastní práva touto cestou.
  */
 
@@ -79,7 +79,7 @@ if ($user_id === intval($_SESSION["user_id"])) {
 }
 
 /**
- * Načtení aktuálního admin statusu uživatele.
+ * @brief Načtení aktuálního admin statusu uživatele.
  * Používá prepared statement pro bezpečnost.
  *
  * @var string $query SQL SELECT dotaz pro získání admin hodnoty.
@@ -94,7 +94,7 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
 /**
- * Určení nové hodnoty admin statusu (přepnutí 0 ↔ 1).
+ * @brief Určení nové hodnoty admin statusu (přepnutí 0 ↔ 1).
  * @var int $new_admin_value Nová hodnota (0 nebo 1).
  */
 
@@ -112,7 +112,7 @@ if ($row = mysqli_fetch_assoc($result)) {
 mysqli_stmt_close($stmt);
 
 /**
- * Aktualizace admin statusu v databázi.
+ * @brief Aktualizace admin statusu v databázi.
  * Používá prepared statement pro UPDATE.
  *
  * @var string $update_query SQL UPDATE dotaz.

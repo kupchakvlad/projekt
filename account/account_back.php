@@ -16,7 +16,7 @@
 session_start();
 
 /**
- * Kontrola přihlášení uživatele.
+ * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 
@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -39,7 +39,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -47,7 +47,7 @@ $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
 
 /**
- * Načtení dat z POST formuláře a ID uživatele ze session.
+ * @brief Načtení dat z POST formuláře a ID uživatele ze session.
  *
  * @var int $user_id ID přihlášeného uživatele.
  * @var string $new_name Nové jméno uživatele.
@@ -61,7 +61,7 @@ $new_email = $_POST['email'];
 $new_password = $_POST['password'];
 
 /**
- * Příprava a provedení UPDATE dotazu.
+ * @brief Příprava a provedení UPDATE dotazu.
  * Pokud je zadáno nové heslo, aktualizuje i sloupec password (s hashováním).
  * Jinak aktualizuje pouze jméno a email.
  *
@@ -85,7 +85,7 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_close($stmt);
 
 /**
- * Přesměrování zpět na stránku profilu po uložení změn.
+ * @brief Přesměrování zpět na stránku profilu po uložení změn.
  */
 
 header("Location: account.php");

@@ -18,7 +18,7 @@
 session_start();
 
 /**
- * Kontrola oprávnění – pouze přihlášený administrátor.
+ * @brief Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud podmínky nejsou splněny, přesměruje na hlavní stránku.
  */
 
@@ -28,7 +28,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
 }
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -41,7 +41,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -52,7 +52,7 @@ if (!$connection) {
 }
 
 /**
- * Získání a validace ID uživatele z GET parametru.
+ * @brief Získání a validace ID uživatele z GET parametru.
  * Používá filter_input s FILTER_VALIDATE_INT pro bezpečnou validaci.
  * Pokud ID není platné číslo nebo chybí, ukončí skript s chybovou zprávou.
  *
@@ -65,7 +65,7 @@ if ($id === false || $id === null) {
 }
 
 /**
- * Načtení aktuálních údajů uživatele (jméno a email) pro předvyplnění formuláře.
+ * @brief Načtení aktuálních údajů uživatele (jméno a email) pro předvyplnění formuláře.
  * Používá prepared statement pro ochranu proti SQL injection.
  *
  * @var string $prefill_query SQL SELECT dotaz.

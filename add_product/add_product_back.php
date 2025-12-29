@@ -17,7 +17,7 @@
 session_start();
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -30,7 +30,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -41,9 +41,9 @@ if (!$connection) {
 }
 
 /**
- * Hlavní logika: Zpracování POST požadavku z formuláře.
- * Validuje vstupy (název, cena, fotky atd.), nahrává soubory a vkládá do tabulky 'products'.
- * Pokud jsou errory, ukládá je do session a přesměruje zpět.
+ * @brief Hlavní logika: Zpracování POST požadavku z formuláře.
+ * @brief Validuje vstupy (název, cena, fotky atd.), nahrává soubory a vkládá do tabulky 'products'.
+ * @brief Pokud jsou errory, ukládá je do session a přesměruje zpět.
  *
  * @return void Přesměruje na main.php při úspěchu, jinak zpět na add_product.php.
  */
@@ -51,7 +51,7 @@ if (!$connection) {
 if (isset($_POST["submit"])) {
 
     /**
-     * Cesta k adresáři pro nahrávání fotek produktu.
+     * @brief Cesta k adresáři pro nahrávání fotek produktu.
      * @var string $upload_directory Absolutní cesta na serveru.
      */
 
@@ -59,7 +59,7 @@ if (isset($_POST["submit"])) {
     $user_id = $_SESSION["user_id"];
 
     /**
-     * Načtení a očištění vstupních dat z formuláře.
+     * @brief Načtení a očištění vstupních dat z formuláře.
      *
      * @var string $product_name Název produktu.
      * @var string $product_fabric Výrobce / materiál.
@@ -75,7 +75,7 @@ if (isset($_POST["submit"])) {
     $product_price = trim($_POST["product_price"]);
 
     /**
-     * Pole pro uložení cest k nahraným souborům a chyb validace.
+     * @brief Pole pro uložení cest k nahraným souborům a chyb validace.
      *
      * @var array $all_file_paths Úspěšně nahrané cesty k fotkám.
      * @var array $errors Pole chybových hlášek (klíče: 'photo', 'price', 'name').
@@ -96,7 +96,7 @@ if (isset($_POST["submit"])) {
     }
 
     /**
-     * Pokud jsou validační chyby – uložit data a errory do session a přesměrovat zpět.
+     * @brief Pokud jsou validační chyby – uložit data a errory do session a přesměrovat zpět.
      */
 
     if (!empty($errors)) {
@@ -113,7 +113,7 @@ if (isset($_POST["submit"])) {
     }
 
     /**
-     * Nahrávání souborů na server.
+     * @brief Nahrávání souborů na server.
      * Prochází všechny nahrané fotky, generuje unikátní jména a přesouvá je do cílového adresáře.
      */
 
@@ -130,7 +130,7 @@ if (isset($_POST["submit"])) {
     }
 
     /**
-     * Nahrávání souborů na server.
+     * @brief Nahrávání souborů na server.
      * Prochází všechny nahrané fotky, generuje unikátní jména a přesouvá je do cílového adresáře.
      */
 
@@ -138,7 +138,7 @@ if (isset($_POST["submit"])) {
     $product_price = (float) $product_price;
 
     /**
-     * SQL dotaz pro vložení nového produktu.
+     * @brief SQL dotaz pro vložení nového produktu.
      * Používá prepared statement pro bezpečnost.
      *
      * @var string $insert_product_query SQL INSERT dotaz.
@@ -164,7 +164,7 @@ if (isset($_POST["submit"])) {
     );
     
         /**
-         * Provedení vložení.
+         * @brief Provedení vložení.
          * Při úspěchu přesměruje na hlavní stránku, při chybě vypíše error.
          */
         

@@ -19,7 +19,7 @@
 session_start();
 
 /**
- * Kontrola přihlášení uživatele.
+ * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 
@@ -29,7 +29,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 /**
- * Nastavení třídy pro tmavý režim.
+ * @brief Nastavení třídy pro tmavý režim.
  * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
@@ -38,7 +38,7 @@ if (!isset($_SESSION["user_id"])) {
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -51,7 +51,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -59,22 +59,22 @@ $conn = mysqli_connect($host, $username, $password, $database);
 if (!$conn) die("DB error");
 
 /**
- * Kontrola existence ID produktu v URL.
+ * @brief Kontrola existence ID produktu v URL.
  * Pokud GET parametr "id" chybí, ukončí skript s chybovou zprávou.
  */
 
 if (!isset($_GET["id"])) die("This product does not exist");
 
 /**
- * ID produktu z GET parametru (přetypováno na integer pro bezpečnost).
+ * @brief ID produktu z GET parametru (přetypováno na integer pro bezpečnost).
  * @var int $id ID produktu z URL.
  */
 
 $id = (int) $_GET['id'];
 
 /**
- * SQL dotaz pro načtení detailu produktu včetně jména prodejce.
- * Používá JOIN mezi tabulkami products a users.
+ * @brief SQL dotaz pro načtení detailu produktu včetně jména prodejce.
+ * @brief Používá JOIN mezi tabulkami products a users.
  *
  * @var string $query SQL dotaz.
  */
@@ -86,7 +86,7 @@ $query = "
     WHERE p.id = $id";
 
 /**
- * Spuštění dotazu a získání dat produktu.
+ * @brief Spuštění dotazu a získání dat produktu.
  * @var mysqli_result $result Výsledek dotazu.
  * @var array|null $product Pole s daty produktu nebo null, pokud neexistuje.
  */
@@ -96,7 +96,7 @@ $product = mysqli_fetch_array($result);
 if (!$product) die("This product does not exist");
 
 /**
- * Formátování data přidání produktu.
+ * @brief Formátování data přidání produktu.
  * Pokud sloupec created_at existuje a není prázdný, převede na formát "d M Y".
  * Jinak zůstane "Unknown".
  *
@@ -133,7 +133,7 @@ if (!empty($product['created_at'])) {
         <?php
 
                 /**
-                 * Zpracování a výpis obrázků produktu.
+                 * @brief Zpracování a výpis obrázků produktu.
                  * Cesta k obrázkům je uložena jako čárkou oddělený seznam v sloupci file_path.
                  * Každá cesta se trimuje a převádí na veřejnou URL.
                  */

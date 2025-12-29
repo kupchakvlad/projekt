@@ -18,7 +18,7 @@
 session_start();
 
 /**
- * Kontrola přihlášení uživatele.
+ * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
 
@@ -28,7 +28,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 /**
- * Nastavení třídy pro tmavý režim.
+ * @brief Nastavení třídy pro tmavý režim.
  * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
@@ -37,7 +37,7 @@ if (!isset($_SESSION["user_id"])) {
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -50,7 +50,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -58,7 +58,7 @@ $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
 
 /**
- * Načtení aktuálních údajů uživatele z databáze.
+ * @brief Načtení aktuálních údajů uživatele z databáze.
  * Používá prepared statement pro bezpečnost.
  * Výsledek se použije pro zobrazení a předvyplnění formuláře.
  *

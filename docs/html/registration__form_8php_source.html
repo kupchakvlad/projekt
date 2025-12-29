@@ -216,90 +216,89 @@ $(document).ready(function(){initNavTree('registration__form_8php_source.html','
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    &lt;form action=<span class="stringliteral">&quot;registration.php&quot;</span> method=<span class="stringliteral">&quot;POST&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_form&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;active&quot;</span>&gt;</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        &lt;?php</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="comment">// FIXED: Removed $registration_errors (already unset) and use direct checks</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keywordflow">if</span> (!empty(<a class="code hl_variable" href="registration__form_8php.html#a656984a70078c13747ed30da3388cb4b">$name_reg_error</a>) || !empty(<a class="code hl_variable" href="registration__form_8php.html#aa8d35a6d597451776fbd7efb49ba0e73">$email_reg_error</a>) || !empty(<a class="code hl_variable" href="registration__form_8php.html#afbab7329d9a5aba838b612c58cbf87df">$password_reg_error</a>) || !empty(<a class="code hl_variable" href="registration__form_8php.html#af5f7fce69875f9b42031bdb951b17206">$confirm_reg_error</a>)) {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            echo <span class="stringliteral">&#39;&lt;div class=&quot;error-box&quot;&gt;&#39;</span>;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            echo <span class="stringliteral">&#39;&lt;strong&gt;Please fix these errors:&lt;/strong&gt;&#39;</span>;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            echo <span class="stringliteral">&#39;&lt;ul&gt;&#39;</span>;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a656984a70078c13747ed30da3388cb4b">$name_reg_error</a>) {</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                echo <span class="stringliteral">&#39;&lt;li&gt;&#39;</span> . htmlspecialchars(<a class="code hl_variable" href="registration__form_8php.html#a656984a70078c13747ed30da3388cb4b">$name_reg_error</a>) . <span class="stringliteral">&#39;&lt;/li&gt;&#39;</span>;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            }</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#aa8d35a6d597451776fbd7efb49ba0e73">$email_reg_error</a>) {</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                echo <span class="stringliteral">&#39;&lt;li&gt;&#39;</span> . htmlspecialchars(<a class="code hl_variable" href="registration__form_8php.html#aa8d35a6d597451776fbd7efb49ba0e73">$email_reg_error</a>) . <span class="stringliteral">&#39;&lt;/li&gt;&#39;</span>;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            }</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#afbab7329d9a5aba838b612c58cbf87df">$password_reg_error</a>) {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                echo <span class="stringliteral">&#39;&lt;li&gt;&#39;</span> . htmlspecialchars(<a class="code hl_variable" href="registration__form_8php.html#afbab7329d9a5aba838b612c58cbf87df">$password_reg_error</a>) . <span class="stringliteral">&#39;&lt;/li&gt;&#39;</span>;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            }</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#af5f7fce69875f9b42031bdb951b17206">$confirm_reg_error</a>) {</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                echo <span class="stringliteral">&#39;&lt;li&gt;&#39;</span> . htmlspecialchars(<a class="code hl_variable" href="registration__form_8php.html#af5f7fce69875f9b42031bdb951b17206">$confirm_reg_error</a>) . <span class="stringliteral">&#39;&lt;/li&gt;&#39;</span>;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            }</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            echo <span class="stringliteral">&#39;&lt;/ul&gt;&#39;</span>;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            echo <span class="stringliteral">&#39;&lt;/div&gt;&#39;</span>;</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        }</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        ?&gt;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;registration_name&quot;</span>&gt;Enter name: &lt;span <span class="keyword">class</span>=<span class="stringliteral">&quot;required&quot;</span>&gt;*&lt;/span&gt;&lt;/label&gt;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        &lt;input type=<span class="stringliteral">&quot;text&quot;</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>               <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_name&quot;</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>               name=<span class="stringliteral">&quot;registration_name&quot;</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>               value=<span class="stringliteral">&quot;&lt;?php echo htmlspecialchars($name_value); ?&gt;&quot;</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                &lt;?php</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a6c496c300e014c314fdd72adfbad54f4">$name_has_error</a>) {</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                    echo <span class="stringliteral">&#39;class=&quot;error-input&quot;&#39;</span>;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                }</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                ?&gt;</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>               required&gt;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_email_container&quot;</span>&gt;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;registration_email&quot;</span>&gt;Enter <a class="code hl_variable" href="account__back_8php.html#aea85f9d3afcfc16bc92be549093b71ce">email</a>: &lt;span <span class="keyword">class</span>=<span class="stringliteral">&quot;required&quot;</span>&gt;*&lt;/span&gt;&lt;/label&gt;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            &lt;input type=<span class="stringliteral">&quot;text&quot;</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                   <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_email&quot;</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                   name=<span class="stringliteral">&quot;registration_email&quot;</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                   value=<span class="stringliteral">&quot;&lt;?php echo htmlspecialchars($email_value); ?&gt;&quot;</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                    &lt;?php</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a317e6b9ba189c298e52495e480aefa4c">$email_has_error</a>) {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                        echo <span class="stringliteral">&#39;class=&quot;error-input&quot;&#39;</span>;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                    }</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                    ?&gt;</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                   required&gt;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        &lt;/div&gt;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_password_container&quot;</span>&gt;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;registration_password&quot;</span>&gt;Enter <a class="code hl_variable" href="account__back_8php.html#ac8b9bcea149376e5e3720ef65b421efd">password</a>: &lt;span <span class="keyword">class</span>=<span class="stringliteral">&quot;required&quot;</span>&gt;*&lt;/span&gt;&lt;/label&gt;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            &lt;input type=<span class="stringliteral">&quot;password&quot;</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                   <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_password&quot;</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                   name=<span class="stringliteral">&quot;registration_password&quot;</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    &lt;?php</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a84d28672133e9f24d7d33669dea08453">$password_has_error</a>) {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                        echo <span class="stringliteral">&#39;class=&quot;error-input&quot;&#39;</span>;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                    }</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                    ?&gt;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                   required&gt;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;registration_password_confirmation&quot;</span>&gt;Enter <a class="code hl_variable" href="account__back_8php.html#ac8b9bcea149376e5e3720ef65b421efd">password</a> once again: &lt;span <span class="keyword">class</span>=<span class="stringliteral">&quot;required&quot;</span>&gt;*&lt;/span&gt;&lt;/label&gt;</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            &lt;input type=<span class="stringliteral">&quot;password&quot;</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                   <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_password_confirmation&quot;</span></div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                   name=<span class="stringliteral">&quot;registration_password_confirmation&quot;</span></div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                    &lt;?php</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a80dfcf0c20c72129e645d73a74620c4d">$confirm_has_error</a>) {</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                        echo <span class="stringliteral">&#39;class=&quot;error-input&quot;&#39;</span>;</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    }</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                    ?&gt;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                   required&gt;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        &lt;/div&gt;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        &lt;input type=<span class="stringliteral">&quot;submit&quot;</span> name=<span class="stringliteral">&quot;registration_submit&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;submit&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_submit&quot;</span> value=<span class="stringliteral">&quot;Sign-up&quot;</span>&gt;</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    &lt;/form&gt;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>&lt;/div&gt;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>&lt;/body&gt;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>&lt;/html&gt;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">if</span> (!empty(<a class="code hl_variable" href="registration__form_8php.html#a656984a70078c13747ed30da3388cb4b">$name_reg_error</a>) || !empty(<a class="code hl_variable" href="registration__form_8php.html#aa8d35a6d597451776fbd7efb49ba0e73">$email_reg_error</a>) || !empty(<a class="code hl_variable" href="registration__form_8php.html#afbab7329d9a5aba838b612c58cbf87df">$password_reg_error</a>) || !empty(<a class="code hl_variable" href="registration__form_8php.html#af5f7fce69875f9b42031bdb951b17206">$confirm_reg_error</a>)) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            echo <span class="stringliteral">&#39;&lt;div class=&quot;error-box&quot;&gt;&#39;</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            echo <span class="stringliteral">&#39;&lt;strong&gt;Please fix these errors:&lt;/strong&gt;&#39;</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            echo <span class="stringliteral">&#39;&lt;ul&gt;&#39;</span>;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a656984a70078c13747ed30da3388cb4b">$name_reg_error</a>) {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                echo <span class="stringliteral">&#39;&lt;li&gt;&#39;</span> . htmlspecialchars(<a class="code hl_variable" href="registration__form_8php.html#a656984a70078c13747ed30da3388cb4b">$name_reg_error</a>) . <span class="stringliteral">&#39;&lt;/li&gt;&#39;</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#aa8d35a6d597451776fbd7efb49ba0e73">$email_reg_error</a>) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                echo <span class="stringliteral">&#39;&lt;li&gt;&#39;</span> . htmlspecialchars(<a class="code hl_variable" href="registration__form_8php.html#aa8d35a6d597451776fbd7efb49ba0e73">$email_reg_error</a>) . <span class="stringliteral">&#39;&lt;/li&gt;&#39;</span>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#afbab7329d9a5aba838b612c58cbf87df">$password_reg_error</a>) {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                echo <span class="stringliteral">&#39;&lt;li&gt;&#39;</span> . htmlspecialchars(<a class="code hl_variable" href="registration__form_8php.html#afbab7329d9a5aba838b612c58cbf87df">$password_reg_error</a>) . <span class="stringliteral">&#39;&lt;/li&gt;&#39;</span>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#af5f7fce69875f9b42031bdb951b17206">$confirm_reg_error</a>) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                echo <span class="stringliteral">&#39;&lt;li&gt;&#39;</span> . htmlspecialchars(<a class="code hl_variable" href="registration__form_8php.html#af5f7fce69875f9b42031bdb951b17206">$confirm_reg_error</a>) . <span class="stringliteral">&#39;&lt;/li&gt;&#39;</span>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            echo <span class="stringliteral">&#39;&lt;/ul&gt;&#39;</span>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            echo <span class="stringliteral">&#39;&lt;/div&gt;&#39;</span>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        ?&gt;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;registration_name&quot;</span>&gt;Enter name: &lt;span <span class="keyword">class</span>=<span class="stringliteral">&quot;required&quot;</span>&gt;*&lt;/span&gt;&lt;/label&gt;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        &lt;input type=<span class="stringliteral">&quot;text&quot;</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>               <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_name&quot;</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>               name=<span class="stringliteral">&quot;registration_name&quot;</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>               value=<span class="stringliteral">&quot;&lt;?php echo htmlspecialchars($name_value); ?&gt;&quot;</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                &lt;?php</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a6c496c300e014c314fdd72adfbad54f4">$name_has_error</a>) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                    echo <span class="stringliteral">&#39;class=&quot;error-input&quot;&#39;</span>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                ?&gt;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>               required&gt;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_email_container&quot;</span>&gt;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;registration_email&quot;</span>&gt;Enter <a class="code hl_variable" href="account__back_8php.html#aea85f9d3afcfc16bc92be549093b71ce">email</a>: &lt;span <span class="keyword">class</span>=<span class="stringliteral">&quot;required&quot;</span>&gt;*&lt;/span&gt;&lt;/label&gt;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            &lt;input type=<span class="stringliteral">&quot;text&quot;</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                   <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_email&quot;</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                   name=<span class="stringliteral">&quot;registration_email&quot;</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                   value=<span class="stringliteral">&quot;&lt;?php echo htmlspecialchars($email_value); ?&gt;&quot;</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    &lt;?php</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a317e6b9ba189c298e52495e480aefa4c">$email_has_error</a>) {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                        echo <span class="stringliteral">&#39;class=&quot;error-input&quot;&#39;</span>;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                    }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                    ?&gt;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                   required&gt;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        &lt;/div&gt;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_password_container&quot;</span>&gt;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;registration_password&quot;</span>&gt;Enter <a class="code hl_variable" href="account__back_8php.html#ac8b9bcea149376e5e3720ef65b421efd">password</a>: &lt;span <span class="keyword">class</span>=<span class="stringliteral">&quot;required&quot;</span>&gt;*&lt;/span&gt;&lt;/label&gt;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            &lt;input type=<span class="stringliteral">&quot;password&quot;</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                   <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_password&quot;</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                   name=<span class="stringliteral">&quot;registration_password&quot;</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                    &lt;?php</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a84d28672133e9f24d7d33669dea08453">$password_has_error</a>) {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                        echo <span class="stringliteral">&#39;class=&quot;error-input&quot;&#39;</span>;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                    }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                    ?&gt;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                   required&gt;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            &lt;label <span class="keywordflow">for</span>=<span class="stringliteral">&quot;registration_password_confirmation&quot;</span>&gt;Enter <a class="code hl_variable" href="account__back_8php.html#ac8b9bcea149376e5e3720ef65b421efd">password</a> once again: &lt;span <span class="keyword">class</span>=<span class="stringliteral">&quot;required&quot;</span>&gt;*&lt;/span&gt;&lt;/label&gt;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            &lt;input type=<span class="stringliteral">&quot;password&quot;</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                   <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_password_confirmation&quot;</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                   name=<span class="stringliteral">&quot;registration_password_confirmation&quot;</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    &lt;?php</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="registration__form_8php.html#a80dfcf0c20c72129e645d73a74620c4d">$confirm_has_error</a>) {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                        echo <span class="stringliteral">&#39;class=&quot;error-input&quot;&#39;</span>;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                    }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    ?&gt;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                   required&gt;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        &lt;/div&gt;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        &lt;input type=<span class="stringliteral">&quot;submit&quot;</span> name=<span class="stringliteral">&quot;registration_submit&quot;</span> <span class="keyword">class</span>=<span class="stringliteral">&quot;submit&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;registration_submit&quot;</span> value=<span class="stringliteral">&quot;Sign-up&quot;</span>&gt;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    &lt;/form&gt;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>&lt;/div&gt;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>&lt;/body&gt;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>&lt;/html&gt;</div>
 <div class="ttc" id="aaccount__back_8php_html_ac8b9bcea149376e5e3720ef65b421efd"><div class="ttname"><a href="account__back_8php.html#ac8b9bcea149376e5e3720ef65b421efd">password</a></div><div class="ttdeci">if(! $connection) die(&quot;Connect failed password</div><div class="ttdef"><b>Definition</b> <a href="account__back_8php_source.html#l00075">account_back.php:75</a></div></div>
 <div class="ttc" id="aaccount__back_8php_html_aea85f9d3afcfc16bc92be549093b71ce"><div class="ttname"><a href="account__back_8php.html#aea85f9d3afcfc16bc92be549093b71ce">email</a></div><div class="ttdeci">if(! $connection) die(&quot;Connect failed email</div><div class="ttdef"><b>Definition</b> <a href="account__back_8php_source.html#l00075">account_back.php:75</a></div></div>
-<div class="ttc" id="aadd__product_8php_html_a95ac5a5e9d6bfe4807b34cd1b783920e"><div class="ttname"><a href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a></div><div class="ttdeci">$errors</div><div class="ttdef"><b>Definition</b> <a href="add__product_8php_source.html#l00065">add_product.php:65</a></div></div>
+<div class="ttc" id="aadd__product_8php_html_a95ac5a5e9d6bfe4807b34cd1b783920e"><div class="ttname"><a href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a></div><div class="ttdeci">$errors</div><div class="ttdoc">Hlavní logika: Zpracování POST požadavku z registračního formuláře.</div><div class="ttdef"><b>Definition</b> <a href="add__product_8php_source.html#l00065">add_product.php:65</a></div></div>
 <div class="ttc" id="aregistration__form_8php_html_a317e6b9ba189c298e52495e480aefa4c"><div class="ttname"><a href="registration__form_8php.html#a317e6b9ba189c298e52495e480aefa4c">$email_has_error</a></div><div class="ttdeci">$email_has_error</div><div class="ttdef"><b>Definition</b> <a href="registration__form_8php_source.html#l00059">registration_form.php:59</a></div></div>
 <div class="ttc" id="aregistration__form_8php_html_a336ad407bac86cf3106656ff5f5416e5"><div class="ttname"><a href="registration__form_8php.html#a336ad407bac86cf3106656ff5f5416e5">$name_value</a></div><div class="ttdeci">$name_value</div><div class="ttdef"><b>Definition</b> <a href="registration__form_8php_source.html#l00045">registration_form.php:45</a></div></div>
 <div class="ttc" id="aregistration__form_8php_html_a4ef1d1fcc6cbc1f24c01fae6f08aaa45"><div class="ttname"><a href="registration__form_8php.html#a4ef1d1fcc6cbc1f24c01fae6f08aaa45">$login_error_text</a></div><div class="ttdeci">$login_error_text</div><div class="ttdef"><b>Definition</b> <a href="registration__form_8php_source.html#l00029">registration_form.php:29</a></div></div>

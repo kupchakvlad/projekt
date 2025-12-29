@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
 }
 
 /**
- * Konfigurační proměnné pro připojení k databázi.
+ * @brief Konfigurační proměnné pro připojení k databázi.
  * @var string $host Hostitel databáze (výchozí: localhost).
  * @var string $username Uživatelské jméno pro DB.
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
@@ -36,7 +36,7 @@ $password = "webove aplikace";
 $database = "kupchvla";
 
 /**
- * Připojení k databázi MySQL.
+ * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
 
@@ -47,7 +47,7 @@ if (!$connection) {
 }
 
 /**
- * SQL dotaz pro načtení všech uživatelů.
+ * @brief SQL dotaz pro načtení všech uživatelů.
  * Vyberá ID, jméno, email a admin status.
  *
  * @var string $select_users_query SQL dotaz.
@@ -84,7 +84,7 @@ $result = mysqli_query($connection, $select_users_query);
         <?php
 
         /**
-         * Výpis řádků tabulky s uživateli.
+         * @brief Výpis řádků tabulky s uživateli.
          * Pokud jsou data, prochází výsledky a generuje řádky s odkazy na akce.
          * Používá htmlspecialchars pro bezpečné vypsání ID v URL.
          */
