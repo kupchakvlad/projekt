@@ -8,11 +8,10 @@
  *
  * Výstup je ve formátu plain text, každý řádek je jedno slabé heslo.
  *
- *
  * @see registration_form.js Použití v AJAX požadavku pro kontrolu slabých hesel.
  * @see registration.php Server-side validace také kontroluje slabá hesla (pro bezpečnost).
  *
- * @return void Vypíše obsah vzdáleného souboru passwords.txt a ukončí skript.
+ * @return Vypíše obsah vzdáleného souboru passwords.txt a ukončí skript.
  */
 
 header("Content-Type: text/plain; charset=utf-8");

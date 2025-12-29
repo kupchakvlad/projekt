@@ -116,7 +116,6 @@ Variables</h2></td></tr>
 <p>Backend skript pro nastavení cookie s preferencí tmavého režimu.</p>
 <p>Tento soubor je volán přes AJAX (POST požadavek) z různých JavaScript souborů (např. account.js, add_product.js, main.js, registration_form.js) v okamžiku, kdy uživatel přepíná mezi tmavým a světlým režimem.</p>
 <p>Přijímá nový režim ("dark" nebo "light") v POST parametru <code>mode</code>, nastavuje cookie s názvem <code>mode</code> s platností do konce relace prohlížeče a s cestou platnou pro celý web (<code>/</code>). Skript nevrací žádný výstup (očekává se tichá odpověď pro AJAX).</p>
-<p>@filesource <a class="el" href="set__dark__mode__cookie_8php.html">set_dark_mode_cookie.php</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$_POST,["mode"]</td><td>Očekávané hodnoty: "dark" nebo "light"</td></tr>
