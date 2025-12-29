@@ -11,7 +11,6 @@
  * @see registration_form.php Pro frontend formulář (přihlašovací část).
  * @see main.php Cílová stránka po úspěšném přihlášení.
  */
-
 session_start();
 
 /**

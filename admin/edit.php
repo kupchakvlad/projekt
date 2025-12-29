@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Administrátorská stránka pro editaci údajů uživatele.
  * Tento soubor je přístupný pouze přihlášeným administrátorům.
@@ -14,14 +13,11 @@
  * @see admin.php Zdroj odkazu "Edit" v seznamu uživatelů.
  * @see edit.css Styly editačního formuláře.
  */
-
 session_start();
-
 /**
  * @brief Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud podmínky nejsou splněny, přesměruje na hlavní stránku.
  */
-
 if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['admin'] != 1) {
     header("Location: ../main/main.php");
     exit;
@@ -34,7 +30,6 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
  * @var string $database Název databáze.
  */
-
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -44,7 +39,6 @@ $database = "kupchvla";
  * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
-
 $connection = mysqli_connect($host, $username, $password, $database);
 
 if (!$connection) {
@@ -58,7 +52,6 @@ if (!$connection) {
  *
  * @var int|false|null $id ID uživatele k editaci.
  */
-
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if ($id === false || $id === null) {
     die("Invalid ID");
@@ -73,7 +66,6 @@ if ($id === false || $id === null) {
  * @var string $current_name Aktuální jméno uživatele.
  * @var string $current_email Aktuální email uživatele.
  */
-
 $prefill_query = "SELECT name, email FROM users WHERE id = ?";
 $prefill_stmt = mysqli_prepare($connection, $prefill_query);
 mysqli_stmt_bind_param($prefill_stmt, "i", $id);

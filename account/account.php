@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Stránka uživatelského profilu / účtu (My Account).
  * Tento soubor je přístupný pouze přihlášeným uživatelům.
@@ -14,14 +13,12 @@
  * @see account.js JavaScript pro dark mode a navigaci.
  * @see logOut.php Odhlášení uživatele.
  */
-
 session_start();
 
 /**
  * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
-
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
@@ -33,7 +30,6 @@ if (!isset($_SESSION["user_id"])) {
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
  */
-
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
@@ -43,7 +39,6 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
  * @var string $database Název databáze.
  */
-
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -53,7 +48,6 @@ $database = "kupchvla";
  * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
-
 $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
 
@@ -66,7 +60,6 @@ if (!$connection) die("Connect failed: " . mysqli_connect_error());
  * @var string $name Aktuální jméno uživatele.
  * @var string $email Aktuální email uživatele.
  */
-
 $user_id = $_SESSION["user_id"];
 $query = "SELECT name, email FROM users WHERE id = ?";
 $stmt = mysqli_prepare($connection, $query);

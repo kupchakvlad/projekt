@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Backend skript pro přepnutí administrátorského oprávnění uživatele.
  * Tento soubor je přístupný pouze přihlášeným administrátorům.
@@ -12,7 +11,6 @@
  *
  * @see admin.php Zdroj odkazu "Change Admin" v tabulce uživatelů.
  */
-
 session_start();
 
 /**
@@ -22,7 +20,6 @@ session_start();
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
  * @var string $database Název databáze.
  */
-
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -32,7 +29,6 @@ $database = "kupchvla";
  * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
-
 $connection = mysqli_connect($host, $username, $password, $database);
 
 if (!$connection) {
@@ -43,7 +39,6 @@ if (!$connection) {
  * @brief Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud podmínky nejsou splněny, přesměruje na hlavní stránku.
  */
-
 if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION["admin"] != 1) {
     header("Location: ../main/main.php");
     exit;
@@ -53,7 +48,6 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION["adm
  * @brief Kontrola existence ID uživatele v GET parametru.
  * Pokud chybí, přesměruje zpět na admin panel.
  */
-
 if (!isset($_GET["id"])) {
     header("Location: admin.php");
     exit;
@@ -65,14 +59,12 @@ if (!isset($_GET["id"])) {
  *
  * @var int $user_id ID cílového uživatele.
  */
-
 $user_id = intval($_GET["id"]);
 
 /**
  * @brief Ochrana před změnou vlastního admin statusu.
  * Administrátor si nemůže odebrat vlastní práva touto cestou.
  */
-
 if ($user_id === intval($_SESSION["user_id"])) {
     header("Location: admin.php");
     exit;
@@ -86,7 +78,6 @@ if ($user_id === intval($_SESSION["user_id"])) {
  * @var mysqli_stmt $stmt Prepared statement pro SELECT.
  * @var mysqli_result $result Výsledek dotazu.
  */
-
 $query = "SELECT admin FROM users WHERE id = ?";
 $stmt = mysqli_prepare($connection, $query);
 mysqli_stmt_bind_param($stmt, "i", $user_id);
@@ -97,7 +88,6 @@ $result = mysqli_stmt_get_result($stmt);
  * @brief Určení nové hodnoty admin statusu (přepnutí 0 ↔ 1).
  * @var int $new_admin_value Nová hodnota (0 nebo 1).
  */
-
 if ($row = mysqli_fetch_assoc($result)) {
     if ($row["admin"] == 1) {
         $new_admin_value = 0;
@@ -118,7 +108,6 @@ mysqli_stmt_close($stmt);
  * @var string $update_query SQL UPDATE dotaz.
  * @var mysqli_stmt $update_stmt Prepared statement pro UPDATE.
  */
-
 $update_query = "UPDATE users SET admin = ? WHERE id = ?";
 $update_stmt = mysqli_prepare($connection, $update_query);
 mysqli_stmt_bind_param($update_stmt, "ii", $new_admin_value, $user_id);

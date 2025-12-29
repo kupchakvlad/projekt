@@ -1,5 +1,4 @@
 <?php
-
 /**
  * AJAX pro filtrování a paginaci produktů.
  * Tento soubor zpracovává GET parametry z frontend filtru (main.js), sestavuje dynamický SQL query
@@ -23,7 +22,6 @@
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
  * @var string $database Název databáze.
  */
-
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -33,7 +31,6 @@ $database = "kupchvla";
  * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
-
 $conn = mysqli_connect($host, $username, $password, $database);
 
 if (!$conn) {
@@ -51,7 +48,6 @@ if (!$conn) {
  * @var string $season Sezóna (výchozí: "").
  * @var int $page Číslo stránky (výchozí: 1, min 1).
  */
-
 if (isset($_GET["search"])) {
     $search = $_GET["search"];
 } else {
@@ -96,14 +92,12 @@ if ($page < 1) {
  * @brief Počet produktů na jednu stránku.
  * @var int $perPage Fixní hodnota 12 produktů na stránku.
  */
-
 $perPage = 12;
 
 /**
  * @brief Základní SQL query s cenovým rozsahem.
  * @var string $req SQL dotaz, který se postupně rozšiřuje podle filtrů.
  */
-
 $req = "SELECT * FROM products WHERE price BETWEEN $min AND $max";
 
 if ($search !="") {
@@ -123,7 +117,6 @@ if ($size > 27) {
 /**
  * @brief Přidání řazení podle ID descending.
  */
-
 $req = $req . " ORDER BY id DESC";
 
 /**
@@ -131,7 +124,6 @@ $req = $req . " ORDER BY id DESC";
  * @var mysqli_result $final_request Výsledek SQL dotazu.
  * @var array $all_products Pole všech produktů, které prošly filtrem.
  */
-
 $final_request = mysqli_query($conn, $req);
 
 $all_products = [];
@@ -145,7 +137,6 @@ while($row = mysqli_fetch_assoc($final_request)) {
  * @var int $totalProducts Celkový počet filtrovaných produktů.
  * @var int $totalPages Celkový počet stránek (zaokrouhleno nahoru).
  */
-
 $totalProducts = count($all_products);
 $totalPages = ceil($totalProducts / $perPage);
 
@@ -156,7 +147,6 @@ $pageProducts = array_slice($all_products, $offset, $perPage);
  * @brief Výpis HTML karet produktů pro aktuální stránku.
  * Pokud nejsou žádné produkty, vypíše zprávu "No products found".
  */
-
 if (count($pageProducts) > 0) {
      foreach ($pageProducts as $product) {
         $images = explode(',', $product['file_path']);
@@ -179,7 +169,6 @@ if (count($pageProducts) > 0) {
 /**
  * @brief Oprava stránky, pokud je požadována neexistující stránka.
  */
-
 if ($page > $totalPages && $totalPages > 0) {
     $page = $totalPages;
 }
@@ -189,7 +178,6 @@ if ($page > $totalPages && $totalPages > 0) {
  * Zobrazí tlačítka Prev/Next a čísla stránek (s ellipsis pro více než 5 stránek).
  * Zobrazí se pouze pokud je více než 1 stránka.
  */
-
 if ($totalPages > 1) {
     echo '<div class="pagination">';
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Stránka detailu produktu.
  * Tento soubor zobrazuje detail jednoho produktu na základě ID z GET parametru.
@@ -15,14 +14,11 @@
  * @see product.css Pro styly detailu produktu.
  * @see products.js Pro JavaScript ovládání galerie a tlačítka "Buy".
  */
-
 session_start();
-
 /**
  * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
-
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
@@ -34,7 +30,6 @@ if (!isset($_SESSION["user_id"])) {
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
  */
-
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
@@ -44,7 +39,6 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
  * @var string $database Název databáze.
  */
-
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -54,7 +48,6 @@ $database = "kupchvla";
  * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
-
 $conn = mysqli_connect($host, $username, $password, $database);
 if (!$conn) die("DB error");
 
@@ -62,14 +55,12 @@ if (!$conn) die("DB error");
  * @brief Kontrola existence ID produktu v URL.
  * Pokud GET parametr "id" chybí, ukončí skript s chybovou zprávou.
  */
-
 if (!isset($_GET["id"])) die("This product does not exist");
 
 /**
  * @brief ID produktu z GET parametru (přetypováno na integer pro bezpečnost).
  * @var int $id ID produktu z URL.
  */
-
 $id = (int) $_GET['id'];
 
 /**
@@ -78,7 +69,6 @@ $id = (int) $_GET['id'];
  *
  * @var string $query SQL dotaz.
  */
-
 $query = "
     SELECT p.*, u.name AS user_name
     FROM products p
@@ -90,7 +80,6 @@ $query = "
  * @var mysqli_result $result Výsledek dotazu.
  * @var array|null $product Pole s daty produktu nebo null, pokud neexistuje.
  */
-
 $result = mysqli_query($conn, $query);
 $product = mysqli_fetch_array($result);
 if (!$product) die("This product does not exist");
@@ -102,12 +91,10 @@ if (!$product) die("This product does not exist");
  *
  * @var string $added_date Formátované datum přidání produktu.
  */
-
 $added_date = 'Unknown';
 if (!empty($product['created_at'])) {
     $added_date = date('d M Y', strtotime($product['created_at']));
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -131,13 +118,11 @@ if (!empty($product['created_at'])) {
 
     <div class="product-gallery" id="productGallery">
         <?php
-
                 /**
                  * @brief Zpracování a výpis obrázků produktu.
                  * Cesta k obrázkům je uložena jako čárkou oddělený seznam v sloupci file_path.
                  * Každá cesta se trimuje a převádí na veřejnou URL.
                  */
-
                 $images = explode(',', $product['file_path']);
                 foreach ($images as $img) {
                     $img_url = str_replace('/home/kupchvla/www', 'https://zwa.toad.cz/~kupchvla', trim($img));

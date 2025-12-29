@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Backend skript pro uložení editovaných údajů uživatele (administrátorská akce).
  * Tento soubor je přístupný pouze přihlášeným administrátorům.
@@ -13,14 +12,12 @@
  * @see edit.php Frontend formulář pro editaci uživatele.
  * @see admin.php Cílová stránka po uložení (seznam uživatelů).
  */
-
 session_start();
 
 /**
  * @brief Kontrola oprávnění – pouze přihlášený administrátor.
  * Pokud podmínky nejsou splněny, přesměruje na hlavní stránku.
  */
-
 if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['admin'] != 1) {
     header("Location: ../main/main.php");
     exit;
@@ -33,7 +30,6 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION["admin"]) || $_SESSION['adm
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
  * @var string $database Název databáze.
  */
-
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -43,7 +39,6 @@ $database = "kupchvla";
  * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
-
 $connection = mysqli_connect($host, $username, $password, $database);
 
 if (!$connection) {
@@ -54,7 +49,6 @@ if (!$connection) {
  * @brief Kontrola existence ID uživatele v GET parametru.
  * Pokud chybí, přesměruje zpět na admin panel.
  */
-
 if (!isset($_GET["id"])) {
     header("Location: admin.php");
     exit;
@@ -67,7 +61,6 @@ if (!isset($_GET["id"])) {
  *
  * @var int|false $id ID uživatele k editaci.
  */
-
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if ($id === false) {
     die("Invalid ID");
@@ -82,7 +75,6 @@ if ($id === false) {
  * @var string $username Očištěné jméno uživatele (trim).
  * @var string $email Očištěný email uživatele (trim).
  */
-
 if (isset($_POST["edit"]) && !empty($_POST["edited_username"]) && !empty($_POST["edited_email"]) && filter_var($_POST["edited_email"], FILTER_VALIDATE_EMAIL)) {
 
     $username = trim($_POST["edited_username"]);
@@ -95,7 +87,6 @@ if (isset($_POST["edit"]) && !empty($_POST["edited_username"]) && !empty($_POST[
      * @var string $edit_query SQL UPDATE dotaz.
      * @var mysqli_stmt $stmt Prepared statement pro UPDATE.
      */
-
     $edit_query = "UPDATE `users` SET name = ?, email = ? WHERE id = ?";
     $stmt = mysqli_prepare($connection, $edit_query);
     mysqli_stmt_bind_param($stmt, "ssi", $username, $email, $id);

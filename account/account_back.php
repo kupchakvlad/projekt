@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Backend skript pro uložení změn v uživatelském profilu.
  * Tento soubor zpracovává POST data z formuláře na account.php.
@@ -12,14 +11,12 @@
  *
  * @see account.php Frontend stránka s formulářem pro úpravu profilu.
  */
-
 session_start();
 
 /**
  * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
@@ -32,7 +29,6 @@ if (!isset($_SESSION['user_id'])) {
  * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
  * @var string $database Název databáze.
  */
-
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
@@ -42,7 +38,6 @@ $database = "kupchvla";
  * @brief Připojení k databázi MySQL.
  * @var mysqli $connection Objekt připojení.
  */
-
 $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
 
@@ -54,7 +49,6 @@ if (!$connection) die("Connect failed: " . mysqli_connect_error());
  * @var string $new_email Nový email uživatele.
  * @var string $new_password Nové heslo (volitelné, může být prázdné).
  */
-
 $user_id = $_SESSION['user_id'];
 $new_name = $_POST['username'];
 $new_email = $_POST['email'];
@@ -69,7 +63,6 @@ $new_password = $_POST['password'];
  * @var string $query SQL UPDATE dotaz (dynamicky podle přítomnosti hesla).
  * @var mysqli_stmt $stmt Prepared statement pro UPDATE.
  */
-
 if (!empty($new_password)) {
     $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
     $query = "UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?";
@@ -87,7 +80,6 @@ mysqli_stmt_close($stmt);
 /**
  * @brief Přesměrování zpět na stránku profilu po uložení změn.
  */
-
 header("Location: account.php");
 exit;
 ?>

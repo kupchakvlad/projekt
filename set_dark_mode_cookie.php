@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file set_dark_mode_cookie.php
  * Backend skript pro nastavení cookie s preferencí tmavého režimu.
@@ -25,7 +24,5 @@ $new_mode = $_POST["mode"];
  *
  * Cookie platí do zavření prohlížeče (session cookie).
  */
-
 setcookie("mode", $new_mode, 0, '/');
-
 ?>

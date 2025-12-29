@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file logout.php
  *
@@ -8,7 +7,6 @@
  * session data a session se kompletně zničí.
  * Nakonec je uživatel přesměrován na registrační / přihlašovací stránku.
  */
-
 session_start();
 session_unset();
 session_destroy();

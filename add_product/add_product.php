@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Stránka pro přidání nového produktu.
  * Tento soubor je přístupný pouze přihlášeným uživatelům.
@@ -13,14 +12,12 @@
  * @see add_product.css Styly formuláře.
  * @see add_product.js JavaScript pro slider velikosti, dark mode a klientskou validaci.
  */
-
 session_start();
 
 /**
  * @brief Kontrola přihlášení uživatele.
  * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
  */
-
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
@@ -32,7 +29,6 @@ if (!isset($_SESSION["user_id"])) {
  *
  * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
  */
-
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
 
 /**
@@ -45,7 +41,6 @@ $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'd
  * @var string $product_size_value Předvyplněná velikost (výchozí '36').
  * @var string $product_price_value Předvyplněná cena.
  */
-
 $product_name_value = $_SESSION['add_product_data']['product_name'] ?? '';
 $product_fabric_value = $_SESSION['add_product_data']['product_fabric'] ?? '';
 $product_season_value = $_SESSION['add_product_data']['product_season'] ?? '';
@@ -61,10 +56,8 @@ $product_price_value = $_SESSION['add_product_data']['product_price'] ?? '';
  * @var string $price_error Chybová zpráva pro cenu.
  * @var string $name_error Chybová zpráva pro název produktu.
  */
-
 $errors = $_SESSION['add_product_errors'] ?? [];
 unset($_SESSION['add_product_data'], $_SESSION['add_product_errors']);
-
 $photo_error = $errors['photo'] ?? '';
 $price_error = $errors['price'] ?? '';
 $name_error = $errors['name'] ?? '';

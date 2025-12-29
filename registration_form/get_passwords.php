@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @brief Vrací obsah souboru
  * @brief s běžnými/slabými hesly (https://zwa.toad.cz/passwords.txt) ve formátu plain text.
@@ -14,7 +13,6 @@
  *
  * @see registration_form.js Použití v AJAX požadavku pro kontrolu slabých hesel.
  */
-
 header("Content-Type: text/plain; charset=utf-8");
 echo file_get_contents("https://zwa.toad.cz/passwords.txt");
 ?>
