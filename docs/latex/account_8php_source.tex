@@ -1,0 +1,76 @@
+\doxysection{account.\+php}
+\hypertarget{account_8php_source}{}\label{account_8php_source}\index{account/account.php@{account/account.php}}
+\mbox{\hyperlink{account_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00017}00017\ session\_start();}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00024}00024\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{"{}user\_id"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00025}00025\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../registration\_form/registration\_form.php"{}});}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00036}\mbox{\hyperlink{account_8php_a25fcfe1f44ff29a7918826d202844f23}{00036}}\ \mbox{\hyperlink{account_8php_a25fcfe1f44ff29a7918826d202844f23}{\$dark\_mode\_class}}\ =\ (isset(\$\_COOKIE[\textcolor{stringliteral}{'mode'}])\ \&\&\ \$\_COOKIE[\textcolor{stringliteral}{'mode'}]\ ===\ \textcolor{stringliteral}{'dark'})\ ?\ \textcolor{stringliteral}{'dark'}\ :\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00046}\mbox{\hyperlink{account_8php_a711797613cb863ca0756df789c396bf2}{00046}}\ \mbox{\hyperlink{account_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00047}\mbox{\hyperlink{account_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00047}}\ \mbox{\hyperlink{account_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00048}\mbox{\hyperlink{account_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00048}}\ \mbox{\hyperlink{account_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00049}\mbox{\hyperlink{account_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00049}}\ \mbox{\hyperlink{account_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00056}\mbox{\hyperlink{account_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00056}}\ \mbox{\hyperlink{account_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{account_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{account_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{account_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{account_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00057}00057\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{account_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ die(\textcolor{stringliteral}{"{}Connect\ failed:\ "{}}\ .\ mysqli\_connect\_error());}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00069}00069\ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}}\ =\ \$\_SESSION[\textcolor{stringliteral}{"{}user\_id"{}}];}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00070}\mbox{\hyperlink{account_8php_a8d868789795b3d842a1d4dc96a4ad900}{00070}}\ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}}\ =\ \textcolor{stringliteral}{"{}SELECT\ name,\ email\ FROM\ users\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00071}00071\ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{account_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}});}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00072}00072\ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}i"{}},\ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}});}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00073}00073\ mysqli\_stmt\_execute(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00074}00074\ mysqli\_stmt\_bind\_result(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \$name,\ \$email);}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00075}00075\ mysqli\_stmt\_fetch(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00076}00076\ mysqli\_stmt\_close(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00077}00077\ ?>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00079}00079\ <!DOCTYPE\ html>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00080}00080\ <html\ lang=\textcolor{stringliteral}{"{}en"{}}>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00081}00081\ <head>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00082}00082\ \ \ \ \ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00083}\mbox{\hyperlink{account_8php_ae07b1cda203ea0369560b996ba752684}{00083}}\ \ \ \ \ <meta\ name=\textcolor{stringliteral}{"{}viewport"{}}\ content=\textcolor{stringliteral}{"{}width=device-\/width,\ initial-\/scale=1.0"{}}>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00084}00084\ \ \ \ \ <title>My\ Account\ -\/\ Botovo</title>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00085}00085\ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}account.css"{}}>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00086}00086\ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}account.js"{}}\ defer></script>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00087}00087\ </head>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00088}00088\ <body\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}<?php\ echo\ \$dark\_mode\_class;\ ?>"{}}>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00090}00090\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00091}00091\ <button\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}back-\/button"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}top-\/button"{}}>\ ←\ </button>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00092}00092\ <button\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}dark-\/mode-\/toggle"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}top-\/button"{}}>\ Dark\ Mode</button>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00094}00094\ <header>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00095}00095\ \ \ \ \ <h1>My\ Account</h1>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00096}00096\ </header>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00098}00098\ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}user-\/panel"{}}>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00099}00099\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}welcome-\/text"{}}>Welcome,</div>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00100}00100\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}user-\/name"{}}><?php\ echo\ htmlspecialchars(\$name);\ ?></div>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00101}00101\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}user-\/email"{}}><?php\ echo\ htmlspecialchars(\$email);\ ?></div>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00102}00102\ </div>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00104}00104\ <form\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}profile-\/form"{}}\ method=\textcolor{stringliteral}{"{}POST"{}}\ action=\textcolor{stringliteral}{"{}account\_back.php"{}}>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00105}00105\ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}username"{}}>Username</label>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00106}00106\ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}username"{}}\ name=\textcolor{stringliteral}{"{}username"{}}\ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$name);\ ?>"{}}\ required>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00108}00108\ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}email"{}}>Email</label>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00109}00109\ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}email"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}email"{}}\ name=\textcolor{stringliteral}{"{}email"{}}\ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$email);\ ?>"{}}\ required>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00111}00111\ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}password"{}}>Password</label>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00112}00112\ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}password"{}}\ name=\textcolor{stringliteral}{"{}password"{}}\ placeholder=\textcolor{stringliteral}{"{}Enter\ new\ password"{}}>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00114}00114\ \ \ \ \ <button\ type=\textcolor{stringliteral}{"{}submit"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}submit-\/button"{}}>Save\ Changes</button>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00116}00116\ \ \ \ \ <a\ href=\textcolor{stringliteral}{"{}logOut.php"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}logout-\/link"{}}>Log\ Out</a>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00117}00117\ </form>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00118}00118\ </body>}
+\DoxyCodeLine{\Hypertarget{account_8php_source_l00119}00119\ </html>}
+
+\end{DoxyCode}

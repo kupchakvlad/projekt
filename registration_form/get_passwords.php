@@ -8,8 +8,6 @@
  *
  * Výstup je ve formátu plain text, každý řádek je jedno slabé heslo.
  *
- * @file get_passwords.php
- *
  * @return Vypíše obsah vzdáleného souboru passwords.txt a ukončí skript.
  * @see registration.php Server-side validace také kontroluje slabá hesla (pro bezpečnost).
  *

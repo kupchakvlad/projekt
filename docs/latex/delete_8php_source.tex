@@ -1,0 +1,39 @@
+\doxysection{delete.\+php}
+\hypertarget{delete_8php_source}{}\label{delete_8php_source}\index{admin/delete.php@{admin/delete.php}}
+\mbox{\hyperlink{delete_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00015}00015\ session\_start();}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00022}00022\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'user\_id'}])\ ||\ !isset(\$\_SESSION[\textcolor{stringliteral}{"{}admin"{}}])\ ||\ \$\_SESSION[\textcolor{stringliteral}{'admin'}]\ !=\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00023}00023\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../main/main.php"{}});}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00035}\mbox{\hyperlink{delete_8php_a711797613cb863ca0756df789c396bf2}{00035}}\ \mbox{\hyperlink{delete_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00036}\mbox{\hyperlink{delete_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00036}}\ \mbox{\hyperlink{delete_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00037}\mbox{\hyperlink{delete_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00037}}\ \mbox{\hyperlink{delete_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00038}\mbox{\hyperlink{delete_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00038}}\ \mbox{\hyperlink{delete_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00045}\mbox{\hyperlink{delete_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00045}}\ \mbox{\hyperlink{delete_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{delete_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{delete_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{delete_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{delete_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00047}00047\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{delete_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ \{}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00048}00048\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connection\ failed:\ \(\backslash\)n"{}}.\ mysqli\_connect\_error());}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00056}\mbox{\hyperlink{delete_8php_af0fcd925f00973e32f7214859dfb3c6b}{00056}}\ \mbox{\hyperlink{delete_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}}\ =\ \$\_GET[\textcolor{stringliteral}{'id'}];}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00066}\mbox{\hyperlink{delete_8php_a5ee94f102f0064cfee30600ef6956c84}{00066}}\ \mbox{\hyperlink{delete_8php_a5ee94f102f0064cfee30600ef6956c84}{\$delete\_user\_query}}\ =\ \textcolor{stringliteral}{"{}DELETE\ FROM\ users\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00067}\mbox{\hyperlink{delete_8php_af27a9140d5f2658693e7fd107f716449}{00067}}\ \mbox{\hyperlink{delete_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{delete_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{delete_8php_a5ee94f102f0064cfee30600ef6956c84}{\$delete\_user\_query}});}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00068}00068\ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{delete_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}i"{}},\ \mbox{\hyperlink{delete_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}});}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00076}00076\ \textcolor{keywordflow}{if}\ (mysqli\_stmt\_execute(\mbox{\hyperlink{delete_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}))\ \{}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00077}00077\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ admin.php"{}});}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00079}\mbox{\hyperlink{delete_8php_a52a1bc2137d271febff4ec5d050b1d29}{00079}}\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00080}00080\ \ \ \ \ echo\ \textcolor{stringliteral}{"{}User\ cannot\ be\ deleted"{}};}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{delete_8php_source_l00082}00082\ ?>}
+
+\end{DoxyCode}

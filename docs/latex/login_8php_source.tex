@@ -1,0 +1,59 @@
+\doxysection{login.\+php}
+\hypertarget{login_8php_source}{}\label{login_8php_source}\index{registration\_form/login.php@{registration\_form/login.php}}
+\mbox{\hyperlink{login_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00014}00014\ session\_start();}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00025}\mbox{\hyperlink{login_8php_a711797613cb863ca0756df789c396bf2}{00025}}\ \mbox{\hyperlink{login_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00026}\mbox{\hyperlink{login_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00026}}\ \mbox{\hyperlink{login_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00027}\mbox{\hyperlink{login_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00027}}\ \mbox{\hyperlink{login_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00028}\mbox{\hyperlink{login_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00028}}\ \mbox{\hyperlink{login_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00037}\mbox{\hyperlink{login_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00037}}\ \mbox{\hyperlink{login_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{login_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{login_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{login_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{login_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00039}00039\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{login_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00040}00040\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connect\ failed:\ \(\backslash\)n"{}}.\ mysqli\_connect\_error());}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00052}00052\ \textcolor{keywordflow}{if}\ (isset(\$\_POST[\textcolor{stringliteral}{'login\_submit'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00061}00061\ \ \ \ \ \$login\_email\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}login\_email"{}}]);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00062}00062\ \ \ \ \ \$login\_password\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}login\_password"{}}]);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00063}00063\ \ \ \ \ \$error\_message\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ Validace:\ Email\ a\ heslo\ musí\ být\ neprázdné.}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (empty(\$login\_email)\ ||\ empty(\$login\_password))\ \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00067}00067\ \ \ \ \ \ \ \ \ \$error\_message\ =\ \textcolor{stringliteral}{"{}Email\ and\ password\ are\ required"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00068}00068\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}}\ =\ \textcolor{stringliteral}{"{}SELECT\ id,\ password,\ admin\ FROM\ users\ WHERE\ email\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{login_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00078}00078\ \ \ \ \ \ \ \ \ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}s"{}},\ \$login\_email);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00079}00079\ \ \ \ \ \ \ \ \ mysqli\_stmt\_execute(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}}\ =\ mysqli\_stmt\_get\_result(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$row\ =\ mysqli\_fetch\_assoc(\mbox{\hyperlink{admin_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}}))\ \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ověření\ hesla\ pomocí\ password\_verify.}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (password\_verify(\$login\_password,\ \$row[\textcolor{stringliteral}{"{}password"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{"{}user\_id"{}}]\ =\ \$row[\textcolor{stringliteral}{"{}id"{}}];}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{"{}admin"{}}]\ =\ \$row[\textcolor{stringliteral}{"{}admin"{}}];}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mysqli\_stmt\_close(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../main/main.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$error\_message\ =\ \textcolor{stringliteral}{"{}Incorrect\ password"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \$error\_message\ =\ \textcolor{stringliteral}{"{}User\ with\ this\ email\ doesn't\ exist"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ Uložení\ erroru\ a\ dat\ do\ session\ a\ přesměrování\ zpět.}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00098}00098\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'login\_error'}]\ =\ \$error\_message;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00099}00099\ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'login\_data'}]\ =\ [}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}email"{}}\ =>\ \$login\_email,}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00101}00101\ \ \ \ \ ];}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00102}00102\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ registration\_form.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00105}00105\ ?>}
+
+\end{DoxyCode}

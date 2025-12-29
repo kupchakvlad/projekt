@@ -1,0 +1,103 @@
+\doxysection{add\+\_\+product\+\_\+back.\+php}
+\hypertarget{add__product__back_8php_source}{}\label{add__product__back_8php_source}\index{add\_product/add\_product\_back.php@{add\_product/add\_product\_back.php}}
+\mbox{\hyperlink{add__product__back_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00016}00016\ session\_start();}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00026}\mbox{\hyperlink{add__product__back_8php_a711797613cb863ca0756df789c396bf2}{00026}}\ \mbox{\hyperlink{add__product__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00027}\mbox{\hyperlink{add__product__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00027}}\ \mbox{\hyperlink{add__product__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00028}\mbox{\hyperlink{add__product__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00028}}\ \mbox{\hyperlink{add__product__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00029}\mbox{\hyperlink{add__product__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00029}}\ \mbox{\hyperlink{add__product__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00036}\mbox{\hyperlink{add__product__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00036}}\ \mbox{\hyperlink{add__product__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{add__product__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{add__product__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{add__product__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{add__product__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00038}00038\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{add__product__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00039}00039\ \ \ \ \ die(\textcolor{stringliteral}{"{}Connection\ failed:\ "{}}\ .\ mysqli\_connect\_error());}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00050}00050\ \textcolor{keywordflow}{if}\ (isset(\$\_POST[\textcolor{stringliteral}{"{}submit"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00057}00057\ \ \ \ \ \$upload\_directory\ =\ \textcolor{stringliteral}{"{}/home/kupchvla/www/projekt/photo/"{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}}\ =\ \$\_SESSION[\textcolor{stringliteral}{"{}user\_id"{}}];}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00070}00070\ \ \ \ \ \$product\_name\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}product\_name"{}}]);}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00071}00071\ \ \ \ \ \$product\_fabric\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}product\_fabric"{}}]);}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00072}00072\ \ \ \ \ \$product\_season\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}season"{}}]);}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00073}00073\ \ \ \ \ \$product\_size\ =\ (int)\ trim(\$\_POST[\textcolor{stringliteral}{"{}product\_size"{}}]);}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00074}00074\ \ \ \ \ \$product\_price\ =\ trim(\$\_POST[\textcolor{stringliteral}{"{}product\_price"{}}]);}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00083}00083\ \ \ \ \ \$all\_file\_paths\ =\ [];}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}\ =\ [];}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{if}\ (count(\$\_FILES[\textcolor{stringliteral}{"{}photo"{}}][\textcolor{stringliteral}{"{}name"{}}])\ ===\ 0\ ||\ \$\_FILES[\textcolor{stringliteral}{"{}photo"{}}][\textcolor{stringliteral}{"{}error"{}}][0]\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}[\textcolor{stringliteral}{'photo'}]\ =\ \textcolor{stringliteral}{"{}At\ least\ one\ photo\ is\ required."{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (empty(\$product\_price)\ ||\ !is\_numeric(\$product\_price)\ ||\ (\textcolor{keywordtype}{float})\$product\_price\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}[\textcolor{stringliteral}{'price'}]\ =\ \textcolor{stringliteral}{"{}Valid\ price\ greater\ than\ 0\ is\ required."{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (empty(\$product\_name))\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}[\textcolor{stringliteral}{'name'}]\ =\ \textcolor{stringliteral}{"{}Product\ name\ is\ required."{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (!empty(\mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00102}00102\ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'add\_product\_errors'}]\ =\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00103}00103\ \ \ \ \ \ \ \ \ \$\_SESSION[\textcolor{stringliteral}{'add\_product\_data'}]\ =\ [}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'product\_name'}\ =>\ \$product\_name,}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'product\_fabric'}\ =>\ \$product\_fabric,}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'product\_season'}\ =>\ \$product\_season,}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'product\_size'}\ =>\ \$product\_size,}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'product\_price'}\ =>\ \$product\_price}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00109}00109\ \ \ \ \ \ \ \ \ ];}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00110}00110\ \ \ \ \ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ add\_product.php"{}});}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{for}\ (\$i\ =\ 0;\ \$i\ <\ count(\$\_FILES[\textcolor{stringliteral}{"{}photo"{}}][\textcolor{stringliteral}{"{}name"{}}]);\ \$i++)\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$\_FILES[\textcolor{stringliteral}{"{}photo"{}}][\textcolor{stringliteral}{"{}error"{}}][\$i]\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \$file\_name\ =\ time()\ .\ \textcolor{stringliteral}{"{}\_"{}}\ .\ \$i\ .\ \textcolor{stringliteral}{"{}\_"{}}\ .\ basename(\$\_FILES[\textcolor{stringliteral}{"{}photo"{}}][\textcolor{stringliteral}{"{}name"{}}][\$i]);}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \$file\_tmp\ =\ \$\_FILES[\textcolor{stringliteral}{"{}photo"{}}][\textcolor{stringliteral}{"{}tmp\_name"{}}][\$i];}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \$file\_path\ =\ \$upload\_directory\ .\ \$file\_name;}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (move\_uploaded\_file(\$file\_tmp,\ \$file\_path))\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$all\_file\_paths[]\ =\ \$file\_path;}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00136}00136\ \ \ \ \ \$final\_file\_paths\ =\ implode(\textcolor{charliteral}{','},\ \$all\_file\_paths);}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00137}00137\ \ \ \ \ \$product\_price\ =\ (float)\ \$product\_price;}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00147}00147\ \ \ \ \ \$insert\_product\_query\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ products\ (}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00148}00148\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ user\_id,\ file\_path,\ name,\ fabric,\ season,\ size,\ price}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00149}00149\ \textcolor{stringliteral}{\ \ \ \ )\ VALUES\ (?,\ ?,\ ?,\ ?,\ ?,\ ?,\ ?)"{}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{add__product__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \$insert\_product\_query);}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00153}00153\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}})\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00155}00155\ \ \ \ \ \ \ \ \ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}issssii"{}},\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00156}00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}},\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00157}00157\ \ \ \ \ \ \ \ \ \$final\_file\_paths,}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00158}00158\ \ \ \ \ \ \ \ \ \$product\_name,\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00159}00159\ \ \ \ \ \ \ \ \ \$product\_fabric,\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00160}00160\ \ \ \ \ \ \ \ \ \$product\_season,\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00161}00161\ \ \ \ \ \ \ \ \ \$product\_size,\ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00162}00162\ \ \ \ \ \ \ \ \ \$product\_price}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00163}00163\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00164}00164\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mysqli\_stmt\_execute(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}))\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../main/main.php"{}});}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00173}00173\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ die(\textcolor{stringliteral}{"{}Execution\ failed:\ "{}}\ .\ mysqli\_stmt\_error(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}));}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00175}00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00176}00176\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00177}00177\ \ \ \ \ \ \ \ \ die(\textcolor{stringliteral}{"{}Statement\ preparation\ failed."{}});}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00178}00178\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00179}00179\ \}}
+\DoxyCodeLine{\Hypertarget{add__product__back_8php_source_l00180}00180\ ?>}
+
+\end{DoxyCode}

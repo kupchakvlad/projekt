@@ -1,0 +1,103 @@
+\doxysection{product.\+php}
+\hypertarget{product_8php_source}{}\label{product_8php_source}\index{main/product.php@{main/product.php}}
+\mbox{\hyperlink{product_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00018}00018\ session\_start();}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00025}00025\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{"{}user\_id"{}}]))\ \{}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00026}00026\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../registration\_form/registration\_form.php"{}});}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00037}\mbox{\hyperlink{product_8php_a25fcfe1f44ff29a7918826d202844f23}{00037}}\ \mbox{\hyperlink{product_8php_a25fcfe1f44ff29a7918826d202844f23}{\$dark\_mode\_class}}\ =\ (isset(\$\_COOKIE[\textcolor{stringliteral}{'mode'}])\ \&\&\ \$\_COOKIE[\textcolor{stringliteral}{'mode'}]\ ===\ \textcolor{stringliteral}{'dark'})\ ?\ \textcolor{stringliteral}{'dark'}\ :\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00047}\mbox{\hyperlink{product_8php_a711797613cb863ca0756df789c396bf2}{00047}}\ \mbox{\hyperlink{product_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00048}\mbox{\hyperlink{product_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00048}}\ \mbox{\hyperlink{product_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00049}\mbox{\hyperlink{product_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00049}}\ \mbox{\hyperlink{product_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00050}\mbox{\hyperlink{product_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00050}}\ \mbox{\hyperlink{product_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00057}\mbox{\hyperlink{product_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{00057}}\ \mbox{\hyperlink{product_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}}\ =\ mysqli\_connect(\mbox{\hyperlink{product_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{product_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{product_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{product_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00058}00058\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{product_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}})\ die(\textcolor{stringliteral}{"{}DB\ error"{}});}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00065}00065\ \textcolor{keywordflow}{if}\ (!isset(\$\_GET[\textcolor{stringliteral}{"{}id"{}}]))\ die(\textcolor{stringliteral}{"{}This\ product\ does\ not\ exist"{}});}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00072}\mbox{\hyperlink{product_8php_ae97941710d863131c700f069b109991e}{00072}}\ \mbox{\hyperlink{product_8php_ae97941710d863131c700f069b109991e}{\$id}}\ =\ (int)\ \$\_GET[\textcolor{stringliteral}{'id'}];}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00081}\mbox{\hyperlink{product_8php_af59a5f7cd609e592c41dc3643efd3c98}{00081}}\ \mbox{\hyperlink{product_8php_af59a5f7cd609e592c41dc3643efd3c98}{\$query}}\ =\ \textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00082}00082\ \textcolor{stringliteral}{\ \ \ \ SELECT\ p.*,\ u.name\ AS\ user\_name}}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00083}00083\ \textcolor{stringliteral}{\ \ \ \ FROM\ products\ p}}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00084}00084\ \textcolor{stringliteral}{\ \ \ \ JOIN\ users\ u\ ON\ p.user\_id\ =\ u.id}}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00085}00085\ \textcolor{stringliteral}{\ \ \ \ WHERE\ p.id\ =\ \$id"{}};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00093}\mbox{\hyperlink{product_8php_a112ef069ddc0454086e3d1e6d8d55d07}{00093}}\ \mbox{\hyperlink{product_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}}\ =\ mysqli\_query(\mbox{\hyperlink{product_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn}},\ \mbox{\hyperlink{product_8php_af59a5f7cd609e592c41dc3643efd3c98}{\$query}});}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00094}\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{00094}}\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}\ =\ mysqli\_fetch\_array(\mbox{\hyperlink{product_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result}});}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00095}00095\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}})\ die(\textcolor{stringliteral}{"{}This\ product\ does\ not\ exist"{}});}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00105}\mbox{\hyperlink{product_8php_a7d3cdde379f81d25f7baae108ba8e320}{00105}}\ \mbox{\hyperlink{product_8php_a7d3cdde379f81d25f7baae108ba8e320}{\$added\_date}}\ =\ \textcolor{stringliteral}{'Unknown'};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00106}\mbox{\hyperlink{product_8php_a61f68fda6675a8db974b3ec211398bd2}{00106}}\ \textcolor{keywordflow}{if}\ (!empty(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'created\_at'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{product_8php_a7d3cdde379f81d25f7baae108ba8e320}{\$added\_date}}\ =\ date(\textcolor{stringliteral}{'d\ M\ Y'},\ strtotime(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'created\_at'}]));}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00108}00108\ \}}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00110}00110\ ?>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00112}00112\ <!DOCTYPE\ html>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00113}00113\ <html\ lang=\textcolor{stringliteral}{"{}en"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00114}00114\ <head>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00115}00115\ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00116}00116\ <meta\ name=\textcolor{stringliteral}{"{}viewport"{}}\ content=\textcolor{stringliteral}{"{}width=device-\/width,\ initial-\/scale=1.0"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00117}00117\ <title><?=\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{"{}name"{}}];\ ?>\ -\/\ Botovo</title>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00118}00118\ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}product.css"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00119}00119\ <script\ src=\textcolor{stringliteral}{"{}products.js"{}}\ defer></script>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00120}00120\ </head>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00121}00121\ <body\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}<?=\ \$dark\_mode\_class;\ ?>"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00123}00123\ <a\ href=\textcolor{stringliteral}{"{}main.php"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}back-\/link"{}}>←\ Back</a>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00125}00125\ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}product-\/page"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00127}00127\ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}product-\/top"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00128}00128\ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}gallery-\/container"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00129}00129\ \ \ \ \ <button\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}gallery-\/btn\ left"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}scrollLeft"{}}>\&\#10094;</button>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00131}00131\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}product-\/gallery"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}productGallery"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00132}00132\ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00140}\mbox{\hyperlink{product_8php_ab0c7013419fc5ee6238d17eff2554afe}{00140}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{product_8php_ab0c7013419fc5ee6238d17eff2554afe}{\$images}}\ =\ explode(\textcolor{charliteral}{','},\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'file\_path'}]);}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00141}\mbox{\hyperlink{product_8php_ad17618ef02af16a04b18544d03c794cd}{00141}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\mbox{\hyperlink{product_8php_ab0c7013419fc5ee6238d17eff2554afe}{\$images}}\ as\ \$img)\ \{}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$img\_url\ =\ str\_replace(\textcolor{stringliteral}{'/home/kupchvla/www'},\ \textcolor{stringliteral}{'https://zwa.toad.cz/\string~kupchvla'},\ trim(\$img));}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<img\ class="{}product-\/image"{}\ src="{}'}\ .\ \$img\_url\ .\ \textcolor{stringliteral}{'"{}\ alt="{}product"{}>'};}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00146}00146\ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00147}00147\ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00149}00149\ \ \ \ \ <button\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}gallery-\/btn\ right"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}scrollRight"{}}>\&\#10095;</button>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00150}00150\ </div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00154}00154\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}product-\/info"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00155}00155\ \ \ \ \ \ \ <h1><?=\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'name'}]\ ?></h1>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00156}00156\ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}brand"{}}><?=\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'fabric'}]\ ?></div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00157}00157\ \ \ \ \ \ \ <p>Season:\ <?=\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'season'}]\ ?></p>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00158}00158\ \ \ \ \ \ \ <p>Size:\ <?=\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'size'}]\ ?></p>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00159}00159\ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}price"{}}><?=\ \mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'price'}]\ ?>\ CZK</div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00161}00161\ \ \ \ \ \ \ <button\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}buy-\/btn"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}buyBtn"{}}>Buy</button>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00162}00162\ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}buy-\/message"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}buyMessage"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00163}00163\ \ \ \ \ \ \ \ \ Request\ sent\ ✔\ Seller\ will\ contact\ you}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00164}00164\ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00166}00166\ \ \ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}product-\/meta"{}}>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00167}00167\ \ \ \ \ \ \ \ <p>Added\ by:\ <?php\ echo\ htmlspecialchars(\mbox{\hyperlink{product_8php_a67d8e3a58e5644af40e14f6db1504f01}{\$product}}[\textcolor{stringliteral}{'user\_name'}]);\ ?></p>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00168}00168\ \ \ \ \ \ \ \ \ <p>Date:\ <?php\ echo\ \mbox{\hyperlink{product_8php_a7d3cdde379f81d25f7baae108ba8e320}{\$added\_date}};\ ?></p>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00169}00169\ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00170}00170\ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00171}00171\ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00172}00172\ </div>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00173}00173\ </body>}
+\DoxyCodeLine{\Hypertarget{product_8php_source_l00174}00174\ </html>}
+
+\end{DoxyCode}
