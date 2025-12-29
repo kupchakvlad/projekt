@@ -6,8 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxyfile" beforeDir="false" afterPath="$PROJECT_DIR$/Doxyfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/account_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/account_back.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/logOut.php" beforeDir="false" afterPath="$PROJECT_DIR$/account/logOut.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_product/add_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_product/add_product_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_product/add_product_back.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin_handling.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin_handling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit_back.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_back.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration_form/get_passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/get_passwords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration_form/registration_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration_form/registration_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set_dark_mode_cookie.php" beforeDir="false" afterPath="$PROJECT_DIR$/set_dark_mode_cookie.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +167,7 @@
       <workItem from="1766659611011" duration="25105000" />
       <workItem from="1766863700167" duration="1157000" />
       <workItem from="1767032508855" duration="470000" />
-      <workItem from="1767042393526" duration="2338000" />
+      <workItem from="1767042393526" duration="3236000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />

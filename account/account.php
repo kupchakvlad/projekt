@@ -7,6 +7,7 @@
  * umožňuje jejich úpravu a změnu hesla přes formulář (odesílá na account_back.php).
  * Podporuje tmavý režim z cookie, obsahuje tlačítka pro návrat, přepnutí režimu a odhlášení.
  *
+ * @file account.php
  *
  * @see account_back.php Backend pro uložení změn v profilu.
  * @see account.css Styly stránky účtu.

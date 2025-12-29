@@ -7,6 +7,7 @@
  * a zajišťuje bezpečné escapování výstupů pomocí htmlspecialchars.
  * Formuláře odesílají data na backend skripty (registration.php a login.php).
  *
+ * @file registration_form.php
  *
  * @see registration.php Pro backend zpracování registrace.
  * @see login.php Pro backend zpracování přihlášení.

@@ -100,110 +100,110 @@ $(document).ready(function(){initNavTree('add__product__back_8php_source.html','
 <div class="contents">
 <a href="add__product__back_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>&lt;?php</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>session_start();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a711797613cb863ca0756df789c396bf2">   26</a></span><a class="code hl_variable" href="add__product__back_8php.html#a711797613cb863ca0756df789c396bf2">$host</a> = <span class="stringliteral">&quot;localhost&quot;</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">   27</a></span><a class="code hl_variable" href="add__product__back_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a> = <span class="stringliteral">&quot;kupchvla&quot;</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">   28</a></span><a class="code hl_variable" href="add__product__back_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a> = <span class="stringliteral">&quot;webove aplikace&quot;</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">   29</a></span><a class="code hl_variable" href="add__product__back_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a> = <span class="stringliteral">&quot;kupchvla&quot;</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">   36</a></span><a class="code hl_variable" href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a> = mysqli_connect(<a class="code hl_variable" href="add__product__back_8php.html#a711797613cb863ca0756df789c396bf2">$host</a>, <a class="code hl_variable" href="add__product__back_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a>, <a class="code hl_variable" href="add__product__back_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a>, <a class="code hl_variable" href="add__product__back_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordflow">if</span> (!<a class="code hl_variable" href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a>) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    die(<span class="stringliteral">&quot;Connection failed: &quot;</span> . mysqli_connect_error());</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordflow">if</span> (isset($_POST[<span class="stringliteral">&quot;submit&quot;</span>])) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    $upload_directory = <span class="stringliteral">&quot;/home/kupchvla/www/projekt/photo/&quot;</span>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_variable" href="admin__handling_8php.html#af0fcd925f00973e32f7214859dfb3c6b">$user_id</a> = $_SESSION[<span class="stringliteral">&quot;user_id&quot;</span>];</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    $product_name = trim($_POST[<span class="stringliteral">&quot;product_name&quot;</span>]);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    $product_fabric = trim($_POST[<span class="stringliteral">&quot;product_fabric&quot;</span>]);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    $product_season = trim($_POST[<span class="stringliteral">&quot;season&quot;</span>]);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    $product_size = (int) trim($_POST[<span class="stringliteral">&quot;product_size&quot;</span>]);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    $product_price = trim($_POST[<span class="stringliteral">&quot;product_price&quot;</span>]);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    $all_file_paths = [];</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a> = [];</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (count($_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>]) === 0 || $_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;error&quot;</span>][0] != 0) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>[<span class="stringliteral">&#39;photo&#39;</span>] = <span class="stringliteral">&quot;At least one photo is required.&quot;</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span> (empty($product_price) || !is_numeric($product_price) || (<span class="keywordtype">float</span>)$product_price &lt;= 0) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>[<span class="stringliteral">&#39;price&#39;</span>] = <span class="stringliteral">&quot;Valid price greater than 0 is required.&quot;</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (empty($product_name)) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>[<span class="stringliteral">&#39;name&#39;</span>] = <span class="stringliteral">&quot;Product name is required.&quot;</span>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (!empty(<a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>)) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        $_SESSION[<span class="stringliteral">&#39;add_product_errors&#39;</span>] = <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        $_SESSION[<span class="stringliteral">&#39;add_product_data&#39;</span>] = [</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="stringliteral">&#39;product_name&#39;</span> =&gt; $product_name,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="stringliteral">&#39;product_fabric&#39;</span> =&gt; $product_fabric,</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="stringliteral">&#39;product_season&#39;</span> =&gt; $product_season,</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="stringliteral">&#39;product_size&#39;</span> =&gt; $product_size,</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="stringliteral">&#39;product_price&#39;</span> =&gt; $product_price</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        ];</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        header(<span class="stringliteral">&quot;Location: add_product.php&quot;</span>);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <a class="code hl_variable" href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a>;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">for</span> ($i = 0; $i &lt; count($_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>]); $i++) {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">if</span> ($_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;error&quot;</span>][$i] == 0) {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            $file_name = time() . <span class="stringliteral">&quot;_&quot;</span> . $i . <span class="stringliteral">&quot;_&quot;</span> . basename($_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>][$i]);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            $file_tmp = $_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;tmp_name&quot;</span>][$i];</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            $file_path = $upload_directory . $file_name;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordflow">if</span> (move_uploaded_file($file_tmp, $file_path)) {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                $all_file_paths[] = $file_path;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    $final_file_paths = implode(<span class="charliteral">&#39;,&#39;</span>, $all_file_paths);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    $product_price = (float) $product_price;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    $insert_product_query = <span class="stringliteral">&quot;INSERT INTO products (</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="stringliteral">        user_id, file_path, name, fabric, season, size, price</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="stringliteral">    ) VALUES (?, ?, ?, ?, ?, ?, ?)&quot;</span>;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a> = mysqli_prepare(<a class="code hl_variable" href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a>, $insert_product_query);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a>) {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        mysqli_stmt_bind_param(<a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a>, <span class="stringliteral">&quot;issssii&quot;</span>, </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <a class="code hl_variable" href="admin__handling_8php.html#af0fcd925f00973e32f7214859dfb3c6b">$user_id</a>, </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        $final_file_paths,</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        $product_name, </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        $product_fabric, </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        $product_season, </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        $product_size, </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        $product_price</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    );</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">if</span> (mysqli_stmt_execute(<a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a>)) {</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            header(<span class="stringliteral">&quot;Location: ../main/main.php&quot;</span>);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <a class="code hl_variable" href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            die(<span class="stringliteral">&quot;Execution failed: &quot;</span> . mysqli_stmt_error(<a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a>));</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        die(<span class="stringliteral">&quot;Statement preparation failed.&quot;</span>);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>?&gt;</div>
-<div class="ttc" id="aadd__product_8php_html_a95ac5a5e9d6bfe4807b34cd1b783920e"><div class="ttname"><a href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a></div><div class="ttdeci">$errors</div><div class="ttdef"><b>Definition</b> <a href="add__product_8php_source.html#l00064">add_product.php:64</a></div></div>
-<div class="ttc" id="aadd__product__back_8php_html_a0d9c79b9b86b3f5891c6d3892f12c6a0"><div class="ttname"><a href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a></div><div class="ttdeci">$connection</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00036">add_product_back.php:36</a></div></div>
-<div class="ttc" id="aadd__product__back_8php_html_a0eb82aa5f81cf845de4b36cd653c42cf"><div class="ttname"><a href="add__product__back_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a></div><div class="ttdeci">$username</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00027">add_product_back.php:27</a></div></div>
-<div class="ttc" id="aadd__product__back_8php_html_a607686ef9f99ea7c42f4f3dd3dbb2b0d"><div class="ttname"><a href="add__product__back_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a></div><div class="ttdeci">$password</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00028">add_product_back.php:28</a></div></div>
-<div class="ttc" id="aadd__product__back_8php_html_a711797613cb863ca0756df789c396bf2"><div class="ttname"><a href="add__product__back_8php.html#a711797613cb863ca0756df789c396bf2">$host</a></div><div class="ttdeci">$host</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00026">add_product_back.php:26</a></div></div>
-<div class="ttc" id="aadd__product__back_8php_html_a7691c0162d89de0b6ba47edcd8ba8878"><div class="ttname"><a href="add__product__back_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a></div><div class="ttdeci">$database</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00029">add_product_back.php:29</a></div></div>
-<div class="ttc" id="aadmin__handling_8php_html_af0fcd925f00973e32f7214859dfb3c6b"><div class="ttname"><a href="admin__handling_8php.html#af0fcd925f00973e32f7214859dfb3c6b">$user_id</a></div><div class="ttdeci">$user_id</div><div class="ttdef"><b>Definition</b> <a href="admin__handling_8php_source.html#l00068">admin_handling.php:68</a></div></div>
-<div class="ttc" id="aadmin__handling_8php_html_af27a9140d5f2658693e7fd107f716449"><div class="ttname"><a href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a></div><div class="ttdeci">$stmt</div><div class="ttdef"><b>Definition</b> <a href="admin__handling_8php_source.html#l00090">admin_handling.php:90</a></div></div>
-<div class="ttc" id="alogOut_8php_html_a6733eb5f605d09eaede9845835d71c4e"><div class="ttname"><a href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a></div><div class="ttdeci">exit</div><div class="ttdef"><b>Definition</b> <a href="logOut_8php_source.html#l00006">logOut.php:6</a></div></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>session_start();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a711797613cb863ca0756df789c396bf2">   27</a></span><a class="code hl_variable" href="add__product__back_8php.html#a711797613cb863ca0756df789c396bf2">$host</a> = <span class="stringliteral">&quot;localhost&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">   28</a></span><a class="code hl_variable" href="add__product__back_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a> = <span class="stringliteral">&quot;kupchvla&quot;</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">   29</a></span><a class="code hl_variable" href="add__product__back_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a> = <span class="stringliteral">&quot;webove aplikace&quot;</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">   30</a></span><a class="code hl_variable" href="add__product__back_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a> = <span class="stringliteral">&quot;kupchvla&quot;</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">   37</a></span><a class="code hl_variable" href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a> = mysqli_connect(<a class="code hl_variable" href="add__product__back_8php.html#a711797613cb863ca0756df789c396bf2">$host</a>, <a class="code hl_variable" href="add__product__back_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a>, <a class="code hl_variable" href="add__product__back_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a>, <a class="code hl_variable" href="add__product__back_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordflow">if</span> (!<a class="code hl_variable" href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a>) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    die(<span class="stringliteral">&quot;Connection failed: &quot;</span> . mysqli_connect_error());</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordflow">if</span> (isset($_POST[<span class="stringliteral">&quot;submit&quot;</span>])) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    $upload_directory = <span class="stringliteral">&quot;/home/kupchvla/www/projekt/photo/&quot;</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_variable" href="admin__handling_8php.html#af0fcd925f00973e32f7214859dfb3c6b">$user_id</a> = $_SESSION[<span class="stringliteral">&quot;user_id&quot;</span>];</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    $product_name = trim($_POST[<span class="stringliteral">&quot;product_name&quot;</span>]);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    $product_fabric = trim($_POST[<span class="stringliteral">&quot;product_fabric&quot;</span>]);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    $product_season = trim($_POST[<span class="stringliteral">&quot;season&quot;</span>]);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    $product_size = (int) trim($_POST[<span class="stringliteral">&quot;product_size&quot;</span>]);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    $product_price = trim($_POST[<span class="stringliteral">&quot;product_price&quot;</span>]);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    $all_file_paths = [];</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a> = [];</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (count($_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>]) === 0 || $_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;error&quot;</span>][0] != 0) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>[<span class="stringliteral">&#39;photo&#39;</span>] = <span class="stringliteral">&quot;At least one photo is required.&quot;</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> (empty($product_price) || !is_numeric($product_price) || (<span class="keywordtype">float</span>)$product_price &lt;= 0) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>[<span class="stringliteral">&#39;price&#39;</span>] = <span class="stringliteral">&quot;Valid price greater than 0 is required.&quot;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> (empty($product_name)) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>[<span class="stringliteral">&#39;name&#39;</span>] = <span class="stringliteral">&quot;Product name is required.&quot;</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span> (!empty(<a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>)) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        $_SESSION[<span class="stringliteral">&#39;add_product_errors&#39;</span>] = <a class="code hl_variable" href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        $_SESSION[<span class="stringliteral">&#39;add_product_data&#39;</span>] = [</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="stringliteral">&#39;product_name&#39;</span> =&gt; $product_name,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="stringliteral">&#39;product_fabric&#39;</span> =&gt; $product_fabric,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="stringliteral">&#39;product_season&#39;</span> =&gt; $product_season,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="stringliteral">&#39;product_size&#39;</span> =&gt; $product_size,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="stringliteral">&#39;product_price&#39;</span> =&gt; $product_price</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        ];</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        header(<span class="stringliteral">&quot;Location: add_product.php&quot;</span>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_variable" href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">for</span> ($i = 0; $i &lt; count($_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>]); $i++) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">if</span> ($_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;error&quot;</span>][$i] == 0) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            $file_name = time() . <span class="stringliteral">&quot;_&quot;</span> . $i . <span class="stringliteral">&quot;_&quot;</span> . basename($_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>][$i]);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            $file_tmp = $_FILES[<span class="stringliteral">&quot;photo&quot;</span>][<span class="stringliteral">&quot;tmp_name&quot;</span>][$i];</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            $file_path = $upload_directory . $file_name;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">if</span> (move_uploaded_file($file_tmp, $file_path)) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                $all_file_paths[] = $file_path;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    $final_file_paths = implode(<span class="charliteral">&#39;,&#39;</span>, $all_file_paths);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    $product_price = (float) $product_price;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    $insert_product_query = <span class="stringliteral">&quot;INSERT INTO products (</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="stringliteral">        user_id, file_path, name, fabric, season, size, price</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="stringliteral">    ) VALUES (?, ?, ?, ?, ?, ?, ?)&quot;</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a> = mysqli_prepare(<a class="code hl_variable" href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a>, $insert_product_query);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a>) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        mysqli_stmt_bind_param(<a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a>, <span class="stringliteral">&quot;issssii&quot;</span>, </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_variable" href="admin__handling_8php.html#af0fcd925f00973e32f7214859dfb3c6b">$user_id</a>, </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        $final_file_paths,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        $product_name, </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        $product_fabric, </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        $product_season, </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        $product_size, </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        $product_price</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    );</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordflow">if</span> (mysqli_stmt_execute(<a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a>)) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            header(<span class="stringliteral">&quot;Location: ../main/main.php&quot;</span>);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <a class="code hl_variable" href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            die(<span class="stringliteral">&quot;Execution failed: &quot;</span> . mysqli_stmt_error(<a class="code hl_variable" href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a>));</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        die(<span class="stringliteral">&quot;Statement preparation failed.&quot;</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>?&gt;</div>
+<div class="ttc" id="aadd__product_8php_html_a95ac5a5e9d6bfe4807b34cd1b783920e"><div class="ttname"><a href="add__product_8php.html#a95ac5a5e9d6bfe4807b34cd1b783920e">$errors</a></div><div class="ttdeci">$errors</div><div class="ttdef"><b>Definition</b> <a href="add__product_8php_source.html#l00065">add_product.php:65</a></div></div>
+<div class="ttc" id="aadd__product__back_8php_html_a0d9c79b9b86b3f5891c6d3892f12c6a0"><div class="ttname"><a href="add__product__back_8php.html#a0d9c79b9b86b3f5891c6d3892f12c6a0">$connection</a></div><div class="ttdeci">$connection</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00037">add_product_back.php:37</a></div></div>
+<div class="ttc" id="aadd__product__back_8php_html_a0eb82aa5f81cf845de4b36cd653c42cf"><div class="ttname"><a href="add__product__back_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">$username</a></div><div class="ttdeci">$username</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00028">add_product_back.php:28</a></div></div>
+<div class="ttc" id="aadd__product__back_8php_html_a607686ef9f99ea7c42f4f3dd3dbb2b0d"><div class="ttname"><a href="add__product__back_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a></div><div class="ttdeci">$password</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00029">add_product_back.php:29</a></div></div>
+<div class="ttc" id="aadd__product__back_8php_html_a711797613cb863ca0756df789c396bf2"><div class="ttname"><a href="add__product__back_8php.html#a711797613cb863ca0756df789c396bf2">$host</a></div><div class="ttdeci">$host</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00027">add_product_back.php:27</a></div></div>
+<div class="ttc" id="aadd__product__back_8php_html_a7691c0162d89de0b6ba47edcd8ba8878"><div class="ttname"><a href="add__product__back_8php.html#a7691c0162d89de0b6ba47edcd8ba8878">$database</a></div><div class="ttdeci">$database</div><div class="ttdef"><b>Definition</b> <a href="add__product__back_8php_source.html#l00030">add_product_back.php:30</a></div></div>
+<div class="ttc" id="aadmin__handling_8php_html_af0fcd925f00973e32f7214859dfb3c6b"><div class="ttname"><a href="admin__handling_8php.html#af0fcd925f00973e32f7214859dfb3c6b">$user_id</a></div><div class="ttdeci">$user_id</div><div class="ttdef"><b>Definition</b> <a href="admin__handling_8php_source.html#l00069">admin_handling.php:69</a></div></div>
+<div class="ttc" id="aadmin__handling_8php_html_af27a9140d5f2658693e7fd107f716449"><div class="ttname"><a href="admin__handling_8php.html#af27a9140d5f2658693e7fd107f716449">$stmt</a></div><div class="ttdeci">$stmt</div><div class="ttdef"><b>Definition</b> <a href="admin__handling_8php_source.html#l00091">admin_handling.php:91</a></div></div>
+<div class="ttc" id="alogOut_8php_html_a6733eb5f605d09eaede9845835d71c4e"><div class="ttname"><a href="logOut_8php.html#a6733eb5f605d09eaede9845835d71c4e">exit</a></div><div class="ttdeci">exit</div><div class="ttdef"><b>Definition</b> <a href="logOut_8php_source.html#l00016">logOut.php:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

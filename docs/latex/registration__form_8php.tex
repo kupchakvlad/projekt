@@ -35,6 +35,24 @@ if(isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}mode\textquotesingle{}\mbox
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Frontend formulář pro registraci a přihlášení uživatelů. Tento soubor generuje HTML stránku s přepínači mezi přihlašovacím a registračním formulářem. Zpracovává data a errory z session (např. předvyplnění polí, zobrazení chyb), a zajišťuje bezpečné escapování výstupů pomocí htmlspecialchars. Formuláře odesílají data na backend skripty (\doxylink{registration_8php}{registration.\+php} a \doxylink{login_8php}{login.\+php}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{registration_8php}{registration.\+php} Pro backend zpracování registrace. 
+
+\doxylink{login_8php}{login.\+php} Pro backend zpracování přihlášení. 
+
+registration\+\_\+form.\+js Pro Java\+Script logiku (přepínání formulářů, validace). 
+
+registration\+\_\+form.\+css Pro styly formulářů. 
+\end{DoxySeeAlso}
+
+
+Definition in file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+
+
+
 \doxysubsection{Variable Documentation}
 \Hypertarget{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}\label{registration__form_8php_af1545dc6af8de6063a4194a912a93e92} 
 \index{registration\_form.php@{registration\_form.php}!\$body\_has\_dark\_mode@{\$body\_has\_dark\_mode}}
@@ -44,7 +62,7 @@ if(isset( \$\+\_\+\+COOKIE\mbox{[} \textquotesingle{}mode\textquotesingle{}\mbox
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00146}{146}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00147}{147}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}\label{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d} 
 \index{registration\_form.php@{registration\_form.php}!\$confirm\_has\_error@{\$confirm\_has\_error}}
@@ -54,7 +72,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00146}{146}}
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00060}{60}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00061}{61}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}\label{registration__form_8php_af5f7fce69875f9b42031bdb951b17206} 
 \index{registration\_form.php@{registration\_form.php}!\$confirm\_reg\_error@{\$confirm\_reg\_error}}
@@ -64,7 +82,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00060}{60}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00075}{75}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00076}{76}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}\label{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c} 
 \index{registration\_form.php@{registration\_form.php}!\$email\_has\_error@{\$email\_has\_error}}
@@ -74,7 +92,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00075}{75}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00058}{58}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00059}{59}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}\label{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73} 
 \index{registration\_form.php@{registration\_form.php}!\$email\_reg\_error@{\$email\_reg\_error}}
@@ -84,7 +102,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00058}{58}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00073}{73}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00074}{74}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}\label{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70} 
 \index{registration\_form.php@{registration\_form.php}!\$email\_value@{\$email\_value}}
@@ -94,7 +112,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00073}{73}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00045}{45}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00046}{46}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}\label{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41} 
 \index{registration\_form.php@{registration\_form.php}!\$login\_email\_value@{\$login\_email\_value}}
@@ -104,7 +122,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00045}{45}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00095}{95}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00096}{96}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}\label{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45} 
 \index{registration\_form.php@{registration\_form.php}!\$login\_error\_text@{\$login\_error\_text}}
@@ -114,7 +132,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00095}{95}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00028}{28}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00029}{29}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}\label{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4} 
 \index{registration\_form.php@{registration\_form.php}!\$name\_has\_error@{\$name\_has\_error}}
@@ -124,7 +142,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00028}{28}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00057}{57}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00058}{58}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a656984a70078c13747ed30da3388cb4b}\label{registration__form_8php_a656984a70078c13747ed30da3388cb4b} 
 \index{registration\_form.php@{registration\_form.php}!\$name\_reg\_error@{\$name\_reg\_error}}
@@ -134,7 +152,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00057}{57}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00072}{72}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00073}{73}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a336ad407bac86cf3106656ff5f5416e5}\label{registration__form_8php_a336ad407bac86cf3106656ff5f5416e5} 
 \index{registration\_form.php@{registration\_form.php}!\$name\_value@{\$name\_value}}
@@ -144,7 +162,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00072}{72}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00044}{44}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00045}{45}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a84d28672133e9f24d7d33669dea08453}\label{registration__form_8php_a84d28672133e9f24d7d33669dea08453} 
 \index{registration\_form.php@{registration\_form.php}!\$password\_has\_error@{\$password\_has\_error}}
@@ -154,7 +172,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00044}{44}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00059}{59}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00060}{60}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}\label{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df} 
 \index{registration\_form.php@{registration\_form.php}!\$password\_reg\_error@{\$password\_reg\_error}}
@@ -164,7 +182,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00059}{59}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00074}{74}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00075}{75}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}\label{registration__form_8php_ab94045681b919bf642102741b5ed5a8e} 
 \index{registration\_form.php@{registration\_form.php}!\$show\_login\_error@{\$show\_login\_error}}
@@ -174,7 +192,7 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00074}{74}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00027}{27}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00028}{28}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 
 \Hypertarget{registration__form_8php_a4bb16be8b98e5231e0a083f9e4da5f12}\label{registration__form_8php_a4bb16be8b98e5231e0a083f9e4da5f12} 
 \index{registration\_form.php@{registration\_form.php}!if@{if}}
@@ -184,5 +202,5 @@ Definition at line \mbox{\hyperlink{registration__form_8php_source_l00027}{27}} 
 
 
 
-Definition at line \mbox{\hyperlink{registration__form_8php_source_l00162}{162}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
+Definition at line \mbox{\hyperlink{registration__form_8php_source_l00163}{163}} of file \mbox{\hyperlink{registration__form_8php_source}{registration\+\_\+form.\+php}}.
 

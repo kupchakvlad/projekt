@@ -8,6 +8,7 @@
  * Formulář odesílá data na edit_back.php, kde proběhne samotná aktualizace.
  * Používá filter_input a htmlspecialchars pro základní bezpečnost.
  *
+ * @file edit.php
  *
  * @see edit_back.php Backend pro uložení změn.
  * @see admin.php Zdroj odkazu "Edit" v seznamu uživatelů.

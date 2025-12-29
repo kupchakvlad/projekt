@@ -7,6 +7,7 @@
  * Po úspěšném smazání přesměruje zpět na admin.php.
  * Pokud smazání selže, vypíše chybovou zprávu.
  *
+ * @file delete.php
  *
  * @see admin.php Zdroj odkazu na smazání uživatele.
  * @see delete_button v admin.php Potvrzení smazání probíhá v admin.js.

@@ -5,10 +5,11 @@
  * s běžnými/slabými hesly (https://zwa.toad.cz/passwords.txt) ve formátu plain text.
  * Používá se na klientovi (registration_form.js) pro rychlou klientskou kontrolu,
  * zda zadané heslo není příliš slabé/běžné.
- *
  * Výstup je ve formátu plain text, každý řádek je jedno slabé heslo.
  *
- * @return Vypíše obsah vzdáleného souboru passwords.txt a ukončí skript.
+ * @file get_passwords.php
+ *
+ * @return void Vypíše obsah vzdáleného souboru passwords.txt a ukončí skript.
  * @see registration.php Server-side validace také kontroluje slabá hesla (pro bezpečnost).
  *
  * @see registration_form.js Použití v AJAX požadavku pro kontrolu slabých hesel.

@@ -8,6 +8,7 @@
  * Při chybách ukládá errory a data do session a přesměruje zpět na formulář.
  * Při úspěchu přesměruje na hlavní stránku (main.php).
  *
+ * @file add_product_back.php
  *
  * @see add_product.php Frontend formulář pro přidání produktu.
  * @see main.php Cílová stránka po úspěšném přidání.

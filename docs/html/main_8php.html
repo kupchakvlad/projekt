@@ -115,7 +115,22 @@ Variables</h2></td></tr>
 <tr class="memitem:a43dd02ab50145011973ca5e9cd22acd8" id="r_a43dd02ab50145011973ca5e9cd22acd8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8php.html#a43dd02ab50145011973ca5e9cd22acd8">if</a> (! $conn)</td></tr>
 <tr class="separator:a43dd02ab50145011973ca5e9cd22acd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Hlavní stránka e-shopu Botovo (seznam produktů). Tento soubor je vstupní bod pro přihlášené uživatele – zobrazuje filtr, seznam produktů a navigaci. Kontroluje přihlášení, načítá tmavý režim z cookie, připojuje se k databázi (pro budoucí použití) a generuje základní HTML strukturu stránky. Produkty se dynamicky načítají přes AJAX (<a class="el" href="filter_8php.html">filter.php</a>) pomocí main.js.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="filter_8php.html">filter.php</a> Pro AJAX filtrování a paginace produktů. </dd>
+<dd>
+main.js Pro JavaScript logiku (filtry, dark mode, AJAX). </dd>
+<dd>
+main.css Pro styly stránky. </dd>
+<dd>
+<a class="el" href="add__product_8php.html">add_product/add_product.php</a> Pro přidání produktu. </dd>
+<dd>
+<a class="el" href="account_8php.html">account/account.php</a> Pro uživatelský profil. </dd>
+<dd>
+<a class="el" href="admin_8php.html">admin/admin.php</a> Pro administrátorské rozhraní. </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="main_8php_source.html">main.php</a>.</p>
+</div><h2 class="groupheader">Variable Documentation</h2>
 <a id="aa8a5a87b9c1a6a0819b88447cbe41877" name="aa8a5a87b9c1a6a0819b88447cbe41877"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8a5a87b9c1a6a0819b88447cbe41877">&#9670;&#160;</a></span>$conn</h2>
 
@@ -128,7 +143,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00061">61</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00062">62</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
 
 </div>
 </div>
@@ -144,7 +159,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00038">38</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00039">39</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
 
 </div>
 </div>
@@ -160,7 +175,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00054">54</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00055">55</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
 
 </div>
 </div>
@@ -176,7 +191,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00051">51</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00052">52</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
 
 </div>
 </div>
@@ -192,7 +207,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00053">53</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00054">54</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
 
 </div>
 </div>
@@ -208,7 +223,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00052">52</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00053">53</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
 
 </div>
 </div>
@@ -235,7 +250,7 @@ Variables</h2></td></tr>
 <p>Výpis HTML karet produktů pro aktuální stránku. Pokud nejsou žádné produkty, vypíše zprávu "No products found".</p>
 <p>Zpracování chyb registračního formuláře z session. Pokud existuje 'registration_errors' v session, nastaví flags a chybové texty pro pole. Nastavení tmavého režimu na základě cookie. Pokud cookie 'mode' je 'dark', přidá třídu 'dark-mode' k body. </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00062">62</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8php_source.html#l00063">63</a> of file <a class="el" href="main_8php_source.html">main.php</a>.</p>
 
 </div>
 </div>

@@ -21,6 +21,20 @@
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Backend skript pro zpracování registračního formuláře. Tento soubor zpracovává POST data z \doxylink{registration__form_8php}{registration\+\_\+form.\+php}, validuje vstupy, kontroluje duplicitu emailu, hashuje heslo a vkládá nového uživatele do databáze. Pokud dojde k chybám, ukládá errory do session a přesměruje zpět na formulář. Při úspěchu nastaví session pro uživatele a přesměruje na hlavní stránku.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{registration__form_8php}{registration\+\_\+form.\+php} Pro frontend formulář. 
+
+\doxylink{main_8php}{main.\+php} Cílová stránka po úspěšné registraci. 
+\end{DoxySeeAlso}
+
+
+Definition in file \mbox{\hyperlink{registration_8php_source}{registration.\+php}}.
+
+
+
 \doxysubsection{Variable Documentation}
 \Hypertarget{registration_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}\label{registration_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0} 
 \index{registration.php@{registration.php}!\$connection@{\$connection}}

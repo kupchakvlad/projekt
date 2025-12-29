@@ -7,6 +7,7 @@
  * Používá se pro dynamické načítání produktů bez reloadu stránky.
  * Výstup je přímo HTML pro vložení do #products elementu.
  *
+ * @file filter.php
  *
  * @see main.php Pro frontend stránku s filtry.
  * @see main.js Pro AJAX volání.

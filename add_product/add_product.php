@@ -7,6 +7,7 @@
  * Podporuje předvyplnění polí a zobrazení chybových hlášek z session po neúspěšném odeslání (z add_product_back.php).
  * Tmavý režim je načítán z cookie. Formulář odesílá data (včetně souborů) na add_product_back.php.
  *
+ * @file add_product.php
  *
  * @see add_product_back.php Backend pro zpracování a uložení produktu.
  * @see add_product.css Styly formuláře.

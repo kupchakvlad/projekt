@@ -6,7 +6,7 @@
  * Pokud dojde k chybám, ukládá errory do session a přesměruje zpět na formulář.
  * Při úspěchu nastaví session pro uživatele a přesměruje na hlavní stránku.
  *
- * @since 2025-12-29
+ * @file registration.php
  *
  * @see registration_form.php Pro frontend formulář.
  * @see main.php Cílová stránka po úspěšné registraci.

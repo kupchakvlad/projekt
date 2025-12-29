@@ -4,202 +4,202 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00001}00001\ <?php}
 \DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00017}00017\ session\_start();}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00027}\mbox{\hyperlink{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}{00027}}\ \mbox{\hyperlink{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}{\$show\_login\_error}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00028}\mbox{\hyperlink{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}{00028}}\ \mbox{\hyperlink{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}{\$login\_error\_text}}\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00030}00030\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'login\_error'}])\ \&\&\ \$\_SESSION[\textcolor{stringliteral}{'login\_error'}]\ !=\ \textcolor{stringliteral}{''})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}{\$show\_login\_error}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}{\$login\_error\_text}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'login\_error'}];}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00033}00033\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'login\_error'}]);}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00034}00034\ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00044}\mbox{\hyperlink{registration__form_8php_a336ad407bac86cf3106656ff5f5416e5}{00044}}\ \mbox{\hyperlink{registration__form_8php_a336ad407bac86cf3106656ff5f5416e5}{\$name\_value}}\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00045}\mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{00045}}\ \mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{\$email\_value}}\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00057}\mbox{\hyperlink{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}{00057}}\ \mbox{\hyperlink{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}{\$name\_has\_error}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00058}\mbox{\hyperlink{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}{00058}}\ \mbox{\hyperlink{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}{\$email\_has\_error}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00059}\mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{00059}}\ \mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{\$password\_has\_error}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00060}\mbox{\hyperlink{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}{00060}}\ \mbox{\hyperlink{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}{\$confirm\_has\_error}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00072}\mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{00072}}\ \mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}}\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00073}\mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{00073}}\ \mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}}\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00074}\mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{00074}}\ \mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}}\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00075}\mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{00075}}\ \mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}}\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00082}00082\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'registration\_data'}]))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a336ad407bac86cf3106656ff5f5416e5}{\$name\_value}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'registration\_data'}][\textcolor{stringliteral}{'name'}]\ ??\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{\$email\_value}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'registration\_data'}][\textcolor{stringliteral}{'email'}]\ ??\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00085}00085\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'registration\_data'}]);}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00086}00086\ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00095}\mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{00095}}\ \mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{\$login\_email\_value}}\ =\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00096}00096\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00097}00097\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'login\_data'}]))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{\$login\_email\_value}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'login\_data'}][\textcolor{stringliteral}{'email'}]\ ??\ \textcolor{stringliteral}{''};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00099}00099\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'login\_data'}]);}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00100}00100\ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00101}00101\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00102}00102\ \textcolor{keywordflow}{if}\ (!empty(\mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{\$email\_value}}))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{\$login\_email\_value}}\ =\ \mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{\$email\_value}};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00104}00104\ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00106}00106\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'last\_login\_email'}]))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{\$login\_email\_value}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'last\_login\_email'}];}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00108}00108\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'last\_login\_email'}]);}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00109}00109\ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00110}00110\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00116}00116\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'registration\_errors'}]))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'registration\_errors'}];}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00118}00118\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'registration\_errors'}]);}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_array(\textcolor{stringliteral}{'name'},\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00121}00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}{\$name\_has\_error}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}}\ =\ \textcolor{stringliteral}{'Name\ is\ required.'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00123}00123\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_array(\textcolor{stringliteral}{'email'},\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00125}00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}{\$email\_has\_error}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}}\ =\ \textcolor{stringliteral}{'Please\ enter\ a\ valid\ email\ address.'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00127}00127\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_array(\textcolor{stringliteral}{'password'},\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{\$password\_has\_error}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}}\ =\ \textcolor{stringliteral}{'Password\ must\ be\ at\ least\ 8\ characters\ and\ not\ too\ common.'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00131}00131\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_array(\textcolor{stringliteral}{'confirm'},\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00133}00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}{\$confirm\_has\_error}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{\$password\_has\_error}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}}\ =\ \textcolor{stringliteral}{'Passwords\ do\ not\ match.'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00136}00136\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00137}00137\ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00138}00138\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00146}\mbox{\hyperlink{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}{00146}}\ \mbox{\hyperlink{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}{\$body\_has\_dark\_mode}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00147}00147\ \textcolor{keywordflow}{if}\ (isset(\$\_COOKIE[\textcolor{stringliteral}{'mode'}])\ \&\&\ \$\_COOKIE[\textcolor{stringliteral}{'mode'}]\ ===\ \textcolor{stringliteral}{'dark'})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}{\$body\_has\_dark\_mode}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00149}00149\ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00150}00150\ ?>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00151}00151\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00152}00152\ <!DOCTYPE\ html>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00153}00153\ <html\ lang=\textcolor{stringliteral}{"{}en"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00154}00154\ <head>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00155}00155\ \ \ \ \ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00156}00156\ \ \ \ \ <meta\ name=\textcolor{stringliteral}{"{}viewport"{}}\ content=\textcolor{stringliteral}{"{}width=device-\/width,\ initial-\/scale=1.0"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00157}00157\ \ \ \ \ <title>Registration</title>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00158}00158\ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}registration\_form.css"{}}/>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00159}00159\ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}registration\_form.js"{}}\ defer></script>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00160}00160\ </head>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00162}\mbox{\hyperlink{registration__form_8php_a4bb16be8b98e5231e0a083f9e4da5f12}{00162}}\ <body\ <?php\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}{\$body\_has\_dark\_mode}})\ \{\ echo\ \textcolor{stringliteral}{'class="{}dark-\/mode"{}'};\ \}\ ?>>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00163}00163\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00164}00164\ <button\ type=\textcolor{stringliteral}{"{}button"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}dark-\/mode-\/btn"{}}>Dark\ Mode</button>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00165}00165\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00166}00166\ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}form-\/container"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00167}00167\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00168}00168\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}top-\/buttons"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00169}00169\ \ \ \ \ \ \ \ \ <button\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_button"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}registration-\/form\ active"{}}>Registration</button>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00170}00170\ \ \ \ \ \ \ \ \ <button\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_button"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}login-\/form"{}}>Login</button>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00171}00171\ \ \ \ \ </div>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00172}00172\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00173}00173\ \ \ \ \ <form\ action=\textcolor{stringliteral}{"{}login.php"{}}\ method=\textcolor{stringliteral}{"{}POST"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_form"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00174}00174\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00175}00175\ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}login\_email"{}}>Enter\ your\ \mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{email}}:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00176}00176\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_email"{}}\ name=\textcolor{stringliteral}{"{}login\_email"{}}\ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$login\_email\_value);\ ?>"{}}\ required>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00177}00177\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00178}00178\ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}login\_password"{}}>Enter\ your\ \mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00179}00179\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_password"{}}\ name=\textcolor{stringliteral}{"{}login\_password"{}}\ required>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00180}00180\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00181}00181\ \ \ \ \ \ \ \ \ <?php}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}{\$show\_login\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<div\ class="{}login-\/error"{}>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}{\$login\_error\_text}})\ .\ \textcolor{stringliteral}{'</div>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00184}00184\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00185}00185\ \ \ \ \ \ \ \ \ ?>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00186}00186\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00187}00187\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_submit"{}}\ name=\textcolor{stringliteral}{"{}login\_submit"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}submit"{}}\ value=\textcolor{stringliteral}{"{}Sign-\/in"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00188}00188\ \ \ \ \ </form>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00189}00189\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00190}00190\ \ \ \ \ <form\ action=\textcolor{stringliteral}{"{}registration.php"{}}\ method=\textcolor{stringliteral}{"{}POST"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_form"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}active"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00191}00191\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00192}00192\ \ \ \ \ \ \ \ \ <?php}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FIXED:\ Removed\ \$registration\_errors\ (already\ unset)\ and\ use\ direct\ checks}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!empty(\mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}})\ ||\ !empty(\mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}})\ ||\ !empty(\mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}})\ ||\ !empty(\mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}}))\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<div\ class="{}error-\/box"{}>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<strong>Please\ fix\ these\ errors:</strong>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<ul>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<li>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}})\ .\ \textcolor{stringliteral}{'</li>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<li>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}})\ .\ \textcolor{stringliteral}{'</li>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<li>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}})\ .\ \textcolor{stringliteral}{'</li>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<li>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}})\ .\ \textcolor{stringliteral}{'</li>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</ul>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</div>'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ ?>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00214}00214\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00215}00215\ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}registration\_name"{}}>Enter\ name:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00216}00216\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_name"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{"{}registration\_name"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$name\_value);\ ?>"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}{\$name\_has\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'class="{}error-\/input"{}'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00226}00226\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00227}00227\ \ \ \ \ \ \ \ \ <div\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_email\_container"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}registration\_email"{}}>Enter\ \mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{email}}:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_email"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{"{}registration\_email"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$email\_value);\ ?>"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}{\$email\_has\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'class="{}error-\/input"{}'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00239}00239\ \ \ \ \ \ \ \ \ </div>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00240}00240\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00241}00241\ \ \ \ \ \ \ \ \ <div\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_password\_container"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00242}00242\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}registration\_password"{}}>Enter\ \mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_password"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{"{}registration\_password"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{\$password\_has\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'class="{}error-\/input"{}'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00253}00253\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}registration\_password\_confirmation"{}}>Enter\ \mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}\ once\ again:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_password\_confirmation"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{"{}registration\_password\_confirmation"{}}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}{\$confirm\_has\_error}})\ \{}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'class="{}error-\/input"{}'};}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00264}00264\ \ \ \ \ \ \ \ \ </div>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00265}00265\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00266}00266\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ name=\textcolor{stringliteral}{"{}registration\_submit"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}submit"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_submit"{}}\ value=\textcolor{stringliteral}{"{}Sign-\/up"{}}>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00267}00267\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00268}00268\ \ \ \ \ </form>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00269}00269\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00270}00270\ </div>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00271}00271\ }
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00272}00272\ </body>}
-\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00273}00273\ </html>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00018}00018\ session\_start();}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00028}\mbox{\hyperlink{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}{00028}}\ \mbox{\hyperlink{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}{\$show\_login\_error}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00029}\mbox{\hyperlink{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}{00029}}\ \mbox{\hyperlink{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}{\$login\_error\_text}}\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00031}00031\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'login\_error'}])\ \&\&\ \$\_SESSION[\textcolor{stringliteral}{'login\_error'}]\ !=\ \textcolor{stringliteral}{''})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}{\$show\_login\_error}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}{\$login\_error\_text}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'login\_error'}];}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00034}00034\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'login\_error'}]);}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00045}\mbox{\hyperlink{registration__form_8php_a336ad407bac86cf3106656ff5f5416e5}{00045}}\ \mbox{\hyperlink{registration__form_8php_a336ad407bac86cf3106656ff5f5416e5}{\$name\_value}}\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00046}\mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{00046}}\ \mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{\$email\_value}}\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00058}\mbox{\hyperlink{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}{00058}}\ \mbox{\hyperlink{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}{\$name\_has\_error}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00059}\mbox{\hyperlink{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}{00059}}\ \mbox{\hyperlink{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}{\$email\_has\_error}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00060}\mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{00060}}\ \mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{\$password\_has\_error}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00061}\mbox{\hyperlink{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}{00061}}\ \mbox{\hyperlink{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}{\$confirm\_has\_error}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00073}\mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{00073}}\ \mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}}\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00074}\mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{00074}}\ \mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}}\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00075}\mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{00075}}\ \mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}}\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00076}\mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{00076}}\ \mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}}\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00083}00083\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'registration\_data'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a336ad407bac86cf3106656ff5f5416e5}{\$name\_value}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'registration\_data'}][\textcolor{stringliteral}{'name'}]\ ??\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{\$email\_value}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'registration\_data'}][\textcolor{stringliteral}{'email'}]\ ??\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00086}00086\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'registration\_data'}]);}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00096}\mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{00096}}\ \mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{\$login\_email\_value}}\ =\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00098}00098\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'login\_data'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{\$login\_email\_value}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'login\_data'}][\textcolor{stringliteral}{'email'}]\ ??\ \textcolor{stringliteral}{''};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00100}00100\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'login\_data'}]);}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00103}00103\ \textcolor{keywordflow}{if}\ (!empty(\mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{\$email\_value}}))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{\$login\_email\_value}}\ =\ \mbox{\hyperlink{registration__form_8php_a962e7c7e648fc013ac0f4dcb18ba9b70}{\$email\_value}};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00105}00105\ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00107}00107\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'last\_login\_email'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_aa14817149d4720c1153a7e15cd1d6c41}{\$login\_email\_value}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'last\_login\_email'}];}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00109}00109\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'last\_login\_email'}]);}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00110}00110\ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00117}00117\ \textcolor{keywordflow}{if}\ (isset(\$\_SESSION[\textcolor{stringliteral}{'registration\_errors'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00118}00118\ \ \ \ \ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'registration\_errors'}];}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00119}00119\ \ \ \ \ unset(\$\_SESSION[\textcolor{stringliteral}{'registration\_errors'}]);}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_array(\textcolor{stringliteral}{'name'},\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}{\$name\_has\_error}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}}\ =\ \textcolor{stringliteral}{'Name\ is\ required.'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_array(\textcolor{stringliteral}{'email'},\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}{\$email\_has\_error}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00127}00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}}\ =\ \textcolor{stringliteral}{'Please\ enter\ a\ valid\ email\ address.'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_array(\textcolor{stringliteral}{'password'},\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{\$password\_has\_error}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00131}00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}}\ =\ \textcolor{stringliteral}{'Password\ must\ be\ at\ least\ 8\ characters\ and\ not\ too\ common.'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (in\_array(\textcolor{stringliteral}{'confirm'},\ \mbox{\hyperlink{add__product_8php_a95ac5a5e9d6bfe4807b34cd1b783920e}{\$errors}}))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00134}00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}{\$confirm\_has\_error}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{\$password\_has\_error}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}}\ =\ \textcolor{stringliteral}{'Passwords\ do\ not\ match.'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00138}00138\ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00147}\mbox{\hyperlink{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}{00147}}\ \mbox{\hyperlink{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}{\$body\_has\_dark\_mode}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00148}00148\ \textcolor{keywordflow}{if}\ (isset(\$\_COOKIE[\textcolor{stringliteral}{'mode'}])\ \&\&\ \$\_COOKIE[\textcolor{stringliteral}{'mode'}]\ ===\ \textcolor{stringliteral}{'dark'})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}{\$body\_has\_dark\_mode}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00151}00151\ ?>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00153}00153\ <!DOCTYPE\ html>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00154}00154\ <html\ lang=\textcolor{stringliteral}{"{}en"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00155}00155\ <head>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00156}00156\ \ \ \ \ <meta\ charset=\textcolor{stringliteral}{"{}UTF-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00157}00157\ \ \ \ \ <meta\ name=\textcolor{stringliteral}{"{}viewport"{}}\ content=\textcolor{stringliteral}{"{}width=device-\/width,\ initial-\/scale=1.0"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00158}00158\ \ \ \ \ <title>Registration</title>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00159}00159\ \ \ \ \ <link\ rel=\textcolor{stringliteral}{"{}stylesheet"{}}\ href=\textcolor{stringliteral}{"{}registration\_form.css"{}}/>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00160}00160\ \ \ \ \ <script\ src=\textcolor{stringliteral}{"{}registration\_form.js"{}}\ defer></script>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00161}00161\ </head>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00163}\mbox{\hyperlink{registration__form_8php_a4bb16be8b98e5231e0a083f9e4da5f12}{00163}}\ <body\ <?php\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_af1545dc6af8de6063a4194a912a93e92}{\$body\_has\_dark\_mode}})\ \{\ echo\ \textcolor{stringliteral}{'class="{}dark-\/mode"{}'};\ \}\ ?>>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00165}00165\ <button\ type=\textcolor{stringliteral}{"{}button"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}dark-\/mode-\/btn"{}}>Dark\ Mode</button>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00167}00167\ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}form-\/container"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00169}00169\ \ \ \ \ <div\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}top-\/buttons"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00170}00170\ \ \ \ \ \ \ \ \ <button\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_button"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}registration-\/form\ active"{}}>Registration</button>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00171}00171\ \ \ \ \ \ \ \ \ <button\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_button"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}login-\/form"{}}>Login</button>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00172}00172\ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00174}00174\ \ \ \ \ <form\ action=\textcolor{stringliteral}{"{}login.php"{}}\ method=\textcolor{stringliteral}{"{}POST"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_form"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00176}00176\ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}login\_email"{}}>Enter\ your\ \mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{email}}:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00177}00177\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_email"{}}\ name=\textcolor{stringliteral}{"{}login\_email"{}}\ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$login\_email\_value);\ ?>"{}}\ required>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00179}00179\ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}login\_password"{}}>Enter\ your\ \mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00180}00180\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_password"{}}\ name=\textcolor{stringliteral}{"{}login\_password"{}}\ required>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00182}00182\ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_ab94045681b919bf642102741b5ed5a8e}{\$show\_login\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<div\ class="{}login-\/error"{}>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_a4ef1d1fcc6cbc1f24c01fae6f08aaa45}{\$login\_error\_text}})\ .\ \textcolor{stringliteral}{'</div>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00186}00186\ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00188}00188\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}login\_submit"{}}\ name=\textcolor{stringliteral}{"{}login\_submit"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}submit"{}}\ value=\textcolor{stringliteral}{"{}Sign-\/in"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00189}00189\ \ \ \ \ </form>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00191}00191\ \ \ \ \ <form\ action=\textcolor{stringliteral}{"{}registration.php"{}}\ method=\textcolor{stringliteral}{"{}POST"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_form"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}active"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00193}00193\ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FIXED:\ Removed\ \$registration\_errors\ (already\ unset)\ and\ use\ direct\ checks}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!empty(\mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}})\ ||\ !empty(\mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}})\ ||\ !empty(\mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}})\ ||\ !empty(\mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}}))\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<div\ class="{}error-\/box"{}>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<strong>Please\ fix\ these\ errors:</strong>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<ul>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<li>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_a656984a70078c13747ed30da3388cb4b}{\$name\_reg\_error}})\ .\ \textcolor{stringliteral}{'</li>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<li>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_aa8d35a6d597451776fbd7efb49ba0e73}{\$email\_reg\_error}})\ .\ \textcolor{stringliteral}{'</li>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<li>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_afbab7329d9a5aba838b612c58cbf87df}{\$password\_reg\_error}})\ .\ \textcolor{stringliteral}{'</li>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'<li>'}\ .\ htmlspecialchars(\mbox{\hyperlink{registration__form_8php_af5f7fce69875f9b42031bdb951b17206}{\$confirm\_reg\_error}})\ .\ \textcolor{stringliteral}{'</li>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</ul>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'</div>'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00214}00214\ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00216}00216\ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}registration\_name"{}}>Enter\ name:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00217}00217\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_name"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{"{}registration\_name"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$name\_value);\ ?>"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a6c496c300e014c314fdd72adfbad54f4}{\$name\_has\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'class="{}error-\/input"{}'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00228}00228\ \ \ \ \ \ \ \ \ <div\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_email\_container"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}registration\_email"{}}>Enter\ \mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{email}}:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}text"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_email"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{"{}registration\_email"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value=\textcolor{stringliteral}{"{}<?php\ echo\ htmlspecialchars(\$email\_value);\ ?>"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a317e6b9ba189c298e52495e480aefa4c}{\$email\_has\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'class="{}error-\/input"{}'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00240}00240\ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00242}00242\ \ \ \ \ \ \ \ \ <div\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_password\_container"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}registration\_password"{}}>Enter\ \mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_password"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{"{}registration\_password"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a84d28672133e9f24d7d33669dea08453}{\$password\_has\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'class="{}error-\/input"{}'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ <label\ \textcolor{keywordflow}{for}=\textcolor{stringliteral}{"{}registration\_password\_confirmation"{}}>Enter\ \mbox{\hyperlink{account__back_8php_ac8b9bcea149376e5e3720ef65b421efd}{password}}\ once\ again:\ <span\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}required"{}}>*</span></label>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}password"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_password\_confirmation"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name=\textcolor{stringliteral}{"{}registration\_password\_confirmation"{}}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <?php}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{registration__form_8php_a80dfcf0c20c72129e645d73a74620c4d}{\$confirm\_has\_error}})\ \{}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{'class="{}error-\/input"{}'};}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00265}00265\ \ \ \ \ \ \ \ \ </div>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00267}00267\ \ \ \ \ \ \ \ \ <input\ type=\textcolor{stringliteral}{"{}submit"{}}\ name=\textcolor{stringliteral}{"{}registration\_submit"{}}\ \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}submit"{}}\ \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}registration\_submit"{}}\ value=\textcolor{stringliteral}{"{}Sign-\/up"{}}>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00269}00269\ \ \ \ \ </form>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00271}00271\ </div>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00273}00273\ </body>}
+\DoxyCodeLine{\Hypertarget{registration__form_8php_source_l00274}00274\ </html>}
 
 \end{DoxyCode}

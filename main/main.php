@@ -7,6 +7,7 @@
  * (pro budoucí použití) a generuje základní HTML strukturu stránky.
  * Produkty se dynamicky načítají přes AJAX (filter.php) pomocí main.js.
  *
+ * @file main.php
  *
  * @see filter.php Pro AJAX filtrování a paginace produktů.
  * @see main.js Pro JavaScript logiku (filtry, dark mode, AJAX).

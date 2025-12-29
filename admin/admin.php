@@ -6,6 +6,7 @@
  * Zobrazuje tabulku všech uživatelů z databáze s možností editace, smazání
  * a změny admin statusu. Používá htmlspecialchars pro ochranu proti XSS.
  *
+ * @file admin.php
  *
  * @see edit.php Pro editaci uživatele.
  * @see delete.php Pro smazání uživatele.

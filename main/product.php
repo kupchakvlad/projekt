@@ -8,6 +8,7 @@
  * převádí cestu k obrázkům na veřejnou URL a generuje HTML s galerií obrázků,
  * informacemi o produktu a tlačítkem pro "koupi".
  *
+ * @file product.php
  *
  * @see main.php Pro výpis produktů a odkaz na tento detail.
  * @see filter.php Pro filtrování produktů (zdroj odkazů).

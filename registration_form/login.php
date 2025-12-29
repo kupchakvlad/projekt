@@ -6,6 +6,7 @@
  * Pokud dojde k chybám, ukládá error message do session a přesměruje zpět na formulář.
  * Při úspěchu nastaví session pro uživatele (user_id a admin) a přesměruje na hlavní stránku.
  *
+ * @file login.php
  *
  * @see registration_form.php Pro frontend formulář (přihlašovací část).
  * @see main.php Cílová stránka po úspěšném přihlášení.

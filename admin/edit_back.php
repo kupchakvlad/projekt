@@ -8,6 +8,7 @@
  * jméno a email uživatele v tabulce `users` pomocí prepared statement.
  * Po zpracování (úspěšném i neúspěšném) vždy přesměruje zpět na admin.php.
  *
+ * @file edit_back.php
  *
  * @see edit.php Frontend formulář pro editaci uživatele.
  * @see admin.php Cílová stránka po uložení (seznam uživatelů).

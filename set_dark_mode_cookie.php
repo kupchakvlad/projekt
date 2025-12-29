@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * @file set_dark_mode_cookie.php
  * Backend skript pro nastavení cookie s preferencí tmavého režimu.
  *
  * Tento soubor je volán přes AJAX (POST požadavek) z různých JavaScript souborů

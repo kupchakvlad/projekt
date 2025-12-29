@@ -8,6 +8,7 @@
  * Používá prepared statements pro ochranu proti SQL injection.
  * Po úspěšné aktualizaci přesměruje zpět na account.php.
  *
+ * @file account_back.php
  *
  * @see account.php Frontend stránka s formulářem pro úpravu profilu.
  */

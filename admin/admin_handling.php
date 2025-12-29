@@ -8,6 +8,7 @@
  * Zabraňuje přepnutí vlastního účtu a neplatnému ID.
  * Po úspěšné (nebo neúspěšné) operaci přesměruje zpět na admin.php.
  *
+ * @file admin_handling.php
  *
  * @see admin.php Zdroj odkazu "Change Admin" v tabulce uživatelů.
  */
