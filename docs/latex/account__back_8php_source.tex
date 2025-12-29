@@ -3,43 +3,42 @@
 \mbox{\hyperlink{account__back_8php}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{account__back_8php_source_l00001}00001\ <?php}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00016}00016\ session\_start();}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00023}00023\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'user\_id'}]))\ \{}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00024}00024\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../registration\_form/registration\_form.php"{}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00026}00026\ \}}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00036}\mbox{\hyperlink{account__back_8php_a711797613cb863ca0756df789c396bf2}{00036}}\ \mbox{\hyperlink{account__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00037}\mbox{\hyperlink{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00037}}\ \mbox{\hyperlink{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00038}\mbox{\hyperlink{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00038}}\ \mbox{\hyperlink{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00039}\mbox{\hyperlink{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00039}}\ \mbox{\hyperlink{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00046}\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00046}}\ \mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{account__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00047}00047\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ die(\textcolor{stringliteral}{"{}Connect\ failed:\ "{}}\ .\ mysqli\_connect\_error());}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00058}00058\ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'user\_id'}];}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00059}00059\ \$new\_name\ =\ \$\_POST[\textcolor{stringliteral}{'username'}];}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00060}00060\ \$new\_email\ =\ \$\_POST[\textcolor{stringliteral}{'email'}];}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00061}00061\ \$new\_password\ =\ \$\_POST[\textcolor{stringliteral}{'password'}];}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00073}00073\ \textcolor{keywordflow}{if}\ (!empty(\$new\_password))\ \{}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00074}00074\ \ \ \ \ \$hashed\_password\ =\ password\_hash(\$new\_password,\ PASSWORD\_DEFAULT);}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00075}\mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{00075}}\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}}\ =\ \textcolor{stringliteral}{"{}UPDATE\ users\ SET\ name\ =\ ?,\ email\ =\ ?,\ password\ =\ ?\ WHERE\ id\ =\ ?"{}};}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00077}00077\ \ \ \ \ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}sssi"{}},\ \$new\_name,\ \$new\_email,\ \$hashed\_password,\ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00078}00078\ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}}\ =\ \textcolor{stringliteral}{"{}UPDATE\ users\ SET\ name\ =\ ?,\ email\ =\ ?\ WHERE\ id\ =\ ?"{}};}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00081}00081\ \ \ \ \ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}ssi"{}},\ \$new\_name,\ \$new\_email,\ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00082}00082\ \}}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00084}00084\ mysqli\_stmt\_execute(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00085}00085\ mysqli\_stmt\_close(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00091}00091\ header(\textcolor{stringliteral}{"{}Location:\ account.php"{}});}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00092}00092\ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
-\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00093}00093\ ?>}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00014}00014\ session\_start();}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00020}00020\ \textcolor{keywordflow}{if}\ (!isset(\$\_SESSION[\textcolor{stringliteral}{'user\_id'}]))\ \{}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00021}00021\ \ \ \ \ header(\textcolor{stringliteral}{"{}Location:\ ../registration\_form/registration\_form.php"{}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00032}\mbox{\hyperlink{account__back_8php_a711797613cb863ca0756df789c396bf2}{00032}}\ \mbox{\hyperlink{account__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00033}\mbox{\hyperlink{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{00033}}\ \mbox{\hyperlink{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00034}\mbox{\hyperlink{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{00034}}\ \mbox{\hyperlink{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}}\ =\ \textcolor{stringliteral}{"{}webove\ aplikace"{}};}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00035}\mbox{\hyperlink{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{00035}}\ \mbox{\hyperlink{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}}\ =\ \textcolor{stringliteral}{"{}kupchvla"{}};}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00041}\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{00041}}\ \mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}}\ =\ mysqli\_connect(\mbox{\hyperlink{account__back_8php_a711797613cb863ca0756df789c396bf2}{\$host}},\ \mbox{\hyperlink{account__back_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username}},\ \mbox{\hyperlink{account__back_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password}},\ \mbox{\hyperlink{account__back_8php_a7691c0162d89de0b6ba47edcd8ba8878}{\$database}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00042}00042\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}})\ die(\textcolor{stringliteral}{"{}Connect\ failed:\ "{}}\ .\ mysqli\_connect\_error());}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00052}00052\ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}}\ =\ \$\_SESSION[\textcolor{stringliteral}{'user\_id'}];}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00053}00053\ \$new\_name\ =\ \$\_POST[\textcolor{stringliteral}{'username'}];}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00054}00054\ \$new\_email\ =\ \$\_POST[\textcolor{stringliteral}{'email'}];}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00055}00055\ \$new\_password\ =\ \$\_POST[\textcolor{stringliteral}{'password'}];}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00066}00066\ \textcolor{keywordflow}{if}\ (!empty(\$new\_password))\ \{}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00067}00067\ \ \ \ \ \$hashed\_password\ =\ password\_hash(\$new\_password,\ PASSWORD\_DEFAULT);}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00068}\mbox{\hyperlink{account__back_8php_aea85f9d3afcfc16bc92be549093b71ce}{00068}}\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}}\ =\ \textcolor{stringliteral}{"{}UPDATE\ users\ SET\ name\ =\ ?,\ email\ =\ ?,\ password\ =\ ?\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00070}00070\ \ \ \ \ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}sssi"{}},\ \$new\_name,\ \$new\_email,\ \$hashed\_password,\ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00071}00071\ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}}\ =\ \textcolor{stringliteral}{"{}UPDATE\ users\ SET\ name\ =\ ?,\ email\ =\ ?\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}}\ =\ mysqli\_prepare(\mbox{\hyperlink{account__back_8php_a0d9c79b9b86b3f5891c6d3892f12c6a0}{\$connection}},\ \mbox{\hyperlink{admin__handling_8php_ac3a3efd86e3cdb24ed2ac53f682de260}{\$query}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00074}00074\ \ \ \ \ mysqli\_stmt\_bind\_param(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}},\ \textcolor{stringliteral}{"{}ssi"{}},\ \$new\_name,\ \$new\_email,\ \mbox{\hyperlink{admin__handling_8php_af0fcd925f00973e32f7214859dfb3c6b}{\$user\_id}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00077}00077\ mysqli\_stmt\_execute(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00078}00078\ mysqli\_stmt\_close(\mbox{\hyperlink{admin__handling_8php_af27a9140d5f2658693e7fd107f716449}{\$stmt}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00083}00083\ header(\textcolor{stringliteral}{"{}Location:\ account.php"{}});}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00084}00084\ \mbox{\hyperlink{logOut_8php_a6733eb5f605d09eaede9845835d71c4e}{exit}};}
+\DoxyCodeLine{\Hypertarget{account__back_8php_source_l00085}00085\ ?>}
 
 \end{DoxyCode}
