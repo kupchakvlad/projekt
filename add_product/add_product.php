@@ -1,18 +1,65 @@
 <?php
+
+/**
+ * Stránka pro přidání nového produktu.
+ * Tento soubor je přístupný pouze přihlášeným uživatelům.
+ * Zobrazuje formulář pro nahrání fotek a zadání údajů o produktu (název, výrobce, sezóna, velikost, cena).
+ * Podporuje předvyplnění polí a zobrazení chybových hlášek z session po neúspěšném odeslání (z add_product_back.php).
+ * Tmavý režim je načítán z cookie. Formulář odesílá data (včetně souborů) na add_product_back.php.
+ *
+ *
+ * @see add_product_back.php Backend pro zpracování a uložení produktu.
+ * @see add_product.css Styly formuláře.
+ * @see add_product.js JavaScript pro slider velikosti, dark mode a klientskou validaci.
+ */
+
 session_start();
+
+/**
+ * Kontrola přihlášení uživatele.
+ * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
+ */
 
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
 }
 
+/**
+ * Nastavení třídy pro tmavý režim.
+ * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
+ *
+ * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
+ */
+
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
+
+/**
+ * Načtení předvyplněných hodnot z session.
+ * Používá se po neúspěšném odeslání formuláře pro zachování zadaných dat.
+ *
+ * @var string $product_name_value Předvyplněný název produktu.
+ * @var string $product_fabric_value Předvyplněný výrobce/materiál.
+ * @var string $product_season_value Předvyplněná sezóna.
+ * @var string $product_size_value Předvyplněná velikost (výchozí '36').
+ * @var string $product_price_value Předvyplněná cena.
+ */
 
 $product_name_value = $_SESSION['add_product_data']['product_name'] ?? '';
 $product_fabric_value = $_SESSION['add_product_data']['product_fabric'] ?? '';
 $product_season_value = $_SESSION['add_product_data']['product_season'] ?? '';
 $product_size_value = $_SESSION['add_product_data']['product_size'] ?? '36';
 $product_price_value = $_SESSION['add_product_data']['product_price'] ?? '';
+
+/**
+ * Načtení chybových hlášek z session.
+ * Chyby jsou uloženy backendem při validaci (foto, cena, název).
+ *
+ * @var array $errors Pole chyb (klíče: 'photo', 'price', 'name').
+ * @var string $photo_error Chybová zpráva pro nahrávání fotek.
+ * @var string $price_error Chybová zpráva pro cenu.
+ * @var string $name_error Chybová zpráva pro název produktu.
+ */
 
 $errors = $_SESSION['add_product_errors'] ?? [];
 unset($_SESSION['add_product_data'], $_SESSION['add_product_errors']);

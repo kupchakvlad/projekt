@@ -1,20 +1,70 @@
 <?php
+
+/**
+ * Stránka uživatelského profilu / účtu (My Account).
+ * Tento soubor je přístupný pouze přihlášeným uživatelům.
+ * Načítá aktuální jméno a email uživatele z databáze, zobrazuje je,
+ * umožňuje jejich úpravu a změnu hesla přes formulář (odesílá na account_back.php).
+ * Podporuje tmavý režim z cookie, obsahuje tlačítka pro návrat, přepnutí režimu a odhlášení.
+ *
+ *
+ * @see account_back.php Backend pro uložení změn v profilu.
+ * @see account.css Styly stránky účtu.
+ * @see account.js JavaScript pro dark mode a navigaci.
+ * @see logOut.php Odhlášení uživatele.
+ */
+
 session_start();
+
+/**
+ * Kontrola přihlášení uživatele.
+ * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
+ */
 
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
 }
 
+/**
+ * Nastavení třídy pro tmavý režim.
+ * Na základě cookie 'mode' přidá třídu 'dark' k <body>.
+ *
+ * @var string $dark_mode_class CSS třída ('dark' nebo prázdná).
+ */
+
 $dark_mode_class = (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') ? 'dark' : '';
+
+/**
+ * Konfigurační proměnné pro připojení k databázi.
+ * @var string $host Hostitel databáze (výchozí: localhost).
+ * @var string $username Uživatelské jméno pro DB.
+ * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
+ * @var string $database Název databáze.
+ */
 
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
 $database = "kupchvla";
 
+/**
+ * Připojení k databázi MySQL.
+ * @var mysqli $connection Objekt připojení.
+ */
+
 $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
+
+/**
+ * Načtení aktuálních údajů uživatele z databáze.
+ * Používá prepared statement pro bezpečnost.
+ * Výsledek se použije pro zobrazení a předvyplnění formuláře.
+ *
+ * @var int $user_id ID přihlášeného uživatele ze session.
+ * @var string $name Aktuální jméno uživatele.
+ * @var string $email Aktuální email uživatele.
+ */
 
 $user_id = $_SESSION["user_id"];
 $query = "SELECT name, email FROM users WHERE id = ?";

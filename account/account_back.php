@@ -1,22 +1,73 @@
 <?php
+
+/**
+ * Backend skript pro uložení změn v uživatelském profilu.
+ * Tento soubor zpracovává POST data z formuláře na account.php.
+ * Aktualizuje jméno, email a případně heslo přihlášeného uživatele v tabulce `users`.
+ * Pokud je zadáno nové heslo, hashuje ho pomocí password_hash.
+ * Používá prepared statements pro ochranu proti SQL injection.
+ * Po úspěšné aktualizaci přesměruje zpět na account.php.
+ *
+ *
+ * @see account.php Frontend stránka s formulářem pro úpravu profilu.
+ */
+
 session_start();
+
+/**
+ * Kontrola přihlášení uživatele.
+ * Pokud není session user_id nastavena, přesměruje na přihlašovací/regační formulář.
+ */
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../registration_form/registration_form.php");
     exit;
 }
+
+/**
+ * Konfigurační proměnné pro připojení k databázi.
+ * @var string $host Hostitel databáze (výchozí: localhost).
+ * @var string $username Uživatelské jméno pro DB.
+ * @var string $password Heslo pro DB (POZOR: Nesdílejte v produkci!).
+ * @var string $database Název databáze.
+ */
 
 $host = "localhost";
 $username = "kupchvla";
 $password = "webove aplikace";
 $database = "kupchvla";
 
+/**
+ * Připojení k databázi MySQL.
+ * @var mysqli $connection Objekt připojení.
+ */
+
 $connection = mysqli_connect($host, $username, $password, $database);
 if (!$connection) die("Connect failed: " . mysqli_connect_error());
+
+/**
+ * Načtení dat z POST formuláře a ID uživatele ze session.
+ *
+ * @var int $user_id ID přihlášeného uživatele.
+ * @var string $new_name Nové jméno uživatele.
+ * @var string $new_email Nový email uživatele.
+ * @var string $new_password Nové heslo (volitelné, může být prázdné).
+ */
 
 $user_id = $_SESSION['user_id'];
 $new_name = $_POST['username'];
 $new_email = $_POST['email'];
 $new_password = $_POST['password'];
+
+/**
+ * Příprava a provedení UPDATE dotazu.
+ * Pokud je zadáno nové heslo, aktualizuje i sloupec password (s hashováním).
+ * Jinak aktualizuje pouze jméno a email.
+ *
+ * @var string $hashed_password Hash nového hesla (pouze pokud je zadáno).
+ * @var string $query SQL UPDATE dotaz (dynamicky podle přítomnosti hesla).
+ * @var mysqli_stmt $stmt Prepared statement pro UPDATE.
+ */
 
 if (!empty($new_password)) {
     $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
@@ -31,6 +82,10 @@ if (!empty($new_password)) {
 
 mysqli_stmt_execute($stmt);
 mysqli_stmt_close($stmt);
+
+/**
+ * Přesměrování zpět na stránku profilu po uložení změn.
+ */
 
 header("Location: account.php");
 exit;

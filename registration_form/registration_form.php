@@ -1,5 +1,28 @@
 <?php
+
+/**
+ * Frontend formulář pro registraci a přihlášení uživatelů.
+ * Tento soubor generuje HTML stránku s přepínači mezi přihlašovacím a registračním formulářem.
+ * Zpracovává data a errory z session (např. předvyplnění polí, zobrazení chyb),
+ * a zajišťuje bezpečné escapování výstupů pomocí htmlspecialchars.
+ * Formuláře odesílají data na backend skripty (registration.php a login.php).
+ *
+ *
+ * @see registration.php Pro backend zpracování registrace.
+ * @see login.php Pro backend zpracování přihlášení.
+ * @see registration_form.js Pro JavaScript logiku (přepínání formulářů, validace).
+ * @see registration_form.css Pro styly formulářů.
+ */
+
 session_start();
+
+/**
+ * Proměnné pro zobrazení chyb přihlášení.
+ * Kontroluje session pro 'login_error' a nastavuje flags a text pro zobrazení chybové zprávy.
+ *
+ * @var bool $show_login_error Flag pro zobrazení chybové zprávy přihlášení.
+ * @var string $login_error_text Text chybové zprávy přihlášení.
+ */
 
 $show_login_error = false;
 $login_error_text = '';
@@ -10,24 +33,64 @@ if (isset($_SESSION['login_error']) && $_SESSION['login_error'] != '') {
     unset($_SESSION['login_error']);
 }
 
+/**
+ * Výchozí hodnoty pro registrační formulář.
+ * Inicializuje prázdné hodnoty pro jméno a email.
+ *
+ * @var string $name_value Předvyplněné jméno z session.
+ * @var string $email_value Předvyplněný email z session.
+ */
+
 $name_value = '';
 $email_value = '';
+
+/**
+ * Flags pro chyby v registračním formuláři.
+ * Nastavují se na základě 'registration_errors' v session pro označení chybných polí.
+ *
+ * @var bool $name_has_error Flag pro chybu v poli jména.
+ * @var bool $email_has_error Flag pro chybu v poli emailu.
+ * @var bool $password_has_error Flag pro chybu v poli hesla.
+ * @var bool $confirm_has_error Flag pro chybu v poli potvrzení hesla.
+ */
 
 $name_has_error = false;
 $email_has_error = false;
 $password_has_error = false;
 $confirm_has_error = false;
 
+/**
+ * Texty chyb pro registrační formulář.
+ * Specifické chybové zprávy pro jednotlivá pole.
+ *
+ * @var string $name_reg_error Chybová zpráva pro jméno.
+ * @var string $email_reg_error Chybová zpráva pro email.
+ * @var string $password_reg_error Chybová zpráva pro heslo.
+ * @var string $confirm_reg_error Chybová zpráva pro potvrzení hesla.
+ */
+
 $name_reg_error = '';
 $email_reg_error = '';
 $password_reg_error = '';
 $confirm_reg_error = '';
+
+/**
+ * Předvyplnění registračního formuláře z session.
+ * Pokud existuje 'registration_data' v session, načte hodnoty a unsetne session.
+ */
 
 if (isset($_SESSION['registration_data'])) {
     $name_value = $_SESSION['registration_data']['name'] ?? '';
     $email_value = $_SESSION['registration_data']['email'] ?? '';
     unset($_SESSION['registration_data']);
 }
+
+/**
+ * Předvyplnění emailu pro přihlašovací formulář.
+ * Načte z 'login_data', 'registration_data' nebo 'last_login_email' v session.
+ *
+ * @var string $login_email_value Předvyplněný email pro přihlášení.
+ */
 
 $login_email_value = '';
 
@@ -44,6 +107,11 @@ if (isset($_SESSION['last_login_email'])) {
     $login_email_value = $_SESSION['last_login_email'];
     unset($_SESSION['last_login_email']);
 }
+
+/**
+ * Zpracování chyb registračního formuláře z session.
+ * Pokud existuje 'registration_errors' v session, nastaví flags a chybové texty pro pole.
+ */
 
 if (isset($_SESSION['registration_errors'])) {
     $errors = $_SESSION['registration_errors'];
@@ -67,6 +135,13 @@ if (isset($_SESSION['registration_errors'])) {
         $confirm_reg_error = 'Passwords do not match.';
     }
 }
+
+/**
+ * Nastavení tmavého režimu na základě cookie.
+ * Pokud cookie 'mode' je 'dark', přidá třídu 'dark-mode' k body.
+ *
+ * @var string $dark_mode_class Třída pro tmavý režim ('dark-mode' nebo prázdná).
+ */
 
 $body_has_dark_mode = false;
 if (isset($_COOKIE['mode']) && $_COOKIE['mode'] === 'dark') {
