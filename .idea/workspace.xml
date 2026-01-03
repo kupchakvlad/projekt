@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="432badf1-2a72-480e-bd22-92f6a8825c0e" name="Changes" comment="pomenjal nazvanije v account back end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Produktová dokumentace.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Programátorská dokumentace.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Zadání úlohy.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/set_dark_mode_cookie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +151,8 @@
       <workItem from="1766863700167" duration="1157000" />
       <workItem from="1767032508855" duration="470000" />
       <workItem from="1767042393526" duration="5280000" />
-      <workItem from="1767050162742" duration="2133000" />
+      <workItem from="1767050162742" duration="2455000" />
+      <workItem from="1767479300187" duration="137000" />
     </task>
     <task id="LOCAL-00033" summary="dobavil cookie na dark mode">
       <option name="closed" value="true" />

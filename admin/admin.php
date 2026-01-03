@@ -86,10 +86,10 @@ $result = mysqli_query($connection, $select_users_query);
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
-                echo "<td>" . $row["id"] . "</td>";
-                echo "<td>" . $row["name"] . "</td>";
-                echo "<td>" . $row["email"] . "</td>";
-                echo "<td>" . $row["admin"] . "</td>";
+                echo "<td>" . htmlspecialchars($row["id"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["admin"]) . "</td>";
                 echo "<td>";
                 echo "<a href='edit.php?id=" . htmlspecialchars($row["id"]) . "'>Edit</a>";
                 echo "<a href='delete.php?id=" . htmlspecialchars($row["id"]) . "' class='delete_button'>Delete</a>";
